@@ -1,27 +1,29 @@
 {
-  "generatedAt": "2026-08-24T19:26:31.881Z",
-  "restaurantCount": 380,
+  "generatedAt": "2026-08-24T22:14:44.135Z",
+  "baseRestaurantCount": 380,
+  "curatedAdditionCount": 32,
+  "restaurantCount": 412,
   "provinceCount": 10,
-  "cityCount": 93,
-  "verifiedMenuCount": 112,
-  "pricedMenuCount": 76,
-  "lateNightCount": 92,
-  "reservationCount": 139,
+  "cityCount": 105,
+  "verifiedMenuCount": 144,
+  "pricedMenuCount": 91,
+  "lateNightCount": 95,
+  "reservationCount": 143,
   "styleCounts": {
-    "tonkotsu": 30,
-    "shoyu": 77,
-    "miso": 93,
-    "tsukemen": 66
+    "tonkotsu": 45,
+    "shoyu": 98,
+    "miso": 121,
+    "tsukemen": 74
   },
-  "veganCompleteCount": 8,
+  "veganCompleteCount": 9,
   "verifiedHalalCount": 0,
-  "houseMadeNoodleCount": 2,
+  "houseMadeNoodleCount": 4,
   "provinces": [
     {
       "code": "ON",
       "slug": "on",
       "name": "Ontario",
-      "count": 150,
+      "count": 154,
       "cities": [
         {
           "name": "Toronto",
@@ -50,8 +52,16 @@
         {
           "name": "Ottawa",
           "slug": "ottawa",
-          "count": 7,
-          "verifiedMenus": 2,
+          "count": 8,
+          "verifiedMenus": 3,
+          "pricedMenus": 2,
+          "lateNight": 2
+        },
+        {
+          "name": "Hamilton",
+          "slug": "hamilton",
+          "count": 6,
+          "verifiedMenus": 3,
           "pricedMenus": 2,
           "lateNight": 2
         },
@@ -62,14 +72,6 @@
           "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 1
-        },
-        {
-          "name": "Hamilton",
-          "slug": "hamilton",
-          "count": 5,
-          "verifiedMenus": 2,
-          "pricedMenus": 2,
-          "lateNight": 2
         },
         {
           "name": "London",
@@ -110,6 +112,14 @@
           "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 1
+        },
+        {
+          "name": "Greater Sudbury",
+          "slug": "greater-sudbury",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
         },
         {
           "name": "Guelph",
@@ -208,14 +218,6 @@
           "lateNight": 0
         },
         {
-          "name": "Greater Sudbury",
-          "slug": "greater-sudbury",
-          "count": 1,
-          "verifiedMenus": 0,
-          "pricedMenus": 0,
-          "lateNight": 0
-        },
-        {
           "name": "Kitchener",
           "slug": "kitchener",
           "count": 1,
@@ -230,6 +232,14 @@
           "verifiedMenus": 0,
           "pricedMenus": 0,
           "lateNight": 0
+        },
+        {
+          "name": "Newmarket",
+          "slug": "newmarket",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 1
         },
         {
           "name": "Orléans",
@@ -277,7 +287,7 @@
       "code": "BC",
       "slug": "bc",
       "name": "British Columbia",
-      "count": 95,
+      "count": 98,
       "cities": [
         {
           "name": "Vancouver",
@@ -368,6 +378,14 @@
           "lateNight": 1
         },
         {
+          "name": "Nanaimo",
+          "slug": "nanaimo",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
           "name": "New Westminster",
           "slug": "new-westminster",
           "count": 2,
@@ -392,10 +410,10 @@
           "lateNight": 0
         },
         {
-          "name": "Nanaimo",
-          "slug": "nanaimo",
+          "name": "Langford",
+          "slug": "langford",
           "count": 1,
-          "verifiedMenus": 0,
+          "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 0
         },
@@ -438,6 +456,14 @@
           "verifiedMenus": 0,
           "pricedMenus": 0,
           "lateNight": 0
+        },
+        {
+          "name": "Whistler",
+          "slug": "whistler",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
         }
       ]
     },
@@ -445,14 +471,14 @@
       "code": "QC",
       "slug": "qc",
       "name": "Quebec",
-      "count": 58,
+      "count": 70,
       "cities": [
         {
           "name": "Montreal",
           "slug": "montreal",
-          "count": 34,
-          "verifiedMenus": 9,
-          "pricedMenus": 6,
+          "count": 36,
+          "verifiedMenus": 11,
+          "pricedMenus": 7,
           "lateNight": 8
         },
         {
@@ -464,11 +490,27 @@
           "lateNight": 0
         },
         {
+          "name": "Brossard",
+          "slug": "brossard",
+          "count": 2,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
           "name": "Gatineau",
           "slug": "gatineau",
           "count": 2,
           "verifiedMenus": 0,
           "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Longueuil",
+          "slug": "longueuil",
+          "count": 2,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
           "lateNight": 0
         },
         {
@@ -493,14 +535,6 @@
           "count": 1,
           "verifiedMenus": 0,
           "pricedMenus": 0,
-          "lateNight": 0
-        },
-        {
-          "name": "Brossard",
-          "slug": "brossard",
-          "count": 1,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
           "lateNight": 0
         },
         {
@@ -560,6 +594,14 @@
           "lateNight": 0
         },
         {
+          "name": "Rimouski",
+          "slug": "rimouski",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
           "name": "Saint-Hubert",
           "slug": "saint-hubert",
           "count": 1,
@@ -576,12 +618,36 @@
           "lateNight": 0
         },
         {
+          "name": "Saint-Laurent",
+          "slug": "saint-laurent",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Saint-Raymond",
+          "slug": "saint-raymond",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
           "name": "Saint-Sauveur",
           "slug": "saint-sauveur",
           "count": 1,
           "verifiedMenus": 0,
           "pricedMenus": 0,
           "lateNight": 1
+        },
+        {
+          "name": "Sainte-Thérèse",
+          "slug": "sainte-therese",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
         },
         {
           "name": "Shawinigan",
@@ -600,6 +666,30 @@
           "lateNight": 0
         },
         {
+          "name": "Terrebonne",
+          "slug": "terrebonne",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Trois-Rivières",
+          "slug": "trois-rivieres",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Vaudreuil-Dorion",
+          "slug": "vaudreuil-dorion",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
           "name": "Westmount",
           "slug": "westmount",
           "count": 1,
@@ -613,23 +703,23 @@
       "code": "AB",
       "slug": "ab",
       "name": "Alberta",
-      "count": 50,
+      "count": 57,
       "cities": [
         {
           "name": "Calgary",
           "slug": "calgary",
-          "count": 22,
-          "verifiedMenus": 6,
-          "pricedMenus": 5,
+          "count": 27,
+          "verifiedMenus": 11,
+          "pricedMenus": 7,
           "lateNight": 5
         },
         {
           "name": "Edmonton",
           "slug": "edmonton",
-          "count": 17,
-          "verifiedMenus": 6,
-          "pricedMenus": 5,
-          "lateNight": 6
+          "count": 19,
+          "verifiedMenus": 8,
+          "pricedMenus": 6,
+          "lateNight": 7
         },
         {
           "name": "Banff",
@@ -701,14 +791,14 @@
       "code": "MB",
       "slug": "mb",
       "name": "Manitoba",
-      "count": 8,
+      "count": 10,
       "cities": [
         {
           "name": "Winnipeg",
           "slug": "winnipeg",
-          "count": 8,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "count": 10,
+          "verifiedMenus": 3,
+          "pricedMenus": 3,
           "lateNight": 1
         }
       ]
@@ -717,7 +807,7 @@
       "code": "NB",
       "slug": "nb",
       "name": "New Brunswick",
-      "count": 7,
+      "count": 8,
       "cities": [
         {
           "name": "Saint John",
@@ -734,6 +824,14 @@
           "verifiedMenus": 0,
           "pricedMenus": 0,
           "lateNight": 0
+        },
+        {
+          "name": "Fredericton",
+          "slug": "fredericton",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
         },
         {
           "name": "Moncton",
@@ -757,14 +855,14 @@
       "code": "NS",
       "slug": "ns",
       "name": "Nova Scotia",
-      "count": 6,
+      "count": 7,
       "cities": [
         {
           "name": "Halifax",
           "slug": "halifax",
-          "count": 3,
-          "verifiedMenus": 0,
-          "pricedMenus": 0,
+          "count": 4,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
           "lateNight": 0
         },
         {
@@ -789,14 +887,14 @@
       "code": "SK",
       "slug": "sk",
       "name": "Saskatchewan",
-      "count": 4,
+      "count": 6,
       "cities": [
         {
           "name": "Regina",
           "slug": "regina",
-          "count": 2,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "count": 4,
+          "verifiedMenus": 3,
+          "pricedMenus": 3,
           "lateNight": 0
         },
         {

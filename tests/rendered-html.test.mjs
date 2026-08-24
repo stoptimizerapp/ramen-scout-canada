@@ -1,14 +1,47 @@
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import crypto from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { distanceKm, formatDistance, rankByDistance } from "../lib/geo.ts";
 import { createRetryableLoader } from "../lib/retryable-loader.ts";
+import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
 
 const siteRoot = new URL("../", import.meta.url);
 const restaurants = JSON.parse(await readFile(new URL("data/restaurants.json", siteRoot), "utf8"));
 const summary = JSON.parse(await readFile(new URL("data/directory-summary.json", siteRoot), "utf8"));
 const searchIndex = JSON.parse(await readFile(new URL("public/data/search-index.json", siteRoot), "utf8"));
+const curatedSource = JSON.parse(await readFile(new URL("data/curated-additions.source.json", siteRoot), "utf8"));
+const rendererContractPaths = [
+  "app/restaurants/[province]/[city]/[slug]/page.tsx",
+  "app/layout.tsx",
+  "app/globals.css",
+  "components/Breadcrumbs.tsx",
+  "components/FactBadge.tsx",
+  "components/RestaurantList.tsx",
+  "components/RestaurantCard.tsx",
+  "components/SiteHeader.tsx",
+  "components/SiteFooter.tsx",
+  "components/Logo.tsx",
+  "lib/directory.ts",
+  "lib/format.ts",
+  "lib/site.ts",
+];
+const rendererContractSources = await Promise.all(rendererContractPaths.map(async (relativePath) => ({
+  path: relativePath,
+  source: await readFile(new URL(relativePath, siteRoot), "utf8"),
+})));
+
+function expectedRendererHash(siteUrl, sourceOverrides = {}) {
+  const canonicalSite = new URL(siteUrl);
+  return crypto.createHash("sha256").update(JSON.stringify({
+    contractVersion: "restaurant-listing-renderer-v1",
+    sources: rendererContractSources.map((entry) => ({ ...entry, source: sourceOverrides[entry.path] ?? entry.source })),
+    canonicalSiteUrl: siteUrl,
+    canonicalOrigin: canonicalSite.origin,
+    canonicalHostname: canonicalSite.hostname,
+  })).digest("hex");
+}
 
 let workerPromise;
 
@@ -55,11 +88,34 @@ function extractTitle(html) {
   return match[1].replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#x27;", "'");
 }
 
+function visibleText(html) {
+  return html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&#x27;", "'")
+    .replaceAll("&nbsp;", " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function wordCount(value) {
+  return value.match(/[\p{L}\p{N}]+(?:['’.-][\p{L}\p{N}]+)*/gu)?.length ?? 0;
+}
+
 test("generated directory data is complete, unique and route-safe", () => {
-  assert.equal(restaurants.length, 380);
-  assert.equal(summary.restaurantCount, 380);
+  assert.equal(summary.baseRestaurantCount, 380);
+  assert.equal(summary.curatedAdditionCount, curatedSource.restaurants.length);
+  assert.equal(restaurants.length, summary.baseRestaurantCount + summary.curatedAdditionCount);
+  assert.equal(summary.restaurantCount, restaurants.length);
   assert.equal(summary.provinceCount, 10);
-  assert.equal(summary.cityCount, 93);
+  const canonicalCityKeys = new Set(restaurants.map((restaurant) => `${restaurant.provinceSlug}:${restaurant.citySlug}`));
+  const summaryCityKeys = summary.provinces.flatMap((province) => province.cities.map((city) => `${province.slug}:${city.slug}`));
+  assert.equal(summary.cityCount, canonicalCityKeys.size);
+  assert.equal(new Set(summaryCityKeys).size, summary.cityCount, "city summary rows must map one-to-one to canonical hub routes");
+  assert.deepEqual(new Set(summaryCityKeys), canonicalCityKeys);
   assert.equal(searchIndex.length, restaurants.length);
 
   for (const key of ["id", "placeId", "canonicalPath"]) {
@@ -77,11 +133,38 @@ test("generated directory data is complete, unique and route-safe", () => {
     assert.notEqual(restaurant.publication.gateStatus, "pass");
     assert.equal(restaurant.publication.gates.humanReview, "no");
     assert.equal(typeof restaurant.publication.qualityScore, "number");
+    assert.equal(restaurant.publication.rendererHash, expectedRendererHash("https://ramenscout.ca"));
   }
 
   for (const record of searchIndex) {
     assert.ok(paths.has(record.path), `search record ${record.id} must resolve to a detail route`);
     assert.ok(Number.isFinite(record.latitude) && Number.isFinite(record.longitude), `search record ${record.id} must have usable coordinates`);
+  }
+});
+
+test("publication renderer hashes bind the exact listing source and canonical origin", () => {
+  const expected = expectedRendererHash("https://ramenscout.ca");
+  assert.match(expected, /^[a-f0-9]{64}$/);
+  assert.ok(restaurants.every((restaurant) => restaurant.publication.rendererHash === expected));
+  assert.notEqual(expectedRendererHash("https://preview.ramenscout.ca"), expected, "a canonical-origin change must invalidate approval hashes");
+  assert.notEqual(
+    expectedRendererHash("https://ramenscout.ca", {
+      "components/Breadcrumbs.tsx": `${rendererContractSources.find((entry) => entry.path === "components/Breadcrumbs.tsx").source}\n// transitive renderer changed`,
+    }),
+    expected,
+    "a transitive listing dependency change must invalidate approval hashes",
+  );
+});
+
+test("curated discoveries retain every researched menu item in listings and search", () => {
+  const runtimeById = new Map(restaurants.map((restaurant) => [restaurant.placeId, restaurant]));
+  const searchById = new Map(searchIndex.map((record) => [record.id, record]));
+  for (const candidate of curatedSource.restaurants) {
+    const runtime = runtimeById.get(candidate.googlePlaceId);
+    assert.ok(runtime, `${candidate.sourceKey} must exist in generated data`);
+    assert.equal(runtime.menu.items.length, candidate.menu.items.length, `${candidate.sourceKey} must retain its complete researched menu`);
+    assert.deepEqual(runtime.menu.items.map((item) => item.name), candidate.menu.items.map((item) => item.name));
+    assert.deepEqual(searchById.get(runtime.id).signatureItems, candidate.menu.items.map((item) => item.name));
   }
 });
 
@@ -124,7 +207,60 @@ test("production indexing fails closed while no restaurant passes every publicat
     env: { ...process.env, NEXT_PUBLIC_ALLOW_INDEXING: "true" },
   });
   assert.notEqual(result.status, 0);
-  assert.match(`${result.stdout}\n${result.stderr}`, /no restaurant passes the complete publication gate/i);
+  assert.match(`${result.stdout}\n${result.stderr}`, /does not pass the national launch gate/i);
+});
+
+test("the shared publication gate separates an approved record from an unreviewed one", () => {
+  const base = structuredClone(restaurants.find((restaurant) => restaurant.evidence.some((evidence) => ["official_site", "official_menu"].includes(evidence.sourceType) && /^[a-f0-9]{64}$/.test(evidence.contentHash || ""))));
+  assert.ok(base);
+  const approved = structuredClone(base);
+  const approval = {
+    restaurantId: approved.id,
+    reviewerId: "editor-fixture",
+    reviewedAt: "2026-08-24T00:00:00Z",
+    schemaValidatedAt: "2026-08-24T00:00:00Z",
+    visibleParityCheckedAt: "2026-08-24T00:00:00Z",
+    rightsReviewedAt: "2026-08-24T00:00:00Z",
+    contentHash: approved.publication.contentHash,
+    evidenceHash: approved.publication.evidenceHash,
+    schemaHash: approved.publication.schemaHash,
+    rendererHash: approved.publication.rendererHash,
+    approvalHash: "a".repeat(64),
+    approveIndexing: true,
+    approveAds: true,
+  };
+  approved.publication = {
+    ...approved.publication,
+    status: "published",
+    robots: "index,follow",
+    adsAllowed: "yes",
+    gateStatus: "pass",
+    failCodes: [],
+    qualityScore: 95,
+    verifiedDecisionFieldCount: 7,
+    humanReviewedAt: approval.reviewedAt,
+    reviewerId: approval.reviewerId,
+    approvalHash: approval.approvalHash,
+    gates: Object.fromEntries(Object.keys(approved.publication.gates).map((key) => [key, "yes"])),
+  };
+  approved.relevance.classification = "primary";
+  approved.menu.status = "verified_current";
+  approved.nextReviewDue = "2026-11-22";
+  assert.equal(passesPublicationGate(approved, Date.parse("2026-08-24T00:00:00Z"), approval), true);
+  assert.equal(passesPublicationGate(base, Date.parse("2026-08-24T00:00:00Z")), false);
+  approved.publication.robots = "index,nofollow";
+  assert.equal(passesPublicationGate(approved, Date.parse("2026-08-24T00:00:00Z"), approval), false, "robots must match index,follow exactly");
+  approved.publication.robots = "index,follow";
+  const staleRendererApproval = { ...approval, rendererHash: "0".repeat(64) };
+  assert.equal(passesPublicationGate(approved, Date.parse("2026-08-24T00:00:00Z"), staleRendererApproval), false, "approval must match the current renderer contract");
+  const currentRendererHash = approved.publication.rendererHash;
+  approved.publication.rendererHash = "0".repeat(64);
+  assert.equal(passesPublicationGate(approved, Date.parse("2026-08-24T00:00:00Z"), approval), false, "generated publication state cannot substitute a different renderer hash");
+  approved.publication.rendererHash = currentRendererHash;
+  const malformedApproval = { ...approval, reviewedAt: "not actually reviewed" };
+  approved.publication.humanReviewedAt = malformedApproval.reviewedAt;
+  assert.equal(passesPublicationGate(approved, Date.parse("2026-08-24T00:00:00Z"), malformedApproval), false, "review timestamps must be real and non-future");
+  assert.equal(passesSiteLaunchGate([approved]), false, "one approval cannot unlock a national site");
 });
 
 test("public search data exposes useful fields without ratings, staged media or internal QA", () => {
@@ -155,6 +291,7 @@ test("search renders a bounded useful first page and keeps query filters noindex
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
   assert.match(html, /value="miso"/i);
   assert.match(html, /Only show confirmed features/i);
+  assert.match(html, /Verified halal/i);
   assert.match(html, /Unknown values never match a confirmed-feature filter/i);
   assert.match(html, /Use my location/i);
   assert.doesNotMatch(html, /Requesting your location|Sorted by distance/i);
@@ -166,8 +303,8 @@ test("homepage renders useful discovery content with global preview safeguards",
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
   assert.match(html, /<link[^>]*rel="canonical"[^>]*href="https:\/\/ramenscout\.ca"/i);
   assert.match(html, /<h1>Find ramen near you—without the guesswork\.<\/h1>/i);
-  assert.match(html, />380<\/strong>/);
-  assert.match(html, />93<\/strong>|93 Canadian cities/);
+  assert.match(html, new RegExp(`>${summary.restaurantCount}<\\/strong>`));
+  assert.match(html, new RegExp(`>${summary.cityCount}<\\/strong>|${summary.cityCount} Canadian cities`));
   assert.match(html, /aria-label="Ramen Scout home"/);
   assert.match(html, /Research preview/);
   assert.match(html, /Use my location/i);
@@ -217,6 +354,61 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
   assert.equal(restaurantSchema.url, `https://ramenscout.ca${restaurant.canonicalPath}`);
   assert.doesNotMatch(JSON.stringify(schema), /AggregateRating|reviewCount|ratingValue|"review"/i);
   assert.doesNotMatch(html, /quality_score|gate_human_review|staging_media|adsbygoogle/i);
+});
+
+test("a curated discovery renders its specific menu and source-backed details", async () => {
+  const restaurant = restaurants.find((entry) => entry.name === "Jinsei Ramen");
+  assert.ok(restaurant, "newly discovered Jinsei Ramen must exist");
+  const html = await htmlFor(restaurant.canonicalPath);
+  assert.match(html, /Jinsei Ramen on Laurier Avenue in Ottawa/i);
+  assert.match(html, /Premium Miso Ramen/i);
+  assert.match(html, /Spicy Red Tonkotsu/i);
+  assert.match(html, /Vegetarian Miso Ramen/i);
+  assert.match(html, /300 Laurier Ave W/i);
+  assert.match(html, /Sunday[^<]*closed/i);
+  assert.match(html, /href="#source-E2"/i);
+  assert.match(html, /id="source-E2"/i);
+  assert.match(html, /Where these details came from/i);
+  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
+  assert.doesNotMatch(html, /AggregateRating|reviewCount|ratingValue|adsbygoogle/i);
+});
+
+test("every curated detail page exposes at least 200 useful publisher words", async () => {
+  for (const candidate of curatedSource.restaurants) {
+    const restaurant = restaurants.find((entry) => entry.placeId === candidate.googlePlaceId);
+    assert.ok(restaurant, `${candidate.sourceKey} must resolve`);
+    const html = await htmlFor(restaurant.canonicalPath);
+    const start = html.indexOf("data-publisher-content");
+    const end = html.indexOf('<aside class="listing-sidebar"', start);
+    assert.ok(start >= 0 && end > start, `${candidate.sourceKey} must mark its publisher content`);
+    const text = visibleText(html.slice(start, end));
+    assert.ok(wordCount(text) >= 200, `${candidate.sourceKey} has only ${wordCount(text)} visible publisher words`);
+    for (const requiredCopy of [restaurant.content.shortDescription, restaurant.content.bestFor, restaurant.content.neighbourhoodContext].filter(Boolean)) {
+      assert.ok(text.includes(requiredCopy), `${candidate.sourceKey} must render its authored decision-useful copy`);
+    }
+  }
+});
+
+test("overnight hours render as next-day service and remain schema-consistent", async () => {
+  const momo = restaurants.find((entry) => entry.placeId === "ChIJ330jjXwZpEwRL1Zg5z4gL_s");
+  assert.ok(momo);
+  const html = await htmlFor(momo.canonicalPath);
+  assert.match(visibleText(html), /Friday 11 a\.m\.–2 a\.m\. next day/i);
+  const schema = extractJsonLd(html);
+  const restaurantSchema = schema["@graph"].find((entry) => entry["@type"] === "Restaurant");
+  const friday = restaurantSchema.openingHoursSpecification.find((entry) => entry.dayOfWeek.endsWith("/Friday"));
+  assert.equal(friday.opens, "11:00");
+  assert.equal(friday.closes, "02:00");
+
+  const hus = restaurants.find((entry) => entry.placeId === "ChIJdzGefcEjoFMRclxgPjwWkpA");
+  assert.ok(hus);
+  const husHtml = await htmlFor(hus.canonicalPath);
+  assert.match(visibleText(husHtml), /Tuesday 5:30 p\.m\.–2 a\.m\. next day/i);
+  const husSchema = extractJsonLd(husHtml)["@graph"].find((entry) => entry["@type"] === "Restaurant");
+  const tuesday = husSchema.openingHoursSpecification.filter((entry) => entry.dayOfWeek.endsWith("/Tuesday"));
+  assert.equal(tuesday.length, 1, "one overnight service period should use one schema interval");
+  assert.equal(tuesday[0].opens, "17:30");
+  assert.equal(tuesday[0].closes, "02:00");
 });
 
 test("representative location, style, feature and policy routes render", async () => {

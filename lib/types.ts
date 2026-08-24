@@ -8,6 +8,7 @@ export type Evidence = {
   retrievedAt?: string;
   effectiveDate?: string;
   supports?: string[];
+  contentHash?: string;
 };
 
 export type MenuItem = {
@@ -41,6 +42,12 @@ export type Restaurant = {
     qualityScore: number;
     verifiedDecisionFieldCount: number;
     humanReviewedAt?: string;
+    reviewerId?: string;
+    approvalHash?: string;
+    contentHash: string;
+    evidenceHash: string;
+    schemaHash: string;
+    rendererHash: string;
     gates: {
       identity: string;
       relevance: string;
@@ -130,6 +137,8 @@ export type Restaurant = {
 
 export type DirectorySummary = {
   generatedAt: string;
+  baseRestaurantCount: number;
+  curatedAdditionCount: number;
   restaurantCount: number;
   provinceCount: number;
   cityCount: number;

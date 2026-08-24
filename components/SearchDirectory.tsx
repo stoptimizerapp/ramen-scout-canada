@@ -19,6 +19,7 @@ const filterDefinitions: ReadonlyArray<readonly [SearchFeature, string]> = [
   ["miso", "Miso"],
   ["tsukemen", "Tsukemen"],
   ["vegan", "Complete vegan bowl"],
+  ["halal", "Verified halal"],
   ["late-night", "Late night"],
   ["reservations", "Reservations"],
   ["house-made-noodles", "Noodles made on site"],

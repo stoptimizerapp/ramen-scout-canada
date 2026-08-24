@@ -1,29 +1,18 @@
 import restaurantJson from "@/data/restaurants.json";
 import summaryJson from "@/data/directory-summary.json";
+import approvalJson from "@/data/publication-approvals.json";
 import { INDEXING_ENABLED } from "./site";
+import { passesPublicationGate, passesSiteLaunchGate } from "./publication-policy.js";
 import type { DirectorySummary, Restaurant } from "./types";
 
 export const restaurants = restaurantJson as Restaurant[];
 export const summary = summaryJson as DirectorySummary;
+const approvalById = new Map(approvalJson.approvals.map((approval) => [approval.restaurantId, approval]));
+const individuallyApproved = restaurants.filter((restaurant) => passesPublicationGate(restaurant, Date.now(), approvalById.get(restaurant.id)));
+export const SITE_LAUNCH_READY = passesSiteLaunchGate(individuallyApproved);
 
 export function isRestaurantIndexable(restaurant: Restaurant) {
-  const hasOfficialEvidence = restaurant.evidence.some((item) => item.url && ["official_menu", "official_site"].includes(item.sourceType || ""));
-  const nextReviewDue = Date.parse(restaurant.nextReviewDue || "");
-  return restaurant.publication.status === "published"
-    && restaurant.publication.robots.startsWith("index")
-    && restaurant.publication.adsAllowed === "yes"
-    && restaurant.publication.gateStatus === "pass"
-    && restaurant.publication.failCodes.length === 0
-    && restaurant.publication.qualityScore >= 90
-    && restaurant.publication.verifiedDecisionFieldCount >= 6
-    && Boolean(restaurant.publication.humanReviewedAt)
-    && Object.values(restaurant.publication.gates).every((value) => value === "yes")
-    && ["primary", "substantial"].includes(restaurant.relevance.classification)
-    && restaurant.menu.status === "verified_current"
-    && restaurant.evidence.length >= 2
-    && hasOfficialEvidence
-    && Number.isFinite(nextReviewDue)
-    && nextReviewDue >= Date.now();
+  return SITE_LAUNCH_READY && passesPublicationGate(restaurant, Date.now(), approvalById.get(restaurant.id));
 }
 
 export const directoryRestaurants = INDEXING_ENABLED ? restaurants.filter(isRestaurantIndexable) : restaurants;

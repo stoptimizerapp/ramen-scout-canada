@@ -1,10 +1,31 @@
 import fs from "node:fs/promises";
+import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(here, "..");
 const sourcePath = path.resolve(siteRoot, "../outputs/ramen_directory_enrichment_20260824/ramen_restaurants_canada_enriched.csv");
+const additionsPath = path.join(siteRoot, "data/curated-additions.csv");
+const additionsSourcePath = path.join(siteRoot, "data/curated-additions.source.json");
+const placeRegistryPath = path.join(siteRoot, "data/curated-place-registry.json");
+const approvalsPath = path.join(siteRoot, "data/publication-approvals.json");
+const rendererContractPaths = [
+  "app/restaurants/[province]/[city]/[slug]/page.tsx",
+  "app/layout.tsx",
+  "app/globals.css",
+  "components/Breadcrumbs.tsx",
+  "components/FactBadge.tsx",
+  "components/RestaurantList.tsx",
+  "components/RestaurantCard.tsx",
+  "components/SiteHeader.tsx",
+  "components/SiteFooter.tsx",
+  "components/Logo.tsx",
+  "lib/directory.ts",
+  "lib/format.ts",
+  "lib/site.ts",
+];
 const outputPath = path.join(siteRoot, "data/restaurants.json");
 const summaryPath = path.join(siteRoot, "data/directory-summary.json");
 const searchPath = path.join(siteRoot, "public/data/search-index.json");
@@ -36,6 +57,21 @@ function parseCsv(text) {
   return rows;
 }
 
+function rowsFromCsv(text, label) {
+  const table = parseCsv(text);
+  if (table.length === 0) throw new Error(`${label} is empty.`);
+  const headers = table[0];
+  if (headers.length !== 378) throw new Error(`${label} must use the 378-column enrichment schema; found ${headers.length} columns.`);
+  if (new Set(headers).size !== headers.length) throw new Error(`${label} contains duplicate column names.`);
+  const dataRows = table.slice(1).filter((row) => row.some((cell) => cell !== ""));
+  for (const [index, row] of dataRows.entries()) {
+    if (row.length !== headers.length) {
+      throw new Error(`${label} row ${index + 2} has ${row.length} cells; expected ${headers.length}.`);
+    }
+  }
+  return { headers, rows: dataRows.map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ""]))) };
+}
+
 function slugify(value) {
   return String(value || "")
     .normalize("NFKD")
@@ -45,17 +81,156 @@ function slugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function normalizedText(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\b(?:street|st)\b/g, "st")
+    .replace(/\b(?:road|rd)\b/g, "rd")
+    .replace(/\b(?:boulevard|boul|bd)\b/g, "blvd")
+    .replace(/\b(?:avenue|ave)\b/g, "ave")
+    .replace(/\b(?:drive|dr)\b/g, "dr")
+    .replace(/\b(?:highway|hwy)\b/g, "hwy")
+    .replace(/\b(?:trail|trl)\b/g, "trl")
+    .replace(/\b(?:crescent|cres)\b/g, "cres")
+    .replace(/\b(?:sainte|saint)\b/g, "saint")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function compactPostal(value) {
+  return String(value || "").replace(/\s+/g, "").toUpperCase();
+}
+
+function significantStreetTokens(value) {
+  const stop = new Set(["st", "rue", "rd", "blvd", "ave", "dr", "hwy", "trl", "cres", "unit", "suite", "local", "floor", "west", "east", "north", "south", "ouest", "est", "nord", "sud", "w", "e", "n", "s", "o"]);
+  return normalizedText(value).split(" ").filter((token) => token && !stop.has(token) && !/^\d+[a-z]?$/.test(token));
+}
+
+function sha256(value) {
+  return crypto.createHash("sha256").update(String(value)).digest("hex");
+}
+
+const canonicalSiteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://ramenscout.ca").replace(/\/$/, "");
+let canonicalSite;
+try {
+  canonicalSite = new URL(canonicalSiteUrl);
+} catch {
+  throw new Error("NEXT_PUBLIC_SITE_URL must be a valid absolute URL before publication records can be generated.");
+}
+if (!canonicalSite.hostname || !["http:", "https:"].includes(canonicalSite.protocol)) {
+  throw new Error("NEXT_PUBLIC_SITE_URL must use HTTP or HTTPS and include a hostname before publication records can be generated.");
+}
+const rendererContractSources = await Promise.all(rendererContractPaths.map(async (relativePath) => ({
+  path: relativePath,
+  source: await fs.readFile(path.join(siteRoot, relativePath), "utf8"),
+})));
+const rendererHash = sha256(JSON.stringify({
+  contractVersion: "restaurant-listing-renderer-v1",
+  sources: rendererContractSources,
+  canonicalSiteUrl,
+  canonicalOrigin: canonicalSite.origin,
+  canonicalHostname: canonicalSite.hostname,
+}));
+
 const split = (value) => String(value || "").split("|").map((part) => part.trim()).filter(Boolean);
 const number = (value) => value === "" || value === null || value === undefined ? null : Number(value);
 const compact = (object) => Object.fromEntries(Object.entries(object).filter(([, value]) => value !== "" && value !== null && value !== undefined));
 
-const table = parseCsv(await fs.readFile(sourcePath, "utf8"));
-const headers = table[0];
-const rawRows = table.slice(1).map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ""])));
+const baseTable = rowsFromCsv(await fs.readFile(sourcePath, "utf8"), "Master enrichment CSV");
+let additionsTable = { headers: baseTable.headers, rows: [] };
+try {
+  additionsTable = rowsFromCsv(await fs.readFile(additionsPath, "utf8"), "Curated additions CSV");
+} catch (error) {
+  if (error?.code !== "ENOENT") throw error;
+}
+if (additionsTable.headers.some((header, index) => header !== baseTable.headers[index])) {
+  throw new Error("Curated additions CSV header does not exactly match the master enrichment CSV.");
+}
+const rawRows = [...baseTable.rows, ...additionsTable.rows];
+const curatedSource = JSON.parse(await fs.readFile(additionsSourcePath, "utf8"));
+if (curatedSource.policyVersion !== "curated-additions-v1" || !Array.isArray(curatedSource.restaurants)) throw new Error("Curated additions source has an unsupported schema.");
+const curatedSourceByKey = new Map(curatedSource.restaurants.map((restaurant) => [restaurant.sourceKey, restaurant]));
+if (curatedSourceByKey.size !== curatedSource.restaurants.length || curatedSource.restaurants.length !== additionsTable.rows.length) {
+  throw new Error("Curated additions source and exact-schema overlay must have one unique record per candidate.");
+}
+const placeRegistry = JSON.parse(await fs.readFile(placeRegistryPath, "utf8"));
+if (placeRegistry.schemaVersion !== "1.0" || !Array.isArray(placeRegistry.records)) throw new Error("Curated place registry has an unsupported schema.");
+const registeredPlaces = new Map(placeRegistry.records.map((record) => [record.candidateKey, record]));
+if (registeredPlaces.size !== placeRegistry.records.length) throw new Error("Curated place registry contains duplicate candidate keys.");
+const approvalRegistry = JSON.parse(await fs.readFile(approvalsPath, "utf8"));
+if (approvalRegistry.schemaVersion !== "1.0" || !Array.isArray(approvalRegistry.approvals)) throw new Error("Publication approval registry has an unsupported schema.");
+const approvalById = new Map(approvalRegistry.approvals.map((approval) => [approval.restaurantId, approval]));
+if (approvalById.size !== approvalRegistry.approvals.length) throw new Error("Publication approval registry contains duplicate restaurant IDs.");
 
-const restaurants = rawRows.map((row) => {
+for (const row of additionsTable.rows) {
+  const required = ["restaurant_id", "source_google_place_id", "name", "canonical_path", "street_address", "city", "province_code", "postal_code", "latitude", "longitude", "official_location_url", "menu_url", "google_maps_url"];
+  const missing = required.filter((field) => !row[field]);
+  if (missing.length) throw new Error(`Curated addition ${row.name || row.restaurant_id || "(unknown)"} is missing: ${missing.join(", ")}.`);
+  if (!/^ChIJ[A-Za-z0-9_-]+$/.test(row.source_google_place_id)) throw new Error(`Curated addition ${row.name} requires an authentic ChIJ Google Place ID.`);
+  if (!/^\/restaurants\/[a-z]{2}\/[a-z0-9-]+\/[a-z0-9-]+$/.test(row.canonical_path)) throw new Error(`Curated addition ${row.name} has an invalid canonical path.`);
+  const mapsUrl = new URL(row.google_maps_url);
+  if (mapsUrl.protocol !== "https:" || !["google.com", "www.google.com"].includes(mapsUrl.hostname) || mapsUrl.pathname !== "/maps/search/") {
+    throw new Error(`Curated addition ${row.name} requires an HTTPS Google Maps search URL.`);
+  }
+  const mapsPlaceId = mapsUrl.searchParams.get("query_place_id");
+  if (mapsPlaceId !== row.source_google_place_id) throw new Error(`Curated addition ${row.name} Maps URL does not match its source Google Place ID.`);
+  const registeredPlace = registeredPlaces.get(row.source_row_number);
+  if (!registeredPlace) throw new Error(`Curated addition ${row.name} is absent from the independently checked place registry.`);
+  if (registeredPlace.googlePlaceId !== row.source_google_place_id || registeredPlace.mapsUrl !== row.google_maps_url) {
+    throw new Error(`Curated addition ${row.name} does not exactly match its checked place-registry identity.`);
+  }
+  const rowLatitude = Number(row.latitude);
+  const rowLongitude = Number(row.longitude);
+  const registryLatitude = Number(registeredPlace.latitude);
+  const registryLongitude = Number(registeredPlace.longitude);
+  if (![rowLatitude, rowLongitude, registryLatitude, registryLongitude].every(Number.isFinite)) {
+    throw new Error(`Curated addition ${row.name} and its checked place-registry record require finite coordinates.`);
+  }
+  if (Math.abs(rowLatitude - registryLatitude) > 0.00001 || Math.abs(rowLongitude - registryLongitude) > 0.00001) {
+    throw new Error(`Curated addition ${row.name} coordinates do not match the checked place registry.`);
+  }
+  const normalizedRowName = normalizedText(row.name);
+  const normalizedMapsName = normalizedText(registeredPlace.mapsName);
+  if (!(normalizedRowName === normalizedMapsName || normalizedRowName.includes(normalizedMapsName) || normalizedMapsName.includes(normalizedRowName))) {
+    throw new Error(`Curated addition ${row.name} name does not match the checked Maps identity.`);
+  }
+  const normalizedMapsAddress = normalizedText(registeredPlace.mapsAddress);
+  if (!normalizedMapsAddress.includes(normalizedText(row.city))) throw new Error(`Curated addition ${row.name} city does not match the checked Maps address.`);
+  const provinceNames = { AB: "alberta", BC: "british columbia", MB: "manitoba", NB: "new brunswick", NL: "newfoundland and labrador", NS: "nova scotia", NT: "northwest territories", NU: "nunavut", ON: "ontario", PE: "prince edward island", QC: "quebec", SK: "saskatchewan", YT: "yukon" };
+  if (![normalizedText(row.province_code), provinceNames[row.province_code]].some((province) => province && normalizedMapsAddress.includes(province))) {
+    throw new Error(`Curated addition ${row.name} province does not match the checked Maps address.`);
+  }
+  if (!compactPostal(registeredPlace.mapsAddress).includes(compactPostal(row.postal_code))) throw new Error(`Curated addition ${row.name} postal code does not match the checked Maps address.`);
+  const streetNumber = row.street_address.match(/\d+/)?.[0];
+  if (streetNumber && !new RegExp(`(?:^|\\D)${streetNumber}(?:\\D|$)`).test(registeredPlace.mapsAddress)) {
+    throw new Error(`Curated addition ${row.name} street number does not match the checked Maps address.`);
+  }
+  const mapsAddressTokens = new Set(normalizedMapsAddress.split(" "));
+  const streetTokens = significantStreetTokens(row.street_address);
+  if (!streetTokens.length || streetTokens.some((token) => !mapsAddressTokens.has(token))) {
+    throw new Error(`Curated addition ${row.name} street name does not match the checked Maps address.`);
+  }
+  if (row.publication_status !== "needs_review" || row.robots_directive !== "noindex,follow" || row.ads_allowed !== "no") {
+    throw new Error(`Curated addition ${row.name} must remain needs_review, noindex,follow and ad-disabled.`);
+  }
+  if (!["primary", "substantial"].includes(row.ramen_relevance) || row.menu_status !== "verified_current") {
+    throw new Error(`Curated addition ${row.name} does not meet the ramen relevance and current-menu admission gate.`);
+  }
+  if (Number(row.publisher_content_word_count) < 200 || row.copy_qa_status !== "pass") {
+    throw new Error(`Curated addition ${row.name} does not meet the 200-word original-content gate.`);
+  }
+  if (Number(row.quality_score_0_100) < 90 || Number(row.verified_decision_field_count) < 6) {
+    throw new Error(`Curated addition ${row.name} does not meet the deterministic quality and decision-data gate.`);
+  }
+  const triStateFields = ["has_tonkotsu", "has_shoyu", "has_miso", "has_tsukemen"];
+  if (triStateFields.some((field) => !["yes", "no", "unknown"].includes(row[field]))) throw new Error(`Curated addition ${row.name} has an invalid ramen taxonomy state.`);
+}
+
+const draftRestaurants = rawRows.map((row) => {
   const pathParts = row.canonical_path.split("/").filter(Boolean);
-  const items = [1, 2, 3].map((itemNumber) => compact({
+  const signatureItems = [1, 2, 3].map((itemNumber) => compact({
     name: row[`signature_${itemNumber}_name`],
     price: number(row[`signature_${itemNumber}_price_cad`]),
     brothBase: split(row[`signature_${itemNumber}_broth_base`]),
@@ -65,6 +240,19 @@ const restaurants = rawRows.map((row) => {
     dietary: split(row[`signature_${itemNumber}_dietary_tags`]),
     evidenceRefs: split(row[`signature_${itemNumber}_evidence_refs`]),
   })).filter((item) => item.name);
+  const curatedCandidate = curatedSourceByKey.get(row.source_row_number);
+  const items = curatedCandidate
+    ? curatedCandidate.menu.items.map((item) => compact({
+      name: item.name,
+      price: number(item.price),
+      brothBase: item.brothBase || [],
+      brothStyle: item.brothStyle || [],
+      tare: item.tare || [],
+      servingStyle: item.servingStyle || [],
+      dietary: item.dietary || [],
+      evidenceRefs: item.evidenceRefs || [],
+    }))
+    : signatureItems;
   const faqs = [1, 2, 3, 4].map((faqNumber) => compact({
     question: row[`faq_${faqNumber}_question`],
     answer: row[`faq_${faqNumber}_answer`],
@@ -79,11 +267,14 @@ const restaurants = rawRows.map((row) => {
     retrievedAt: row[`evidence_${slot}_retrieved_at`],
     effectiveDate: row[`evidence_${slot}_effective_date`],
     supports: split(row[`evidence_${slot}_supports_fields`]),
+    contentHash: row[`evidence_${slot}_content_hash`],
   })).filter((item) => item.url || item.sourceType);
 
   return {
     id: row.restaurant_id,
-    placeId: row.source_google_place_id,
+    // Preserve older base records that lack a Google Place ID. Curated
+    // additions are validated above and always carry an independently checked ID.
+    placeId: row.source_google_place_id || row.restaurant_id,
     name: row.name,
     alternateNames: split(row.alternate_names),
     brandName: row.brand_name,
@@ -276,30 +467,136 @@ const restaurants = rawRows.map((row) => {
   };
 });
 
-function isPublicationApproved(restaurant) {
-  const hasOfficialEvidence = restaurant.evidence.some((item) => item.url && ["official_menu", "official_site"].includes(item.sourceType));
-  const nextReviewDue = Date.parse(restaurant.nextReviewDue || "");
-  return restaurant.publication.status === "published"
-    && restaurant.publication.robots.startsWith("index")
-    && restaurant.publication.adsAllowed === "yes"
-    && restaurant.publication.gateStatus === "pass"
-    && restaurant.publication.failCodes.length === 0
-    && restaurant.publication.qualityScore >= 90
-    && restaurant.publication.verifiedDecisionFieldCount >= 6
-    && Boolean(restaurant.publication.humanReviewedAt)
-    && Object.values(restaurant.publication.gates).every((value) => value === "yes")
-    && ["primary", "substantial"].includes(restaurant.relevance.classification)
-    && restaurant.menu.status === "verified_current"
-    && restaurant.evidence.length >= 2
-    && hasOfficialEvidence
-    && Number.isFinite(nextReviewDue)
-    && nextReviewDue >= Date.now();
+function approvalHashes(restaurant) {
+  const contentHash = sha256(JSON.stringify({ content: restaurant.content, seo: restaurant.seo }));
+  const evidenceHash = sha256(JSON.stringify(restaurant.evidence.map((evidence) => ({
+    id: evidence.id,
+    url: evidence.url,
+    sourceType: evidence.sourceType,
+    supports: evidence.supports,
+    contentHash: evidence.contentHash,
+  }))));
+  const schemaHash = sha256(JSON.stringify({
+    id: restaurant.id,
+    canonicalPath: restaurant.canonicalPath,
+    name: restaurant.name,
+    contact: restaurant.contact,
+    location: restaurant.location,
+    hours: restaurant.hours,
+    menu: restaurant.menu,
+    taxonomy: restaurant.taxonomy,
+    vegan: restaurant.vegan,
+    halal: restaurant.halal,
+    noodles: restaurant.noodles,
+    prices: restaurant.prices,
+    reservations: restaurant.reservations,
+    services: restaurant.services,
+  }));
+  return { contentHash, evidenceHash, schemaHash, rendererHash };
+}
+
+function expectedApprovalHash(approval) {
+  return sha256(JSON.stringify({
+    restaurantId: approval.restaurantId,
+    reviewerId: approval.reviewerId,
+    reviewedAt: approval.reviewedAt,
+    schemaValidatedAt: approval.schemaValidatedAt,
+    visibleParityCheckedAt: approval.visibleParityCheckedAt,
+    rightsReviewedAt: approval.rightsReviewedAt,
+    contentHash: approval.contentHash,
+    evidenceHash: approval.evidenceHash,
+    schemaHash: approval.schemaHash,
+    rendererHash: approval.rendererHash,
+    approveIndexing: approval.approveIndexing,
+    approveAds: approval.approveAds,
+  }));
+}
+
+const restaurants = draftRestaurants.map((restaurant) => {
+  const hashes = approvalHashes(restaurant);
+  const publication = { ...restaurant.publication, ...hashes };
+  const approval = approvalById.get(restaurant.id);
+  if (!approval) return { ...restaurant, publication };
+  const now = Date.now();
+  for (const field of ["reviewedAt", "schemaValidatedAt", "visibleParityCheckedAt", "rightsReviewedAt"]) {
+    const timestamp = Date.parse(approval[field] || "");
+    if (!Number.isFinite(timestamp) || timestamp > now) throw new Error(`Publication approval for ${restaurant.name} has an invalid ${field}.`);
+  }
+  if (typeof approval.reviewerId !== "string" || approval.reviewerId.trim().length < 3) throw new Error(`Publication approval for ${restaurant.name} requires a reviewer identity.`);
+  for (const [field, value] of Object.entries(hashes)) {
+    if (approval[field] !== value) throw new Error(`Publication approval for ${restaurant.name} is stale: ${field} does not match the current generated record.`);
+  }
+  if (approval.approvalHash !== expectedApprovalHash(approval)) throw new Error(`Publication approval for ${restaurant.name} has an invalid approval hash.`);
+  if (approval.approveIndexing !== true || approval.approveAds !== true) throw new Error(`Publication approval for ${restaurant.name} must explicitly approve indexing and ads.`);
+  return {
+    ...restaurant,
+    publication: {
+      ...publication,
+      status: "published",
+      robots: "index,follow",
+      adsAllowed: "yes",
+      gateStatus: "pass",
+      failCodes: [],
+      humanReviewedAt: approval.reviewedAt,
+      reviewerId: approval.reviewerId,
+      approvalHash: approval.approvalHash,
+      gates: Object.fromEntries(Object.keys(publication.gates).map((gate) => [gate, "yes"])),
+    },
+  };
+});
+
+function assertUnique(values, label) {
+  const seen = new Set();
+  for (const value of values) {
+    if (!value) throw new Error(`${label} contains a blank value.`);
+    if (seen.has(value)) throw new Error(`${label} contains a duplicate value: ${value}`);
+    seen.add(value);
+  }
+}
+
+assertUnique(restaurants.map((restaurant) => restaurant.id), "Restaurant IDs");
+assertUnique(restaurants.map((restaurant) => restaurant.placeId), "Restaurant source identities");
+assertUnique(restaurants.map((restaurant) => restaurant.canonicalPath), "Restaurant canonical paths");
+
+const normalizedAddresses = restaurants.map((restaurant) => slugify(`${restaurant.name}-${restaurant.location.street}-${restaurant.location.postalCode}`));
+assertUnique(normalizedAddresses, "Normalized restaurant name/address identities");
+const normalizedStreetAddresses = restaurants.map((restaurant) => slugify(`${restaurant.location.street}-${restaurant.location.postalCode}`));
+assertUnique(normalizedStreetAddresses, "Normalized restaurant street/unit/postal identities");
+
+for (const restaurant of restaurants.slice(baseTable.rows.length)) {
+  if (!Number.isFinite(restaurant.location.latitude) || !Number.isFinite(restaurant.location.longitude)) {
+    throw new Error(`Curated addition ${restaurant.name} requires finite coordinates.`);
+  }
+  if (restaurant.location.latitude < 41 || restaurant.location.latitude > 84 || restaurant.location.longitude < -142 || restaurant.location.longitude > -52) {
+    throw new Error(`Curated addition ${restaurant.name} has coordinates outside Canada-wide bounds.`);
+  }
+  const evidenceIds = new Set(restaurant.evidence.map((item) => item.id));
+  if (restaurant.evidence.length < 2 || !restaurant.evidence.some((item) => item.url && ["official_menu", "official_site"].includes(item.sourceType))) {
+    throw new Error(`Curated addition ${restaurant.name} requires at least two sources, including an official site or menu.`);
+  }
+  const evidenceRefs = [
+    ...restaurant.relevance.evidenceRefs,
+    ...restaurant.hours.evidenceRefs,
+    ...restaurant.menu.evidenceRefs,
+    ...restaurant.taxonomy.evidenceRefs,
+    ...restaurant.vegan.evidenceRefs,
+    ...restaurant.halal.evidenceRefs,
+    ...restaurant.noodles.evidenceRefs,
+    ...restaurant.prices.evidenceRefs,
+    ...restaurant.reservations.evidenceRefs,
+    ...restaurant.services.evidenceRefs,
+    ...restaurant.menu.items.flatMap((item) => item.evidenceRefs || []),
+    ...restaurant.content.faqs.flatMap((faq) => faq.evidenceRefs || []),
+  ];
+  const unresolved = [...new Set(evidenceRefs)].filter((reference) => !evidenceIds.has(reference));
+  if (unresolved.length) throw new Error(`Curated addition ${restaurant.name} has unresolved evidence refs: ${unresolved.join(", ")}.`);
 }
 
 const indexingEnabled = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
-const directoryRestaurants = indexingEnabled ? restaurants.filter(isPublicationApproved) : restaurants;
-if (indexingEnabled && directoryRestaurants.length === 0) {
-  throw new Error("Indexing was requested, but no restaurant passes the complete publication gate. Keep NEXT_PUBLIC_ALLOW_INDEXING disabled until human review is complete.");
+const approvedRestaurants = restaurants.filter((restaurant) => passesPublicationGate(restaurant, Date.now(), approvalById.get(restaurant.id)));
+const directoryRestaurants = indexingEnabled ? approvedRestaurants : restaurants;
+if (indexingEnabled && !passesSiteLaunchGate(approvedRestaurants)) {
+  throw new Error("Indexing was requested, but the approved cohort does not pass the national launch gate (50 restaurants, 15 cities and 5 provinces). Keep NEXT_PUBLIC_ALLOW_INDEXING disabled until review coverage is sufficient.");
 }
 
 const provinceMap = new Map();
@@ -314,9 +611,9 @@ for (const restaurant of directoryRestaurants) {
   });
   const province = provinceMap.get(provinceKey);
   province.count += 1;
-  const cityKey = restaurant.location.city;
+  const cityKey = restaurant.citySlug;
   if (!province.cities.has(cityKey)) province.cities.set(cityKey, {
-    name: cityKey,
+    name: restaurant.location.city,
     slug: restaurant.citySlug,
     count: 0,
     verifiedMenus: 0,
@@ -337,6 +634,8 @@ const provinces = [...provinceMap.values()].map((province) => ({
 
 const summary = {
   generatedAt: new Date().toISOString(),
+  baseRestaurantCount: baseTable.rows.length,
+  curatedAdditionCount: additionsTable.rows.length,
   restaurantCount: directoryRestaurants.length,
   provinceCount: provinces.length,
   cityCount: provinces.reduce((total, province) => total + province.cities.length, 0),
