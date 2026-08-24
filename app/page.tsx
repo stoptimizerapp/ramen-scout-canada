@@ -1,0 +1,74 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { RestaurantList } from "@/components/RestaurantList";
+import { directoryRestaurants, summary } from "@/lib/directory";
+import { absoluteUrl, buildPageMetadata } from "@/lib/site";
+
+export const metadata: Metadata = buildPageMetadata({ title: "Find ramen near you across Canada", description: `Explore ${summary.restaurantCount} ramen restaurants in ${summary.cityCount} Canadian cities. Compare verified menu styles, price evidence, late-night hours, vegan bowls and reservations.`, path: "/" });
+
+const featuredCityNames = ["Toronto", "Montreal", "Vancouver", "Calgary"];
+const featuredCities = featuredCityNames.map((name) => {
+  for (const province of summary.provinces) {
+    const city = province.cities.find((item) => item.name === name);
+    if (city) return { ...city, province };
+  }
+  return null;
+}).filter(Boolean) as Array<{ name: string; slug: string; count: number; verifiedMenus: number; province: (typeof summary.provinces)[number] }>;
+const featuredRestaurants = directoryRestaurants.filter((restaurant) => restaurant.menu.status === "verified_current" && restaurant.prices.observedCount > 0).slice(0, 6);
+
+export default function Home() {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": `${absoluteUrl("/")}#organization`, name: "Ramen Scout Canada", url: absoluteUrl("/"), logo: absoluteUrl("/logo-mark.svg") },
+      { "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, name: "Ramen Scout Canada", url: absoluteUrl("/"), publisher: { "@id": `${absoluteUrl("/")}#organization` }, potentialAction: { "@type": "SearchAction", target: `${absoluteUrl("/search")}?q={search_term_string}`, "query-input": "required name=search_term_string" } },
+    ],
+  };
+  return (
+    <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="eyebrow"><span /> Independent Canadian ramen guide</p>
+          <h1>Find ramen near you—without the guesswork.</h1>
+          <p className="hero-intro">Search {summary.restaurantCount} ramen spots across {summary.cityCount} Canadian cities, then compare source-backed menu styles, price evidence, vegan choices, late-night hours and more.</p>
+          <form className="search-shell" action="/search" role="search">
+            <label htmlFor="home-search">Restaurant, city, neighbourhood or postal code</label>
+            <div><span aria-hidden="true">⌖</span><input id="home-search" name="q" type="search" placeholder="Try “miso ramen Toronto”" /><button type="submit">Find ramen</button></div>
+          </form>
+          <div className="quick-links" aria-label="Popular searches"><span>Popular:</span><Link href="/styles/tonkotsu">Tonkotsu</Link><Link href="/styles/tsukemen">Tsukemen</Link><Link href="/features/vegan">Vegan bowls</Link><Link href="/features/late-night">Late night</Link></div>
+        </div>
+        <aside className="hero-card" aria-label="Directory coverage">
+          <div className="map-grid" aria-hidden="true"><span className="pin pin-one" /><span className="pin pin-two" /><span className="pin pin-three" /></div>
+          <div className="coverage-card"><span className="tiny-label">Coast to coast</span><strong>{summary.restaurantCount}</strong><p>structured restaurant listings with source-linked facts</p><div><span>{summary.provinceCount} provinces &amp; territories</span><span>{summary.cityCount} cities</span></div></div>
+        </aside>
+      </section>
+
+      <section className="trust-strip" aria-label="Directory features">
+        <div><strong>{summary.verifiedMenuCount}</strong><span>menus checked</span></div><div><strong>{summary.pricedMenuCount}</strong><span>priced menus</span></div><div><strong>{summary.lateNightCount}</strong><span>late-night spots</span></div>
+        <p>Every factual filter shows what is confirmed, what remains unknown and when the supporting source was checked.</p>
+      </section>
+
+      <section className="section" id="cities">
+        <div className="section-heading"><div><p className="eyebrow"><span /> Start with a city</p><h2>Ramen, neighbourhood by neighbourhood.</h2></div><Link href="/locations">Browse all locations <span aria-hidden="true">→</span></Link></div>
+        <div className="location-grid">
+          {featuredCities.map((city, index) => <Link className="location-card" href={`/locations/${city.province.slug}/${city.slug}`} key={city.name}><span className="card-index">0{index + 1}</span><div><p>{city.province.name}</p><h3>{city.name}</h3><span>{city.verifiedMenus ? `${city.verifiedMenus} current menus checked` : "Restaurant details available"}</span></div><strong>{city.count}<small> spots</small></strong></Link>)}
+        </div>
+      </section>
+
+      <section className="section featured-section">
+        <div className="section-heading"><div><p className="eyebrow"><span /> Useful starting points</p><h2>Menu-rich listings to explore.</h2></div><Link href="/search">Search all restaurants <span aria-hidden="true">→</span></Link></div>
+        <RestaurantList restaurants={featuredRestaurants} />
+      </section>
+
+      <section className="method" id="how-it-works">
+        <div><p className="eyebrow light"><span /> Useful by design</p><h2>Less guessing. Better bowls.</h2></div>
+        <div className="method-grid">
+          <article><span>01</span><h3>Menu-led filters</h3><p>Broth and style filters come from current menu evidence—not assumptions based on a restaurant name.</p><Link href="/methodology">Read the methodology →</Link></article>
+          <article><span>02</span><h3>Honest unknowns</h3><p>Halal certification, vegan suitability and house-made noodles stay unknown until a source supports the claim.</p><Link href="/editorial-standards">See our standards →</Link></article>
+          <article><span>03</span><h3>Plan the visit</h3><p>See service hours, price evidence, reservation details and practical caveats together on one page.</p><Link href="/corrections">Report a change →</Link></article>
+        </div>
+      </section>
+    </main>
+  );
+}

@@ -1,0 +1,845 @@
+{
+  "generatedAt": "2026-08-24T18:53:03.495Z",
+  "restaurantCount": 380,
+  "provinceCount": 10,
+  "cityCount": 93,
+  "verifiedMenuCount": 112,
+  "pricedMenuCount": 76,
+  "lateNightCount": 92,
+  "reservationCount": 139,
+  "styleCounts": {
+    "tonkotsu": 30,
+    "shoyu": 77,
+    "miso": 93,
+    "tsukemen": 66
+  },
+  "veganCompleteCount": 8,
+  "verifiedHalalCount": 0,
+  "houseMadeNoodleCount": 2,
+  "provinces": [
+    {
+      "code": "ON",
+      "slug": "on",
+      "name": "Ontario",
+      "count": 150,
+      "cities": [
+        {
+          "name": "Toronto",
+          "slug": "toronto",
+          "count": 71,
+          "verifiedMenus": 19,
+          "pricedMenus": 14,
+          "lateNight": 21
+        },
+        {
+          "name": "Mississauga",
+          "slug": "mississauga",
+          "count": 9,
+          "verifiedMenus": 6,
+          "pricedMenus": 4,
+          "lateNight": 5
+        },
+        {
+          "name": "Markham",
+          "slug": "markham",
+          "count": 8,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Ottawa",
+          "slug": "ottawa",
+          "count": 7,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
+          "lateNight": 2
+        },
+        {
+          "name": "Richmond Hill",
+          "slug": "richmond-hill",
+          "count": 6,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Hamilton",
+          "slug": "hamilton",
+          "count": 5,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
+          "lateNight": 2
+        },
+        {
+          "name": "London",
+          "slug": "london",
+          "count": 5,
+          "verifiedMenus": 3,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Concord",
+          "slug": "concord",
+          "count": 4,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 2
+        },
+        {
+          "name": "Waterloo",
+          "slug": "waterloo",
+          "count": 4,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 2
+        },
+        {
+          "name": "Windsor",
+          "slug": "windsor",
+          "count": 3,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 3
+        },
+        {
+          "name": "Burlington",
+          "slug": "burlington",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Guelph",
+          "slug": "guelph",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Kanata",
+          "slug": "kanata",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Kingston",
+          "slug": "kingston",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Oakville",
+          "slug": "oakville",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Vaughan",
+          "slug": "vaughan",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Whitby",
+          "slug": "whitby",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Ajax",
+          "slug": "ajax",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Alliston",
+          "slug": "alliston",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Aurora",
+          "slug": "aurora",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Barrie",
+          "slug": "barrie",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Brampton",
+          "slug": "brampton",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "East Gwillimbury",
+          "slug": "east-gwillimbury",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Greater Sudbury",
+          "slug": "greater-sudbury",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Kitchener",
+          "slug": "kitchener",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Komoka",
+          "slug": "komoka",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Orléans",
+          "slug": "orleans",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Oshawa",
+          "slug": "oshawa",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Pickering",
+          "slug": "pickering",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "St. Catharines",
+          "slug": "st-catharines",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Unionville",
+          "slug": "unionville",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        }
+      ]
+    },
+    {
+      "code": "BC",
+      "slug": "bc",
+      "name": "British Columbia",
+      "count": 95,
+      "cities": [
+        {
+          "name": "Vancouver",
+          "slug": "vancouver",
+          "count": 32,
+          "verifiedMenus": 14,
+          "pricedMenus": 6,
+          "lateNight": 13
+        },
+        {
+          "name": "Burnaby",
+          "slug": "burnaby",
+          "count": 9,
+          "verifiedMenus": 3,
+          "pricedMenus": 1,
+          "lateNight": 2
+        },
+        {
+          "name": "Coquitlam",
+          "slug": "coquitlam",
+          "count": 9,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
+          "lateNight": 0
+        },
+        {
+          "name": "Richmond",
+          "slug": "richmond",
+          "count": 8,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Surrey",
+          "slug": "surrey",
+          "count": 7,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "Victoria",
+          "slug": "victoria",
+          "count": 7,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
+          "lateNight": 0
+        },
+        {
+          "name": "Kelowna",
+          "slug": "kelowna",
+          "count": 4,
+          "verifiedMenus": 3,
+          "pricedMenus": 3,
+          "lateNight": 0
+        },
+        {
+          "name": "North Vancouver",
+          "slug": "north-vancouver",
+          "count": 3,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 2
+        },
+        {
+          "name": "Delta",
+          "slug": "delta",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Kamloops",
+          "slug": "kamloops",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Langley",
+          "slug": "langley",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
+          "name": "New Westminster",
+          "slug": "new-westminster",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Courtenay",
+          "slug": "courtenay",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Duncan",
+          "slug": "duncan",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Nanaimo",
+          "slug": "nanaimo",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Nelson",
+          "slug": "nelson",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Parksville",
+          "slug": "parksville",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Vernon",
+          "slug": "vernon",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "West Kelowna",
+          "slug": "west-kelowna",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "West Vancouver",
+          "slug": "west-vancouver",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "QC",
+      "slug": "qc",
+      "name": "Quebec",
+      "count": 58,
+      "cities": [
+        {
+          "name": "Montreal",
+          "slug": "montreal",
+          "count": 34,
+          "verifiedMenus": 9,
+          "pricedMenus": 6,
+          "lateNight": 8
+        },
+        {
+          "name": "Quebec City",
+          "slug": "quebec-city",
+          "count": 4,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Gatineau",
+          "slug": "gatineau",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Pointe-Claire",
+          "slug": "pointe-claire",
+          "count": 2,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Anjou",
+          "slug": "anjou",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Boucherville",
+          "slug": "boucherville",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Brossard",
+          "slug": "brossard",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Dollard-Des Ormeaux",
+          "slug": "dollard-des-ormeaux",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Farnham",
+          "slug": "farnham",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Jonquière",
+          "slug": "jonquiere",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "La Prairie",
+          "slug": "la-prairie",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Lasalle",
+          "slug": "lasalle",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Laval",
+          "slug": "laval",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Repentigny",
+          "slug": "repentigny",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Saint-Hubert",
+          "slug": "saint-hubert",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Saint-Hyacinthe",
+          "slug": "saint-hyacinthe",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Saint-Sauveur",
+          "slug": "saint-sauveur",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Shawinigan",
+          "slug": "shawinigan",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Sherbrooke",
+          "slug": "sherbrooke",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Westmount",
+          "slug": "westmount",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        }
+      ]
+    },
+    {
+      "code": "AB",
+      "slug": "ab",
+      "name": "Alberta",
+      "count": 50,
+      "cities": [
+        {
+          "name": "Calgary",
+          "slug": "calgary",
+          "count": 22,
+          "verifiedMenus": 6,
+          "pricedMenus": 5,
+          "lateNight": 5
+        },
+        {
+          "name": "Edmonton",
+          "slug": "edmonton",
+          "count": 17,
+          "verifiedMenus": 6,
+          "pricedMenus": 5,
+          "lateNight": 6
+        },
+        {
+          "name": "Banff",
+          "slug": "banff",
+          "count": 3,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 1
+        },
+        {
+          "name": "Red Deer",
+          "slug": "red-deer",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Brooks",
+          "slug": "brooks",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Camrose",
+          "slug": "camrose",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Canmore",
+          "slug": "canmore",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Lacombe",
+          "slug": "lacombe",
+          "count": 1,
+          "verifiedMenus": 1,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Lethbridge",
+          "slug": "lethbridge",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Red Deer County",
+          "slug": "red-deer-county",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "MB",
+      "slug": "mb",
+      "name": "Manitoba",
+      "count": 8,
+      "cities": [
+        {
+          "name": "Winnipeg",
+          "slug": "winnipeg",
+          "count": 8,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        }
+      ]
+    },
+    {
+      "code": "NB",
+      "slug": "nb",
+      "name": "New Brunswick",
+      "count": 7,
+      "cities": [
+        {
+          "name": "Saint John",
+          "slug": "saint-john",
+          "count": 4,
+          "verifiedMenus": 2,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Dieppe",
+          "slug": "dieppe",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Moncton",
+          "slug": "moncton",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Shediac",
+          "slug": "shediac",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "NS",
+      "slug": "ns",
+      "name": "Nova Scotia",
+      "count": 6,
+      "cities": [
+        {
+          "name": "Halifax",
+          "slug": "halifax",
+          "count": 3,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Dartmouth",
+          "slug": "dartmouth",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        },
+        {
+          "name": "Bedford",
+          "slug": "bedford",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "SK",
+      "slug": "sk",
+      "name": "Saskatchewan",
+      "count": 4,
+      "cities": [
+        {
+          "name": "Regina",
+          "slug": "regina",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 0
+        },
+        {
+          "name": "Saskatoon",
+          "slug": "saskatoon",
+          "count": 2,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "PE",
+      "slug": "pe",
+      "name": "Prince Edward Island",
+      "count": 1,
+      "cities": [
+        {
+          "name": "Charlottetown",
+          "slug": "charlottetown",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    },
+    {
+      "code": "YT",
+      "slug": "yt",
+      "name": "Yukon",
+      "count": 1,
+      "cities": [
+        {
+          "name": "Whitehorse",
+          "slug": "whitehorse",
+          "count": 1,
+          "verifiedMenus": 0,
+          "pricedMenus": 0,
+          "lateNight": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function manifest(): MetadataRoute.Manifest { return { name: "Ramen Scout Canada", short_name: "Ramen Scout", description: "Find and compare ramen restaurants across Canada.", start_url: "/", display: "standalone", background_color: "#FFF8EA", theme_color: "#245C45", icons: [{ src: "/favicon.svg", sizes: "any", type: "image/svg+xml" }] }; }
