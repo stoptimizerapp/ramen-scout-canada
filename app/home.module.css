@@ -1,0 +1,52 @@
+.heroArtwork {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.heroArtwork::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 43%, rgba(33, 26, 23, .12) 65%, rgba(33, 26, 23, .55) 100%);
+}
+
+.heroArtwork picture,
+.heroArtwork img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.heroArtwork img {
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.heroArtwork figcaption {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  right: 18px;
+  max-width: 190px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(33, 26, 23, .82);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .heroArtwork figcaption {
+    top: 14px;
+    right: 14px;
+    max-width: calc(100% - 28px);
+    border-radius: 10px;
+  }
+}

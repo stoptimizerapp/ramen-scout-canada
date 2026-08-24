@@ -298,7 +298,11 @@ test("search renders a bounded useful first page and keeps query filters noindex
 });
 
 test("homepage renders useful discovery content with global preview safeguards", async () => {
-  const html = await htmlFor("/");
+  const [html, heroAvif, heroJpeg] = await Promise.all([
+    htmlFor("/"),
+    readFile(new URL("public/images/ramen-scout-hero.avif", siteRoot)),
+    readFile(new URL("public/images/ramen-scout-hero.jpg", siteRoot)),
+  ]);
   assert.match(html, /<title>Find ramen near you across Canada \| Ramen Scout Canada<\/title>/i);
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
   assert.match(html, /<link[^>]*rel="canonical"[^>]*href="https:\/\/ramenscout\.ca"/i);
@@ -309,6 +313,12 @@ test("homepage renders useful discovery content with global preview safeguards",
   assert.match(html, /Research preview/);
   assert.match(html, /Use my location/i);
   assert.match(html, /coordinates stay in this page/i);
+  assert.match(html, /srcSet="\/images\/ramen-scout-hero\.avif"/i);
+  assert.match(html, /src="\/images\/ramen-scout-hero\.jpg"/i);
+  assert.match(html, /alt="Editorial illustration of a steaming ramen bowl with egg, scallions, nori and mushrooms"/i);
+  assert.match(html, /Original editorial illustration—not a photo from a listed restaurant\./i);
+  assert.ok(heroAvif.byteLength <= 160_000, `AVIF hero is ${heroAvif.byteLength} bytes`);
+  assert.ok(heroJpeg.byteLength <= 300_000, `JPEG hero is ${heroJpeg.byteLength} bytes`);
   const schema = extractJsonLd(html);
   const publisher = schema["@graph"].find((entry) => entry["@type"] === "Organization");
   assert.equal(publisher.name, "Nocturnal Devs");

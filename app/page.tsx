@@ -4,6 +4,7 @@ import { NearbyFinder } from "@/components/NearbyFinder";
 import { RestaurantList } from "@/components/RestaurantList";
 import { directoryRestaurants, summary } from "@/lib/directory";
 import { absoluteUrl, buildPageMetadata, PUBLISHER } from "@/lib/site";
+import styles from "./home.module.css";
 
 export const metadata: Metadata = buildPageMetadata({ title: "Find ramen near you across Canada", description: `Explore ${summary.restaurantCount} ramen restaurants in ${summary.cityCount} Canadian cities. Compare verified menu styles, price evidence, late-night hours, vegan bowls and reservations.`, path: "/" });
 
@@ -41,7 +42,21 @@ export default function Home() {
           <div className="quick-links" aria-label="Popular searches"><span>Popular:</span><Link href="/styles/tonkotsu">Tonkotsu</Link><Link href="/styles/tsukemen">Tsukemen</Link><Link href="/features/vegan">Vegan bowls</Link><Link href="/features/late-night">Late night</Link></div>
         </div>
         <aside className="hero-card" aria-label="Directory coverage">
-          <div className="map-grid" aria-hidden="true"><span className="pin pin-one" /><span className="pin pin-two" /><span className="pin pin-three" /></div>
+          <figure className={styles.heroArtwork}>
+            <picture>
+              <source srcSet="/images/ramen-scout-hero.avif" type="image/avif" />
+              <img
+                src="/images/ramen-scout-hero.jpg"
+                width="900"
+                height="900"
+                alt="Editorial illustration of a steaming ramen bowl with egg, scallions, nori and mushrooms"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
+            <figcaption>Original editorial illustration—not a photo from a listed restaurant.</figcaption>
+          </figure>
           <div className="coverage-card"><span className="tiny-label">Coast to coast</span><strong>{summary.restaurantCount}</strong><p>structured restaurant listings with source-linked facts</p><div><span>{summary.provinceCount} provinces &amp; territories</span><span>{summary.cityCount} cities</span></div></div>
         </aside>
       </section>
