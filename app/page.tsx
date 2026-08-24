@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NearbyFinder } from "@/components/NearbyFinder";
 import { RestaurantList } from "@/components/RestaurantList";
 import { directoryRestaurants, summary } from "@/lib/directory";
-import { absoluteUrl, buildPageMetadata } from "@/lib/site";
+import { absoluteUrl, buildPageMetadata, PUBLISHER } from "@/lib/site";
 
 export const metadata: Metadata = buildPageMetadata({ title: "Find ramen near you across Canada", description: `Explore ${summary.restaurantCount} ramen restaurants in ${summary.cityCount} Canadian cities. Compare verified menu styles, price evidence, late-night hours, vegan bowls and reservations.`, path: "/" });
 
@@ -20,8 +21,8 @@ export default function Home() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": `${absoluteUrl("/")}#organization`, name: "Ramen Scout Canada", url: absoluteUrl("/"), logo: absoluteUrl("/logo-mark.svg") },
-      { "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, name: "Ramen Scout Canada", url: absoluteUrl("/"), publisher: { "@id": `${absoluteUrl("/")}#organization` }, potentialAction: { "@type": "SearchAction", target: `${absoluteUrl("/search")}?q={search_term_string}`, "query-input": "required name=search_term_string" } },
+      { "@type": "Organization", "@id": `${PUBLISHER.url}#organization`, name: PUBLISHER.name, url: PUBLISHER.url, email: PUBLISHER.email, telephone: PUBLISHER.phone, address: { "@type": "PostalAddress", streetAddress: PUBLISHER.address.street, addressLocality: PUBLISHER.address.city, addressRegion: PUBLISHER.address.regionCode, postalCode: PUBLISHER.address.postalCode, addressCountry: PUBLISHER.address.countryCode } },
+      { "@type": "WebSite", "@id": `${absoluteUrl("/")}#website`, name: "Ramen Scout Canada", url: absoluteUrl("/"), publisher: { "@id": `${PUBLISHER.url}#organization` }, brand: { "@type": "Brand", name: "Ramen Scout Canada", logo: absoluteUrl("/logo-mark.svg") }, potentialAction: { "@type": "SearchAction", target: `${absoluteUrl("/search")}?q={search_term_string}`, "query-input": "required name=search_term_string" } },
     ],
   };
   return (
@@ -36,6 +37,7 @@ export default function Home() {
             <label htmlFor="home-search">Restaurant, city, neighbourhood or postal code</label>
             <div><span aria-hidden="true">⌖</span><input id="home-search" name="q" type="search" placeholder="Try “miso ramen Toronto”" /><button type="submit">Find ramen</button></div>
           </form>
+          <NearbyFinder />
           <div className="quick-links" aria-label="Popular searches"><span>Popular:</span><Link href="/styles/tonkotsu">Tonkotsu</Link><Link href="/styles/tsukemen">Tsukemen</Link><Link href="/features/vegan">Vegan bowls</Link><Link href="/features/late-night">Late night</Link></div>
         </div>
         <aside className="hero-card" aria-label="Directory coverage">

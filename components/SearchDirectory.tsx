@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { formatDistance, rankByDistance, type Coordinates } from "@/lib/geo";
+import { createRetryableLoader } from "@/lib/retryable-loader";
 import {
   getSearchResults,
   isSearchFeature,
@@ -10,14 +12,6 @@ import {
 } from "@/lib/types";
 
 const PAGE_SIZE = 24;
-
-function distanceKm(lat1: number, lon1: number, lat2: number, lon2: number) {
-  const radians = (degrees: number) => degrees * Math.PI / 180;
-  const dLat = radians(lat2 - lat1);
-  const dLon = radians(lon2 - lon1);
-  const value = Math.sin(dLat / 2) ** 2 + Math.cos(radians(lat1)) * Math.cos(radians(lat2)) * Math.sin(dLon / 2) ** 2;
-  return 6371 * 2 * Math.atan2(Math.sqrt(value), Math.sqrt(1 - value));
-}
 
 const filterDefinitions: ReadonlyArray<readonly [SearchFeature, string]> = [
   ["tonkotsu", "Tonkotsu"],
@@ -54,6 +48,21 @@ function sameFeatures(left: SearchFeature[], right: SearchFeature[]) {
   return sortedLeft.length === sortedRight.length && sortedLeft.every((value, index) => value === sortedRight[index]);
 }
 
+function readCurrentPosition() {
+  return new Promise<GeolocationPosition>((resolve, reject) => {
+    navigator.geolocation.getCurrentPosition(resolve, reject, {
+      enableHighAccuracy: false,
+      timeout: 10000,
+      maximumAge: 300000,
+    });
+  });
+}
+
+function geolocationErrorCode(error: unknown) {
+  if (typeof error !== "object" || error === null || !("code" in error)) return null;
+  return Number((error as { code: unknown }).code);
+}
+
 type SearchDirectoryProps = {
   initialQuery?: string;
   initialFilters?: SearchFeature[];
@@ -75,16 +84,24 @@ export function SearchDirectory({
   const [query, setQuery] = useState(initialQuery);
   const [filters, setFilters] = useState<SearchFeature[]>(initialFilters);
   const [limit, setLimit] = useState(PAGE_SIZE);
-  const [location, setLocation] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [location, setLocation] = useState<Coordinates | null>(null);
+  const [locationPending, setLocationPending] = useState(false);
   const [locationStatus, setLocationStatus] = useState("");
+  const fullIndexLoader = useRef<(() => Promise<SearchRecord[]>) | null>(null);
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch("/data/search-index.json")
-      .then((response) => {
+  const loadFullIndex = useCallback(() => {
+    fullIndexLoader.current ??= createRetryableLoader(() => (
+      fetch("/data/search-index.json", { cache: "force-cache" }).then((response) => {
         if (!response.ok) throw new Error(`Directory request failed: ${response.status}`);
         return response.json() as Promise<SearchRecord[]>;
       })
+    ));
+    return fullIndexLoader.current();
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadFullIndex()
       .then((nextRecords) => {
         if (cancelled) return;
         setRecords(nextRecords);
@@ -94,7 +111,7 @@ export function SearchDirectory({
         if (!cancelled) setLoadError("The complete directory could not be loaded. The first results are still available.");
       });
     return () => { cancelled = true; };
-  }, []);
+  }, [loadFullIndex]);
 
   useEffect(() => {
     function restoreUrlState() {
@@ -107,15 +124,12 @@ export function SearchDirectory({
     return () => window.removeEventListener("popstate", restoreUrlState);
   }, []);
 
-  const filtered = useMemo(() => {
+  const rankedResults = useMemo(() => {
     const matches = getSearchResults(records, query, filters);
-    if (!location) return matches;
-    return matches.sort((a, b) => {
-      const aDistance = a.latitude === null || a.longitude === null ? Infinity : distanceKm(location.latitude, location.longitude, a.latitude, a.longitude);
-      const bDistance = b.latitude === null || b.longitude === null ? Infinity : distanceKm(location.latitude, location.longitude, b.latitude, b.longitude);
-      return aDistance - bDistance || a.name.localeCompare(b.name) || a.id.localeCompare(b.id);
-    });
+    if (!location) return matches.map((item) => ({ item, distance: null }));
+    return rankByDistance(matches, location);
   }, [records, query, filters, location]);
+  const filtered = rankedResults.map(({ item }) => item);
 
   const initialCriteria = query.trim() === initialQuery.trim() && sameFeatures(filters, initialFilters);
   const resultTotal = hasFullIndex ? filtered.length : initialCriteria ? initialTotal : filtered.length;
@@ -134,20 +148,36 @@ export function SearchDirectory({
     updateSearchUrl(query, nextFilters, "push");
   }
 
-  function requestLocation() {
+  async function requestLocation() {
     if (!navigator.geolocation) {
-      setLocationStatus("Your browser does not support location access.");
+      setLocationStatus("Your browser does not support location access. Search by city or postal code instead.");
       return;
     }
-    setLocationStatus("Requesting your location…");
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLocation({ latitude: position.coords.latitude, longitude: position.coords.longitude });
-        setLocationStatus("Sorted by distance. Your location stays in this browser and is not added to the URL.");
-      },
-      () => setLocationStatus("Location was not available. You can still search by city or postal code."),
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
-    );
+    setLocationPending(true);
+    setLocationStatus("Waiting for permission and loading all restaurants before calculating the closest match…");
+    try {
+      const [position, nextRecords] = await Promise.all([readCurrentPosition(), loadFullIndex()]);
+      setRecords(nextRecords);
+      setHasFullIndex(true);
+      setLoadError("");
+      setLimit(PAGE_SIZE);
+      setLocation({ latitude: position.coords.latitude, longitude: position.coords.longitude });
+      setLocationStatus("Closest matching restaurants are shown first. Distances are straight-line estimates; your coordinates stay in this tab and are not added to the URL or sent to Ramen Scout.");
+    } catch (error) {
+      const code = geolocationErrorCode(error);
+      if (code === 1) setLocationStatus("Location permission was declined. Search by city or postal code instead, or change the permission in your browser settings.");
+      else if (code === 3) setLocationStatus("Your location took too long to arrive. Try again or search by city or postal code.");
+      else if (code === 2) setLocationStatus("Your device could not determine a location. Try again or search by place.");
+      else setLocationStatus("The complete directory could not be loaded, so a reliable closest match is not available. Search by city or postal code instead.");
+    } finally {
+      setLocationPending(false);
+    }
+  }
+
+  function clearLocation() {
+    setLocation(null);
+    setLimit(PAGE_SIZE);
+    setLocationStatus("Location removed. Results are no longer ordered by distance.");
   }
 
   return (
@@ -164,7 +194,12 @@ export function SearchDirectory({
             placeholder={`Search all ${directoryTotal} restaurants`}
             aria-describedby="search-help"
           />
-          <button type="button" onClick={requestLocation}>Use my location</button>
+          <div className="location-controls">
+            <button type="button" onClick={requestLocation} disabled={locationPending} aria-busy={locationPending}>
+              {locationPending ? "Finding nearby ramen…" : location ? "Update my location" : "Use my location"}
+            </button>
+            {location ? <button className="clear-location" type="button" onClick={clearLocation}>Stop using my location</button> : null}
+          </div>
         </div>
         <fieldset aria-describedby="search-help">
           <legend>Only show confirmed features</legend>
@@ -192,19 +227,20 @@ export function SearchDirectory({
         <h2 aria-live="polite" aria-atomic="true">
           {!hasFullIndex && !initialCriteria && !loadError ? "Checking all restaurants…" : resultLabel}
         </h2>
-        <p>{location ? "Nearest confirmed matches appear first." : "Results are ordered by relevance, then name."}</p>
+        <p>{location ? "Nearest matches for the current search appear first; distances are straight-line estimates." : "Results are ordered by relevance, then name."}</p>
       </div>
 
       <div className="search-results" aria-label="Ramen restaurant results">
-        {filtered.slice(0, limit).map((record) => (
-          <article className="search-result" key={record.id}>
+        {rankedResults.slice(0, limit).map(({ item: record, distance }, index) => (
+          <article className={`search-result${location && index === 0 ? " closest-result" : ""}`} key={record.id}>
             <div>
-              <span>{record.provinceCode}</span>
+              <span>{location && index === 0 ? `Closest matching restaurant · ${record.provinceCode}` : record.provinceCode}</span>
               <h3><a href={record.path}>{record.name}</a></h3>
               <p>{record.neighbourhood ? `${record.neighbourhood}, ` : ""}{record.city} · {record.address}</p>
             </div>
             <p>{record.description}</p>
             <div className="search-result-meta">
+              {distance !== null ? <strong className="distance-label">Approximately {formatDistance(distance)} away</strong> : null}
               <span>{record.menuStatus === "verified_current" ? `Menu checked ${record.menuVerifiedAt}` : "Menu not verified"}</span>
               <strong>{record.priceMin === null ? "Price not confirmed" : record.priceMax && record.priceMax !== record.priceMin ? `$${record.priceMin}–$${record.priceMax}` : `From $${record.priceMin}`}</strong>
               <a href={record.path}>See details →</a>

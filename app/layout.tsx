@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { INDEXING_ENABLED, SITE_NAME, SITE_URL } from "@/lib/site";
+import { INDEXING_ENABLED, PUBLISHER, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: { default: `${SITE_NAME} — Find ramen near you`, template: `%s | ${SITE_NAME}` },
   description: "Compare ramen restaurants across Canada by location, menu style, price, dietary evidence, hours and reservations.",
   applicationName: SITE_NAME,
+  authors: [{ name: PUBLISHER.name, url: PUBLISHER.url }],
+  creator: PUBLISHER.name,
+  publisher: PUBLISHER.name,
   category: "food and dining",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   manifest: "/manifest.webmanifest",

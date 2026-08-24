@@ -3,6 +3,22 @@ import type { Metadata } from "next";
 export const SITE_NAME = "Ramen Scout Canada";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://ramenscout.ca").replace(/\/$/, "");
 export const INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+export const PUBLISHER = {
+  name: "Nocturnal Devs",
+  url: "https://www.nocturnaldevs.com/",
+  email: "nocturnaldevs@gmail.com",
+  phone: "+1-437-366-2920",
+  phoneDisplay: "+1 (437) 366-2920",
+  address: {
+    street: "419 Markham Road",
+    city: "Toronto",
+    region: "Ontario",
+    regionCode: "ON",
+    postalCode: "M1J 3E1",
+    country: "Canada",
+    countryCode: "CA",
+  },
+} as const;
 
 export function absoluteUrl(path = "/") {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;

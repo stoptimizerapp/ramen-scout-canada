@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { distanceKm, formatDistance, rankByDistance } from "../lib/geo.ts";
+import { createRetryableLoader } from "../lib/retryable-loader.ts";
 
 const siteRoot = new URL("../", import.meta.url);
 const restaurants = JSON.parse(await readFile(new URL("data/restaurants.json", siteRoot), "utf8"));
@@ -79,7 +81,40 @@ test("generated directory data is complete, unique and route-safe", () => {
 
   for (const record of searchIndex) {
     assert.ok(paths.has(record.path), `search record ${record.id} must resolve to a detail route`);
+    assert.ok(Number.isFinite(record.latitude) && Number.isFinite(record.longitude), `search record ${record.id} must have usable coordinates`);
   }
+});
+
+test("nearby ranking calculates useful distances and keeps missing coordinates last", () => {
+  const toronto = { latitude: 43.6532, longitude: -79.3832 };
+  const montreal = { latitude: 45.5019, longitude: -73.5674 };
+  const vancouver = { latitude: 49.2827, longitude: -123.1207 };
+  const distanceToMontreal = distanceKm(toronto, montreal);
+  assert.ok(distanceToMontreal > 490 && distanceToMontreal < 520);
+  assert.equal(formatDistance(0.03), "under 50 m");
+  assert.equal(formatDistance(0.42), "400 m");
+  assert.deepEqual(
+    rankByDistance([
+      { id: "missing", latitude: null, longitude: null },
+      { id: "vancouver", ...vancouver },
+      { id: "montreal", ...montreal },
+    ], toronto).map(({ item }) => item.id),
+    ["montreal", "vancouver", "missing"],
+  );
+});
+
+test("the full directory loader retries after a transient failure", async () => {
+  let attempts = 0;
+  const load = createRetryableLoader(async () => {
+    attempts += 1;
+    if (attempts === 1) throw new Error("temporary failure");
+    return ["directory ready"];
+  });
+  await assert.rejects(load(), /temporary failure/);
+  assert.deepEqual(await load(), ["directory ready"]);
+  assert.equal(attempts, 2);
+  assert.deepEqual(await load(), ["directory ready"]);
+  assert.equal(attempts, 2, "a successful request should remain cached");
 });
 
 test("production indexing fails closed while no restaurant passes every publication gate", () => {
@@ -121,6 +156,7 @@ test("search renders a bounded useful first page and keeps query filters noindex
   assert.match(html, /value="miso"/i);
   assert.match(html, /Only show confirmed features/i);
   assert.match(html, /Unknown values never match a confirmed-feature filter/i);
+  assert.match(html, /Use my location/i);
   assert.doesNotMatch(html, /Requesting your location|Sorted by distance/i);
 });
 
@@ -134,7 +170,29 @@ test("homepage renders useful discovery content with global preview safeguards",
   assert.match(html, />93<\/strong>|93 Canadian cities/);
   assert.match(html, /aria-label="Ramen Scout home"/);
   assert.match(html, /Research preview/);
+  assert.match(html, /Use my location/i);
+  assert.match(html, /coordinates stay in this page/i);
+  const schema = extractJsonLd(html);
+  const publisher = schema["@graph"].find((entry) => entry["@type"] === "Organization");
+  assert.equal(publisher.name, "Nocturnal Devs");
+  assert.equal(publisher.url, "https://www.nocturnaldevs.com/");
   assert.doesNotMatch(html, /adsbygoogle|pagead2|googlesyndication|AggregateRating|reviewCount/i);
+});
+
+test("privacy and publisher details match the browser-local location design", async () => {
+  const [privacyHtml, homeFinderSource, searchSource] = await Promise.all([
+    htmlFor("/privacy"),
+    readFile(new URL("../components/NearbyFinder.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/SearchDirectory.tsx", import.meta.url), "utf8"),
+  ]);
+  assert.match(privacyHtml, /Nocturnal Devs/);
+  assert.match(privacyHtml, /419 Markham Road/);
+  assert.match(privacyHtml, /nocturnaldevs@gmail\.com/);
+  assert.match(privacyHtml, /does not add them to the URL, cookies, local storage or session storage/i);
+  assert.match(privacyHtml, /browser, operating system or device location provider/i);
+  assert.match(homeFinderSource, /navigator\.geolocation\.getCurrentPosition/);
+  assert.match(searchSource, /navigator\.geolocation\.getCurrentPosition/);
+  assert.doesNotMatch(`${homeFinderSource}\n${searchSource}`, /localStorage|sessionStorage/);
 });
 
 test("restaurant detail renders canonical facts, cautious unknowns and valid rating-free schema", async () => {

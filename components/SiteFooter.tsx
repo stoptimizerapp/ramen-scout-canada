@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PUBLISHER } from "@/lib/site";
 import { Logo } from "./Logo";
 
 const explore = [
@@ -17,11 +18,12 @@ export function SiteFooter() {
         <Logo />
         <p>A practical, evidence-led guide to ramen restaurants across Canada.</p>
         <span>Facts checked against source material. Unknowns stay unknown.</span>
+        <span className="publisher-line">Published by <a href={PUBLISHER.url} rel="noopener noreferrer">{PUBLISHER.name}</a>, Toronto, Canada.</span>
       </div>
       <div><h2>Explore</h2>{explore.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>
       <div><h2>Trust</h2>{trust.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>
       <div><h2>Legal</h2><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/editorial-standards#advertising">Advertising policy</Link></div>
-      <p className="footer-fineprint">© {new Date().getFullYear()} Ramen Scout Canada. Restaurant details change; confirm critical information with the restaurant before travelling.</p>
+      <p className="footer-fineprint">© {new Date().getFullYear()} Ramen Scout Canada. Published by {PUBLISHER.name}. Restaurant details change; confirm critical information with the restaurant before travelling.</p>
     </footer>
   );
 }
