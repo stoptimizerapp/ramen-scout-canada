@@ -35,6 +35,36 @@ export function rankByDistance<T extends GeographicPoint>(items: T[], origin: Co
     });
 }
 
+export function rankNearestGeocoded<T extends GeographicPoint>(items: T[], origin: Coordinates, limit: number) {
+  return rankByDistance(items, origin)
+    .filter((result): result is typeof result & { distance: number } => result.distance !== null)
+    .slice(0, Math.max(0, Math.floor(limit)));
+}
+
+export function rankByDistanceWithFallback<T extends GeographicPoint & { id: string }>(
+  exactItems: T[],
+  eligibleItems: T[],
+  origin: Coordinates,
+  minimumResults: number,
+) {
+  const exactIds = new Set(exactItems.map((item) => item.id));
+  const rankedExact = rankByDistance(exactItems, origin);
+  const missingCount = Math.max(0, Math.floor(minimumResults) - rankedExact.length);
+  const fallback = missingCount > 0
+    ? rankNearestGeocoded(eligibleItems.filter((item) => !exactIds.has(item.id)), origin, missingCount)
+    : [];
+  const fallbackIds = new Set(fallback.map(({ item }) => item.id));
+
+  return {
+    expanded: fallback.length > 0,
+    exactCount: rankedExact.length,
+    results: rankByDistance(
+      [...exactItems, ...eligibleItems.filter((item) => fallbackIds.has(item.id))],
+      origin,
+    ).map((result) => ({ ...result, isExactMatch: exactIds.has(result.item.id) })),
+  };
+}
+
 export function formatDistance(distance: number) {
   if (distance < 0.05) return "under 50 m";
   if (distance < 1) return `${Math.round(distance * 1000 / 50) * 50} m`;

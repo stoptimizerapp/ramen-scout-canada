@@ -2,16 +2,18 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { formatDistance, rankByDistance, type Coordinates } from "@/lib/geo";
+import { formatDistance, rankByDistance, rankByDistanceWithFallback, type Coordinates } from "@/lib/geo";
 import { createRetryableLoader } from "@/lib/retryable-loader";
 import {
   getSearchResults,
+  isExactCitySearch,
   isSearchFeature,
   type SearchFeature,
   type SearchRecord,
 } from "@/lib/types";
 
 const PAGE_SIZE = 24;
+const NEARBY_RESULT_LIMIT = 6;
 
 const filterDefinitions: ReadonlyArray<readonly [SearchFeature, string]> = [
   ["tonkotsu", "Tonkotsu"],
@@ -125,16 +127,40 @@ export function SearchDirectory({
     return () => window.removeEventListener("popstate", restoreUrlState);
   }, []);
 
-  const rankedResults = useMemo(() => {
+  const locationResults = useMemo(() => {
     const matches = getSearchResults(records, query, filters);
-    if (!location) return matches.map((item) => ({ item, distance: null }));
-    return rankByDistance(matches, location);
+    if (!location) {
+      return {
+        expanded: false,
+        exactCount: matches.length,
+        results: matches.map((item) => ({ item, distance: null, isExactMatch: true })),
+      };
+    }
+
+    if (!isExactCitySearch(records, query) || matches.length >= NEARBY_RESULT_LIMIT) {
+      return {
+        expanded: false,
+        exactCount: matches.length,
+        results: rankByDistance(matches, location).map((result) => ({ ...result, isExactMatch: true })),
+      };
+    }
+
+    return rankByDistanceWithFallback(
+      matches,
+      getSearchResults(records, "", filters),
+      location,
+      NEARBY_RESULT_LIMIT,
+    );
   }, [records, query, filters, location]);
+  const rankedResults = locationResults.results;
   const filtered = rankedResults.map(({ item }) => item);
 
   const initialCriteria = query.trim() === initialQuery.trim() && sameFeatures(filters, initialFilters);
   const resultTotal = hasFullIndex ? filtered.length : initialCriteria ? initialTotal : filtered.length;
   const resultLabel = `${resultTotal} ramen ${resultTotal === 1 ? "spot" : "spots"}`;
+  const displayedLocationStatus = location && locationResults.expanded
+    ? `The city search “${query.trim()}” has ${locationResults.exactCount} exact ${locationResults.exactCount === 1 ? "match" : "matches"}, so ${rankedResults.length} of the closest restaurants that meet the selected filters are shown across nearby cities. Distances are straight-line estimates; your coordinates stay in this tab and are not added to the URL or sent to Ramen Scout.`
+    : locationStatus;
 
   function updateQuery(nextQuery: string) {
     setQuery(nextQuery);
@@ -217,7 +243,7 @@ export function SearchDirectory({
       </form>
 
       <div className="location-status" role="status" aria-live="polite">
-        {locationStatus ? <p>{locationStatus}</p> : null}
+        {displayedLocationStatus ? <p>{displayedLocationStatus}</p> : null}
         {!hasFullIndex && !loadError ? <p>Showing the first {Math.min(initialTotal, initialRecords.length)} matches. The complete interactive index loads when JavaScript is available.</p> : null}
         {loadError ? <p>{loadError}</p> : null}
       </div>
@@ -228,14 +254,22 @@ export function SearchDirectory({
         <h2 aria-live="polite" aria-atomic="true">
           {!hasFullIndex && !initialCriteria && !loadError ? "Checking all restaurants…" : resultLabel}
         </h2>
-        <p>{location ? "Nearest matches for the current search appear first; distances are straight-line estimates." : "Results are ordered by relevance, then name."}</p>
+        <p>{locationResults.expanded ? "Exact city matches are kept, then nearby options are added by distance." : location ? "Nearest matches for the current search appear first; distances are straight-line estimates." : "Results are ordered by relevance, then name."}</p>
       </div>
 
       <div className="search-results" aria-label="Ramen restaurant results">
-        {rankedResults.slice(0, limit).map(({ item: record, distance }, index) => (
+        {rankedResults.slice(0, limit).map(({ item: record, distance, isExactMatch }, index) => (
           <article className={`search-result${location && index === 0 ? " closest-result" : ""}`} key={record.id}>
             <div>
-              <span>{location && index === 0 ? `Closest matching restaurant · ${record.provinceCode}` : record.provinceCode}</span>
+              <span>{locationResults.expanded
+                ? index === 0
+                  ? `Closest restaurant shown · ${record.city}, ${record.provinceCode}`
+                  : isExactMatch
+                    ? `Exact ${record.city} match · ${record.provinceCode}`
+                    : `Nearby option · ${record.city}, ${record.provinceCode}`
+                : location && index === 0
+                  ? `Closest matching restaurant · ${record.provinceCode}`
+                  : record.provinceCode}</span>
               <h3><a href={record.path}>{record.name}</a></h3>
               <p>{record.neighbourhood ? `${record.neighbourhood}, ` : ""}{record.city} · {record.address}</p>
             </div>

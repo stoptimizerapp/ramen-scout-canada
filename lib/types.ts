@@ -222,6 +222,20 @@ export function normalizeDirectorySearch(value: string) {
     .trim();
 }
 
+export function isExactCitySearch(records: SearchRecord[], query: string) {
+  const normalizedQuery = normalizeDirectorySearch(query);
+  if (!normalizedQuery) return false;
+
+  return records.some((record) => {
+    const city = normalizeDirectorySearch(record.city);
+    const province = normalizeDirectorySearch(record.province);
+    const provinceCode = normalizeDirectorySearch(record.provinceCode);
+    return normalizedQuery === city
+      || normalizedQuery === `${city} ${provinceCode}`
+      || normalizedQuery === `${city} ${province}`;
+  });
+}
+
 function matchesConfirmedFeature(record: SearchRecord, feature: SearchFeature) {
   if (feature === "tonkotsu" || feature === "shoyu" || feature === "miso" || feature === "tsukemen") {
     return record[feature] === "yes";

@@ -327,7 +327,10 @@ test("privacy and publisher details match the browser-local location design", as
   assert.match(privacyHtml, /nocturnaldevs@gmail\.com/);
   assert.match(privacyHtml, /does not add them to the URL, cookies, local storage or session storage/i);
   assert.match(privacyHtml, /browser, operating system or device location provider/i);
+  assert.match(privacyHtml, /homepage discards them after calculating the nearest matches/i);
   assert.match(homeFinderSource, /navigator\.geolocation\.getCurrentPosition/);
+  assert.match(homeFinderSource, /NEARBY_LIMIT = 6/);
+  assert.match(homeFinderSource, /aria-label="Nearest ramen restaurants"/);
   assert.match(searchSource, /navigator\.geolocation\.getCurrentPosition/);
   assert.doesNotMatch(`${homeFinderSource}\n${searchSource}`, /localStorage|sessionStorage/);
 });

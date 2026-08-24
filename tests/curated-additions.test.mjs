@@ -36,16 +36,16 @@ const placesByKey = new Map(placeRegistry.records.map((record) => [record.candid
 test("curated overlay is exact, unique and registry-matched", () => {
   assert.equal(headers.length, 378);
   assert.equal(new Set(headers).size, 378);
-  assert.equal(source.restaurants.length, 32);
-  assert.equal(rows.length, 32);
-  assert.equal(placeRegistry.records.length, 32);
+  assert.equal(source.restaurants.length, 33);
+  assert.equal(rows.length, 33);
+  assert.equal(placeRegistry.records.length, 33);
   assert.deepEqual(
     placeRegistry.records.map((record) => record.candidateKey).sort(),
     source.restaurants.map((restaurant) => restaurant.sourceKey).sort(),
     "the checked place registry must contain exactly the accepted candidate set",
   );
   for (const field of ["restaurant_id", "source_google_place_id", "source_row_number", "canonical_path"]) {
-    assert.equal(new Set(rows.map((row) => row[field])).size, 32, `${field} must be unique`);
+    assert.equal(new Set(rows.map((row) => row[field])).size, 33, `${field} must be unique`);
   }
   for (const row of rows) {
     const place = placesByKey.get(row.source_row_number);
@@ -142,6 +142,54 @@ test("curated rows remain high-information but fail closed", () => {
     assert.ok(!(candidate.reviewFlags || []).some((flag) => /(?:address|postal|identity)_conflict/.test(flag)));
     assert.equal(row.gate_identity_pass, "yes");
   }
+});
+
+test("Umi Sushi Ajax preserves the verified identity, complete menu and conservative unknowns", () => {
+  const candidate = source.restaurants.find((restaurant) => restaurant.sourceKey === "umi-sushi-ajax");
+  const row = rows.find((restaurant) => restaurant.source_row_number === "umi-sushi-ajax");
+  const place = placesByKey.get("umi-sushi-ajax");
+
+  assert.ok(candidate);
+  assert.ok(row);
+  assert.ok(place);
+  assert.equal(candidate.googlePlaceId, "ChIJs5ZA4kff1IkRsKuEMza1Bb0");
+  assert.equal(candidate.location.postalCode, "L1T 1P5");
+  assert.equal(candidate.location.latitude, 43.8593479);
+  assert.equal(candidate.location.longitude, -79.0393782);
+  assert.equal(place.mapsName, "Umi Sushi");
+  assert.equal(candidate.relevance.itemCount, 10);
+  assert.equal(candidate.menu.items.length, 10);
+  assert.deepEqual(
+    candidate.menu.items.map((item) => [item.name, item.price]),
+    [
+      ["Chicken Yaki Ramen", 13.99],
+      ["Beef Yaki Ramen", 13.99],
+      ["Seafood Yaki Ramen", 13.99],
+      ["Vegetable Yaki Ramen", 13.99],
+      ["Chicken Soup Ramen", 14.99],
+      ["Beef Soup Ramen", 14.99],
+      ["Seafood Soup Ramen", 14.99],
+      ["Vegetable Soup Ramen", 14.99],
+      ["Chasu(Pork Belly) Ramen", 16.99],
+      ["Blk Pepper Duck Breast Ramen", 16.99],
+    ],
+  );
+  assert.equal(row.hours_mon, "11:00-22:00");
+  assert.equal(row.hours_fri, "11:00-22:30");
+  assert.equal(row.hours_sun, "11:00-22:00");
+  assert.equal(row.ramen_price_observed_item_count, "10");
+  assert.equal(row.ramen_price_min_cad, "13.99");
+  assert.equal(row.ramen_price_max_cad, "16.99");
+  assert.equal(row.ramen_price_median_cad, "14.99");
+  assert.equal(row.has_tonkotsu, "unknown");
+  assert.equal(row.has_shoyu, "unknown");
+  assert.equal(row.has_miso, "unknown");
+  assert.equal(row.has_tsukemen, "no");
+  assert.equal(row.vegan_status, "unknown");
+  assert.equal(row.halal_status, "unknown");
+  assert.equal(row.house_made_noodles_status, "unknown");
+  assert.ok(Number(row.quality_score_0_100) >= 95);
+  assert.ok(Number(row.publisher_content_word_count) >= 300);
 });
 
 test("overnight and split hours preserve next-day semantics", () => {

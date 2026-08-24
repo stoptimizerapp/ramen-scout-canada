@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-24T21:15:37.807Z",
+  "generatedAt": "2026-08-24T22:44:47.414Z",
   "crawl4aiEndpoint": "http://192.168.1.201:11235",
   "hashPolicy": "SHA-256 of normalized Crawl4AI markdown; PDFs and Crawl4AI-empty fallbacks use fetched response bytes.",
   "records": [
@@ -731,6 +731,34 @@
       "byteCount": 108867,
       "crawl4aiSuccess": true,
       "crawl4aiMarkdownChars": 0
+    },
+    {
+      "url": "https://www.umisushiajax.ca/",
+      "finalUrl": "https://www.umisushiajax.ca/",
+      "success": true,
+      "statusCode": 200,
+      "retrievedAt": "2026-08-24T22:41:32.357Z",
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentType": "text/html; charset=utf-8",
+      "contentHash": "c25b2600a0bc58b524762ce665c6500c953b914ce8d73621a047f936857c5f2f",
+      "charCount": 1678,
+      "byteCount": null,
+      "crawl4aiSuccess": true,
+      "crawl4aiMarkdownChars": 1678
+    },
+    {
+      "url": "https://cloud.quickposhub.com/onlineorder/#/pages/order/tableurl?code=QIFBJnapqG",
+      "finalUrl": "https://cloud.quickposhub.com/onlineorder/#/pages/order/index?hotelid=106700&fc=up",
+      "success": true,
+      "statusCode": 200,
+      "retrievedAt": "2026-08-24T22:44:47.414Z",
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentType": "text/html",
+      "contentHash": "6de228c52e0da069c5608bd8028e6182aaf69b4699efa7dc74bf42cdc855655d",
+      "charCount": 12115,
+      "byteCount": null,
+      "crawl4aiSuccess": true,
+      "crawl4aiMarkdownChars": 12115
     }
   ]
 }

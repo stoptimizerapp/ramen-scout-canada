@@ -9073,6 +9073,266 @@
           "factsSnapshot": "Exact Google Maps result for GaiJin Izakaya at 1575 Regent Ave W #2, Winnipeg, MB R2C 3B3; Place ID ChIJSSCf6NNx6lIRtxX6rbi-yGs; coordinates 49.8988515, -97.0660289."
         }
       ]
+    },
+    {
+      "sourceKey": "umi-sushi-ajax",
+      "name": "Umi Sushi",
+      "brandName": "Umi Sushi",
+      "branchName": "Ajax",
+      "googlePlaceId": "ChIJs5ZA4kff1IkRsKuEMza1Bb0",
+      "location": {
+        "street": "15 Westney Rd N",
+        "neighbourhood": "Westney",
+        "city": "Ajax",
+        "region": "Durham Region",
+        "provinceName": "Ontario",
+        "provinceCode": "ON",
+        "postalCode": "L1T 1P5",
+        "latitude": 43.8593479,
+        "longitude": -79.0393782,
+        "geocodePrecision": "business_pin",
+        "timezone": "America/Toronto"
+      },
+      "contact": {
+        "phone": "+19054269980",
+        "website": "https://www.umisushiajax.ca/",
+        "locationUrl": "https://www.umisushiajax.ca/",
+        "menuUrl": "https://cloud.quickposhub.com/onlineorder/#/pages/order/tableurl?code=QIFBJnapqG",
+        "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Umi+Sushi%2C+15+Westney+Rd+N%2C+Ajax%2C+ON+L1T+1P5&query_place_id=ChIJs5ZA4kff1IkRsKuEMza1Bb0"
+      },
+      "relevance": {
+        "classification": "substantial",
+        "itemCount": 10,
+        "reason": "Umi's restaurant-linked ordering menu carries ten permanent ramen dishes: four yaki choices, four soup choices, pork-belly ramen and black-pepper duck-breast ramen.",
+        "confidence": "high"
+      },
+      "hours": {
+        "Monday": "11:00-22:00",
+        "Tuesday": "11:00-22:00",
+        "Wednesday": "11:00-22:00",
+        "Thursday": "11:00-22:00",
+        "Friday": "11:00-22:30",
+        "Saturday": "11:00-22:30",
+        "Sunday": "11:00-22:00",
+        "notes": "Umi opens at 11 a.m. daily; Friday and Saturday close thirty minutes later than the other five days.",
+        "confidence": "high"
+      },
+      "menu": {
+        "sourceType": "official_menu",
+        "effectiveDate": "2026-08-24",
+        "confidence": "high",
+        "items": [
+          {
+            "name": "Chicken Yaki Ramen",
+            "price": 13.99,
+            "servingStyle": [
+              "yaki ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Beef Yaki Ramen",
+            "price": 13.99,
+            "servingStyle": [
+              "yaki ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Seafood Yaki Ramen",
+            "price": 13.99,
+            "servingStyle": [
+              "yaki ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Vegetable Yaki Ramen",
+            "price": 13.99,
+            "servingStyle": [
+              "yaki ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Chicken Soup Ramen",
+            "price": 14.99,
+            "servingStyle": [
+              "soup ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Beef Soup Ramen",
+            "price": 14.99,
+            "servingStyle": [
+              "soup ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Seafood Soup Ramen",
+            "price": 14.99,
+            "servingStyle": [
+              "soup ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Vegetable Soup Ramen",
+            "price": 14.99,
+            "servingStyle": [
+              "soup ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Chasu(Pork Belly) Ramen",
+            "price": 16.99,
+            "servingStyle": [
+              "ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "name": "Blk Pepper Duck Breast Ramen",
+            "price": 16.99,
+            "servingStyle": [
+              "ramen"
+            ],
+            "evidenceRefs": [
+              "E2"
+            ]
+          }
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [],
+        "servingStyles": [
+          "yaki ramen",
+          "soup ramen",
+          "ramen"
+        ],
+        "tonkotsu": "unknown",
+        "shoyu": "unknown",
+        "miso": "unknown",
+        "tsukemen": "no",
+        "confidence": "high"
+      },
+      "content": {
+        "shortDescription": "Umi Sushi broadens Ajax’s ramen choices with ten priced dishes: four stir-fried yaki ramen, four soup ramen, chasu pork belly and black-pepper duck breast, backed by seven-day hours and a restaurant-linked ordering menu.",
+        "editorialDescription": "Umi is a sushi restaurant, but its noodle section goes well beyond one incidental bowl. Diners can choose chicken, beef, seafood or vegetable in either yaki ramen or soup ramen, allowing a direct stir-fried-versus-soup comparison with the same four main labels. Chasu Pork Belly Ramen and Blk Pepper Duck Breast Ramen add two choices outside that matrix. Every yaki option is $13.99, each soup version is $14.99, and the two speciality bowls cost $16.99. The menu does not identify tonkotsu, shoyu, miso or tsukemen recipes. Umi opens at 11 a.m. daily, closes at 10 p.m. Monday through Thursday and Sunday, and stays open until 10:30 p.m. Friday and Saturday.",
+        "whyGo": "Ten current choices make Umi useful for mixed sushi-and-ramen groups, especially when diners disagree between stir-fried noodles and soup.",
+        "whatToOrder": "Choose a $13.99 yaki ramen for the lowest-priced route, or compare pork belly and black-pepper duck breast at $16.99.",
+        "bestFor": "Ajax groups seeking sushi alongside several ramen proteins, vegetables and two clearly separated serving styles.",
+        "visitTips": "All seven days begin at 11 a.m.; Friday and Saturday provide the latest finish, with service listed until 10:30 p.m.",
+        "neighbourhoodContext": "The Westney Road North address places Umi in Ajax’s Westney area, southwest of the city’s existing Ajisen ramen listing.",
+        "caveats": "Vegetable dish names do not establish vegan preparation, while halal suitability, broth recipes and noodle production are not confirmed.",
+        "specificFactCount": 28,
+        "faqs": [
+          {
+            "question": "How many ramen dishes does Umi Sushi Ajax list?",
+            "answer": "The current restaurant-linked menu lists ten: four yaki ramen, four soup ramen and two speciality bowls.",
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "question": "How much does ramen cost at Umi Sushi Ajax?",
+            "answer": "Yaki ramen is $13.99, soup ramen is $14.99, and the pork-belly and black-pepper duck-breast choices are $16.99.",
+            "evidenceRefs": [
+              "E2"
+            ]
+          },
+          {
+            "question": "What hours are verified for Umi Sushi Ajax?",
+            "answer": "Umi posts 11 a.m.–10 p.m. Monday–Thursday and Sunday, plus 11 a.m.–10:30 p.m. Friday and Saturday.",
+            "evidenceRefs": [
+              "E1"
+            ]
+          }
+        ]
+      },
+      "seo": {
+        "title": "Umi Sushi Ajax Ramen Menu, Prices & Hours",
+        "description": "Explore Umi Sushi Ajax’s ten-item ramen menu, with $13.99 yaki, $14.99 soup, pork-belly and black-pepper duck choices plus verified daily hours.",
+        "h1": "Umi Sushi Ajax: ramen menu, prices and hours",
+        "secondaryTopics": [
+          "ramen Ajax",
+          "ramen Westney Ajax",
+          "yaki ramen Ajax",
+          "soup ramen Ajax"
+        ],
+        "topics": [
+          "yaki ramen",
+          "soup ramen",
+          "pork belly ramen",
+          "duck ramen",
+          "Ajax ramen",
+          "Westney ramen"
+        ]
+      },
+      "evidence": [
+        {
+          "id": "E1",
+          "url": "https://www.umisushiajax.ca/",
+          "sourceType": "official_site",
+          "publisher": "Umi Sushi",
+          "retrievedAt": "2026-08-24T22:41:32.357Z",
+          "supports": [
+            "identity",
+            "hours",
+            "contact"
+          ],
+          "factsSnapshot": "Umi Sushi identifies its Ajax restaurant at 15 Westney Road North and phone 905-426-9980. Posted hours are Monday-Thursday and Sunday 11 a.m.-10 p.m., with Friday-Saturday 11 a.m.-10:30 p.m.; the official site links the QuickPOS ordering menu."
+        },
+        {
+          "id": "E2",
+          "url": "https://cloud.quickposhub.com/onlineorder/#/pages/order/tableurl?code=QIFBJnapqG",
+          "sourceType": "official_menu",
+          "publisher": "Umi Sushi / QuickPOS",
+          "retrievedAt": "2026-08-24T22:44:47.414Z",
+          "supports": [
+            "ramen_relevance",
+            "menu",
+            "taxonomy",
+            "prices"
+          ],
+          "factsSnapshot": "The restaurant-linked menu has ten active ramen dishes. Chicken, Beef, Seafood and Vegetable Yaki Ramen are $13.99; the same four Soup Ramen choices are $14.99; Chasu Pork Belly and Blk Pepper Duck Breast Ramen are $16.99."
+        },
+        {
+          "id": "E3",
+          "url": "https://www.google.com/maps/search/?api=1&query=Umi+Sushi%2C+15+Westney+Rd+N%2C+Ajax%2C+ON+L1T+1P5&query_place_id=ChIJs5ZA4kff1IkRsKuEMza1Bb0",
+          "sourceType": "licensed_maps_provider",
+          "publisher": "Google Maps",
+          "retrievedAt": "2026-08-24T22:39:23Z",
+          "supports": [
+            "identity",
+            "coordinates"
+          ],
+          "factsSnapshot": "Exact Google Maps business result for Umi Sushi at 15 Westney Rd N, Ajax, ON L1T 1P5; Place ID ChIJs5ZA4kff1IkRsKuEMza1Bb0; coordinates 43.8593479, -79.0393782."
+        }
+      ]
     }
   ]
 }

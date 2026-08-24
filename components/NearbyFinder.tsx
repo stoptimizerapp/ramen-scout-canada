@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { formatDistance, rankByDistance } from "@/lib/geo";
+import { formatDistance, rankNearestGeocoded } from "@/lib/geo";
 import type { SearchRecord } from "@/lib/types";
+
+const NEARBY_LIMIT = 6;
 
 function readCurrentPosition() {
   return new Promise<GeolocationPosition>((resolve, reject) => {
@@ -31,7 +33,7 @@ function locationErrorMessage(error: unknown) {
 export function NearbyFinder() {
   const [pending, setPending] = useState(false);
   const [status, setStatus] = useState("");
-  const [closest, setClosest] = useState<{ record: SearchRecord; distance: number } | null>(null);
+  const [nearby, setNearby] = useState<Array<{ record: SearchRecord; distance: number }>>([]);
 
   async function findClosest() {
     if (!navigator.geolocation) {
@@ -40,7 +42,7 @@ export function NearbyFinder() {
     }
 
     setPending(true);
-    setClosest(null);
+    setNearby([]);
     setStatus("Waiting for location permission and loading the directory…");
     try {
       const [position, response] = await Promise.all([
@@ -49,17 +51,19 @@ export function NearbyFinder() {
       ]);
       if (!response.ok) throw new Error(`Directory request failed: ${response.status}`);
       const records = await response.json() as SearchRecord[];
-      const [closest] = rankByDistance(records, {
+      const matches = rankNearestGeocoded(records, {
         latitude: position.coords.latitude,
         longitude: position.coords.longitude,
-      });
-      if (!closest || closest.distance === null) throw new Error("No geocoded restaurants are available");
+      }, NEARBY_LIMIT)
+        .map(({ item: record, distance }) => ({ record, distance }));
+      if (!matches.length) throw new Error("No geocoded restaurants are available");
 
-      setClosest({ record: closest.item, distance: closest.distance });
-      setStatus(`Closest match found: ${closest.item.name}, about ${formatDistance(closest.distance)} away.`);
-      setPending(false);
+      setNearby(matches);
+      const cityCount = new Set(matches.map(({ record }) => `${record.provinceCode}:${record.city}`)).size;
+      setStatus(`Showing ${matches.length} nearest listed restaurants across ${cityCount} ${cityCount === 1 ? "city" : "cities"}. Distances are straight-line estimates.`);
     } catch (error) {
       setStatus(locationErrorMessage(error));
+    } finally {
       setPending(false);
     }
   }
@@ -68,17 +72,23 @@ export function NearbyFinder() {
     <div className="nearby-finder">
       <button type="button" onClick={findClosest} disabled={pending}>
         <span aria-hidden="true">⌖</span>
-        {pending ? "Finding the closest ramen…" : closest ? "Check my location again" : "Use my location"}
+        {pending ? "Finding nearby ramen…" : nearby.length ? "Check my location again" : "Use my location"}
       </button>
-      <p>Your coordinates stay in this page and are discarded after the nearest match is found.</p>
+      <p>Your coordinates stay in this page and are discarded after the nearest matches are found.</p>
       <div className="nearby-status" role="status" aria-live="polite">{status}</div>
-      {closest ? (
-        <article className="nearby-match">
-          <span>Closest listed restaurant · approximately {formatDistance(closest.distance)} straight-line distance</span>
-          <strong>{closest.record.name}</strong>
-          <p>{closest.record.address}, {closest.record.city}, {closest.record.provinceCode}</p>
-          <a href={closest.record.path}>View restaurant details <span aria-hidden="true">→</span></a>
-        </article>
+      {nearby.length ? (
+        <ol className="nearby-matches" aria-label="Nearest ramen restaurants">
+          {nearby.map(({ record, distance }, index) => (
+            <li key={record.id}>
+              <article className="nearby-match">
+                <span>{index === 0 ? "Closest listed restaurant" : `Nearby option ${index + 1}`} · approximately {formatDistance(distance)} away</span>
+                <strong>{record.name}</strong>
+                <p>{record.address}, {record.city}, {record.provinceCode}</p>
+                <a href={record.path}>View restaurant details <span aria-hidden="true">→</span></a>
+              </article>
+            </li>
+          ))}
+        </ol>
       ) : null}
     </div>
   );

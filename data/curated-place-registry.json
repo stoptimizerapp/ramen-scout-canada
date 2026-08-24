@@ -418,6 +418,19 @@
       "matchConfidence": "high",
       "retrievedAt": "2026-08-24T20:28:33Z",
       "editorialNote": ""
+    },
+    {
+      "candidateKey": "umi-sushi-ajax",
+      "googlePlaceId": "ChIJs5ZA4kff1IkRsKuEMza1Bb0",
+      "mapsName": "Umi Sushi",
+      "mapsAddress": "15 Westney Rd N, Ajax, ON L1T 1P5",
+      "latitude": 43.8593479,
+      "longitude": -79.0393782,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Umi+Sushi%2C+15+Westney+Rd+N%2C+Ajax%2C+ON+L1T+1P5&query_place_id=ChIJs5ZA4kff1IkRsKuEMza1Bb0",
+      "sourceSearchUrl": "https://www.google.com/search?tbm=map&hl=en&gl=ca&q=Umi+Sushi+15+Westney+Road+North+Ajax+ON+L1T+1P5",
+      "matchConfidence": "high",
+      "retrievedAt": "2026-08-24T22:39:23Z",
+      "editorialNote": "Matched the live Umi Sushi business result and official domain; the generic embedded plaza-address pin was deliberately excluded."
     }
   ]
 }

@@ -33,7 +33,8 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
 .nearby-finder>button span { color:var(--mustard);font-size:20px;line-height:1; }
 .nearby-finder>p { display:inline;margin:0 0 0 11px;color:var(--muted);font-size:11px;line-height:1.5; }
 .nearby-status { min-height:18px;margin-top:7px;color:var(--muted);font-size:11px; }
-.nearby-match { margin-top:10px;padding:15px 17px;border:1px solid #9ab9a7;border-radius:11px;background:var(--soft-green); }
+.nearby-matches { margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none; }
+.nearby-match { height:100%;padding:15px 17px;border:1px solid #9ab9a7;border-radius:11px;background:var(--soft-green); }
 .nearby-match>span { display:block;color:var(--green);font-size:9px;font-weight:900;letter-spacing:.07em;text-transform:uppercase; }
 .nearby-match>strong { display:block;margin:5px 0 3px;font-family:Georgia,serif;font-size:21px;font-weight:500; }
 .nearby-match>p { margin:0;color:var(--muted);font-size:11px; }
@@ -172,7 +173,7 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
   .prose-content { margin-left:0; }.section-heading { align-items:flex-start;flex-direction:column; }
 }
 @media (max-width:480px) {
-  .preview-notice { align-items:flex-start;flex-direction:column;gap:2px;text-align:left; }.nearby-finder>button{width:100%;justify-content:center}.nearby-finder>p{display:block;margin:8px 0 0}.location-controls{grid-template-columns:1fr}.listing-actions { grid-template-columns:1fr 1fr; }.verification-strip{grid-template-columns:1fr}.verification-strip>div,.verification-strip>div:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.style-counts{grid-template-columns:1fr}.site-footer{grid-template-columns:1fr}.site-footer>div:nth-of-type(4){grid-column:auto}.metric-row strong{font-size:28px}.filter-options{display:grid;grid-template-columns:repeat(2,1fr)}.filter-options span{border-radius:8px}
+  .preview-notice { align-items:flex-start;flex-direction:column;gap:2px;text-align:left; }.nearby-finder>button{width:100%;justify-content:center}.nearby-finder>p{display:block;margin:8px 0 0}.nearby-matches{grid-template-columns:1fr}.location-controls{grid-template-columns:1fr}.listing-actions { grid-template-columns:1fr 1fr; }.verification-strip{grid-template-columns:1fr}.verification-strip>div,.verification-strip>div:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.style-counts{grid-template-columns:1fr}.site-footer{grid-template-columns:1fr}.site-footer>div:nth-of-type(4){grid-column:auto}.metric-row strong{font-size:28px}.filter-options{display:grid;grid-template-columns:repeat(2,1fr)}.filter-options span{border-radius:8px}
 }
 
 @media (forced-colors:active) { .fact-badge,.button,.search-controls,.restaurant-card,.province-card { border:1px solid CanvasText; }.badge-positive::before { forced-color-adjust:none; } }

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-24T22:14:44.135Z",
+  "generatedAt": "2026-08-24T22:50:14.076Z",
   "baseRestaurantCount": 380,
-  "curatedAdditionCount": 32,
-  "restaurantCount": 412,
+  "curatedAdditionCount": 33,
+  "restaurantCount": 413,
   "provinceCount": 10,
   "cityCount": 105,
-  "verifiedMenuCount": 144,
-  "pricedMenuCount": 91,
+  "verifiedMenuCount": 145,
+  "pricedMenuCount": 92,
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
@@ -23,7 +23,7 @@
       "code": "ON",
       "slug": "on",
       "name": "Ontario",
-      "count": 154,
+      "count": 155,
       "cities": [
         {
           "name": "Toronto",
@@ -106,6 +106,14 @@
           "lateNight": 3
         },
         {
+          "name": "Ajax",
+          "slug": "ajax",
+          "count": 2,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
+          "lateNight": 1
+        },
+        {
           "name": "Burlington",
           "slug": "burlington",
           "count": 2,
@@ -168,14 +176,6 @@
           "verifiedMenus": 1,
           "pricedMenus": 1,
           "lateNight": 0
-        },
-        {
-          "name": "Ajax",
-          "slug": "ajax",
-          "count": 1,
-          "verifiedMenus": 0,
-          "pricedMenus": 0,
-          "lateNight": 1
         },
         {
           "name": "Alliston",
