@@ -317,6 +317,7 @@ test("homepage renders useful discovery content with global preview safeguards",
   assert.match(html, /src="\/images\/ramen-scout-hero\.jpg"/i);
   assert.match(html, /alt="Editorial illustration of a steaming ramen bowl with egg, scallions, nori and mushrooms"/i);
   assert.match(html, /Original editorial illustration—not a photo from a listed restaurant\./i);
+  assert.match(html, /source-linked restaurant listings/i);
   assert.ok(heroAvif.byteLength <= 160_000, `AVIF hero is ${heroAvif.byteLength} bytes`);
   assert.ok(heroJpeg.byteLength <= 300_000, `JPEG hero is ${heroJpeg.byteLength} bytes`);
   const schema = extractJsonLd(html);

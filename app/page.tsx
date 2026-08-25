@@ -57,7 +57,7 @@ export default function Home() {
             </picture>
             <figcaption>Original editorial illustration—not a photo from a listed restaurant.</figcaption>
           </figure>
-          <div className="coverage-card"><span className="tiny-label">Coast to coast</span><strong>{summary.restaurantCount}</strong><p>structured restaurant listings with source-linked facts</p><div><span>{summary.provinceCount} provinces &amp; territories</span><span>{summary.cityCount} cities</span></div></div>
+          <div className={`coverage-card ${styles.coverageCard}`}><span className="tiny-label">Coast to coast</span><strong className={styles.coverageCount}>{summary.restaurantCount}</strong><p className={styles.coverageCopy}>source-linked restaurant listings</p><div className={styles.coverageMeta}><span>{summary.provinceCount} provinces &amp; territories</span><span>{summary.cityCount} cities</span></div></div>
         </aside>
       </section>
 
