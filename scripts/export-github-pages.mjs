@@ -7,12 +7,21 @@ const clientRoot = path.join(siteRoot, "dist", "client");
 const outputRoot = path.join(siteRoot, "pages-out");
 const canonicalOrigin = "https://ramenscout.ca";
 const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-const staticIndexableRoutes = new Set([
+const fullContentIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING === "true";
+const coreStaticIndexableRoutes = new Set([
   "/",
   "/locations",
   "/about",
   "/methodology",
   "/editorial-standards",
+]);
+const allStaticContentRoutes = new Set([
+  ...coreStaticIndexableRoutes,
+  "/accessibility",
+  "/contact",
+  "/corrections",
+  "/privacy",
+  "/terms",
 ]);
 
 const [restaurants, summary] = await Promise.all([
@@ -65,6 +74,7 @@ async function render(route, expectedStatus = 200) {
 }
 
 const routeList = [...routes].sort();
+const indexableRoutes = new Set(fullContentIndexingEnabled ? routeList.filter((route) => route !== "/search") : coreStaticIndexableRoutes);
 let nextRoute = 0;
 const htmlByRoute = new Map();
 const renderWorkers = Array.from({ length: Math.min(12, routeList.length) }, async () => {
@@ -73,7 +83,7 @@ const renderWorkers = Array.from({ length: Math.min(12, routeList.length) }, asy
     const response = await render(route);
     const html = await response.text();
     if (!/^<!DOCTYPE html>/i.test(html)) throw new Error(`${route} did not return a complete HTML document`);
-    const expectedRobots = staticIndexingEnabled && staticIndexableRoutes.has(route) ? "index, follow" : "noindex, follow";
+    const expectedRobots = staticIndexingEnabled && indexableRoutes.has(route) ? "index, follow" : "noindex, follow";
     if (!html.includes(`name="robots" content="${expectedRobots}"`)) throw new Error(`${route} has an unexpected robots directive; expected ${expectedRobots}`);
     if (!html.includes(`href="${canonicalOrigin}${route === "/" ? "" : route}"`)) throw new Error(`${route} has an unexpected canonical URL`);
     const destination = routeFile(route);
@@ -114,8 +124,9 @@ if (staticIndexingEnabled) {
   if (/^Disallow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must not block the entire staged site");
   if (!robots.includes(`${canonicalOrigin}/sitemap.xml`)) throw new Error("robots.txt must advertise the canonical sitemap");
   const sitemapUrls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
-  const expectedUrls = [...staticIndexableRoutes].map((route) => `${canonicalOrigin}${route}`).sort();
-  if (JSON.stringify(sitemapUrls) !== JSON.stringify(expectedUrls)) throw new Error(`sitemap.xml contains an unsafe staged inventory: ${sitemapUrls.join(", ")}`);
+  const expectedUrls = [...indexableRoutes].map((route) => `${canonicalOrigin}${route}`).sort();
+  if (JSON.stringify(sitemapUrls) !== JSON.stringify(expectedUrls)) throw new Error(`sitemap.xml does not match the indexable canonical inventory: expected ${expectedUrls.length} URLs, found ${sitemapUrls.length}`);
+  if (fullContentIndexingEnabled && ![...allStaticContentRoutes].every((route) => indexableRoutes.has(route))) throw new Error("Full indexing must include every canonical static content page");
 } else {
   if (!/^Disallow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must remain fail-closed when staged indexing is disabled");
   if (/<url>/i.test(sitemapXml)) throw new Error("sitemap.xml must remain empty when staged indexing is disabled");

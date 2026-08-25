@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RestaurantList } from "@/components/RestaurantList";
 import { cityFacts, getCity, isCityIndexable, summary } from "@/lib/directory";
 import { formatMoney } from "@/lib/format";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, FULL_CONTENT_INDEXING_ENABLED } from "@/lib/site";
 
 export function generateStaticParams() { return summary.provinces.flatMap((province) => province.cities.map((city) => ({ province: province.slug, city: city.slug }))); }
 
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ province:
   const route = await params;
   const data = getCity(route.province, route.city);
   if (!data) return {};
-  return buildPageMetadata({ title: `Ramen restaurants in ${data.city.name}, ${data.province.code}`, description: `Compare ${data.restaurants.length} ramen restaurants in ${data.city.name} by verified menu style, price evidence, late-night hours, vegan bowls and reservations.`, path: `/locations/${route.province}/${route.city}`, indexable: isCityIndexable(data.restaurants) });
+  return buildPageMetadata({ title: `Ramen restaurants in ${data.city.name}, ${data.province.code}`, description: `Compare ${data.restaurants.length} ramen restaurants in ${data.city.name} by verified menu style, price evidence, late-night hours, vegan bowls and reservations.`, path: `/locations/${route.province}/${route.city}`, indexable: FULL_CONTENT_INDEXING_ENABLED || isCityIndexable(data.restaurants) });
 }
 
 export default async function CityPage({ params }: { params: Promise<{ province: string; city: string }> }) {

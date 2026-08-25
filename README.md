@@ -19,7 +19,7 @@ An addition is rejected unless it has an authentic, unique Google Place ID; exac
 
 Restaurant IDs use `ramen_ca_` plus the first 20 hexadecimal characters of SHA-256 over normalized name, branch, street and postal code. Brand IDs use the equivalent first 16 characters over the normalized brand name. The quality score is also deterministic: official identity (15), ramen relevance (15), current item-level menu (15), complete hours (10), explicit taxonomy (10), evidence coverage (10), original content (10) and freshness (5), plus five points for observed ramen prices and one point each for an explicit vegan, noodle, reservation or service decision group, capped at 100. These data-quality scores do not authorize publication.
 
-Every curated row remains `needs_review`, `noindex,follow`, ad-disabled and blocked on human review, rendered-schema validation and visible-schema parity. Source prose, external ratings and third-party photos are not published. A separate `data/publication-approvals.json` registry is the only supported review-to-publication path: approvals are tied to exact content, evidence, schema-input and renderer/canonical-origin hashes, a named reviewer and non-future review timestamps.
+Every curated data row remains `needs_review`, ad-disabled and blocked from the approval-gated advertising cohort until human review, rendered-schema validation and visible-schema parity are complete. Public page indexing is configured separately. Source prose, external ratings and third-party photos are not published. A separate `data/publication-approvals.json` registry remains the only supported review-to-advertising path: approvals are tied to exact content, evidence, schema-input and renderer/canonical-origin hashes, a named reviewer and non-future review timestamps.
 
 ## Verification
 
@@ -32,9 +32,9 @@ npm test
 
 ## Publication gate
 
-The GitHub Pages release uses a staged editorial launch. `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true` makes only the homepage, national locations page, About, Methodology and Editorial Standards indexable. It also permits crawling so search engines can read the `noindex` directive on every unreviewed restaurant, city, province, style, feature, search, support and policy page. The sitemap contains only those five substantive static pages.
+The GitHub Pages release permits crawling with `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true`. `NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING=true` makes every canonical restaurant, city, province, style, feature, editorial, support and policy page indexable and includes it in the sitemap. Internal search and query/filter variants remain excluded because they duplicate canonical directory inventory.
 
-Restaurant publication remains independently fail-closed. Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the listing gates pass and the monitored contacts, human review and corrections workflow are operational. The build-time gate filters indexable directory output to hash-matched approvals and aborts unless at least 50 approved restaurants span 15 cities and five provinces. Advertising and third-party rating code remain disabled, and unlicensed restaurant media is excluded.
+The approval-gated advertising cohort remains independently fail-closed. Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the listing gates pass and the monitored contacts, human review and corrections workflow are operational. That build-time gate filters the approved cohort to hash-matched records and aborts unless at least 50 approved restaurants span 15 cities and five provinces. Advertising and third-party rating code remain disabled, and unlicensed restaurant media is excluded.
 
 ## GitHub Pages
 
@@ -45,7 +45,8 @@ Restaurant publication remains independently fail-closed. Do not set `NEXT_PUBLI
 ```bash
 NEXT_PUBLIC_SITE_URL=https://ramenscout.ca
 NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true
+NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING=true
 NEXT_PUBLIC_ALLOW_INDEXING=false
 ```
 
-`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=false` on private previews. Keep directory indexing disabled until the approval registry and national launch gate pass.
+`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set both indexing flags to `false` on private previews. `NEXT_PUBLIC_ALLOW_INDEXING` remains the separate approval-gated publication cohort switch and stays disabled until the approval registry and national launch gate pass.

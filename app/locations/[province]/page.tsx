@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RestaurantList } from "@/components/RestaurantList";
 import { getProvince, getProvinceRestaurants, isRestaurantIndexable, summary } from "@/lib/directory";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, FULL_CONTENT_INDEXING_ENABLED } from "@/lib/site";
 
 export function generateStaticParams() { return summary.provinces.map((province) => ({ province: province.slug })); }
 
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ province:
   const indexable = entries.filter(isRestaurantIndexable);
   const cityCount = new Set(indexable.map((restaurant) => restaurant.location.city)).size;
   const eligible = indexable.length >= 8 && cityCount >= 2;
-  return buildPageMetadata({ title: `Ramen restaurants in ${province.name}`, description: `Browse ${province.count} ramen restaurants across ${province.cities.length} ${province.name} cities, with menu, price, service and verification details.`, path: `/locations/${slug}`, indexable: eligible });
+  return buildPageMetadata({ title: `Ramen restaurants in ${province.name}`, description: `Browse ${province.count} ramen restaurants across ${province.cities.length} ${province.name} cities, with menu, price, service and verification details.`, path: `/locations/${slug}`, indexable: FULL_CONTENT_INDEXING_ENABLED || eligible });
 }
 
 export default async function ProvincePage({ params }: { params: Promise<{ province: string }> }) {

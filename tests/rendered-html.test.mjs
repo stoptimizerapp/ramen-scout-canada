@@ -33,7 +33,9 @@ const rendererContractSources = await Promise.all(rendererContractPaths.map(asyn
   source: await readFile(new URL(relativePath, siteRoot), "utf8"),
 })));
 const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-const staticIndexablePaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards"];
+const fullContentIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING === "true";
+const coreStaticIndexablePaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards"];
+const allStaticContentPaths = [...coreStaticIndexablePaths, "/corrections", "/contact", "/privacy", "/accessibility", "/terms"];
 
 function expectedRendererHash(siteUrl, sourceOverrides = {}) {
   const canonicalSite = new URL(siteUrl);
@@ -355,7 +357,7 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
 
   const escapedH1 = restaurant.seo.h1.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   assert.match(html, new RegExp(`<h1>${escapedH1}<\\/h1>`));
-  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
+  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled && fullContentIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
   assert.match(html, new RegExp(`<link[^>]*rel="canonical"[^>]*href="https://ramenscout\\.ca${restaurant.canonicalPath}"`, "i"));
   assert.equal(extractTitle(html), restaurant.seo.title);
   assert.match(html, /Ramen style not confirmed|Not confirmed/);
@@ -385,7 +387,7 @@ test("a curated discovery renders its specific menu and source-backed details", 
   assert.match(html, /href="#source-E2"/i);
   assert.match(html, /id="source-E2"/i);
   assert.match(html, /Where these details came from/i);
-  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
+  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled && fullContentIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
   assert.doesNotMatch(html, /AggregateRating|reviewCount|ratingValue|adsbygoogle/i);
 });
 
@@ -428,27 +430,29 @@ test("overnight hours render as next-day service and remain schema-consistent", 
 });
 
 test("representative location, style, feature and policy routes render", async () => {
-  const noindexRoutes = [
+  const routes = [
     "/search?q=miso",
+    "/locations",
     "/locations/on",
     "/locations/on/toronto",
     "/locations/yt/whitehorse",
     "/styles/miso",
     "/features/late-night",
+    "/about",
+    "/methodology",
+    "/editorial-standards",
     "/corrections",
+    "/contact",
     "/privacy",
     "/accessibility",
     "/terms",
   ];
-  for (const route of noindexRoutes) {
+  for (const route of routes) {
     const html = await htmlFor(route);
     assert.match(html, /<h1[ >]/i, `${route} should have one primary heading`);
-    assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
-  }
-  for (const route of staticIndexablePaths.filter((path) => path !== "/")) {
-    const html = await htmlFor(route);
-    assert.match(html, /<h1[ >]/i, `${route} should have one primary heading`);
-    assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
+    const pathname = route.split("?")[0];
+    const indexable = staticIndexingEnabled && pathname !== "/search" && (fullContentIndexingEnabled || coreStaticIndexablePaths.includes(pathname));
+    assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${indexable ? "index, follow" : "noindex, follow"}`, "i"));
   }
 });
 
@@ -460,7 +464,7 @@ test("location pages use their own canonical and social URL", async () => {
   assert.doesNotMatch(html, /property="og:url" content="https:\/\/ramenscout\.ca"\s*\/>/i);
 });
 
-test("robots and sitemap expose only the staged editorial inventory", async () => {
+test("robots and sitemap expose the intended canonical inventory", async () => {
   const robotsResponse = await render("/robots.txt");
   assert.equal(robotsResponse.status, 200);
   const robots = await robotsResponse.text();
@@ -474,9 +478,18 @@ test("robots and sitemap expose only the staged editorial inventory", async () =
     assert.doesNotMatch(robots, /^Disallow:\s*\/\s*$/im);
     assert.match(robots, /Sitemap: https:\/\/ramenscout\.ca\/sitemap\.xml/i);
     const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
-    const expectedUrls = staticIndexablePaths.map((path) => `https://ramenscout.ca${path}`).sort();
+    const expectedPaths = fullContentIndexingEnabled ? [
+      ...allStaticContentPaths,
+      ...summary.provinces.map((province) => `/locations/${province.slug}`),
+      ...summary.provinces.flatMap((province) => province.cities.map((city) => `/locations/${province.slug}/${city.slug}`)),
+      ...["tonkotsu", "shoyu", "miso", "tsukemen"].map((style) => `/styles/${style}`),
+      ...["late-night", "reservations", "vegan", "house-made-noodles"].map((feature) => `/features/${feature}`),
+      ...restaurants.map((restaurant) => restaurant.canonicalPath),
+    ] : coreStaticIndexablePaths;
+    const expectedUrls = expectedPaths.map((path) => `https://ramenscout.ca${path}`).sort();
     assert.deepEqual(urls, expectedUrls);
-    assert.doesNotMatch(sitemap, /\/restaurants\/|\/locations\/(?:ab|bc|mb|nb|nl|ns|on|pe|qc|sk|yt)(?:<|\/)|\/styles\/|\/features\/|\/search/i);
+    assert.doesNotMatch(sitemap, /\/search(?:<|\?|\/)/i);
+    if (fullContentIndexingEnabled) assert.equal(urls.length, 546, "every canonical content route except internal search must be submitted");
   } else {
     assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
     assert.doesNotMatch(sitemap, /<url>/);
@@ -489,6 +502,7 @@ test("unknown paths return a true 404", async () => {
   const html = await response.text();
   assert.match(html, /This bowl is not on the menu/i);
   assert.match(html, /<title>Page not found \| Ramen Scout Canada<\/title>/i);
+  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex(?:, follow)?"/i);
   assert.doesNotMatch(html, /rel="canonical"/i);
   assert.doesNotMatch(html, /property="og:url"/i);
 });
