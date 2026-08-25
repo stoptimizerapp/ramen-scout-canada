@@ -76,8 +76,6 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
 .brand-image { width:44px;height:44px;display:block; }
 .skip-link { position:fixed;z-index:1000;left:16px;top:12px;padding:11px 15px;background:var(--ink);color:#fff;border-radius:8px;transform:translateY(-180%);transition:transform .15s; }
 .skip-link:focus { transform:translateY(0); }
-.preview-notice { min-height:38px;padding:8px 20px;display:flex;align-items:center;justify-content:center;gap:10px;color:#fff;background:var(--green);font-style:normal;font-size:12px;line-height:1.35;text-align:center; }
-.preview-notice strong { color:var(--mustard);text-transform:uppercase;letter-spacing:.09em;font-size:10px; }
 :focus-visible { outline:3px solid #1677c8;outline-offset:3px; }
 .page-shell,.listing-shell { max-width:1240px;margin:0 auto;padding:0 28px 100px; }
 .breadcrumbs { padding:18px 0 5px;color:var(--muted);font-size:12px; }
@@ -173,7 +171,7 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
   .prose-content { margin-left:0; }.section-heading { align-items:flex-start;flex-direction:column; }
 }
 @media (max-width:480px) {
-  .preview-notice { align-items:flex-start;flex-direction:column;gap:2px;text-align:left; }.nearby-finder>button{width:100%;justify-content:center}.nearby-finder>p{display:block;margin:8px 0 0}.nearby-matches{grid-template-columns:1fr}.location-controls{grid-template-columns:1fr}.listing-actions { grid-template-columns:1fr 1fr; }.verification-strip{grid-template-columns:1fr}.verification-strip>div,.verification-strip>div:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.style-counts{grid-template-columns:1fr}.site-footer{grid-template-columns:1fr}.site-footer>div:nth-of-type(4){grid-column:auto}.metric-row strong{font-size:28px}.filter-options{display:grid;grid-template-columns:repeat(2,1fr)}.filter-options span{border-radius:8px}
+  .nearby-finder>button{width:100%;justify-content:center}.nearby-finder>p{display:block;margin:8px 0 0}.nearby-matches{grid-template-columns:1fr}.location-controls{grid-template-columns:1fr}.listing-actions { grid-template-columns:1fr 1fr; }.verification-strip{grid-template-columns:1fr}.verification-strip>div,.verification-strip>div:first-child{padding:12px 0;border-right:0;border-bottom:1px solid var(--line)}.style-counts{grid-template-columns:1fr}.site-footer{grid-template-columns:1fr}.site-footer>div:nth-of-type(4){grid-column:auto}.metric-row strong{font-size:28px}.filter-options{display:grid;grid-template-columns:repeat(2,1fr)}.filter-options span{border-radius:8px}
 }
 
 @media (forced-colors:active) { .fact-badge,.button,.search-controls,.restaurant-card,.province-card { border:1px solid CanvasText; }.badge-positive::before { forced-color-adjust:none; } }

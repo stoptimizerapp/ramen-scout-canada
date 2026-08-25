@@ -298,7 +298,7 @@ test("search renders a bounded useful first page and keeps query filters noindex
   assert.doesNotMatch(html, /Requesting your location|Sorted by distance/i);
 });
 
-test("homepage renders useful discovery content with global preview safeguards", async () => {
+test("homepage renders useful discovery content with global indexing safeguards", async () => {
   const [html, heroAvif, heroJpeg] = await Promise.all([
     htmlFor("/"),
     readFile(new URL("public/images/ramen-scout-hero.avif", siteRoot)),
@@ -311,7 +311,7 @@ test("homepage renders useful discovery content with global preview safeguards",
   assert.match(html, new RegExp(`>${summary.restaurantCount}<\\/strong>`));
   assert.match(html, new RegExp(`>${summary.cityCount}<\\/strong>|${summary.cityCount} Canadian cities`));
   assert.match(html, /aria-label="Ramen Scout home"/);
-  assert.match(html, /Research preview/);
+  assert.doesNotMatch(html, /Research preview|Preview status|Listings remain noindexed/i);
   assert.match(html, /Use my location/i);
   assert.match(html, /coordinates stay in this page/i);
   assert.match(html, /srcSet="\/images\/ramen-scout-hero\.avif"/i);
