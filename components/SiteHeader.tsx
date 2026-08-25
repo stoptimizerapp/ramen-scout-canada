@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { Logo } from "./Logo";
 
 export function SiteHeader() {

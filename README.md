@@ -42,6 +42,10 @@ The default build is a research preview:
 
 Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the publication gates pass and the custom domain, monitored contact addresses, final human review, and corrections workflow are operational. The build-time gate filters indexable output to hash-matched approvals and fails closed unless at least 50 approved restaurants span 15 cities and five provinces.
 
+## GitHub Pages
+
+`npm run build:pages` creates a complete static artifact in `pages-out/`. The GitHub Actions workflow deploys that artifact, including every restaurant, city, province, style, feature and policy route, to `ramenscout.ca`. DNS remains hosted at the registrar; the apex and `www` records point to GitHub Pages.
+
 ## Environment
 
 ```bash

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { ProsePage } from "@/components/ProsePage";
 import { buildPageMetadata } from "@/lib/site";
 export const metadata: Metadata = buildPageMetadata({ title: "How Ramen Scout verifies restaurant information", description: "Our methodology for menu verification, ramen styles, prices, vegan and halal claims, noodles, hours and reservations.", path: "/methodology" });

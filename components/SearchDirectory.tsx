@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { formatDistance, rankByDistance, rankByDistanceWithFallback, type Coordinates } from "@/lib/geo";
 import { createRetryableLoader } from "@/lib/retryable-loader";
 import {
@@ -123,6 +123,7 @@ export function SearchDirectory({
       setFilters(featuresFromUrl());
       setLimit(PAGE_SIZE);
     }
+    restoreUrlState();
     window.addEventListener("popstate", restoreUrlState);
     return () => window.removeEventListener("popstate", restoreUrlState);
   }, []);

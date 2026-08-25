@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { summary } from "@/lib/directory";
 import { buildPageMetadata } from "@/lib/site";

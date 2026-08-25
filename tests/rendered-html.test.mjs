@@ -23,6 +23,7 @@ const rendererContractPaths = [
   "components/SiteHeader.tsx",
   "components/SiteFooter.tsx",
   "components/Logo.tsx",
+  "components/SiteLink.tsx",
   "lib/directory.ts",
   "lib/format.ts",
   "lib/site.ts",

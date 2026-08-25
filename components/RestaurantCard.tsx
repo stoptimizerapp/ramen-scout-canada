@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { formatDate, formatPriceRange } from "@/lib/format";
 import type { Restaurant } from "@/lib/types";
 import { FactBadge } from "./FactBadge";

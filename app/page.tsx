@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteLink as Link } from "@/components/SiteLink";
 import { NearbyFinder } from "@/components/NearbyFinder";
 import { RestaurantList } from "@/components/RestaurantList";
 import { directoryRestaurants, summary } from "@/lib/directory";
