@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 import { directoryRestaurants, featureDefinitions, getProvinceRestaurants, isCityIndexable, isRestaurantIndexable, restaurantsForFeature, restaurantsForStyle, styleDefinitions, summary, type FeatureSlug, type StyleSlug } from "@/lib/directory";
-import { absoluteUrl, INDEXING_ENABLED, STATIC_INDEXABLE_PATHS } from "@/lib/site";
+import { absoluteUrl, STATIC_INDEXABLE_PATHS, STATIC_INDEXING_ENABLED } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  if (!INDEXING_ENABLED) return [];
+  if (!STATIC_INDEXING_ENABLED) return [];
   const changed = new Date(summary.generatedAt);
   const staticPages = STATIC_INDEXABLE_PATHS.map((path) => ({ url: absoluteUrl(path), lastModified: changed, changeFrequency: path === "/" ? "weekly" as const : "monthly" as const, priority: path === "/" ? 1 : path === "/locations" ? .8 : .5 }));
   const restaurantPages = directoryRestaurants.filter(isRestaurantIndexable).map((restaurant) => ({ url: absoluteUrl(restaurant.canonicalPath), lastModified: new Date(restaurant.refreshedAt), changeFrequency: "monthly" as const, priority: .7 }));

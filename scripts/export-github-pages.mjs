@@ -6,6 +6,14 @@ const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."
 const clientRoot = path.join(siteRoot, "dist", "client");
 const outputRoot = path.join(siteRoot, "pages-out");
 const canonicalOrigin = "https://ramenscout.ca";
+const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
+const staticIndexableRoutes = new Set([
+  "/",
+  "/locations",
+  "/about",
+  "/methodology",
+  "/editorial-standards",
+]);
 
 const [restaurants, summary] = await Promise.all([
   fs.readFile(path.join(siteRoot, "data", "restaurants.json"), "utf8").then(JSON.parse),
@@ -65,7 +73,8 @@ const renderWorkers = Array.from({ length: Math.min(12, routeList.length) }, asy
     const response = await render(route);
     const html = await response.text();
     if (!/^<!DOCTYPE html>/i.test(html)) throw new Error(`${route} did not return a complete HTML document`);
-    if (!html.includes('name="robots" content="noindex, follow"')) throw new Error(`${route} lost the preview noindex safeguard`);
+    const expectedRobots = staticIndexingEnabled && staticIndexableRoutes.has(route) ? "index, follow" : "noindex, follow";
+    if (!html.includes(`name="robots" content="${expectedRobots}"`)) throw new Error(`${route} has an unexpected robots directive; expected ${expectedRobots}`);
     if (!html.includes(`href="${canonicalOrigin}${route === "/" ? "" : route}"`)) throw new Error(`${route} has an unexpected canonical URL`);
     const destination = routeFile(route);
     await fs.mkdir(path.dirname(destination), { recursive: true });
@@ -99,6 +108,17 @@ await fs.writeFile(path.join(outputRoot, ".nojekyll"), "");
 await fs.writeFile(path.join(outputRoot, "CNAME"), "ramenscout.ca\n");
 
 const robots = await fs.readFile(path.join(outputRoot, "robots.txt"), "utf8");
-if (!/Disallow:\s*\//i.test(robots)) throw new Error("robots.txt must remain fail-closed before editorial launch approval");
+const sitemapXml = await fs.readFile(path.join(outputRoot, "sitemap.xml"), "utf8");
+if (staticIndexingEnabled) {
+  if (!/^Allow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must allow crawling for Google to see page-level noindex directives");
+  if (/^Disallow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must not block the entire staged site");
+  if (!robots.includes(`${canonicalOrigin}/sitemap.xml`)) throw new Error("robots.txt must advertise the canonical sitemap");
+  const sitemapUrls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
+  const expectedUrls = [...staticIndexableRoutes].map((route) => `${canonicalOrigin}${route}`).sort();
+  if (JSON.stringify(sitemapUrls) !== JSON.stringify(expectedUrls)) throw new Error(`sitemap.xml contains an unsafe staged inventory: ${sitemapUrls.join(", ")}`);
+} else {
+  if (!/^Disallow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must remain fail-closed when staged indexing is disabled");
+  if (/<url>/i.test(sitemapXml)) throw new Error("sitemap.xml must remain empty when staged indexing is disabled");
+}
 
 console.log(`Exported ${routeList.length} static HTML routes for GitHub Pages.`);

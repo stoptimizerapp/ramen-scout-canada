@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { absoluteUrl, INDEXING_ENABLED } from "@/lib/site";
+import { absoluteUrl, STATIC_INDEXING_ENABLED } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
-  if (!INDEXING_ENABLED) return { rules: { userAgent: "*", disallow: "/" } };
+  if (!STATIC_INDEXING_ENABLED) return { rules: { userAgent: "*", disallow: "/" } };
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow: ["/search", "/*?*sort=", "/*?*filter=", "/*?*q="] },

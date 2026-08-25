@@ -32,6 +32,8 @@ const rendererContractSources = await Promise.all(rendererContractPaths.map(asyn
   path: relativePath,
   source: await readFile(new URL(relativePath, siteRoot), "utf8"),
 })));
+const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
+const staticIndexablePaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards"];
 
 function expectedRendererHash(siteUrl, sourceOverrides = {}) {
   const canonicalSite = new URL(siteUrl);
@@ -298,14 +300,14 @@ test("search renders a bounded useful first page and keeps query filters noindex
   assert.doesNotMatch(html, /Requesting your location|Sorted by distance/i);
 });
 
-test("homepage renders useful discovery content with global indexing safeguards", async () => {
+test("homepage renders useful discovery content with staged indexing safeguards", async () => {
   const [html, heroAvif, heroJpeg] = await Promise.all([
     htmlFor("/"),
     readFile(new URL("public/images/ramen-scout-hero.avif", siteRoot)),
     readFile(new URL("public/images/ramen-scout-hero.jpg", siteRoot)),
   ]);
   assert.match(html, /<title>Find ramen near you across Canada \| Ramen Scout Canada<\/title>/i);
-  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
+  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
   assert.match(html, /<link[^>]*rel="canonical"[^>]*href="https:\/\/ramenscout\.ca"/i);
   assert.match(html, /<h1>Find ramen near you—without the guesswork\.<\/h1>/i);
   assert.match(html, new RegExp(`>${summary.restaurantCount}<\\/strong>`));
@@ -426,26 +428,27 @@ test("overnight hours render as next-day service and remain schema-consistent", 
 });
 
 test("representative location, style, feature and policy routes render", async () => {
-  const routes = [
+  const noindexRoutes = [
     "/search?q=miso",
-    "/locations",
     "/locations/on",
     "/locations/on/toronto",
     "/locations/yt/whitehorse",
     "/styles/miso",
     "/features/late-night",
-    "/about",
-    "/methodology",
-    "/editorial-standards",
     "/corrections",
     "/privacy",
     "/accessibility",
     "/terms",
   ];
-  for (const route of routes) {
+  for (const route of noindexRoutes) {
     const html = await htmlFor(route);
     assert.match(html, /<h1[ >]/i, `${route} should have one primary heading`);
     assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
+  }
+  for (const route of staticIndexablePaths.filter((path) => path !== "/")) {
+    const html = await htmlFor(route);
+    assert.match(html, /<h1[ >]/i, `${route} should have one primary heading`);
+    assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
   }
 });
 
@@ -457,16 +460,27 @@ test("location pages use their own canonical and social URL", async () => {
   assert.doesNotMatch(html, /property="og:url" content="https:\/\/ramenscout\.ca"\s*\/>/i);
 });
 
-test("preview robots and sitemap expose no crawlable inventory", async () => {
+test("robots and sitemap expose only the staged editorial inventory", async () => {
   const robotsResponse = await render("/robots.txt");
   assert.equal(robotsResponse.status, 200);
-  assert.match(await robotsResponse.text(), /User-Agent: \*\s+Disallow: \//i);
+  const robots = await robotsResponse.text();
 
   const sitemapResponse = await render("/sitemap.xml");
   assert.equal(sitemapResponse.status, 200);
   const sitemap = await sitemapResponse.text();
   assert.match(sitemap, /<urlset\b/);
-  assert.doesNotMatch(sitemap, /<url>/);
+  if (staticIndexingEnabled) {
+    assert.match(robots, /^Allow:\s*\/\s*$/im);
+    assert.doesNotMatch(robots, /^Disallow:\s*\/\s*$/im);
+    assert.match(robots, /Sitemap: https:\/\/ramenscout\.ca\/sitemap\.xml/i);
+    const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
+    const expectedUrls = staticIndexablePaths.map((path) => `https://ramenscout.ca${path}`).sort();
+    assert.deepEqual(urls, expectedUrls);
+    assert.doesNotMatch(sitemap, /\/restaurants\/|\/locations\/(?:ab|bc|mb|nb|nl|ns|on|pe|qc|sk|yt)(?:<|\/)|\/styles\/|\/features\/|\/search/i);
+  } else {
+    assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
+    assert.doesNotMatch(sitemap, /<url>/);
+  }
 });
 
 test("unknown paths return a true 404", async () => {

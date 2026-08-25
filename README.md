@@ -32,15 +32,9 @@ npm test
 
 ## Publication gate
 
-The default build is a research preview:
+The GitHub Pages release uses a staged editorial launch. `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true` makes only the homepage, national locations page, About, Methodology and Editorial Standards indexable. It also permits crawling so search engines can read the `noindex` directive on every unreviewed restaurant, city, province, style, feature, search, support and policy page. The sitemap contains only those five substantive static pages.
 
-- every page is `noindex`;
-- `robots.txt` disallows crawling;
-- the sitemap is empty;
-- no advertising or third-party rating code is loaded;
-- unlicensed restaurant media is excluded.
-
-Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the publication gates pass and the custom domain, monitored contact addresses, final human review, and corrections workflow are operational. The build-time gate filters indexable output to hash-matched approvals and fails closed unless at least 50 approved restaurants span 15 cities and five provinces.
+Restaurant publication remains independently fail-closed. Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the listing gates pass and the monitored contacts, human review and corrections workflow are operational. The build-time gate filters indexable directory output to hash-matched approvals and aborts unless at least 50 approved restaurants span 15 cities and five provinces. Advertising and third-party rating code remain disabled, and unlicensed restaurant media is excluded.
 
 ## GitHub Pages
 
@@ -50,7 +44,8 @@ Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the publication gates pass an
 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://ramenscout.ca
+NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true
 NEXT_PUBLIC_ALLOW_INDEXING=false
 ```
 
-`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Keep indexing disabled on preview deployments.
+`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=false` on private previews. Keep directory indexing disabled until the approval registry and national launch gate pass.

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const SITE_NAME = "Ramen Scout Canada";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://ramenscout.ca").replace(/\/$/, "");
+export const STATIC_INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
 export const INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 export const PUBLISHER = {
   name: "Nocturnal Devs",
@@ -25,7 +26,7 @@ export function absoluteUrl(path = "/") {
 }
 
 export function pageRobots(eligible = true): Metadata["robots"] {
-  const index = INDEXING_ENABLED && eligible;
+  const index = STATIC_INDEXING_ENABLED && eligible;
   return { index, follow: true, googleBot: { index, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } };
 }
 
@@ -49,9 +50,4 @@ export const STATIC_INDEXABLE_PATHS = [
   "/about",
   "/methodology",
   "/editorial-standards",
-  "/corrections",
-  "/contact",
-  "/privacy",
-  "/accessibility",
-  "/terms",
 ];
