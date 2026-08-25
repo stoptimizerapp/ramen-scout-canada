@@ -12,6 +12,7 @@ const restaurants = JSON.parse(await readFile(new URL("data/restaurants.json", s
 const summary = JSON.parse(await readFile(new URL("data/directory-summary.json", siteRoot), "utf8"));
 const searchIndex = JSON.parse(await readFile(new URL("public/data/search-index.json", siteRoot), "utf8"));
 const curatedSource = JSON.parse(await readFile(new URL("data/curated-additions.source.json", siteRoot), "utf8"));
+const indexNowKey = "07b7924f1ae8950c2458c04eb4ed55ffcf06ec010530303232a04858611a1ae8";
 const rendererContractPaths = [
   "app/restaurants/[province]/[city]/[slug]/page.tsx",
   "app/layout.tsx",
@@ -145,6 +146,12 @@ test("generated directory data is complete, unique and route-safe", () => {
     assert.ok(paths.has(record.path), `search record ${record.id} must resolve to a detail route`);
     assert.ok(Number.isFinite(record.latitude) && Number.isFinite(record.longitude), `search record ${record.id} must have usable coordinates`);
   }
+});
+
+test("IndexNow ownership uses one valid root key file", async () => {
+  const content = await readFile(new URL(`public/${indexNowKey}.txt`, siteRoot), "utf8");
+  assert.equal(content.trim(), indexNowKey);
+  assert.match(indexNowKey, /^[A-Za-z0-9-]{8,128}$/);
 });
 
 test("publication renderer hashes bind the exact listing source and canonical origin", () => {

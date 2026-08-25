@@ -55,6 +55,14 @@ if (routes.size !== 1 + 10 + 4 + 4 + summary.provinces.length + summary.cityCoun
 await fs.rm(outputRoot, { recursive: true, force: true });
 await fs.cp(clientRoot, outputRoot, { recursive: true });
 
+const exportedIndexNowKeys = (await fs.readdir(outputRoot)).filter((name) => /^[A-Za-z0-9-]{8,128}\.txt$/.test(name));
+const validExportedIndexNowKeys = [];
+for (const name of exportedIndexNowKeys) {
+  const key = name.slice(0, -4);
+  if ((await fs.readFile(path.join(outputRoot, name), "utf8")).trim() === key) validExportedIndexNowKeys.push(name);
+}
+if (validExportedIndexNowKeys.length !== 1) throw new Error(`Expected exactly one exported IndexNow key, found ${validExportedIndexNowKeys.length}`);
+
 const worker = (await import(new URL("../dist/server/index.js", import.meta.url))).default;
 const executionContext = { waitUntil() {}, passThroughOnException() {} };
 const environment = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };

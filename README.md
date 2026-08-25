@@ -50,3 +50,7 @@ NEXT_PUBLIC_ALLOW_INDEXING=false
 ```
 
 `NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set both indexing flags to `false` on private previews. `NEXT_PUBLIC_ALLOW_INDEXING` remains the separate approval-gated publication cohort switch and stays disabled until the approval registry and national launch gate pass.
+
+## Search-engine discovery
+
+The canonical sitemap is advertised in `robots.txt` and submitted to Google and Bing webmaster tools. A root IndexNow ownership key and `npm run search:submit` notify all participating IndexNow engines about every canonical sitemap URL; the GitHub Pages workflow repeats that notification after successful deployments.

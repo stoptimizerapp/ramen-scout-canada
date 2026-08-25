@@ -59,3 +59,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Check out source for search notification
+        uses: actions/checkout@v4
+
+      - name: Notify IndexNow participants
+        run: node scripts/submit-indexnow.mjs
