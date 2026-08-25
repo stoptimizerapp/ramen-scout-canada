@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RestaurantList } from "@/components/RestaurantList";
-import { isRestaurantIndexable, restaurantsForStyle, styleDefinitions, type StyleSlug } from "@/lib/directory";
-import { buildPageMetadata, FULL_CONTENT_INDEXING_ENABLED } from "@/lib/site";
+import { isFacetSearchReady, restaurantsForStyle, styleDefinitions, type StyleSlug } from "@/lib/directory";
+import { buildPageMetadata } from "@/lib/site";
 
 const styleSlugs = Object.keys(styleDefinitions) as StyleSlug[];
 export function generateStaticParams() { return styleSlugs.map((style) => ({ style })); }
@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ style: st
   if (!styleSlugs.includes(style as StyleSlug)) return {};
   const definition = styleDefinitions[style as StyleSlug];
   const entries = restaurantsForStyle(style as StyleSlug);
-  const eligible = entries.filter(isRestaurantIndexable).length >= 8;
-  return buildPageMetadata({ title: `${definition.label} in Canada`, description: `Browse ${entries.length} Canadian restaurants with explicit ${style} menu evidence, verification dates and practical visit details.`, path: `/styles/${style}`, indexable: FULL_CONTENT_INDEXING_ENABLED || eligible });
+  return buildPageMetadata({ title: `${definition.label} in Canada`, description: `Browse ${entries.length} Canadian restaurants with explicit ${style} menu evidence, verification dates and practical visit details.`, path: `/styles/${style}`, indexable: isFacetSearchReady(entries) });
 }
 
 export default async function StylePage({ params }: { params: Promise<{ style: string }> }) {

@@ -32,7 +32,7 @@ npm test
 
 ## Publication gate
 
-The GitHub Pages release permits crawling with `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true`. `NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING=true` makes every canonical restaurant, city, province, style, feature, editorial, support and policy page indexable and includes it in the sitemap. Internal search and query/filter variants remain excluded because they duplicate canonical directory inventory.
+The GitHub Pages release permits crawling with `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true`, but indexing is deliberately quality-gated. Editorial, support and policy pages are indexable. A restaurant enters the sitemap only when it has substantial unique publisher content, primary or substantial ramen relevance, a current official menu, fresh source evidence, at least six verified decision fields and a quality score of 90 or better. City, province, style and feature hubs must also clear minimum useful-inventory thresholds. Other canonical pages remain accessible with `noindex,follow`; internal search and query/filter variants are always excluded because they duplicate canonical inventory.
 
 The approval-gated advertising cohort remains independently fail-closed. Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the listing gates pass and the monitored contacts, human review and corrections workflow are operational. That build-time gate filters the approved cohort to hash-matched records and aborts unless at least 50 approved restaurants span 15 cities and five provinces. Advertising and third-party rating code remain disabled, and unlicensed restaurant media is excluded.
 
@@ -45,11 +45,10 @@ The approval-gated advertising cohort remains independently fail-closed. Do not 
 ```bash
 NEXT_PUBLIC_SITE_URL=https://ramenscout.ca
 NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true
-NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING=true
 NEXT_PUBLIC_ALLOW_INDEXING=false
 ```
 
-`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set both indexing flags to `false` on private previews. `NEXT_PUBLIC_ALLOW_INDEXING` remains the separate approval-gated publication cohort switch and stays disabled until the approval registry and national launch gate pass.
+`NEXT_PUBLIC_SITE_URL` controls canonical and social URLs. Set `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=false` on private previews. `NEXT_PUBLIC_ALLOW_INDEXING` remains the separate approval-gated advertising cohort switch and stays disabled until the approval registry and national launch gate pass.
 
 ## Search-engine discovery
 

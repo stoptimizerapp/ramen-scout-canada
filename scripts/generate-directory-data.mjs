@@ -25,6 +25,7 @@ const rendererContractPaths = [
   "components/SiteLink.tsx",
   "lib/directory.ts",
   "lib/format.ts",
+  "lib/search-readiness.js",
   "lib/site.ts",
 ];
 const outputPath = path.join(siteRoot, "data/restaurants.json");

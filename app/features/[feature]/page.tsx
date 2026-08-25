@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { RestaurantList } from "@/components/RestaurantList";
-import { featureDefinitions, isRestaurantIndexable, restaurantsForFeature, type FeatureSlug } from "@/lib/directory";
-import { buildPageMetadata, FULL_CONTENT_INDEXING_ENABLED } from "@/lib/site";
+import { featureDefinitions, isFacetSearchReady, restaurantsForFeature, type FeatureSlug } from "@/lib/directory";
+import { buildPageMetadata } from "@/lib/site";
 
 const featureSlugs = Object.keys(featureDefinitions) as FeatureSlug[];
 export function generateStaticParams() { return featureSlugs.map((feature) => ({ feature })); }
@@ -13,8 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ feature: 
   if (!featureSlugs.includes(feature as FeatureSlug)) return {};
   const definition = featureDefinitions[feature as FeatureSlug];
   const entries = restaurantsForFeature(feature as FeatureSlug);
-  const eligible = entries.filter(isRestaurantIndexable).length >= 8;
-  return buildPageMetadata({ title: `${definition.label} in Canada`, description: `${definition.intro} Browse ${entries.length} source-backed Canadian restaurant matches.`, path: `/features/${feature}`, indexable: FULL_CONTENT_INDEXING_ENABLED || eligible });
+  return buildPageMetadata({ title: `${definition.label} in Canada`, description: `${definition.intro} Browse ${entries.length} source-backed Canadian restaurant matches.`, path: `/features/${feature}`, indexable: isFacetSearchReady(entries) });
 }
 
 export default async function FeaturePage({ params }: { params: Promise<{ feature: string }> }) {

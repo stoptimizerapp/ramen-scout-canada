@@ -6,6 +6,13 @@ import test from "node:test";
 import { distanceKm, formatDistance, rankByDistance } from "../lib/geo.ts";
 import { createRetryableLoader } from "../lib/retryable-loader.ts";
 import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
+import {
+  isCitySearchReady,
+  isFacetSearchReady,
+  isProvinceSearchReady,
+  isRestaurantSearchReady,
+  publisherContentWordCount,
+} from "../lib/search-readiness.js";
 
 const siteRoot = new URL("../", import.meta.url);
 const restaurants = JSON.parse(await readFile(new URL("data/restaurants.json", siteRoot), "utf8"));
@@ -27,6 +34,7 @@ const rendererContractPaths = [
   "components/SiteLink.tsx",
   "lib/directory.ts",
   "lib/format.ts",
+  "lib/search-readiness.js",
   "lib/site.ts",
 ];
 const rendererContractSources = await Promise.all(rendererContractPaths.map(async (relativePath) => ({
@@ -34,9 +42,35 @@ const rendererContractSources = await Promise.all(rendererContractPaths.map(asyn
   source: await readFile(new URL(relativePath, siteRoot), "utf8"),
 })));
 const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-const fullContentIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING === "true";
-const coreStaticIndexablePaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards"];
-const allStaticContentPaths = [...coreStaticIndexablePaths, "/corrections", "/contact", "/privacy", "/accessibility", "/terms"];
+const allStaticContentPaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards", "/corrections", "/contact", "/privacy", "/accessibility", "/terms"];
+const styleSlugs = ["tonkotsu", "shoyu", "miso", "tsukemen"];
+const featureMatchers = {
+  "late-night": (restaurant) => restaurant.hours.lateNightStatus === "yes",
+  reservations: (restaurant) => ["accepted", "required"].includes(restaurant.reservations.status),
+  vegan: (restaurant) => ["one_complete_bowl", "multiple_complete_bowls"].includes(restaurant.vegan.status),
+  "house-made-noodles": (restaurant) => restaurant.noodles.status === "made_on_site",
+};
+
+function expectedSearchReadyPaths() {
+  const restaurantPaths = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant)).map((restaurant) => restaurant.canonicalPath);
+  const cityPaths = summary.provinces.flatMap((province) => province.cities.flatMap((city) => {
+    const entries = restaurants.filter((restaurant) => restaurant.provinceSlug === province.slug && restaurant.citySlug === city.slug);
+    return isCitySearchReady(entries) ? [`/locations/${province.slug}/${city.slug}`] : [];
+  }));
+  const provincePaths = summary.provinces.flatMap((province) => {
+    const entries = restaurants.filter((restaurant) => restaurant.provinceSlug === province.slug);
+    return isProvinceSearchReady(entries) ? [`/locations/${province.slug}`] : [];
+  });
+  const stylePaths = styleSlugs.flatMap((style) => {
+    const entries = restaurants.filter((restaurant) => restaurant.taxonomy[style] === "yes");
+    return isFacetSearchReady(entries) ? [`/styles/${style}`] : [];
+  });
+  const featurePaths = Object.entries(featureMatchers).flatMap(([feature, matches]) => {
+    const entries = restaurants.filter(matches);
+    return isFacetSearchReady(entries) ? [`/features/${feature}`] : [];
+  });
+  return { restaurantPaths, cityPaths, provincePaths, stylePaths, featurePaths, all: [...allStaticContentPaths, ...provincePaths, ...cityPaths, ...stylePaths, ...featurePaths, ...restaurantPaths] };
+}
 
 function expectedRendererHash(siteUrl, sourceOverrides = {}) {
   const canonicalSite = new URL(siteUrl);
@@ -364,7 +398,8 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
 
   const escapedH1 = restaurant.seo.h1.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   assert.match(html, new RegExp(`<h1>${escapedH1}<\\/h1>`));
-  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled && fullContentIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
+  assert.equal(isRestaurantSearchReady(restaurant), false, "the weak-menu fixture must remain excluded from search indexing");
+  assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
   assert.match(html, new RegExp(`<link[^>]*rel="canonical"[^>]*href="https://ramenscout\\.ca${restaurant.canonicalPath}"`, "i"));
   assert.equal(extractTitle(html), restaurant.seo.title);
   assert.match(html, /Ramen style not confirmed|Not confirmed/);
@@ -377,6 +412,7 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
   assert.equal(restaurantSchema.name, restaurant.name);
   assert.equal(restaurantSchema.address.addressLocality, restaurant.location.city);
   assert.equal(restaurantSchema.url, `https://ramenscout.ca${restaurant.canonicalPath}`);
+  assert.equal(restaurantSchema.servesCuisine, undefined, "uncertain ramen relevance must not be asserted in schema");
   assert.doesNotMatch(JSON.stringify(schema), /AggregateRating|reviewCount|ratingValue|"review"/i);
   assert.doesNotMatch(html, /quality_score|gate_human_review|staging_media|adsbygoogle/i);
 });
@@ -384,6 +420,7 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
 test("a curated discovery renders its specific menu and source-backed details", async () => {
   const restaurant = restaurants.find((entry) => entry.name === "Jinsei Ramen");
   assert.ok(restaurant, "newly discovered Jinsei Ramen must exist");
+  assert.equal(isRestaurantSearchReady(restaurant), true, "the complete, source-backed fixture should be search-ready");
   const html = await htmlFor(restaurant.canonicalPath);
   assert.match(html, /Jinsei Ramen on Laurier Avenue in Ottawa/i);
   assert.match(html, /Premium Miso Ramen/i);
@@ -394,7 +431,7 @@ test("a curated discovery renders its specific menu and source-backed details", 
   assert.match(html, /href="#source-E2"/i);
   assert.match(html, /id="source-E2"/i);
   assert.match(html, /Where these details came from/i);
-  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled && fullContentIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
+  assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${staticIndexingEnabled ? "index, follow" : "noindex, follow"}`, "i"));
   assert.doesNotMatch(html, /AggregateRating|reviewCount|ratingValue|adsbygoogle/i);
 });
 
@@ -445,6 +482,7 @@ test("representative location, style, feature and policy routes render", async (
     "/locations/yt/whitehorse",
     "/styles/miso",
     "/features/late-night",
+    "/features/house-made-noodles",
     "/about",
     "/methodology",
     "/editorial-standards",
@@ -458,7 +496,7 @@ test("representative location, style, feature and policy routes render", async (
     const html = await htmlFor(route);
     assert.match(html, /<h1[ >]/i, `${route} should have one primary heading`);
     const pathname = route.split("?")[0];
-    const indexable = staticIndexingEnabled && pathname !== "/search" && (fullContentIndexingEnabled || coreStaticIndexablePaths.includes(pathname));
+    const indexable = staticIndexingEnabled && expectedSearchReadyPaths().all.includes(pathname);
     assert.match(html, new RegExp(`<meta[^>]*name="robots"[^>]*content="${indexable ? "index, follow" : "noindex, follow"}`, "i"));
   }
 });
@@ -485,22 +523,57 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
     assert.doesNotMatch(robots, /^Disallow:\s*\/\s*$/im);
     assert.match(robots, /Sitemap: https:\/\/ramenscout\.ca\/sitemap\.xml/i);
     const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
-    const expectedPaths = fullContentIndexingEnabled ? [
-      ...allStaticContentPaths,
-      ...summary.provinces.map((province) => `/locations/${province.slug}`),
-      ...summary.provinces.flatMap((province) => province.cities.map((city) => `/locations/${province.slug}/${city.slug}`)),
-      ...["tonkotsu", "shoyu", "miso", "tsukemen"].map((style) => `/styles/${style}`),
-      ...["late-night", "reservations", "vegan", "house-made-noodles"].map((feature) => `/features/${feature}`),
-      ...restaurants.map((restaurant) => restaurant.canonicalPath),
-    ] : coreStaticIndexablePaths;
+    const ready = expectedSearchReadyPaths();
+    const expectedPaths = ready.all;
     const expectedUrls = expectedPaths.map((path) => `https://ramenscout.ca${path}`).sort();
     assert.deepEqual(urls, expectedUrls);
     assert.doesNotMatch(sitemap, /\/search(?:<|\?|\/)/i);
-    if (fullContentIndexingEnabled) assert.equal(urls.length, 546, "every canonical content route except internal search must be submitted");
+    assert.equal(ready.restaurantPaths.length, 77);
+    assert.equal(ready.cityPaths.length, 10);
+    assert.equal(ready.provincePaths.length, 4);
+    assert.equal(ready.stylePaths.length, 4);
+    assert.deepEqual(ready.featurePaths.sort(), ["/features/late-night", "/features/reservations"]);
+    assert.equal(urls.length, 107, "only substantial, evidence-backed canonical pages should be submitted");
   } else {
     assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
     assert.doesNotMatch(sitemap, /<url>/);
   }
+});
+
+test("search-ready listings meet the anti-thin-content and originality gates", () => {
+  const ready = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant));
+  assert.equal(ready.length, 77);
+  assert.equal(restaurants.length - ready.length, 336, "weaker listings must remain noindex rather than entering the sitemap");
+
+  const shortDescriptions = new Set();
+  const editorialDescriptions = new Set();
+  for (const restaurant of ready) {
+    assert.ok(publisherContentWordCount(restaurant) >= 200, `${restaurant.name} needs at least 200 authored words`);
+    assert.ok(["primary", "substantial"].includes(restaurant.relevance.classification));
+    assert.equal(restaurant.menu.status, "verified_current");
+    assert.ok(restaurant.publication.qualityScore >= 90);
+    assert.ok(restaurant.publication.verifiedDecisionFieldCount >= 6);
+    assert.ok(!shortDescriptions.has(restaurant.content.shortDescription), `${restaurant.name} repeats a short description`);
+    assert.ok(!editorialDescriptions.has(restaurant.content.editorialDescription), `${restaurant.name} repeats an editorial description`);
+    shortDescriptions.add(restaurant.content.shortDescription);
+    editorialDescriptions.add(restaurant.content.editorialDescription);
+  }
+
+  function fiveGrams(value) {
+    const words = value.toLocaleLowerCase("en-CA").match(/[\p{L}\p{N}]+/gu) || [];
+    return new Set(Array.from({ length: Math.max(0, words.length - 4) }, (_, index) => words.slice(index, index + 5).join(" ")));
+  }
+  let maxJaccard = 0;
+  for (let left = 0; left < ready.length; left += 1) {
+    const leftGrams = fiveGrams(ready[left].content.editorialDescription);
+    for (let right = left + 1; right < ready.length; right += 1) {
+      const rightGrams = fiveGrams(ready[right].content.editorialDescription);
+      const intersection = [...leftGrams].filter((gram) => rightGrams.has(gram)).length;
+      const union = new Set([...leftGrams, ...rightGrams]).size;
+      maxJaccard = Math.max(maxJaccard, union ? intersection / union : 0);
+    }
+  }
+  assert.ok(maxJaccard < 0.15, `editorial similarity is too high: ${maxJaccard.toFixed(4)}`);
 });
 
 test("unknown paths return a true 404", async () => {

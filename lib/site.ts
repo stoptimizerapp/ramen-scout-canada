@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 export const SITE_NAME = "Ramen Scout Canada";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://ramenscout.ca").replace(/\/$/, "");
 export const STATIC_INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-export const FULL_CONTENT_INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING === "true";
 export const INDEXING_ENABLED = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 export const PUBLISHER = {
   name: "Nocturnal Devs",
@@ -45,16 +44,12 @@ export function buildPageMetadata({ title, description, path, indexable = true }
   };
 }
 
-export const CORE_STATIC_INDEXABLE_PATHS = [
+export const ALL_STATIC_CONTENT_PATHS = [
   "/",
   "/locations",
   "/about",
   "/methodology",
   "/editorial-standards",
-];
-
-export const ALL_STATIC_CONTENT_PATHS = [
-  ...CORE_STATIC_INDEXABLE_PATHS,
   "/corrections",
   "/contact",
   "/privacy",

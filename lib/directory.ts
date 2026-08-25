@@ -3,7 +3,15 @@ import summaryJson from "@/data/directory-summary.json";
 import approvalJson from "@/data/publication-approvals.json";
 import { INDEXING_ENABLED } from "./site";
 import { passesPublicationGate, passesSiteLaunchGate } from "./publication-policy.js";
+import {
+  isCitySearchReady,
+  isFacetSearchReady,
+  isProvinceSearchReady,
+  isRestaurantSearchReady,
+} from "./search-readiness.js";
 import type { DirectorySummary, Restaurant } from "./types";
+
+export { isCitySearchReady, isFacetSearchReady, isProvinceSearchReady, isRestaurantSearchReady };
 
 export const restaurants = restaurantJson as Restaurant[];
 export const summary = summaryJson as DirectorySummary;
@@ -37,12 +45,6 @@ export function getCity(provinceSlug: string, citySlug: string) {
 
 export function getProvinceRestaurants(provinceSlug: string) {
   return directoryRestaurants.filter((restaurant) => restaurant.provinceSlug === provinceSlug);
-}
-
-export function isCityIndexable(entries: Restaurant[]) {
-  const eligible = entries.filter(isRestaurantIndexable);
-  return eligible.length >= 5
-    && eligible.filter((restaurant) => restaurant.menu.status === "verified_current").length >= 3;
 }
 
 export const styleDefinitions = {

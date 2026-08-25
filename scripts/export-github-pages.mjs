@@ -1,22 +1,24 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  isCitySearchReady,
+  isFacetSearchReady,
+  isProvinceSearchReady,
+  isRestaurantSearchReady,
+} from "../lib/search-readiness.js";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const clientRoot = path.join(siteRoot, "dist", "client");
 const outputRoot = path.join(siteRoot, "pages-out");
 const canonicalOrigin = "https://ramenscout.ca";
 const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-const fullContentIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_ALL_CONTENT_INDEXING === "true";
-const coreStaticIndexableRoutes = new Set([
+const allStaticContentRoutes = new Set([
   "/",
   "/locations",
   "/about",
   "/methodology",
   "/editorial-standards",
-]);
-const allStaticContentRoutes = new Set([
-  ...coreStaticIndexableRoutes,
   "/accessibility",
   "/contact",
   "/corrections",
@@ -82,7 +84,36 @@ async function render(route, expectedStatus = 200) {
 }
 
 const routeList = [...routes].sort();
-const indexableRoutes = new Set(fullContentIndexingEnabled ? routeList.filter((route) => route !== "/search") : coreStaticIndexableRoutes);
+const styleRoutes = ["tonkotsu", "shoyu", "miso", "tsukemen"].flatMap((style) => {
+  const entries = restaurants.filter((restaurant) => restaurant.taxonomy[style] === "yes");
+  return isFacetSearchReady(entries) ? [`/styles/${style}`] : [];
+});
+const featureMatchers = {
+  "late-night": (restaurant) => restaurant.hours.lateNightStatus === "yes",
+  reservations: (restaurant) => ["accepted", "required"].includes(restaurant.reservations.status),
+  vegan: (restaurant) => ["one_complete_bowl", "multiple_complete_bowls"].includes(restaurant.vegan.status),
+  "house-made-noodles": (restaurant) => restaurant.noodles.status === "made_on_site",
+};
+const featureRoutes = Object.entries(featureMatchers).flatMap(([feature, matches]) => {
+  const entries = restaurants.filter(matches);
+  return isFacetSearchReady(entries) ? [`/features/${feature}`] : [];
+});
+const provinceRoutes = summary.provinces.flatMap((province) => {
+  const entries = restaurants.filter((restaurant) => restaurant.provinceSlug === province.slug);
+  return isProvinceSearchReady(entries) ? [`/locations/${province.slug}`] : [];
+});
+const cityRoutes = summary.provinces.flatMap((province) => province.cities.flatMap((city) => {
+  const entries = restaurants.filter((restaurant) => restaurant.provinceSlug === province.slug && restaurant.citySlug === city.slug);
+  return isCitySearchReady(entries) ? [`/locations/${province.slug}/${city.slug}`] : [];
+}));
+const indexableRoutes = new Set([
+  ...allStaticContentRoutes,
+  ...provinceRoutes,
+  ...cityRoutes,
+  ...styleRoutes,
+  ...featureRoutes,
+  ...restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant)).map((restaurant) => restaurant.canonicalPath),
+]);
 let nextRoute = 0;
 const htmlByRoute = new Map();
 const renderWorkers = Array.from({ length: Math.min(12, routeList.length) }, async () => {
@@ -134,7 +165,7 @@ if (staticIndexingEnabled) {
   const sitemapUrls = [...sitemapXml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]).sort();
   const expectedUrls = [...indexableRoutes].map((route) => `${canonicalOrigin}${route}`).sort();
   if (JSON.stringify(sitemapUrls) !== JSON.stringify(expectedUrls)) throw new Error(`sitemap.xml does not match the indexable canonical inventory: expected ${expectedUrls.length} URLs, found ${sitemapUrls.length}`);
-  if (fullContentIndexingEnabled && ![...allStaticContentRoutes].every((route) => indexableRoutes.has(route))) throw new Error("Full indexing must include every canonical static content page");
+  if (![...allStaticContentRoutes].every((route) => indexableRoutes.has(route))) throw new Error("Every canonical static content page must be included in the searchable inventory");
 } else {
   if (!/^Disallow:\s*\/\s*$/im.test(robots)) throw new Error("robots.txt must remain fail-closed when staged indexing is disabled");
   if (/<url>/i.test(sitemapXml)) throw new Error("sitemap.xml must remain empty when staged indexing is disabled");
