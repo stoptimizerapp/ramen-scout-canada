@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-25T03:57:41.444Z",
+  "generatedAt": "2026-08-25T15:46:37.323Z",
   "baseRestaurantCount": 380,
   "curatedAdditionCount": 33,
   "restaurantCount": 413,
   "provinceCount": 10,
   "cityCount": 105,
   "verifiedMenuCount": 145,
-  "pricedMenuCount": 92,
+  "pricedMenuCount": 95,
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
@@ -15,7 +15,7 @@
     "miso": 121,
     "tsukemen": 74
   },
-  "veganCompleteCount": 9,
+  "veganCompleteCount": 10,
   "verifiedHalalCount": 0,
   "houseMadeNoodleCount": 4,
   "provinces": [
@@ -30,7 +30,7 @@
           "slug": "toronto",
           "count": 71,
           "verifiedMenus": 19,
-          "pricedMenus": 14,
+          "pricedMenus": 15,
           "lateNight": 21
         },
         {
@@ -78,7 +78,7 @@
           "slug": "london",
           "count": 5,
           "verifiedMenus": 3,
-          "pricedMenus": 0,
+          "pricedMenus": 1,
           "lateNight": 1
         },
         {
@@ -814,7 +814,7 @@
           "slug": "saint-john",
           "count": 4,
           "verifiedMenus": 2,
-          "pricedMenus": 1,
+          "pricedMenus": 2,
           "lateNight": 0
         },
         {

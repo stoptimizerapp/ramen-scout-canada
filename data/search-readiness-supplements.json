@@ -1,0 +1,1616 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-25T15:43:12.399Z",
+  "crawler": "Crawl4AI",
+  "policy": "Fresh Crawl4AI menu corroboration for existing source-backed listings whose runtime facts independently recompute to at least 90 quality points and six verified decision groups.",
+  "records": [
+    {
+      "restaurantId": "ramen_ca_093dcc5255d4bd3be6dd",
+      "url": "https://sites.ambassador.ai/?s=hako",
+      "finalUrl": "https://sites.ambassador.ai/?s=hako",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "7a00946189bc217fa1af57491539c5b171e1dc42e0870a47ebeb81dd9871966d",
+      "markdownChars": 2648,
+      "corroboration": {
+        "ramenTerms": 9,
+        "priceSignals": 12,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 96,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_0b0376105a372047458a",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 91,
+      "derivedDecisionFieldCount": 7,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_180a80a37ad28bbe64c3",
+      "url": "https://menyakokoro.com/menu",
+      "finalUrl": "https://menyakokoro.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dc22bf0c171c708cd3fc0a4c595189b301f9390585e7060db079a593b9d7d394",
+      "markdownChars": 8235,
+      "corroboration": {
+        "ramenTerms": 12,
+        "priceSignals": 0,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 96,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_1b536e66069e63fb910f",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_20f331807bb0b81f84ce",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_22b7654a127fdc803348",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_2f8f8196e3117eec5b8e",
+      "url": "https://ramendanbo.com/our-menu-vancouver/",
+      "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
+      "markdownChars": 13211,
+      "corroboration": {
+        "ramenTerms": 41,
+        "priceSignals": 61,
+        "matchedItems": 10
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_32295bb473c8fef0a0c9",
+      "url": "https://www.ikkousha.ca/chickenmenu",
+      "finalUrl": "https://www.ikkousha.ca/chickenmenu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "0e64daf08226e06b77e406ee25102f0aba213dc1a5e3ac5a631a66f7de80ce4d",
+      "markdownChars": 6385,
+      "corroboration": {
+        "ramenTerms": 28,
+        "priceSignals": 11,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_3ba23fe4b57a0e311bb7",
+      "url": "https://kintonramen.com/menu/british-columbia/?soft-opening=true",
+      "finalUrl": "https://kintonramen.com/menu/british-columbia/?soft-opening=true",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "f110cf288a9375f5fa04fa24bfe6046d10e56b18eb6d00d1c3c28b6df8a576b2",
+      "markdownChars": 59428,
+      "corroboration": {
+        "ramenTerms": 132,
+        "priceSignals": 0,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_3f3a7786497f3d911270",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_43b4bce2f9fd530a2cdd",
+      "url": "https://www.exclamationfusion.com/online-ordering1",
+      "finalUrl": "https://www.exclamationfusion.com/online-ordering1",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "0f95a9f3766815e9473b3742e291498c6391b6d7fe4b003a824643426b8c1c10",
+      "markdownChars": 9209,
+      "corroboration": {
+        "ramenTerms": 9,
+        "priceSignals": 1,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_4402ce69cafa1c3cc115",
+      "url": "https://kintonramen.com/menu/alberta/",
+      "finalUrl": "https://kintonramen.com/menu/alberta/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "3a339097f5a8d6071380facd1a01985b78de492ccd382a7b74c23b17a3c2e700",
+      "markdownChars": 68030,
+      "corroboration": {
+        "ramenTerms": 178,
+        "priceSignals": 24,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_484520fca8adaa4c6e17",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 91,
+      "derivedDecisionFieldCount": 7,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_4bfecd3bd7b89bfcb2ba",
+      "url": "https://kintonramen.com/menu/alberta/",
+      "finalUrl": "https://kintonramen.com/menu/alberta/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "3a339097f5a8d6071380facd1a01985b78de492ccd382a7b74c23b17a3c2e700",
+      "markdownChars": 68030,
+      "corroboration": {
+        "ramenTerms": 178,
+        "priceSignals": 24,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_4e3ef8a7d78b95525556",
+      "url": "https://ramenxremix.com/menu",
+      "finalUrl": "https://ramenxremix.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "b807b44a601e1fe98f5c461fa2a39f51f8bda56f6199342b0d80bdeafd2c4e8b",
+      "markdownChars": 4283,
+      "corroboration": {
+        "ramenTerms": 8,
+        "priceSignals": 0,
+        "matchedItems": 2
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_56e447889b9c6b8f62ff",
+      "url": "https://www.sappororamen.ca/menu",
+      "finalUrl": "https://www.sappororamen.ca/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "af80dd7767f10f01c7adab3fb024f66d3ccdc9e00b7b2561b9951c667a6ebf20",
+      "markdownChars": 8803,
+      "corroboration": {
+        "ramenTerms": 14,
+        "priceSignals": 44,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_584a0beebf604a36911f",
+      "url": "https://ipponramen.com/new-menu/",
+      "finalUrl": "https://ipponramen.com/new-menu/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "cc2dad0487d4177c88b72f29b1c9d3c93432e741619b87281a43a2a933321df5",
+      "markdownChars": 4190,
+      "corroboration": {
+        "ramenTerms": 13,
+        "priceSignals": 36,
+        "matchedItems": 2
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_5ea1f7e81cee1838bf7b",
+      "url": "https://kintonramen.com/menu/quebec/",
+      "finalUrl": "https://kintonramen.com/menu/quebec/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "39bb19d5adb2dd9c5dbdda9f781529df4606eb88bd3e1b7e21f0cafadf8b2e17",
+      "markdownChars": 67101,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_5fb8118ab759cdc282a2",
+      "url": "https://umamikid.com/menu-category/ramen",
+      "finalUrl": "https://umamikid.com/menu-category/ramen",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "90a5d85f5f9b22d6be6a29ddd75bc3d4e56401d3503e425ea7a6b87603ccf82d",
+      "markdownChars": 7705,
+      "corroboration": {
+        "ramenTerms": 32,
+        "priceSignals": 9,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_61e99e2371a89cd6ff3b",
+      "url": "https://ramendanbo.com/our-menu-vancouver/",
+      "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
+      "markdownChars": 13211,
+      "corroboration": {
+        "ramenTerms": 41,
+        "priceSignals": 61,
+        "matchedItems": 10
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_63ea131bf211b7401c24",
+      "url": "https://kintonramen.com/menu/quebec/",
+      "finalUrl": "https://kintonramen.com/menu/quebec/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "39bb19d5adb2dd9c5dbdda9f781529df4606eb88bd3e1b7e21f0cafadf8b2e17",
+      "markdownChars": 67101,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_663e16e0d3429be199f1",
+      "url": "https://www.jinyaramenbar.com/menu/bc/amazingbrentwood/",
+      "finalUrl": "https://www.jinyaramenbar.com/menu/bc/amazingbrentwood/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "e329b21220a72984b68b8428ad012272e751efc09faec98fb559217b009ba2d5",
+      "markdownChars": 42337,
+      "corroboration": {
+        "ramenTerms": 16,
+        "priceSignals": 1,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_673f77c73329cc03339c",
+      "url": "https://www.yoramen.ca/menu",
+      "finalUrl": "https://www.yoramen.ca/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "4bcafec60a8cd0897c5a34bbdb5caef4f1736ccdefbb17f817e5dcc4b1196c58",
+      "markdownChars": 7654,
+      "corroboration": {
+        "ramenTerms": 6,
+        "priceSignals": 27,
+        "matchedItems": 2
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_681c2d840970929e1897",
+      "url": "https://machiyaramen.hiraccoon.com/menu",
+      "finalUrl": "https://machiyaramen.hiraccoon.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "3fea91bcf3a5ef00f0f0493582f2709977fa6f334ab984d3bd65525e3dcff25f",
+      "markdownChars": 7354,
+      "corroboration": {
+        "ramenTerms": 47,
+        "priceSignals": 32,
+        "matchedItems": 2
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_6857bac7a076e1dd2f1b",
+      "url": "https://kintonramen.com/menu/quebec/",
+      "finalUrl": "https://kintonramen.com/menu/quebec/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "39bb19d5adb2dd9c5dbdda9f781529df4606eb88bd3e1b7e21f0cafadf8b2e17",
+      "markdownChars": 67101,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_729cb9cf7650b49f8658",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_7a527c4d5287da88f112",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_7a7a172f52ff78b6945e",
+      "url": "https://kokoro-mazesoba.com/en/menu-en/",
+      "finalUrl": "https://kokoro-mazesoba.com/en/menu-en/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "3bc9923e86e6a5519a884aeb28d2441ea52fd1c77a47fd4ccaab575503bbe41f",
+      "markdownChars": 7978,
+      "corroboration": {
+        "ramenTerms": 81,
+        "priceSignals": 0,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_7c8c5ec0c51f36e66a34",
+      "url": "https://www.ikkousha.ca/chickenmenu",
+      "finalUrl": "https://www.ikkousha.ca/chickenmenu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "0e64daf08226e06b77e406ee25102f0aba213dc1a5e3ac5a631a66f7de80ce4d",
+      "markdownChars": 6385,
+      "corroboration": {
+        "ramenTerms": 28,
+        "priceSignals": 11,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 96,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_8135cdfb4ef4506f7c12",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_8349d2b665530eb5d50d",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_85c380deac774bb36d32",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_8a66a6c9f30ad697e77d",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_8dd8f8fe509b41e4870a",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_908aacb0eef3aa1bee9b",
+      "url": "https://rakuramen.com/ramen-menu/",
+      "finalUrl": "https://rakuramen.com/ramen-menu/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "5a59c8c4fec2ea553a898d75a0320716aaea32fa07ab62dff8359544ee455cb4",
+      "markdownChars": 2041,
+      "corroboration": {
+        "ramenTerms": 14,
+        "priceSignals": 10,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 96,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_99986ee3ecb92be65a35",
+      "url": "https://kazokuramen.ca/menu",
+      "finalUrl": "https://kazokuramen.ca/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "675aa337b8aab6533459df1a28257b2c6f82d8bba016aaee751f53cc0aef23df",
+      "markdownChars": 20621,
+      "corroboration": {
+        "ramenTerms": 12,
+        "priceSignals": 0,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_9ab6a5a88b5966bed902",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_a04407fda23f2c3e1c8c",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_a9e7418324b875f45e1a",
+      "url": "https://www.katsu-express.ca/menu",
+      "finalUrl": "https://www.katsu-express.ca/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "f83559b1aed96b51bcf7aeb00e06caa359e2210efd4ac25cc3c7eff143ec828e",
+      "markdownChars": 36343,
+      "corroboration": {
+        "ramenTerms": 15,
+        "priceSignals": 1,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_ab2f62fd6e8bce16eb62",
+      "url": "https://takumiramen.ca/menu/",
+      "finalUrl": "https://takumiramen.ca/menu/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "a8aea37490810bd13c64994d7495bea788923d8ed8a687f36d0d856ddc535986",
+      "markdownChars": 10095,
+      "corroboration": {
+        "ramenTerms": 7,
+        "priceSignals": 83,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "noodles",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_aca9bc5a28136d591501",
+      "url": "https://kintonramen.com/menu/ontario/",
+      "finalUrl": "https://kintonramen.com/menu/ontario/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "084091b8ff24c12605f021ba0f13ae557201a2920a5b336a17b195e656052d2f",
+      "markdownChars": 68387,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 27
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_adc66d9fa854183d105f",
+      "url": "https://ramendanbo.com/our-menu-vancouver/",
+      "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
+      "markdownChars": 13211,
+      "corroboration": {
+        "ramenTerms": 41,
+        "priceSignals": 61,
+        "matchedItems": 10
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_adc7edbf17eb0ebc5ce1",
+      "url": "https://sushinoodlebar.com/menu/",
+      "finalUrl": "https://sushinoodlebar.com/menu/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "65101f10560af4b5163459fa1793353185238db1ba9669197c121a21eadb0ff7",
+      "markdownChars": 27719,
+      "corroboration": {
+        "ramenTerms": 63,
+        "priceSignals": 74,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_bf71a4cffd41dd404789",
+      "url": "https://kokoro-mazesoba.com/en/menu-en/",
+      "finalUrl": "https://kokoro-mazesoba.com/en/menu-en/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "3bc9923e86e6a5519a884aeb28d2441ea52fd1c77a47fd4ccaab575503bbe41f",
+      "markdownChars": 7978,
+      "corroboration": {
+        "ramenTerms": 81,
+        "priceSignals": 0,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_c1f0d17dcff848452a3c",
+      "url": "https://kintonramen.com/menu/british-columbia/",
+      "finalUrl": "https://kintonramen.com/menu/british-columbia/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "61167430240ae9cac17b053aefa0637cc518b6ea04b9c928a53166ec694f1380",
+      "markdownChars": 67275,
+      "corroboration": {
+        "ramenTerms": 146,
+        "priceSignals": 24,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_cad618850f8c59ef0831",
+      "url": "https://oishidesu.com/",
+      "finalUrl": "https://oishidesu.com/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "8f74d74f330d9bad59993333ff42cff31134de990dbc297136bdd1dca14fc0b4",
+      "markdownChars": 6969,
+      "corroboration": {
+        "ramenTerms": 24,
+        "priceSignals": 13,
+        "matchedItems": 1
+      },
+      "derivedQualityScore": 91,
+      "derivedDecisionFieldCount": 7,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_ce699dcb20cf7959c730",
+      "url": "https://pokenchat.com/orderonline/",
+      "finalUrl": "https://pokenchat.com/orderonline/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "1ea404ad8b9819f7a1c853f625b193c4c94ff33aaec1e9ee8b171d36d92d51ef",
+      "markdownChars": 6048,
+      "corroboration": {
+        "ramenTerms": 10,
+        "priceSignals": 126,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_d065af9ea1e4bf604b82",
+      "url": "https://ramendanbo.com/our-menu-vancouver/",
+      "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
+      "markdownChars": 13211,
+      "corroboration": {
+        "ramenTerms": 41,
+        "priceSignals": 61,
+        "matchedItems": 10
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_d803b44fefafa757981e",
+      "url": "https://tokiwaramen.ca/menu",
+      "finalUrl": "https://tokiwaramen.ca/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "c411463b97f907b4f4635de019fb92a6196a7230b0123024aad507eb59447f07",
+      "markdownChars": 2391,
+      "corroboration": {
+        "ramenTerms": 3,
+        "priceSignals": 1,
+        "matchedItems": 1
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_d952994eafc78fa40942",
+      "url": "https://www.ikkousha.ca/chickenmenu",
+      "finalUrl": "https://www.ikkousha.ca/chickenmenu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "0e64daf08226e06b77e406ee25102f0aba213dc1a5e3ac5a631a66f7de80ce4d",
+      "markdownChars": 6385,
+      "corroboration": {
+        "ramenTerms": 28,
+        "priceSignals": 11,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_d9c5f855d17e0352ac3f",
+      "url": "https://ramenisshin.com/menu",
+      "finalUrl": "https://ramenisshin.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "48d7b20cdac2263335d4241c36aac156ce167136936470de3d61af7d551cfe42",
+      "markdownChars": 18587,
+      "corroboration": {
+        "ramenTerms": 20,
+        "priceSignals": 0,
+        "matchedItems": 24
+      },
+      "derivedQualityScore": 92,
+      "derivedDecisionFieldCount": 8,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_f43841040f91ed0862cc",
+      "url": "https://ramengojiro.com/menu.html",
+      "finalUrl": "https://ramengojiro.com/menu.html",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "f409cb2769537d90955ea3e9b435e8214506c3c8696229107119c55064c0da3a",
+      "markdownChars": 5787,
+      "corroboration": {
+        "ramenTerms": 31,
+        "priceSignals": 0,
+        "matchedItems": 2
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "noodles",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_f56b3a4d9e2ec94ce1bc",
+      "url": "https://ramenraijin.com/wellesley/menu/",
+      "finalUrl": "https://ramenraijin.com/wellesley/menu/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "8113eeb100af0c6fe1e78a89b2a49df3bfef9505df331848f15a9b4b868e460b",
+      "markdownChars": 31623,
+      "corroboration": {
+        "ramenTerms": 65,
+        "priceSignals": 75,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_fa60d773a37e2b3094c6",
+      "url": "https://menyakokoro.com/menu",
+      "finalUrl": "https://menyakokoro.com/menu",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dc22bf0c171c708cd3fc0a4c595189b301f9390585e7060db079a593b9d7d394",
+      "markdownChars": 8235,
+      "corroboration": {
+        "ramenTerms": 12,
+        "priceSignals": 0,
+        "matchedItems": 6
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_fd9c677ad2ee87a57107",
+      "url": "https://www.jinyaramenbar.com/menu/bc/langley/",
+      "finalUrl": "https://www.jinyaramenbar.com/menu/bc/langley/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "fe5beee8cc20b3f7f1b2cbb7b570bbdbd0186f0775cc7949534612eaa3f2dc6c",
+      "markdownChars": 46935,
+      "corroboration": {
+        "ramenTerms": 15,
+        "priceSignals": 1,
+        "matchedItems": 3
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_fdf92f34dfc5f41d550d",
+      "url": "https://ramendanbo.com/our-menu-vancouver/",
+      "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "retrievedAt": "2026-08-25T15:43:12.399Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
+      "markdownChars": 13211,
+      "corroboration": {
+        "ramenTerms": 41,
+        "priceSignals": 61,
+        "matchedItems": 10
+      },
+      "derivedQualityScore": 93,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "vegan",
+        "reservations",
+        "services"
+      ]
+    }
+  ],
+  "rejected": []
+}

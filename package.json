@@ -8,6 +8,7 @@
   "scripts": {
     "data:evidence": "node scripts/build-curated-evidence-registry.mjs",
     "data:curated": "node scripts/build-curated-additions.mjs",
+    "data:readiness": "node scripts/build-search-readiness-supplements.mjs",
     "data:build": "npm run data:curated && node scripts/generate-directory-data.mjs",
     "predev": "npm run data:build",
     "prebuild": "npm run data:build",

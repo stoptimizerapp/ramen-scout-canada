@@ -13,12 +13,15 @@ import {
   isRestaurantSearchReady,
   publisherContentWordCount,
 } from "../lib/search-readiness.js";
+import { deriveSearchReadinessProfile } from "../lib/search-readiness-profile.js";
 
 const siteRoot = new URL("../", import.meta.url);
 const restaurants = JSON.parse(await readFile(new URL("data/restaurants.json", siteRoot), "utf8"));
 const summary = JSON.parse(await readFile(new URL("data/directory-summary.json", siteRoot), "utf8"));
 const searchIndex = JSON.parse(await readFile(new URL("public/data/search-index.json", siteRoot), "utf8"));
 const curatedSource = JSON.parse(await readFile(new URL("data/curated-additions.source.json", siteRoot), "utf8"));
+const readinessSupplements = JSON.parse(await readFile(new URL("data/search-readiness-supplements.json", siteRoot), "utf8"));
+const readinessEnrichments = JSON.parse(await readFile(new URL("data/search-readiness-menu-enrichments.json", siteRoot), "utf8"));
 const indexNowKey = "07b7924f1ae8950c2458c04eb4ed55ffcf06ec010530303232a04858611a1ae8";
 const rendererContractPaths = [
   "app/restaurants/[province]/[city]/[slug]/page.tsx",
@@ -35,6 +38,7 @@ const rendererContractPaths = [
   "lib/directory.ts",
   "lib/format.ts",
   "lib/search-readiness.js",
+  "lib/search-readiness-profile.js",
   "lib/site.ts",
 ];
 const rendererContractSources = await Promise.all(rendererContractPaths.map(async (relativePath) => ({
@@ -212,6 +216,86 @@ test("curated discoveries retain every researched menu item in listings and sear
     assert.deepEqual(runtime.menu.items.map((item) => item.name), candidate.menu.items.map((item) => item.name));
     assert.deepEqual(searchById.get(runtime.id).signatureItems, candidate.menu.items.map((item) => item.name));
   }
+});
+
+test("fresh Crawl4AI supplements promote only listings whose live facts clear the quality gate", () => {
+  assert.equal(readinessSupplements.schemaVersion, "1.0");
+  assert.equal(readinessSupplements.records.length, 56);
+  assert.equal(readinessSupplements.rejected.length, 0);
+  assert.equal(new Set(readinessSupplements.records.map((record) => record.restaurantId)).size, readinessSupplements.records.length);
+  const now = Date.now();
+  for (const record of readinessSupplements.records) {
+    const restaurant = restaurants.find((entry) => entry.id === record.restaurantId);
+    assert.ok(restaurant, `${record.restaurantId} must resolve to a generated listing`);
+    assert.equal(record.crawl4aiSuccess, true);
+    assert.equal(record.extractionMethod, "crawl4ai_normalized_markdown");
+    assert.equal(record.url, restaurant.menu.url);
+    assert.ok(record.statusCode >= 200 && record.statusCode < 400);
+    assert.match(record.contentHash, /^[a-f0-9]{64}$/);
+    assert.ok(record.markdownChars >= 200);
+    const capturedAt = Date.parse(record.retrievedAt);
+    assert.ok(Number.isFinite(capturedAt) && capturedAt <= now + 5 * 60 * 1000 && now - capturedAt <= 120 * 24 * 60 * 60 * 1000);
+    assert.equal(Object.hasOwn(record, "markdown"), false, "source prose must not be copied into the supplement registry");
+    assert.deepEqual(restaurant.publication.searchReadinessSupplement, {
+      verifiedAt: record.retrievedAt,
+      url: record.url,
+      finalUrl: record.finalUrl,
+      extractionMethod: record.extractionMethod,
+      contentHash: record.contentHash,
+      statusCode: record.statusCode,
+      markdownChars: record.markdownChars,
+      crawl4aiSuccess: true,
+      corroboration: record.corroboration,
+      qualityScore: record.derivedQualityScore,
+      verifiedDecisionFieldCount: record.derivedDecisionFieldCount,
+      verifiedDecisionGroups: record.verifiedDecisionGroups,
+    });
+    const source = restaurant.evidence.find((evidence) => evidence.id === "SR1");
+    assert.ok(source, `${restaurant.name} must expose its fresh first-party source`);
+    assert.equal(source.url, record.url);
+    assert.equal(source.contentHash, record.contentHash);
+    assert.equal(source.retrievedAt, record.retrievedAt);
+    assert.ok(restaurant.menu.evidenceRefs.includes("SR1"));
+    const profile = deriveSearchReadinessProfile(restaurant, now);
+    assert.equal(profile.qualityScore, record.derivedQualityScore);
+    assert.equal(profile.decisionFieldCount, record.derivedDecisionFieldCount);
+    assert.deepEqual(Object.entries(profile.facts).filter(([, verified]) => verified).map(([group]) => group), record.verifiedDecisionGroups);
+    assert.equal(isRestaurantSearchReady(restaurant, now), true);
+  }
+
+  const fixture = structuredClone(restaurants.find((restaurant) => restaurant.publication.searchReadinessSupplement));
+  assert.ok(fixture);
+  fixture.publication.searchReadinessSupplement.contentHash = "0".repeat(64);
+  assert.equal(isRestaurantSearchReady(fixture, now), false, "a supplement detached from its evidence hash must fail closed");
+  fixture.publication.searchReadinessSupplement.contentHash = fixture.evidence.find((evidence) => evidence.id === "SR1").contentHash;
+  fixture.publication.searchReadinessSupplement.verifiedAt = "2025-01-01T00:00:00.000Z";
+  assert.equal(isRestaurantSearchReady(fixture, now), false, "a stale supplement must fail closed");
+});
+
+test("item-level menu repairs remain evidence-linked, specific and conservative", () => {
+  assert.equal(readinessEnrichments.schemaVersion, "1.0");
+  assert.equal(readinessEnrichments.records.length, 4);
+  for (const enrichment of readinessEnrichments.records) {
+    const restaurant = restaurants.find((entry) => entry.id === enrichment.restaurantId);
+    assert.ok(restaurant, `${enrichment.restaurantId} must resolve`);
+    assert.equal(restaurant.menu.url, enrichment.menuUrl);
+    assert.equal(restaurant.menu.itemCount, enrichment.permanentItemCount);
+    assert.deepEqual(restaurant.menu.items.map((item) => item.name), enrichment.items.map((item) => item.name));
+    assert.ok(restaurant.menu.items.every((item) => item.evidenceRefs.includes("SR1")));
+    assert.equal(isRestaurantSearchReady(restaurant), true);
+    if (enrichment.prices) {
+      assert.equal(restaurant.prices.observedCount, enrichment.prices.observedCount);
+      assert.ok(restaurant.prices.evidenceRefs.includes("SR1"));
+      assert.match(restaurant.prices.verifiedAt, /^2026-08-25T/);
+    }
+  }
+  const raijin = restaurants.find((restaurant) => restaurant.id === "ramen_ca_f56b3a4d9e2ec94ce1bc");
+  assert.equal(raijin.vegan.status, "one_complete_bowl");
+  assert.deepEqual(raijin.vegan.itemNames, ["Vegan Spicy Miso Ramen"]);
+  assert.ok(raijin.vegan.evidenceRefs.includes("SR1"));
+  const remix = restaurants.find((restaurant) => restaurant.id === "ramen_ca_4e3ef8a7d78b95525556");
+  assert.equal(remix.prices.observedCount, 0, "Ramen x Remix must not invent prices the menu does not publish");
+  assert.equal(remix.vegan.status, "unknown", "a vegetarian seasonal special must not be promoted to verified vegan");
 });
 
 test("nearby ranking calculates useful distances and keeps missing coordinates last", () => {
@@ -528,12 +612,12 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
     const expectedUrls = expectedPaths.map((path) => `https://ramenscout.ca${path}`).sort();
     assert.deepEqual(urls, expectedUrls);
     assert.doesNotMatch(sitemap, /\/search(?:<|\?|\/)/i);
-    assert.equal(ready.restaurantPaths.length, 77);
+    assert.equal(ready.restaurantPaths.length, 133);
     assert.equal(ready.cityPaths.length, 10);
     assert.equal(ready.provincePaths.length, 4);
     assert.equal(ready.stylePaths.length, 4);
-    assert.deepEqual(ready.featurePaths.sort(), ["/features/late-night", "/features/reservations"]);
-    assert.equal(urls.length, 107, "only substantial, evidence-backed canonical pages should be submitted");
+    assert.deepEqual(ready.featurePaths.sort(), ["/features/late-night", "/features/reservations", "/features/vegan"]);
+    assert.equal(urls.length, 164, "only substantial, evidence-backed canonical pages should be submitted");
   } else {
     assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
     assert.doesNotMatch(sitemap, /<url>/);
@@ -542,8 +626,8 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
 
 test("search-ready listings meet the anti-thin-content and originality gates", () => {
   const ready = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant));
-  assert.equal(ready.length, 77);
-  assert.equal(restaurants.length - ready.length, 336, "weaker listings must remain noindex rather than entering the sitemap");
+  assert.equal(ready.length, 133);
+  assert.equal(restaurants.length - ready.length, 280, "weaker listings must remain noindex rather than entering the sitemap");
 
   const shortDescriptions = new Set();
   const editorialDescriptions = new Set();
@@ -551,8 +635,10 @@ test("search-ready listings meet the anti-thin-content and originality gates", (
     assert.ok(publisherContentWordCount(restaurant) >= 200, `${restaurant.name} needs at least 200 authored words`);
     assert.ok(["primary", "substantial"].includes(restaurant.relevance.classification));
     assert.equal(restaurant.menu.status, "verified_current");
-    assert.ok(restaurant.publication.qualityScore >= 90);
-    assert.ok(restaurant.publication.verifiedDecisionFieldCount >= 6);
+    const profile = deriveSearchReadinessProfile(restaurant);
+    const supplement = restaurant.publication.searchReadinessSupplement;
+    assert.ok(Math.max(restaurant.publication.qualityScore, supplement ? profile.qualityScore : 0) >= 90);
+    assert.ok(Math.max(restaurant.publication.verifiedDecisionFieldCount, supplement ? profile.decisionFieldCount : 0) >= 6);
     assert.ok(!shortDescriptions.has(restaurant.content.shortDescription), `${restaurant.name} repeats a short description`);
     assert.ok(!editorialDescriptions.has(restaurant.content.editorialDescription), `${restaurant.name} repeats an editorial description`);
     shortDescriptions.add(restaurant.content.shortDescription);

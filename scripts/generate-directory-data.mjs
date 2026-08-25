@@ -3,6 +3,8 @@ import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
+import { deriveSearchReadinessProfile } from "../lib/search-readiness-profile.js";
+import { applySearchReadinessEnrichment, validateSearchReadinessEnrichments } from "../lib/search-readiness-enrichments.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(here, "..");
@@ -11,6 +13,8 @@ const additionsPath = path.join(siteRoot, "data/curated-additions.csv");
 const additionsSourcePath = path.join(siteRoot, "data/curated-additions.source.json");
 const placeRegistryPath = path.join(siteRoot, "data/curated-place-registry.json");
 const approvalsPath = path.join(siteRoot, "data/publication-approvals.json");
+const readinessSupplementsPath = path.join(siteRoot, "data/search-readiness-supplements.json");
+const readinessEnrichmentsPath = path.join(siteRoot, "data/search-readiness-menu-enrichments.json");
 const rendererContractPaths = [
   "app/restaurants/[province]/[city]/[slug]/page.tsx",
   "app/layout.tsx",
@@ -26,6 +30,7 @@ const rendererContractPaths = [
   "lib/directory.ts",
   "lib/format.ts",
   "lib/search-readiness.js",
+  "lib/search-readiness-profile.js",
   "lib/site.ts",
 ];
 const outputPath = path.join(siteRoot, "data/restaurants.json");
@@ -165,6 +170,13 @@ const approvalRegistry = JSON.parse(await fs.readFile(approvalsPath, "utf8"));
 if (approvalRegistry.schemaVersion !== "1.0" || !Array.isArray(approvalRegistry.approvals)) throw new Error("Publication approval registry has an unsupported schema.");
 const approvalById = new Map(approvalRegistry.approvals.map((approval) => [approval.restaurantId, approval]));
 if (approvalById.size !== approvalRegistry.approvals.length) throw new Error("Publication approval registry contains duplicate restaurant IDs.");
+const readinessSupplements = JSON.parse(await fs.readFile(readinessSupplementsPath, "utf8"));
+if (readinessSupplements.schemaVersion !== "1.0" || !Array.isArray(readinessSupplements.records) || !Array.isArray(readinessSupplements.rejected)) {
+  throw new Error("Search-readiness supplements have an unsupported schema.");
+}
+const readinessSupplementById = new Map(readinessSupplements.records.map((record) => [record.restaurantId, record]));
+if (readinessSupplementById.size !== readinessSupplements.records.length) throw new Error("Search-readiness supplements contain duplicate restaurant IDs.");
+const readinessEnrichmentById = validateSearchReadinessEnrichments(JSON.parse(await fs.readFile(readinessEnrichmentsPath, "utf8")));
 
 for (const row of additionsTable.rows) {
   const required = ["restaurant_id", "source_google_place_id", "name", "canonical_path", "street_address", "city", "province_code", "postal_code", "latitude", "longitude", "official_location_url", "menu_url", "google_maps_url"];
@@ -469,6 +481,91 @@ const draftRestaurants = rawRows.map((row) => {
   };
 });
 
+const maximumSupplementAgeMs = 120 * 24 * 60 * 60 * 1000;
+const currentBuildTime = Date.now();
+const enrichedDraftRestaurants = draftRestaurants.map((restaurant) => applySearchReadinessEnrichment(restaurant, readinessEnrichmentById.get(restaurant.id)));
+for (const restaurantId of readinessEnrichmentById.keys()) {
+  if (!draftRestaurants.some((restaurant) => restaurant.id === restaurantId)) throw new Error(`Search-readiness menu enrichment references unknown restaurant ID ${restaurantId}.`);
+}
+const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) => {
+  const supplement = readinessSupplementById.get(restaurant.id);
+  if (!supplement) return restaurant;
+  const enrichment = readinessEnrichmentById.get(restaurant.id);
+  const retrievedAt = Date.parse(supplement.retrievedAt || "");
+  if (supplement.crawl4aiSuccess !== true || supplement.extractionMethod !== "crawl4ai_normalized_markdown") {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} is not a successful normalized Crawl4AI capture.`);
+  }
+  if (supplement.url !== restaurant.menu.url) throw new Error(`Search-readiness supplement for ${restaurant.name} does not match its current menu URL.`);
+  if (!/^https:\/\//i.test(supplement.finalUrl || "") || !Number.isInteger(supplement.statusCode) || supplement.statusCode < 200 || supplement.statusCode >= 400) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} does not resolve to a usable HTTPS menu page.`);
+  }
+  if (!/^[a-f0-9]{64}$/.test(supplement.contentHash || "") || !Number.isInteger(supplement.markdownChars) || supplement.markdownChars < 200) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} lacks a substantial hashed menu capture.`);
+  }
+  if (!Number.isFinite(retrievedAt) || retrievedAt > currentBuildTime + 5 * 60 * 1000 || currentBuildTime - retrievedAt > maximumSupplementAgeMs) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} is stale or has an invalid retrieval time.`);
+  }
+  if ((supplement.corroboration?.ramenTerms || 0) < 2 || !(
+    (supplement.corroboration?.matchedItems || 0) >= 1
+    || (supplement.corroboration?.priceSignals || 0) >= 2
+  )) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} does not sufficiently corroborate a ramen menu.`);
+  }
+  const evidenceId = "SR1";
+  if (restaurant.evidence.some((evidence) => evidence.id === evidenceId)) throw new Error(`Search-readiness evidence ID collision for ${restaurant.name}.`);
+  const menuEvidenceRefs = [...new Set([...(restaurant.menu.evidenceRefs || []), evidenceId])];
+  const menuItems = enrichment ? restaurant.menu.items.map((item) => ({ ...item, evidenceRefs: [...new Set([...(item.evidenceRefs || []), evidenceId])] })) : restaurant.menu.items;
+  const prices = enrichment?.prices ? { ...restaurant.prices, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.prices.evidenceRefs || []), evidenceId])] } : restaurant.prices;
+  const vegan = enrichment?.vegan ? { ...restaurant.vegan, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.vegan.evidenceRefs || []), evidenceId])] } : restaurant.vegan;
+  const supplemented = {
+    ...restaurant,
+    publication: {
+      ...restaurant.publication,
+      searchReadinessSupplement: {
+        verifiedAt: supplement.retrievedAt,
+        url: supplement.url,
+        finalUrl: supplement.finalUrl,
+        extractionMethod: supplement.extractionMethod,
+        contentHash: supplement.contentHash,
+        statusCode: supplement.statusCode,
+        markdownChars: supplement.markdownChars,
+        crawl4aiSuccess: true,
+        corroboration: supplement.corroboration,
+        qualityScore: supplement.derivedQualityScore,
+        verifiedDecisionFieldCount: supplement.derivedDecisionFieldCount,
+        verifiedDecisionGroups: supplement.verifiedDecisionGroups,
+      },
+    },
+    menu: { ...restaurant.menu, verifiedAt: supplement.retrievedAt, items: menuItems, evidenceRefs: menuEvidenceRefs },
+    prices,
+    vegan,
+    evidence: [...restaurant.evidence, {
+      id: evidenceId,
+      url: supplement.url,
+      sourceType: "official_menu",
+      publisher: new URL(supplement.finalUrl).hostname,
+      retrievedAt: supplement.retrievedAt,
+      effectiveDate: supplement.retrievedAt.slice(0, 10),
+      supports: ["menu_status", "menu_items", "menu_verification_date", "search_readiness_corroboration"],
+      contentHash: supplement.contentHash,
+    }],
+    refreshedAt: supplement.retrievedAt,
+  };
+  const profile = deriveSearchReadinessProfile(supplemented, currentBuildTime);
+  const verifiedDecisionGroups = Object.entries(profile.facts).filter(([, verified]) => verified).map(([group]) => group).sort();
+  if (profile.qualityScore !== supplement.derivedQualityScore
+    || profile.decisionFieldCount !== supplement.derivedDecisionFieldCount
+    || JSON.stringify(verifiedDecisionGroups) !== JSON.stringify([...(supplement.verifiedDecisionGroups || [])].sort())
+    || profile.qualityScore < 90
+    || profile.decisionFieldCount < 6) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} does not match its independently derived current quality profile.`);
+  }
+  return supplemented;
+});
+for (const restaurantId of readinessSupplementById.keys()) {
+  if (!enrichedDraftRestaurants.some((restaurant) => restaurant.id === restaurantId)) throw new Error(`Search-readiness supplement references unknown restaurant ID ${restaurantId}.`);
+}
+
 function approvalHashes(restaurant) {
   const contentHash = sha256(JSON.stringify({ content: restaurant.content, seo: restaurant.seo }));
   const evidenceHash = sha256(JSON.stringify(restaurant.evidence.map((evidence) => ({
@@ -514,7 +611,7 @@ function expectedApprovalHash(approval) {
   }));
 }
 
-const restaurants = draftRestaurants.map((restaurant) => {
+const restaurants = supplementedDraftRestaurants.map((restaurant) => {
   const hashes = approvalHashes(restaurant);
   const publication = { ...restaurant.publication, ...hashes };
   const approval = approvalById.get(restaurant.id);

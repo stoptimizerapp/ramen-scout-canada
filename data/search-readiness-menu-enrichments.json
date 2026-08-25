@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "policy": "Small, evidence-linked item-level corrections for otherwise strong existing listings. Facts come from current first-party menus revisited with Crawl4AI; unsupported fields remain unknown.",
+  "records": [
+    {
+      "restaurantId": "ramen_ca_5fb8118ab759cdc282a2",
+      "replacesMenuUrl": "https://umamikid.com/menu",
+      "menuUrl": "https://umamikid.com/menu-category/ramen",
+      "permanentItemCount": 9,
+      "items": [
+        { "name": "Pork Tonkotsu Ramen", "price": 22.99, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Creamy Mushroom Tofu Ramen", "price": 22.99, "brothBase": ["mushroom"], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": ["plant_based"], "evidenceRefs": ["E3"] },
+        { "name": "Pork Chashu Tantanmen", "price": 22.99, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": ["sesame", "spicy_other"], "servingStyle": ["tantanmen"], "dietary": [], "evidenceRefs": ["E3"] }
+      ],
+      "prices": { "observedCount": 9, "min": 22.99, "max": 27.99, "median": 22.99, "typical": 22.99, "band": "premium", "evidenceRefs": ["E3"] },
+      "content": {
+        "editorialDescription": "Umami Kid at 26 Germain Street now publishes nine named ramen bowls with prices. Pork Tonkotsu and Creamy Mushroom Tofu Ramen are both listed at $22.99, while Black Garlic Pork Tonkotsu is $25.99 and Premium Seafood Ramen is $27.99. Chicken paitan, beef miso-shoyu and pork tantanmen broaden the choice. Sunday through Thursday service ends at 9 p.m.; Friday and Saturday reach 10 p.m. The mushroom-tofu bowl is described by the restaurant as plant-based, but cross-contact is not documented. Reservations and delivery are unavailable, and halal status plus noodle production remain unknown.",
+        "whatToOrder": "Compare the $22.99 Pork Tonkotsu with Creamy Mushroom Tofu Ramen; for a richer upgrade, the current menu prices Black Garlic Pork Tonkotsu at $25.99.",
+        "bestFor": "Umami Kid works well for uptown Saint John diners who want a broad nine-bowl menu, published prices and later Friday or Saturday service without needing a reservation."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_a9e7418324b875f45e1a",
+      "replacesMenuUrl": "https://www.katsu-express.ca/menu",
+      "menuUrl": "https://www.katsu-express.ca/menu",
+      "permanentItemCount": 5,
+      "items": [
+        { "name": "Tonkotsu Ramen", "price": 15.95, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Mala Ramen", "price": 17.95, "brothBase": [], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Black Garlic Ramen", "price": 16.95, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] }
+      ],
+      "prices": { "observedCount": 5, "min": 15.95, "max": 17.95, "median": 15.95, "typical": 15.95, "band": "moderate", "evidenceRefs": ["E3"] },
+      "content": {
+        "editorialDescription": "Katsu Express occupies unit 105 at 685 Richmond Street in London. Its current menu names five ramen bowls: Tonkotsu, Mala, Miso, Shoyu and Black Garlic. Starting prices run from $15.95 to $17.95, with Mala at the top of that range. The schedule is unusually late for the area, ending at 1 a.m. Monday through Wednesday and 2:30 a.m. Thursday through Saturday; Sunday is closed. Reservations, dine-in, takeout and delivery are listed. No complete vegan ramen, verified halal option or noodle-production detail is available, so dietary restrictions still need a direct restaurant check.",
+        "whatToOrder": "Tonkotsu and Miso Ramen start at $15.95; Black Garlic is $16.95, while the spicy Mala Ramen is the highest-priced bowl at $17.95."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_f56b3a4d9e2ec94ce1bc",
+      "replacesMenuUrl": "https://ramenraijin.com/wellesley/menu/",
+      "menuUrl": "https://ramenraijin.com/wellesley/menu/",
+      "permanentItemCount": 9,
+      "items": [
+        { "name": "Hakata Tonkotsu Ramen", "price": 15.5, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Rich Gyokai Tonkotsu Tsuke-Men", "price": 20, "brothBase": ["fish_seafood", "pork_bone"], "brothStyle": ["gyokai", "tonkotsu"], "tare": [], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Vegan Spicy Miso Ramen", "price": 19.5, "brothBase": ["mushroom", "vegetable"], "brothStyle": [], "tare": ["miso", "spicy_other"], "servingStyle": ["ramen"], "dietary": ["vegan"], "evidenceRefs": ["E3"] }
+      ],
+      "prices": { "observedCount": 9, "min": 15.5, "max": 20, "median": 17, "typical": 17, "band": "moderate", "evidenceRefs": ["E3"] },
+      "vegan": { "status": "one_complete_bowl", "bowlCount": 1, "customizationRequired": "no", "itemNames": ["Vegan Spicy Miso Ramen"], "note": "The official Wellesley menu labels this bowl vegan; cross-contact is not documented.", "confidence": "high", "evidenceRefs": ["E3"] },
+      "content": {
+        "editorialDescription": "RAMEN RAIJIN operates from the rear unit at 24 Wellesley Street West. Its detailed branch menu lists nine regular ramen choices plus clearly marked limited dishes. Hakata Tonkotsu starts at $15.50 without an egg, Umami Shoyu also starts at $15.50, and Rich Gyokai Tonkotsu Tsuke-Men is $20. The official menu also identifies a complete Vegan Spicy Miso Ramen at $19.50. Service begins at noon daily and reaches 10:30 p.m. Friday and Saturday. Online reservations, dine-in, takeout and delivery are available. Halal status and noodle-production methods remain unconfirmed.",
+        "whatToOrder": "Start with the $15.50 Hakata Tonkotsu, choose the $20 Rich Gyokai Tonkotsu Tsuke-Men for dipping noodles, or use the explicitly labelled $19.50 Vegan Spicy Miso Ramen.",
+        "bestFor": "RAMEN RAIJIN is useful for diners comparing tonkotsu, shoyu, miso, tsukemen and a complete vegan bowl with current branch-level prices before reserving online.",
+        "caveats": "Prices and bowl names were checked on the Wellesley branch menu on August 25, 2026. Vegan Spicy Miso Ramen is restaurant-labelled vegan, but cross-contact is not documented. Halal status and noodle production remain unknown, so allergy and religious-diet needs require direct confirmation."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_4e3ef8a7d78b95525556",
+      "replacesMenuUrl": "https://ramenxremix.com/menu",
+      "menuUrl": "https://ramenxremix.com/menu",
+      "permanentItemCount": 2,
+      "items": [
+        { "name": "Signature Truffle Shoyu Consommé", "brothBase": ["chicken"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
+        { "name": "Truffle Shoyu Paitan", "brothBase": ["chicken", "pork_bone"], "brothStyle": ["paitan"], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] }
+      ],
+      "content": {
+        "editorialDescription": "Ramen x Remix Ramen&Bar is the restaurant at 424 Queen Street West. Its current page lists two standing truffle-shoyu bowls: a clear Signature Truffle Shoyu Consommé and a richer Truffle Shoyu Paitan made with chicken and pork-bone broth. A seasonal vegetarian Spicy Corn Tantanmen was also displayed, but it is not counted as permanent and no bowl prices are published. Monday has split lunch and dinner periods, Tuesday through Thursday are evening-only, and Friday and Saturday service reaches midnight. Reservations are not offered; dine-in, takeout and delivery are available. Vegan and halal suitability remain unverified.",
+        "whatToOrder": "Choose between the clear Signature Truffle Shoyu Consommé and creamy Truffle Shoyu Paitan; ask whether the seasonal vegetarian Spicy Corn Tantanmen is still available."
+      }
+    }
+  ]
+}

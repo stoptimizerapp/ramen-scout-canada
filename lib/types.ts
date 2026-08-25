@@ -48,6 +48,24 @@ export type Restaurant = {
     evidenceHash: string;
     schemaHash: string;
     rendererHash: string;
+    searchReadinessSupplement?: {
+      verifiedAt: string;
+      url: string;
+      finalUrl: string;
+      extractionMethod: "crawl4ai_normalized_markdown";
+      contentHash: string;
+      statusCode: number;
+      markdownChars: number;
+      crawl4aiSuccess: boolean;
+      corroboration: {
+        ramenTerms: number;
+        priceSignals: number;
+        matchedItems: number;
+      };
+      qualityScore: number;
+      verifiedDecisionFieldCount: number;
+      verifiedDecisionGroups: string[];
+    };
     gates: {
       identity: string;
       relevance: string;

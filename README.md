@@ -11,6 +11,8 @@ npm run dev
 
 The data generator runs automatically before development and production builds.
 
+Freshness supplements for strong existing listings are refreshed separately with `npm run data:readiness`. That command uses Crawl4AI to revisit the exact first-party menu URLs already attached to near-ready records. A small reviewed `data/search-readiness-menu-enrichments.json` ledger can correct missing item-level menu facts before the crawl, but only with explicit evidence references and conservative unknowns. The supplement registry stores only source URLs, retrieval times, HTTP status, normalized-content hashes and corroboration counts—not copied source prose. Normal builds never crawl external sites.
+
 ## Curated additions
 
 The original 378-column enrichment export remains immutable. Newly discovered restaurants are authored in `data/curated-additions.source.json`. `npm run data:evidence` refreshes the source-controlled Crawl4AI content-hash registry after an editorial source review; it is deliberately separate from normal builds. `npm run data:curated` then deterministically expands the manifest into the matching `data/curated-additions.csv`, and `npm run data:build` merges it before generating public route data.
@@ -32,7 +34,7 @@ npm test
 
 ## Publication gate
 
-The GitHub Pages release permits crawling with `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true`, but indexing is deliberately quality-gated. Editorial, support and policy pages are indexable. A restaurant enters the sitemap only when it has substantial unique publisher content, primary or substantial ramen relevance, a current official menu, fresh source evidence, at least six verified decision fields and a quality score of 90 or better. City, province, style and feature hubs must also clear minimum useful-inventory thresholds. Other canonical pages remain accessible with `noindex,follow`; internal search and query/filter variants are always excluded because they duplicate canonical inventory.
+The GitHub Pages release permits crawling with `NEXT_PUBLIC_ALLOW_STATIC_INDEXING=true`, but indexing is deliberately quality-gated. Editorial, support and policy pages are indexable. A restaurant enters the sitemap only when it has substantial unique publisher content, primary or substantial ramen relevance, a current official menu, fresh source evidence, at least six verified decision fields and a quality score of 90 or better. A Crawl4AI supplement can correct a stale legacy score only when its exact menu URL, timestamp, content hash and independently recomputed live fact profile all match; it cannot override identity, relevance, evidence, originality, rights or freshness failures. City, province, style and feature hubs must also clear minimum useful-inventory thresholds. Other canonical pages remain accessible with `noindex,follow`; internal search and query/filter variants are always excluded because they duplicate canonical inventory.
 
 The approval-gated advertising cohort remains independently fail-closed. Do not set `NEXT_PUBLIC_ALLOW_INDEXING=true` until the listing gates pass and the monitored contacts, human review and corrections workflow are operational. That build-time gate filters the approved cohort to hash-matched records and aborts unless at least 50 approved restaurants span 15 cities and five provinces. Advertising and third-party rating code remain disabled, and unlicensed restaurant media is excluded.
 
