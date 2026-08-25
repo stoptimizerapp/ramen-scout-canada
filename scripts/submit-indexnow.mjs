@@ -38,10 +38,24 @@ const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => mat
 if (!urlList.length || urlList.length > 10_000) throw new Error(`Invalid IndexNow URL count: ${urlList.length}`);
 if (urlList.some((url) => new URL(url).hostname !== siteHost)) throw new Error("The sitemap contains a URL outside the verified IndexNow host");
 
-const response = await fetch(endpoint, {
-  method: "POST",
-  headers: { "content-type": "application/json; charset=utf-8" },
-  body: JSON.stringify({ host: siteHost, key, keyLocation, urlList }),
-});
-if (![200, 202].includes(response.status)) throw new Error(`IndexNow rejected the submission: HTTP ${response.status} ${await response.text()}`);
-console.log(`IndexNow accepted ${urlList.length} URLs with HTTP ${response.status}.`);
+async function submitUrls() {
+  for (let attempt = 1; attempt <= 6; attempt += 1) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "content-type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ host: siteHost, key, keyLocation, urlList }),
+    });
+    if ([200, 202].includes(response.status)) return response.status;
+
+    const body = await response.text();
+    const verificationPending = response.status === 403 && body.includes("SiteVerificationNotCompleted");
+    if (!verificationPending || attempt === 6) {
+      throw new Error(`IndexNow rejected the submission: HTTP ${response.status} ${body}`);
+    }
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+  }
+  throw new Error("IndexNow submission did not complete");
+}
+
+const status = await submitUrls();
+console.log(`IndexNow accepted ${urlList.length} URLs with HTTP ${status}.`);
