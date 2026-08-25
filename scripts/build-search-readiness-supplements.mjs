@@ -96,12 +96,82 @@ function menuSignals(markdown, restaurants) {
   return { ramenTerms, priceSignals, matchedItems, qualifies: ramenTerms >= 2 && (matchedItems >= 1 || priceSignals >= 2 || /\bmenu\b/.test(plain)) };
 }
 
+function pendingSupplementReferences(enrichment) {
+  return [
+    ...enrichment.items.flatMap((item) => item.evidenceRefs || []),
+    ...(enrichment.prices?.evidenceRefs || []),
+    ...(enrichment.vegan?.evidenceRefs || []),
+    ...(enrichment.taxonomy?.evidenceRefs || []),
+    ...(enrichment.noodles?.evidenceRefs || []),
+  ].includes("SR1");
+}
+
+function withPendingSupplementEvidence(restaurant, enrichment) {
+  if (!enrichment || !pendingSupplementReferences(enrichment) || restaurant.evidence.some((evidence) => evidence.id === "SR1")) return restaurant;
+  return {
+    ...restaurant,
+    evidence: [...restaurant.evidence, {
+      id: "SR1",
+      url: restaurant.menu.url,
+      sourceType: "official_menu",
+      publisher: new URL(restaurant.menu.url).hostname,
+      retrievedAt: new Date(0).toISOString(),
+      contentHash: "0".repeat(64),
+    }],
+  };
+}
+
+function normalizedDocumentUrl(value) {
+  const parsed = new URL(value);
+  parsed.hash = "";
+  return decodeURIComponent(parsed.toString()).replace(/\/+$/, "");
+}
+
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function wordpressDerivativePattern(url) {
+  const pathname = decodeURIComponent(new URL(url).pathname);
+  const match = pathname.match(/^(.*?)(\.[a-z0-9]+)$/i);
+  if (!match) return null;
+  return new RegExp(`${escapeRegex(match[1])}-\\d+x\\d+${escapeRegex(match[2])}(?:[?"'\\s<>)\\]]|$)`, "i");
+}
+
+async function fetchLinkedDocuments(enrichment, markdown) {
+  if (!enrichment?.linkedDocuments?.length) return [];
+  let normalizedMarkdown = markdown.replace(/\\/g, "");
+  try { normalizedMarkdown = decodeURIComponent(normalizedMarkdown); } catch { /* Preserve malformed percent text verbatim. */ }
+  const documents = [];
+  for (const url of enrichment.linkedDocuments) {
+    const normalizedUrl = normalizedDocumentUrl(url);
+    const urlPath = decodeURIComponent(new URL(url).pathname);
+    const derivativePattern = wordpressDerivativePattern(url);
+    if (!normalizedMarkdown.includes(normalizedUrl) && !normalizedMarkdown.includes(urlPath) && !derivativePattern?.test(normalizedMarkdown)) {
+      throw new Error(`Linked menu document is no longer present on ${enrichment.menuUrl}: ${url}`);
+    }
+    const response = await fetch(url, { headers: { "user-agent": "Ramen Scout evidence verifier/1.0" }, signal: AbortSignal.timeout(45_000) });
+    if (!response.ok) throw new Error(`Linked menu document returned HTTP ${response.status}: ${url}`);
+    const bytes = Buffer.from(await response.arrayBuffer());
+    const contentType = (response.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
+    if (bytes.length < 1_000 || !/^(?:image\/|application\/pdf$)/.test(contentType)) {
+      throw new Error(`Linked menu document is not a substantial image or PDF: ${url}`);
+    }
+    documents.push({ url, finalUrl: response.url || url, contentType, bytes: bytes.length, contentHash: sha256(bytes) });
+  }
+  return documents;
+}
+
 const health = await fetch(`${crawl4aiUrl}/health`, { signal: AbortSignal.timeout(10_000) });
 if (!health.ok) throw new Error(`Crawl4AI health check returned ${health.status}`);
 
 const restaurants = JSON.parse(await fs.readFile(inputPath, "utf8"));
 const enrichmentById = validateSearchReadinessEnrichments(JSON.parse(await fs.readFile(enrichmentsPath, "utf8")));
-const enrichedRestaurants = restaurants.map((restaurant) => applySearchReadinessEnrichment(restaurant, enrichmentById.get(restaurant.id)));
+const enrichedRestaurants = restaurants.map((restaurant) => {
+  const enrichment = enrichmentById.get(restaurant.id);
+  const enriched = applySearchReadinessEnrichment(restaurant, enrichment, { allowPendingSupplementEvidence: true });
+  return withPendingSupplementEvidence(enriched, enrichment);
+});
 for (const restaurantId of enrichmentById.keys()) if (!restaurants.some((restaurant) => restaurant.id === restaurantId)) throw new Error(`Menu enrichment references unknown restaurant ID ${restaurantId}.`);
 const candidates = enrichedRestaurants.map((restaurant) => ({ restaurant, profile: deriveSearchReadinessProfile(restaurant) })).filter(({ restaurant, profile }) => (
   restaurant.publication.gates.identity === "yes"
@@ -172,11 +242,32 @@ for (const [url, candidateEntries] of restaurantsByUrl) {
   const statusCode = result?.status_code ?? null;
   const crawlSuccess = Boolean(result?.success) && statusCode !== null && statusCode < 400 && markdown.length >= 200;
   const signals = menuSignals(markdown, candidateEntries.map(({ restaurant }) => restaurant));
-  if (!crawlSuccess || !signals.qualifies) {
+  const enrichments = candidateEntries.map(({ restaurant }) => enrichmentById.get(restaurant.id)).filter(Boolean);
+  const linkedDocumentUrls = [...new Set(enrichments.flatMap((enrichment) => enrichment.linkedDocuments || []))];
+  let linkedDocuments = [];
+  let linkedDocumentError = "";
+  if (crawlSuccess && linkedDocumentUrls.length) {
+    try {
+      linkedDocuments = await fetchLinkedDocuments({ menuUrl: url, linkedDocuments: linkedDocumentUrls }, markdown);
+    } catch (error) {
+      linkedDocumentError = String(error?.message || error);
+    }
+  }
+  const documentBacked = linkedDocumentUrls.length > 0 && linkedDocuments.length === linkedDocumentUrls.length && !linkedDocumentError;
+  if (!crawlSuccess || !(signals.qualifies || documentBacked && signals.ramenTerms >= 1)) {
     rejected.push({ url, restaurantIds: candidateEntries.map(({ restaurant }) => restaurant.id), statusCode, markdownChars: markdown.length, signals, error: result?.error_message || "Menu corroboration gate failed" });
     continue;
   }
   for (const { restaurant, profile } of candidateEntries) {
+    const enrichment = enrichmentById.get(restaurant.id);
+    const recordDocuments = (enrichment?.linkedDocuments || []).map((documentUrl) => linkedDocuments.find((document) => document.url === documentUrl)).filter(Boolean);
+    if ((enrichment?.linkedDocuments || []).length !== recordDocuments.length) {
+      rejected.push({ url, restaurantIds: [restaurant.id], statusCode, markdownChars: markdown.length, signals, error: linkedDocumentError || "A linked menu document was not verified" });
+      continue;
+    }
+    const extractionMethod = recordDocuments.length ? "crawl4ai_page_plus_verified_document" : "crawl4ai_normalized_markdown";
+    const pageContentHash = sha256(markdown);
+    const contentHash = recordDocuments.length ? sha256(JSON.stringify({ pageContentHash, linkedDocuments: recordDocuments })) : pageContentHash;
     records.push({
       restaurantId: restaurant.id,
       url,
@@ -184,9 +275,11 @@ for (const [url, candidateEntries] of restaurantsByUrl) {
       retrievedAt,
       statusCode,
       crawl4aiSuccess: true,
-      extractionMethod: "crawl4ai_normalized_markdown",
-      contentHash: sha256(markdown),
+      extractionMethod,
+      contentHash,
+      pageContentHash,
       markdownChars: markdown.length,
+      linkedDocuments: recordDocuments,
       corroboration: { ramenTerms: signals.ramenTerms, priceSignals: signals.priceSignals, matchedItems: signals.matchedItems },
       derivedQualityScore: profile.qualityScore,
       derivedDecisionFieldCount: profile.decisionFieldCount,
@@ -200,7 +293,7 @@ const output = {
   schemaVersion: "1.0",
   generatedAt: retrievedAt,
   crawler: "Crawl4AI",
-  policy: "Fresh Crawl4AI menu corroboration for existing source-backed listings whose runtime facts independently recompute to at least 90 quality points and six verified decision groups.",
+  policy: "Fresh Crawl4AI menu corroboration, optionally paired with hashed first-party-linked menu images or PDFs that received an item-level editorial review, for existing source-backed listings whose runtime facts independently recompute to at least 90 quality points and six verified decision groups.",
   records,
   rejected,
 };

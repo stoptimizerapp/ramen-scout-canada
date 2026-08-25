@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "policy": "Small, evidence-linked item-level corrections for otherwise strong existing listings. Facts come from current first-party menus revisited with Crawl4AI; unsupported fields remain unknown.",
+  "policy": "Small, evidence-linked item-level corrections for otherwise strong existing listings. Facts come from current first-party menus revisited with Crawl4AI; linked images and PDFs are retained as hashed document evidence after visual review. Unsupported fields remain unknown, and community discussion is used only to locate current first-party sources.",
   "records": [
     {
       "restaurantId": "ramen_ca_5fb8118ab759cdc282a2",
@@ -8,11 +8,75 @@
       "menuUrl": "https://umamikid.com/menu-category/ramen",
       "permanentItemCount": 9,
       "items": [
-        { "name": "Pork Tonkotsu Ramen", "price": 22.99, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Creamy Mushroom Tofu Ramen", "price": 22.99, "brothBase": ["mushroom"], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": ["plant_based"], "evidenceRefs": ["E3"] },
-        { "name": "Pork Chashu Tantanmen", "price": 22.99, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": ["sesame", "spicy_other"], "servingStyle": ["tantanmen"], "dietary": [], "evidenceRefs": ["E3"] }
+        {
+          "name": "Pork Tonkotsu Ramen",
+          "price": 22.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Creamy Mushroom Tofu Ramen",
+          "price": 22.99,
+          "brothBase": [
+            "mushroom"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "plant_based"
+          ],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Pork Chashu Tantanmen",
+          "price": 22.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "sesame",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "tantanmen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        }
       ],
-      "prices": { "observedCount": 9, "min": 22.99, "max": 27.99, "median": 22.99, "typical": 22.99, "band": "premium", "evidenceRefs": ["E3"] },
+      "prices": {
+        "observedCount": 9,
+        "min": 22.99,
+        "max": 27.99,
+        "median": 22.99,
+        "typical": 22.99,
+        "band": "premium",
+        "evidenceRefs": [
+          "E3"
+        ]
+      },
       "content": {
         "editorialDescription": "Umami Kid at 26 Germain Street now publishes nine named ramen bowls with prices. Pork Tonkotsu and Creamy Mushroom Tofu Ramen are both listed at $22.99, while Black Garlic Pork Tonkotsu is $25.99 and Premium Seafood Ramen is $27.99. Chicken paitan, beef miso-shoyu and pork tantanmen broaden the choice. Sunday through Thursday service ends at 9 p.m.; Friday and Saturday reach 10 p.m. The mushroom-tofu bowl is described by the restaurant as plant-based, but cross-contact is not documented. Reservations and delivery are unavailable, and halal status plus noodle production remain unknown.",
         "whatToOrder": "Compare the $22.99 Pork Tonkotsu with Creamy Mushroom Tofu Ramen; for a richer upgrade, the current menu prices Black Garlic Pork Tonkotsu at $25.99.",
@@ -25,11 +89,68 @@
       "menuUrl": "https://www.katsu-express.ca/menu",
       "permanentItemCount": 5,
       "items": [
-        { "name": "Tonkotsu Ramen", "price": 15.95, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Mala Ramen", "price": 17.95, "brothBase": [], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Black Garlic Ramen", "price": 16.95, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] }
+        {
+          "name": "Tonkotsu Ramen",
+          "price": 15.95,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Mala Ramen",
+          "price": 17.95,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Black Garlic Ramen",
+          "price": 16.95,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        }
       ],
-      "prices": { "observedCount": 5, "min": 15.95, "max": 17.95, "median": 15.95, "typical": 15.95, "band": "moderate", "evidenceRefs": ["E3"] },
+      "prices": {
+        "observedCount": 5,
+        "min": 15.95,
+        "max": 17.95,
+        "median": 15.95,
+        "typical": 15.95,
+        "band": "moderate",
+        "evidenceRefs": [
+          "E3"
+        ]
+      },
       "content": {
         "editorialDescription": "Katsu Express occupies unit 105 at 685 Richmond Street in London. Its current menu names five ramen bowls: Tonkotsu, Mala, Miso, Shoyu and Black Garlic. Starting prices run from $15.95 to $17.95, with Mala at the top of that range. The schedule is unusually late for the area, ending at 1 a.m. Monday through Wednesday and 2:30 a.m. Thursday through Saturday; Sunday is closed. Reservations, dine-in, takeout and delivery are listed. No complete vegan ramen, verified halal option or noodle-production detail is available, so dietary restrictions still need a direct restaurant check.",
         "whatToOrder": "Tonkotsu and Miso Ramen start at $15.95; Black Garlic is $16.95, while the spicy Mala Ramen is the highest-priced bowl at $17.95."
@@ -41,12 +162,91 @@
       "menuUrl": "https://ramenraijin.com/wellesley/menu/",
       "permanentItemCount": 9,
       "items": [
-        { "name": "Hakata Tonkotsu Ramen", "price": 15.5, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Rich Gyokai Tonkotsu Tsuke-Men", "price": 20, "brothBase": ["fish_seafood", "pork_bone"], "brothStyle": ["gyokai", "tonkotsu"], "tare": [], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Vegan Spicy Miso Ramen", "price": 19.5, "brothBase": ["mushroom", "vegetable"], "brothStyle": [], "tare": ["miso", "spicy_other"], "servingStyle": ["ramen"], "dietary": ["vegan"], "evidenceRefs": ["E3"] }
+        {
+          "name": "Hakata Tonkotsu Ramen",
+          "price": 15.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Rich Gyokai Tonkotsu Tsuke-Men",
+          "price": 20,
+          "brothBase": [
+            "fish_seafood",
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "gyokai",
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Vegan Spicy Miso Ramen",
+          "price": 19.5,
+          "brothBase": [
+            "mushroom",
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "E3"
+          ]
+        }
       ],
-      "prices": { "observedCount": 9, "min": 15.5, "max": 20, "median": 17, "typical": 17, "band": "moderate", "evidenceRefs": ["E3"] },
-      "vegan": { "status": "one_complete_bowl", "bowlCount": 1, "customizationRequired": "no", "itemNames": ["Vegan Spicy Miso Ramen"], "note": "The official Wellesley menu labels this bowl vegan; cross-contact is not documented.", "confidence": "high", "evidenceRefs": ["E3"] },
+      "prices": {
+        "observedCount": 9,
+        "min": 15.5,
+        "max": 20,
+        "median": 17,
+        "typical": 17,
+        "band": "moderate",
+        "evidenceRefs": [
+          "E3"
+        ]
+      },
+      "vegan": {
+        "status": "one_complete_bowl",
+        "bowlCount": 1,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Spicy Miso Ramen"
+        ],
+        "note": "The official Wellesley menu labels this bowl vegan; cross-contact is not documented.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "E3"
+        ]
+      },
       "content": {
         "editorialDescription": "RAMEN RAIJIN operates from the rear unit at 24 Wellesley Street West. Its detailed branch menu lists nine regular ramen choices plus clearly marked limited dishes. Hakata Tonkotsu starts at $15.50 without an egg, Umami Shoyu also starts at $15.50, and Rich Gyokai Tonkotsu Tsuke-Men is $20. The official menu also identifies a complete Vegan Spicy Miso Ramen at $19.50. Service begins at noon daily and reaches 10:30 p.m. Friday and Saturday. Online reservations, dine-in, takeout and delivery are available. Halal status and noodle-production methods remain unconfirmed.",
         "whatToOrder": "Start with the $15.50 Hakata Tonkotsu, choose the $20 Rich Gyokai Tonkotsu Tsuke-Men for dipping noodles, or use the explicitly labelled $19.50 Vegan Spicy Miso Ramen.",
@@ -60,12 +260,4239 @@
       "menuUrl": "https://ramenxremix.com/menu",
       "permanentItemCount": 2,
       "items": [
-        { "name": "Signature Truffle Shoyu Consommé", "brothBase": ["chicken"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] },
-        { "name": "Truffle Shoyu Paitan", "brothBase": ["chicken", "pork_bone"], "brothStyle": ["paitan"], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["E3"] }
+        {
+          "name": "Signature Truffle Shoyu Consommé",
+          "brothBase": [
+            "chicken"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        },
+        {
+          "name": "Truffle Shoyu Paitan",
+          "brothBase": [
+            "chicken",
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "paitan"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "E3"
+          ]
+        }
       ],
       "content": {
         "editorialDescription": "Ramen x Remix Ramen&Bar is the restaurant at 424 Queen Street West. Its current page lists two standing truffle-shoyu bowls: a clear Signature Truffle Shoyu Consommé and a richer Truffle Shoyu Paitan made with chicken and pork-bone broth. A seasonal vegetarian Spicy Corn Tantanmen was also displayed, but it is not counted as permanent and no bowl prices are published. Monday has split lunch and dinner periods, Tuesday through Thursday are evening-only, and Friday and Saturday service reaches midnight. Reservations are not offered; dine-in, takeout and delivery are available. Vegan and halal suitability remain unverified.",
         "whatToOrder": "Choose between the clear Signature Truffle Shoyu Consommé and creamy Truffle Shoyu Paitan; ask whether the seasonal vegetarian Spicy Corn Tantanmen is still available."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_67c966cef17327e834c0",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/british-columbia/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 15.99,
+        "max": 21.99,
+        "median": 16.99,
+        "typical": 16.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Uptown New Westminster stays open from 11 a. m. to 11 p. m. daily. The British Columbia menu now supplies named bowls and prices here, from $15.99 Pork Original through $17.99 chilled tsukemen and $21.99 Spicy Beef Mazemen.",
+        "editorialDescription": "KINTON Ramen Uptown New Westminster operates at 678 6th Street, Unit 1, with the same 11 a. m. –11 p. m. schedule every day. That closing time meets the late-night filter throughout the week. Reservations and most service modes are unknown; only the wheelchair-accessible entrance is clearly listed. Complete vegan and halal options and noodle production are also unconfirmed. For this New Westminster branch, the current British Columbia menu supplies 20 ramen-family choices. Pork Original begins at $15.99, Chilled Tsukemen is $17.99, and brothless Spicy Beef Mazemen reaches $21.99. Shoyu and miso are confirmed; tonkotsu is not shown on the complete regional menu.",
+        "whatToOrder": "Compare the $15.99 Pork Original with $17.99 Chilled Tsukemen; Spicy Beef Mazemen is the $21.99 brothless option.",
+        "caveats": "The regional menu applies in British Columbia, but daily sell-outs can change availability. Garden Veggie contains egg, so no complete vegan bowl is confirmed; halal status and noodle-production location remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_2c6784bc2d00382b5361",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/british-columbia/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 15.99,
+        "max": 21.99,
+        "median": 16.99,
+        "typical": 16.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen at McArthurGlen Designer Outlet YVR has a current official menu page supporting tsukemen and mazesoba. McArthurGlen’s current regional selection includes $15.99 Pork Shoyu, $16.99 Pork Miso and a $17.99 chilled dipping bowl among 20 ramen-family mains.",
+        "editorialDescription": "KINTON Ramen's McArthurGlen YVR location is at 7899 Templeton Station Road in Richmond. Daily service starts at 11 in the morning and ends at 9 at night. Dine-in, takeout and delivery are available. The current menu information supports tsukemen and mazesoba with curry and spicy directions. The reservation policy is unknown, as are vegan and halal suitability. Noodle production has not been established either. Use the address, hours and serving styles for planning rather than relying on a specific dish recommendation. The British Columbia page now resolves the menu gap for this outlet location: 20 current ramen-family mains span soup bowls, tsukemen and mazemen. Pork Shoyu costs $15.99, Pork Miso is $16.99, and Chilled Tsukemen lists at $17.99. No tonkotsu-labelled item appears in the complete selection.",
+        "whatToOrder": "Pork Shoyu starts at $15.99, Pork Miso adds a richer seasoning at $16.99, and Chilled Tsukemen changes the format for $17.99.",
+        "caveats": "These are British Columbia regional prices and may change after the next menu revision. The veggie choices are not verified vegan; halal suitability and where noodles are produced are unconfirmed."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_9f654f713870be66fea8",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/british-columbia/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 15.99,
+        "max": 21.99,
+        "median": 16.99,
+        "typical": 16.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Marine Gateway opens from 11 a. m. to midnight every day. Its current menu category supports tsukemen, mazemen, curry and spicy choices; the online queue is not an advance reservation. Marine Gateway now maps to a 20-main British Columbia menu with shoyu, miso, chilled tsukemen and mazemen; observed prices run from $15.99 to $21.99.",
+        "editorialDescription": "Marine Gateway's KINTON is at 434 Southwest Marine Drive in Vancouver. The branch runs 11 a. m. –midnight seven days a week, creating a late-service window nightly. A digital waitlist is available; it helps with same-day arrival and should not be mistaken for a future reservation. Dine-in, takeout and delivery are listed, as are wheelchair-accessible entrance, seating and washroom. Vegan and halal options and noodle production are unconfirmed. At Marine Gateway, the live British Columbia menu establishes 20 ramen-family choices and a $15.99–$21.99 observed range. Chicken Shoyu sits at $15.99, Chilled Tsukemen at $17.99 and Spicy Beef Mazemen at $21.99. Miso and shoyu are represented, while the full regional list does not identify tonkotsu.",
+        "whatToOrder": "Chicken Shoyu is a $15.99 soup option; Chilled Tsukemen is $17.99, while Spicy Beef Mazemen is the priciest researched noodle main at $21.99.",
+        "caveats": "Menu pricing is regional and should be rechecked after seasonal changes. Garden Veggie is made with egg; vegan completeness, halal suitability and noodle origin are not established."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_36816c821ddb9381b1cd",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/british-columbia/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 15.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 15.99,
+        "max": 21.99,
+        "median": 16.99,
+        "typical": 16.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Waterfront at 200 Burrard Street has a current official ramen category supporting tsukemen and mazemen formats. It opens 10 a. m. –8 p. m. Waterfront diners can now compare $15.99 original and shoyu bowls, $16.99 miso choices, $17.99 tsukemen and $20.99–$21.99 mazemen on the BC menu.",
+        "editorialDescription": "Vancouver's Waterfront KINTON is in unit R020A at 200 Burrard Street. The branch's official menu category was current on August 24, 2026, and supports tsukemen, mazemen, curry and spicy filters. It did not expose dependable dish-by-dish details, so no bowl name, price range or specific broth can be quoted. Hours are notably daytime-oriented: 10 a. m. –8 p. m. on every day of the week. Seated meals, collection and delivery are all available, and the entrance is wheelchair accessible. Waterfront’s branch page can be paired with the current British Columbia menu rather than a generic archive. The 20-main selection starts at $15.99, prices Chilled Tsukemen at $17.99, and carries two mazemen choices above $20. Miso and shoyu are supported; a tonkotsu-labelled bowl is absent from the complete page.",
+        "whatToOrder": "Use Pork Original at $15.99 as the baseline, then compare $17.99 Chilled Tsukemen or $20.99 Chilled Chicken Mazemen.",
+        "caveats": "Seasonal dishes can rotate even while the regional page remains active. No complete vegan ramen or halal option is verified, and the menu does not establish where its noodles are made."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_336bc9e9b7eddf0bf3d1",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/ontario/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 16.99,
+        "max": 21.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Appleby Burlington confirms curry and spicy directions together with mazesoba and tsukemen. Friday and Saturday service reaches 11 p. m. Appleby’s Ontario menu now confirms 20 current noodle mains, including $16.99 Pork Shoyu, $17.99 Pork Miso and $17.99 chilled tsukemen.",
+        "editorialDescription": "KINTON Ramen Appleby Burlington occupies units C3 and C4 at 2500 Appleby Line. Sunday through Thursday operate 11:30 a. m. –10 p. m. ; Friday and Saturday continue to 11 p. m. Reservation status and standard dining-service formats are unknown. For mobility planning, the Appleby branch lists an accessible entrance, seating and washroom. No complete vegan bowl, verified halal option or noodle-production method is established, so confirm the intended order with the Appleby branch before visiting. The Ontario menu gives the Appleby branch a concrete 20-main selection. Pork Shoyu begins at $16.99, Pork Miso is $17.99, and Chilled Tsukemen also lists at $17.99; brothless Spicy Beef Mazemen reaches $21.99. Shoyu, miso, tsukemen and mazemen are supported, but tonkotsu is not named.",
+        "whatToOrder": "Pork Shoyu is $16.99; move to Pork Miso or Chilled Tsukemen at $17.99 depending on whether you want soup or dipping noodles.",
+        "caveats": "Ontario prices and seasonal availability can change. Garden Veggie includes egg, and the sources do not verify a complete vegan bowl, halal preparation or noodle-production location."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_e872e4299aaf3668feb6",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/ontario/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 16.99,
+        "max": 21.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Oxford London confirms curry and spicy directions plus mazesoba and tsukemen, without publishing current bowl names or prices here. The branch serves until 10 p. m. daily, while reservation availability remains unknown. Oxford London is now tied to Ontario’s priced ramen menu: standard bowls begin at $16.99, miso reaches $17.99, and the current mazemen options top out at $21.99.",
+        "editorialDescription": "KINTON RAMEN OXFORD LONDON occupies Unit 1B at 530 Oxford Street West. Compared with the regional menus published for other KINTON locations, its current menu confirms styles without providing a full dish list. Curry and spicy seasonings are listed, together with mazesoba and tsukemen serving formats. Specific names and Canadian-dollar prices are absent. The branch runs 11:30 a. m. –10 p. m. seven days a week; reservation availability is not established. Dine-in, takeout and delivery are listed, plus an accessible entrance. Halal status, vegan completeness and noodle production remain unknown. For Oxford Street, the current Ontario menu replaces the earlier category-level uncertainty. Twenty ramen-family mains cover shoyu, miso, tsukemen and mazemen. Chicken Original is $16.99, Pork Miso is $17.99 and Spicy Beef Mazemen is $21.99. The complete page does not identify a tonkotsu bowl.",
+        "whatToOrder": "Chicken Original offers the $16.99 low end; Pork Miso costs $17.99, and Spicy Beef Mazemen provides a $21.99 brothless contrast.",
+        "caveats": "The researched prices belong to the Ontario menu and may change with seasonal updates. Vegan completeness, halal status and noodle production remain unverified for London."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_c32df422ddd6cddf33f8",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/ontario/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 16.99,
+        "max": 21.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Heartland Mississauga serves until 11 p. m. Sunday-Thursday and midnight Friday-Saturday. Heartland’s current Ontario selection spans 20 ramen-family mains, with $16.99 Chicken Shoyu, $17.99 Pork Miso and a $21.99 spicy beef mazemen.",
+        "editorialDescription": "KINTON Ramen Heartland Mississauga is at 6045 Mavis Road, Unit 11. The schedule runs from 11 a. m. to 11 p. m. Sunday through Thursday and to midnight Friday and Saturday, qualifying for the late-night filter every day. The Heartland branch offers dine-in, takeout and delivery, plus wheelchair access across its entrance, tables and washrooms. Reservations are not offered. A restaurant-level vegan mention is not enough to establish a complete bowl. The Heartland branch now has a usable Ontario menu rather than just style labels. Its 20 current noodle mains run from $16.99 to $21.99. Chicken Shoyu occupies the low end, Pork Miso is $17.99 and Spicy Beef Mazemen is the highest observed main. Tsukemen is present; tonkotsu is not named.",
+        "whatToOrder": "Compare $16.99 Chicken Shoyu with $17.99 Pork Miso, or choose the $21.99 Spicy Beef Mazemen when a brothless bowl suits the visit.",
+        "caveats": "Availability can shift with Ontario-wide seasonal features. The vegetarian bowl contains egg, while complete vegan, halal and noodle-production claims are absent."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_66426c38e7d2c36ae25d",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/ontario/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 16.99,
+        "max": 21.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Bayview and Major Mackenzie has current style information for tsukemen, mazesoba, curry and spicy noodles. It closes at 9 p. m. Sunday-Thursday and 10 p. m. Friday-Saturday. Richmond Hill’s current menu confirms shoyu, miso, tsukemen and mazemen across 20 mains; examples range from $16.99 Pork Original to $21.99 Spicy Beef Mazemen.",
+        "editorialDescription": "KINTON Ramen Bayview and Major Mackenzie is at 1070 Major Mackenzie Drive East, Unit 101, in Richmond Hill. Tonkotsu, shoyu and miso remain unresolved for this specific location. Sunday through Thursday run from 11 a. m. until 9 p. m. ; on Friday and Saturday, closing moves to 10 p. m. Dine-in, takeout and delivery are listed, alongside wheelchair access at the entrance, seating area and washroom. Bayview and Major Mackenzie diners can now compare 20 Ontario ramen-family mains with current prices. Pork Original lists at $16.99, Beef Miso at $18.99 and Chilled Tsukemen at $17.99. The menu also contains two mazemen preparations. It does not establish tonkotsu despite covering shoyu and miso choices in full.",
+        "whatToOrder": "Pork Original costs $16.99, Chilled Tsukemen is $17.99 and Beef Miso is $18.99; each represents a different current direction.",
+        "caveats": "This is the current Ontario selection, not a guaranteed stock list for every service. No complete vegan ramen, verified halal option or noodle-making location is documented."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_e56717c98e0a6f5e988d",
+      "replacesMenuUrl": "https://kintonramen.com/category/menu/",
+      "menuUrl": "https://kintonramen.com/menu/ontario/",
+      "permanentItemCount": 20,
+      "items": [
+        {
+          "name": "Pork Original Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Shoyu Ramen",
+          "price": 16.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Pork Miso Ramen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chilled Tsukemen",
+          "price": 17.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Mazemen",
+          "price": 21.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "mazesoba"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 20,
+        "min": 16.99,
+        "max": 21.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "KINTON Ramen Yonge x Richmond is a downtown Toronto branch listed from 11:30 a. m. to 10:30 p. m. daily. Current menu material confirms tsukemen and mazemen, but not dish-level prices. Yonge and Richmond now has a priced 20-main Ontario menu, from $16.99 original and shoyu bowls to $17.99 tsukemen and $20.99 chilled chicken mazemen.",
+        "editorialDescription": "KINTON Yonge x Richmond is located at 1 Richmond Street West. The branch is listed from 11:30 a. m. until 10:30 p. m. every day, with dine-in and takeout confirmed. Wheelchair-accessible seating and washrooms are also recorded. A current official menu-category page mentions tsukemen, mazemen, curry and other spicy preparations. Tonkotsu, shoyu and miso availability are likewise unresolved here. Reservation, delivery, vegan, halal and noodle-production details need confirmation before they are used as filters. The downtown branch is now backed by Ontario’s current item-level menu. Twenty ramen-family mains cover soup ramen, chilled dipping noodles and brothless mazemen. Pork Shoyu costs $16.99, Chilled Tsukemen is $17.99 and Chilled Chicken Mazemen is $20.99. Miso is also represented, while no tonkotsu-labelled bowl appears.",
+        "whatToOrder": "Start with $16.99 Pork Shoyu, shift to $17.99 Chilled Tsukemen for dipping noodles, or choose $20.99 Chilled Chicken Mazemen.",
+        "caveats": "Ontario menu features may rotate, so limited dishes should be checked on the day. Garden Veggie contains egg; halal suitability and noodle origin are still unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_64142e3952aa35b32706",
+      "replacesMenuUrl": "https://konjikiramen.com/menus/",
+      "menuUrl": "https://konjikiramen.com/menus/north-york-menu/",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Signature Clam Intense Shoyu Ramen",
+          "price": 18.5,
+          "brothBase": [
+            "fish_seafood"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Original Shoyu Tonkotsu Ramen",
+          "price": 17.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Miso Ramen",
+          "price": 18,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 9,
+        "min": 17.5,
+        "max": 18.5,
+        "median": 18,
+        "typical": 18,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "fish_seafood",
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "shio",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "abura_soba"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Konjiki Ramen on Yonge Street opens daily and stays until 10:30 p. m. on Friday and Saturday. The North York branch menu now supports nine standing ramen-family choices, including $17.50 Original Shoyu Tonkotsu and two $18.50 clam-broth signatures.",
+        "editorialDescription": "Konjiki Ramen occupies 5051 Yonge Street in North York. It opens at 11:30 a. m. every day, closing at 9:30 p. m. Monday through Thursday, 10:30 p. m. Friday and Saturday, and 10 p. m. Sunday. Advance reservations are not offered, while dine-in, takeout and delivery are listed. Accordingly, diners should consult that page before targeting shoyu, miso, tonkotsu or another style. A restaurant-level vegan statement does not verify a complete bowl. Halal suitability and noodle production are likewise unknown for this branch. The branch-specific North York menu now names and prices the standing selection. Original Shoyu Tonkotsu is $17.50, while Signature Clam Intense Shoyu and Signature Clam Mild Shio are $18.50. Spicy Miso, black-garlic tonkotsu and abura soba broaden the range; limited wagyu and lobster dishes are excluded from the permanent count.",
+        "whatToOrder": "Compare the $18.50 clam-shoyu signature with $17.50 Original Shoyu Tonkotsu; Spicy Miso sits at $18 for a hotter alternative.",
+        "caveats": "Limited wagyu and lobster bowls are not counted as permanent. The official menu does not verify a complete vegan bowl, halal preparation or noodle-production location; tonkotsu also carries a seafood warning."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_1b69f8021e67f3dacf92",
+      "replacesMenuUrl": "https://konjikiramen.com/menus/",
+      "menuUrl": "https://konjikiramen.com/menus/downtown-menu/",
+      "permanentItemCount": 8,
+      "items": [
+        {
+          "name": "Signature Clam Mild Shio Ramen",
+          "price": 18.5,
+          "brothBase": [
+            "fish_seafood"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shio"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Original Shoyu Tonkotsu Ramen",
+          "price": 17.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Smokey Black Tonkotsu Ramen",
+          "price": 18,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 8,
+        "min": 17.5,
+        "max": 18.5,
+        "median": 18,
+        "typical": 18,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "fish_seafood",
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "shio",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "abura_soba"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Konjiki Ramen's downtown Toronto branch is at 41 Elm Street, with dine-in, takeout and delivery listed. An official menu page exists, although its branch-specific dishes, prices and dietary choices remain unclear. Konjiki Downtown’s own menu lists eight standing ramen-family dishes, with $17.50 Original Shoyu Tonkotsu and $18–$18.50 clam, black-garlic and miso options.",
+        "editorialDescription": "Konjiki Ramen's downtown location operates from 41 Elm Street in Toronto. Hours run from 11:30 a. m. to 9:30 p. m. Monday through Thursday, with later closing times from Friday through Sunday. Dine-in, takeout and delivery are available, while the reservation policy is still unknown. The official menu page does not clearly tie bowl names, broth styles or prices to the Elm Street branch. Diners should therefore consult that live page before choosing an order. The downtown-specific menu supplies eight standing ramen-family choices after limited wagyu dishes are set aside. Original Shoyu Tonkotsu is $17.50, Smokey Black and Spicy Red Tonkotsu are $18, and both clam signatures cost $18.50. Spicy Miso and abura soba add seasoning and brothless alternatives without creating a tsukemen claim.",
+        "whatToOrder": "Original Shoyu Tonkotsu starts at $17.50; Smokey Black adds roasted-garlic character for $18, and the clam-shio signature is $18.50.",
+        "caveats": "Premium wagyu dishes are explicitly limited and excluded from the standing count. Vegan completeness, halal suitability and noodle-production location remain unverified; tonkotsu contains seafood according to the menu warning."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_398211e3bd9819b3eccf",
+      "replacesMenuUrl": "https://byzubu.com/ramen/menu/",
+      "menuUrl": "https://byzubu.com/ramen/menu/metrotown-menu/?category=food&section=ramen",
+      "permanentItemCount": 4,
+      "items": [
+        {
+          "name": "Tonkotsu Ramen",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Tonkotsu Ramen",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Creamy Chicken Ramen",
+          "brothBase": [
+            "chicken"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "no",
+        "miso": "no",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "ZUBU Metrotown at 4575 Central Boulevard has a four-bowl branch menu covering pork-bone tonkotsu and creamy chicken ramen, with daily 11 a.m.–10 p.m. hours and online reservations.",
+        "editorialDescription": "Unit M01 at 4575 Central Boulevard is ZUBU’s Metrotown stop, open from 11 a.m. to 10 p.m. throughout the week. Its branch page narrows the ramen decision to four named bowls: Tonkotsu, Spicy Tonkotsu, Creamy Chicken and Spicy Chicken. That lineup confirms pork-bone and chicken broth directions without suggesting shoyu, miso or tsukemen. Reservations are accepted, while dine-in, takeout, delivery and outdoor seating are reported for this Burnaby address. The online menu does not expose dependable prices, and its general vegan wording cannot establish a complete plant-based bowl. Halal suitability and noodle production therefore stay unconfirmed.",
+        "whatToOrder": "Start with Tonkotsu for pork-bone broth, or compare Creamy Chicken; each style also has a clearly named spicy version.",
+        "caveats": "Metrotown’s page names all four ramen choices but omits readable prices. No complete vegan order, halal preparation or noodle-making location is verified."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_836d91344db582e938e8",
+      "replacesMenuUrl": "https://byzubu.com/ramen/menu/",
+      "menuUrl": "https://byzubu.com/ramen/menu/park-royal-menu/?category=food&section=ramen",
+      "permanentItemCount": 4,
+      "items": [
+        {
+          "name": "Tonkotsu Ramen",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Tonkotsu Ramen",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Creamy Chicken Ramen",
+          "brothBase": [
+            "chicken"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "no",
+        "miso": "no",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Park Royal’s ZUBU serves four documented ramen choices at 788 Main Street, pairing regular and spicy tonkotsu with two creamy chicken bowls; it closes at 9 p.m. daily.",
+        "editorialDescription": "For West Vancouver diners, this is the Park Royal ZUBU at 788 Main Street rather than the Burnaby outlet. Service runs 11 a.m.–9 p.m. daily, and the location accepts reservations alongside dine-in, pickup and delivery. The local menu lists Tonkotsu Ramen and its spicy counterpart, then repeats that mild-or-spicy choice with creamy chicken broth. Because the full ramen section stops at those four dishes, shoyu, miso and dipping noodles are not assigned as filters. Wheelchair entrance, seating and washroom information is available for visit planning. Prices are not legible in the published menu text; vegan completeness, halal status and noodle origin remain unanswered.",
+        "whatToOrder": "Compare the regular Creamy Chicken bowl with Tonkotsu, then choose the spicy version only if heat matters more than changing the broth base.",
+        "caveats": "The Park Royal selection is branch-specific, but current dollar amounts are not published in usable text. Dietary composition and noodle-production details need direct confirmation."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_1ea2417885713547a8ef",
+      "replacesMenuUrl": "https://ramenichinen.com/menu",
+      "menuUrl": "https://www.ramenichinen.com/menu",
+      "permanentItemCount": 8,
+      "items": [
+        {
+          "name": "Original Tonkotsu Ramen",
+          "price": 19,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tonkotsu Gyokai Tsukemen",
+          "price": 21.5,
+          "brothBase": [
+            "fish_seafood",
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "gyokai",
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Ramen",
+          "price": 21.3,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 8,
+        "min": 17.25,
+        "max": 21.5,
+        "median": 20.15,
+        "typical": 20.15,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "fish_seafood",
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "gyokai",
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "no",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "one_complete_bowl",
+        "bowlCount": 1,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Ramen"
+        ],
+        "note": "The official menu describes this bowl as fully plant-based and serves it over kale noodles; cross-contact is not documented.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ramen Ichinen in Calgary schedules lunch and dinner separately from Monday through Saturday, ending at 8 p. m. , and closes Sunday. Its current eight-bowl menu now confirms tonkotsu, gyokai tsukemen, spicy mazemen and a complete vegan ramen, with published prices from $17.25 to $21.50.",
+        "editorialDescription": "Ramen Ichinen serves unit 349 at 3132 26 Street Northeast in Calgary’s Sunridge area. Monday through Saturday follow the same split schedule, 11 a. m. –3 p. m. for lunch and 5–8 p. m. for dinner; Sunday is closed. The Sunridge restaurant accepts reservations and lists both dine-in and takeout service. A general vegan claim does not prove a complete vegan order. Halal suitability and noodle-production practices also require direct confirmation with Ramen Ichinen. Ichinen’s current menu resolves the earlier bowl-level gaps with eight choices and prices. Original Tonkotsu is $19, Tonkotsu Gyokai Tsukemen is $21.50 and Spicy Mazemen begins at $17.25. A separate Vegan Ramen is described as fully plant-based, uses kale noodles and costs $21.30; the similarly named Veggie Ramen contains egg noodles.",
+        "whatToOrder": "Original Tonkotsu costs $19; choose the $21.50 gyokai tsukemen for dipping noodles, or the explicitly plant-based $21.30 Vegan Ramen.",
+        "caveats": "The vegan bowl is restaurant-labelled fully plant-based, but cross-contact is not documented. Halal status and noodle-production location remain unknown, and Sunday is still closed."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_e02bb8d807d7f663b7a8",
+      "replacesMenuUrl": "https://www.kumatakumi.com/menu",
+      "menuUrl": "https://www.kumatakumi.com/menu",
+      "permanentItemCount": 8,
+      "items": [
+        {
+          "name": "Tonkotsu Black",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegetarian Miso",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegetarian"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Kuma Takumi closes Tuesday and serves until 9 p. m. Friday and Saturday at its Hazeldean Road unit. Kuma Takumi’s official menu now names eight ramen bowls, ranging from Tonkotsu Black and Shoyu to Miso Shrimp and Vegetarian Miso; readable prices remain absent.",
+        "editorialDescription": "Kuma Takumi is at Unit 6A, 484 Hazeldean Road in Kanata. Tuesday is the closure day; Friday and Saturday extend to 9 p. m. , while the remaining open days finish at 8:30 p. m. Dine-in and takeout are documented, but reservations and delivery are not confirmed. The business is presented as ramen-focused and publishes an official menu page. Check that live menu for current bowl names, broth styles, toppings and prices instead of guessing from the restaurant category. The current Kanata menu names eight bowls: Tonkotsu Black, Tonkotsu, Tonkotsu Shrimp, Shoyu, Miso, Spicy Miso, Miso Shrimp and Vegetarian Miso. This establishes tonkotsu, shoyu and miso while ruling out tsukemen on the complete ramen section. The vegetarian choice includes a ramen egg, so it is not treated as verified vegan.",
+        "whatToOrder": "Tonkotsu Black adds house-made black-garlic oil to the pork-bone base; Miso Shrimp uses tempura shrimp, while Vegetarian Miso carries egg and a veggie croquette.",
+        "caveats": "The readable menu does not publish current prices. Vegetarian Miso is not verified vegan because it includes egg; halal suitability and noodle-production location also remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_7b1c872d0770a502efaa",
+      "replacesMenuUrl": "https://www.globefishramen.ca/menu",
+      "menuUrl": "https://www.globefishramen.ca/menu",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Globefish Ramen",
+          "price": 17.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [
+            "sesame",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tokyo Tonkotsu Ramen",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chicken Paitan Ramen",
+          "price": 16.5,
+          "brothBase": [
+            "chicken"
+          ],
+          "brothStyle": [
+            "paitan"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "content": {
+        "shortDescription": "Globefish Ramen and Izakaya in northwest Calgary has verified tonkotsu, tori paitan, shoyu, miso, tantanmen and chilled-ramen signals. It closes Monday and Tuesday and uses split hours Wednesday through Friday. Its current menu now names nine ramen choices, including Globefish Ramen, Tokyo Tonkotsu, Kuro Garlic and Chicken Paitan; only some prices are exposed clearly.",
+        "editorialDescription": "Globefish is at 326 14 Street NW in Calgary. Its current menu supports pork-bone tonkotsu and tori-paitan styles, shoyu and miso seasoning, tantanmen and a chilled ramen preparation. The restaurant also makes a noodle-production claim, but the wording does not say whether that work occurs at this branch, so this page does not describe the noodles as made there. Operating hours are distinctive: Monday and Tuesday are closed; Wednesday through Friday have noon–2:30 p. m. lunch and 5–8:30 p. m. The item-level menu now names nine ramen choices instead of style signals alone. Globefish Ramen combines spicy sesame and peanut with tonkotsu and is shown at $17.50; Tokyo Tonkotsu, Shoyu, Miso, Spicy Miso, Kuro Garlic and Chicken Paitan are also present. Because the remaining price order is ambiguous, this page does not invent a complete range.",
+        "whatToOrder": "Globefish Ramen is the $17.50 sesame-tonkotsu signature; compare it with Tokyo Tonkotsu or the clearly named Chicken Paitan.",
+        "caveats": "Only prices that align unambiguously with a named item are quoted. Noodle production is restaurant-claimed without a branch location, while vegan and halal suitability remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_2486b361dcbea78abf5f",
+      "replacesMenuUrl": "https://www.shinramensushi.com/ramen-1",
+      "menuUrl": "https://www.shinramensushi.com/ramen-1",
+      "permanentItemCount": 19,
+      "items": [
+        {
+          "name": "Tonkotsu Ramen",
+          "price": 17.95,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "price": 14.95,
+          "brothBase": [
+            "chicken"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Sapporo Miso Ramen",
+          "price": 17.95,
+          "brothBase": [
+            "fish_seafood"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://static.wixstatic.com/media/e26303_8dbb62c902764386a3e1cf6f09d493ed~mv2.png",
+        "https://static.wixstatic.com/media/e26303_de722c4988e04529b5f8870dfe13bf6f~mv2.png"
+      ],
+      "prices": {
+        "observedCount": 19,
+        "min": 14.95,
+        "max": 20.95,
+        "median": 18.95,
+        "typical": 18.95,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "fish_seafood",
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "shio",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Shin Ramen and Sushi on Lake Shore Boulevard West has multiple permanent ramen bowls documented on its official menu. The restaurant serves Monday through Saturday until 9 p. m. , with dine-in, takeout and delivery available. The current two-page menu shows 19 ramen bowls priced from $14.95 to $20.95, including tonkotsu, shoyu, shio, miso, seafood and vegetable-broth choices.",
+        "editorialDescription": "Shin Ramen and Sushi is at 3106 Lake Shore Boulevard West in Etobicoke. Monday–Saturday hours span 11:30 a. m. –9 p. m. ; Sunday is closed. Dine-in, takeout and delivery are documented, along with wheelchair-accessible seating, family-friendly service and alcoholic drinks. A vegan-options indicator comes only from a low-confidence restaurant claim and does not identify a complete suitable bowl. Reservations, halal status and noodle production were not resolved. Shin’s August 2026 menu images establish 19 bowls and an observed $14.95–$20.95 range. Shoyu and Shio Ramen are $14.95, Tonkotsu is $17.95, Sapporo Miso is $17.95 and Shin Ramen with spicy seafood broth is $20.95. Veggie Tofu uses vegetable broth, but the menu does not label it vegan.",
+        "whatToOrder": "Shoyu is the $14.95 low end, Tonkotsu costs $17.95, and Shin Ramen is the $20.95 spicy seafood-broth signature.",
+        "caveats": "The official menu labels Veggie Tofu as vegetable-broth ramen but does not verify vegan preparation or cross-contact. Reservations, halal suitability and noodle production remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_f1c9bcc6b7eea60aba64",
+      "replacesMenuUrl": "https://sushietramen.ca/menu/",
+      "menuUrl": "https://order.pikapoint.io/ichi-ramen-shop/menus",
+      "permanentItemCount": 4,
+      "items": [
+        {
+          "name": "Sho-yo Ramen",
+          "price": 14.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tonkotsu Ramen",
+          "price": 14.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Ramen",
+          "price": 14.99,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 4,
+        "min": 14.99,
+        "max": 18.98,
+        "median": 14.99,
+        "typical": 14.99,
+        "band": "budget",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "shoyu"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ichi Shop & Ramen on Rue Saint-Zotique has a ramen-led official menu and stays open until 3 a. m. Tuesday–Saturday. Online reservations, dine-in, takeout and delivery are all available. The restaurant-linked ordering menu now confirms four ramen choices: shoyu, tonkotsu and miso at $14.99, plus Ramen Delux at $18.98.",
+        "editorialDescription": "Ichi Shop & Ramen is at 780 Rue Saint-Zotique East in Rosemont–La Petite-Patrie. Its official menu is ramen-led and lists many permanent bowls, although dependable dish names, prices and style tags were not available here. Hours are highly late-oriented: Monday runs 11:30 a. m. –1 a. m. ; Tuesday opens at 4 p. m. and closes at 3 a. m. ; Wednesday through Saturday serve 11:30 a. m. –3 a. m. ; Sunday is 4 p. m. –1 a. m. Online reservations are listed through the restaurant's booking site. The official site’s ordering link provides four current ramen choices with prices. Sho-yo, Tonkotsu and Miso Ramen are each $14.99, while Ramen Delux is $18.98. That concise section supports shoyu, pork-bone tonkotsu and miso filters, but no tsukemen. Dietary composition is not detailed enough for a vegan claim.",
+        "whatToOrder": "Shoyu, Tonkotsu and Miso all share the $14.99 starting price; Ramen Delux is the larger $18.98 choice.",
+        "caveats": "The linked ordering system confirms names and prices but does not publish ingredient-level vegan, halal or noodle-production information. The accessibility limitations in the branch facts still apply."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_73050b83c2c3acb00150",
+      "replacesMenuUrl": "https://www.ramenarashi.ca/locations/view/27-kelowna",
+      "menuUrl": "https://www.clover.com/online-ordering/ramen-arashi-kelowna",
+      "permanentItemCount": 12,
+      "items": [
+        {
+          "name": "Tonkotsu",
+          "price": 17.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu",
+          "price": 16.95,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Veggie Tan Tan",
+          "price": 18.95,
+          "brothBase": [
+            "soy_milk"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "sesame",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegetarian"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 12,
+        "min": 16.95,
+        "max": 18.95,
+        "median": 17.95,
+        "typical": 17.95,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "soy_milk"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "miso",
+          "sesame",
+          "shio",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tantanmen",
+          "chilled_ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ramen Arashi Kelowna is open Thursday through Monday on Dayton Street, with Tuesday and Wednesday closed. Kelowna’s restaurant-linked menu now lists 12 ramen choices from $16.95 to $18.95, covering tonkotsu, shoyu, miso, yuzu shio, tan tan and vegetarian soy-milk bowls.",
+        "editorialDescription": "Ramen Arashi Kelowna operates at 1884 Dayton Street with an 11 a. m. to 8 p. m. schedule from Thursday through Monday. Tuesday and Wednesday are closed. Dine-in and takeout are available, along with wheelchair-accessible entrance, seating and washrooms. Reservations are accepted through an unspecified channel, while delivery remains unknown. The restaurant mentions vegan suitability, while halal options and noodle production are unknown. The Kelowna ordering menu now establishes 12 bowls and a $16.95–$18.95 range. Shoyu and Yuzu Shio occupy the low end, Tonkotsu is $17.50, and Arashi Tan Tan plus three vegetarian bowls are $18.95. The vegetarian descriptions use soy milk, sesame or miso but do not explicitly claim vegan preparation.",
+        "whatToOrder": "Shoyu is $16.95, classic Tonkotsu is $17.50 and Arashi Tan Tan is $18.95; Veggie Tan Tan is also $18.95 but is not verified vegan.",
+        "caveats": "Clover is linked directly by the Kelowna location page. Vegetarian items are not promoted as vegan, and halal suitability plus noodle-production details remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_5211513246e03ae53ad5",
+      "replacesMenuUrl": "https://kintaroramenbc.com/kintaro-ramen/locations/",
+      "menuUrl": "https://kintaroramenbc.com/kintaro-ramen/locations/",
+      "permanentItemCount": 11,
+      "items": [
+        {
+          "name": "Shoyu Ramen",
+          "price": 16.96,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Ramen",
+          "price": 18.01,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Vegetable Ramen",
+          "price": 21.95,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 3,
+        "min": 16.96,
+        "max": 21.95,
+        "median": 18.01,
+        "typical": 18.01,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "shoyu"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "unknown",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "unknown",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Kintaro Ramen on Denman Street closes Monday and runs until 10 p. m. Friday and Saturday. Kintaro’s official Denman page now names a numbered 11-bowl menu; readable examples include $16.96 Shoyu, $18.01 Miso and $21.95 Miso Vegetable Ramen.",
+        "editorialDescription": "Kintaro Ramen here means the 788 Denman Street restaurant in central Vancouver. Monday is closed; Tuesday through Thursday and Sunday end at 9:30 p. m. , with Friday and Saturday reaching 10 p. m. Reservations are confirmed as unavailable. Dine-in, takeout and delivery are all listed, along with an accessible entrance. The business is presented as ramen-focused. Halal suitability, complete vegan offerings and noodle preparation are also unverified. Review the chosen ingredients and their preparation with the restaurant before relying on dietary accommodations, then confirm same-day availability before travelling. The Denman page exposes three priced anchors from its numbered 11-bowl menu. Shoyu Ramen uses pork-bone stock and costs $16.96; Miso is $18.01; Miso Vegetable is $21.95. The restaurant explicitly warns that its vegetable bowl still uses pork broth, so it is neither treated as vegetarian nor promoted as vegan.",
+        "whatToOrder": "Shoyu is the $16.96 entry point, Miso costs $18.01, and Miso Vegetable is $21.95 but still contains pork broth.",
+        "caveats": "Only the three bowls displayed with dependable text prices are quoted. Miso Vegetable is not meat-free because its broth contains pork; halal and noodle-production details remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_88bb66dab4bc0456eb1d",
+      "replacesMenuUrl": "https://www.machidashoten.ca/",
+      "menuUrl": "https://www.machidashoten.ca/",
+      "permanentItemCount": 5,
+      "items": [
+        {
+          "name": "Original",
+          "price": 14.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Kara",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Max",
+          "price": 19.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.machidashoten.ca/MACHIDA_SHOTEN_MENU.png"
+      ],
+      "prices": {
+        "observedCount": 5,
+        "min": 14.99,
+        "max": 19.99,
+        "median": 17.99,
+        "typical": 17.99,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "no",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Machida Shoten's College Street branch is listed from 11 a. m. to 10 p. m. daily. Dine-in and takeout are available, delivery is not, and the entrance is reported wheelchair accessible. Machida Shoten’s current College Street menu shows five Yokohama Iekei bowls from $14.99 to $19.99, built on pork-bone broth seasoned with soy sauce and chicken oil.",
+        "editorialDescription": "Machida Shoten is located at 326 College Street in Toronto. The branch uses one schedule across the entire week, opening at 11 a. m. and closing at 10 p. m. Its current service attributes support dining in and taking food away, but specifically list delivery as unavailable. Alcohol service and a wheelchair-accessible entrance are also recorded. As a result, this guide does not assign tonkotsu, shoyu, miso, tsukemen, vegan, halal or house-noodle filters to the location. Reservation arrangements are similarly unconfirmed and warrant a direct check. The current menu image resolves both style and price: five Yokohama Iekei bowls use rich pork-bone broth, special soy sauce, chicken oil and thick chewy noodles. Original starts at $14.99, spicy Kara is $16.99, Negi is $17.99, and both Chashu and Max cost $19.99. The page does not label this selection tonkotsu.",
+        "whatToOrder": "Original gives the $14.99 baseline; Kara adds the spicy bomb for $16.99, and Max combines extra pork, egg and nori at $19.99.",
+        "caveats": "The official allergen note warns of wheat, soy, egg and possible sesame or dairy, with kitchen cross-contamination possible. Vegan, halal and house-made-noodle claims are not established."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_5c9ac40ac8e5d19b9e8e",
+      "replacesMenuUrl": "https://tastyhouse.ca/menu/",
+      "menuUrl": "https://tastyhouse.ca/menu/",
+      "permanentItemCount": 6,
+      "items": [
+        {
+          "name": "Tan Tan (Minced Pork) Ramen",
+          "price": 19,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "sesame"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu (Beef) Ramen",
+          "price": 19,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso (Pork) Ramen",
+          "price": 19,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Veggie Ramen",
+          "price": 17,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegetarian"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://tastyhouse.ca/wp-content/uploads/2026/02/Menu-Jan-2026-front-scaled.jpg",
+        "https://tastyhouse.ca/wp-content/uploads/2026/02/Menu-Jan-2026-back-scaled.jpg"
+      ],
+      "prices": {
+        "observedCount": 6,
+        "min": 17,
+        "max": 19,
+        "median": 19,
+        "typical": 19,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [
+          "miso",
+          "sesame",
+          "shoyu"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tantanmen"
+        ],
+        "tonkotsu": "unknown",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Tasty House in Edmonton lists six Japanese ramen bowls within a broader Chinese and Japanese noodle menu. It opens daily from 11 a. m. to 10 p. m. with dine-in, takeout and delivery. Tasty House’s January 2026 menu names six Japanese ramen bowls: Veggie is $17, while tan tan, shoyu beef, beef tomato, miso pork and chicken are $19.",
+        "editorialDescription": "Tasty House Chinese and Japanese Noodle Restaurant is at 11113 87 Avenue Northwest in south-central Edmonton. Its current ordering menu contains six Japanese ramen bowls, making ramen a substantial category within a wider noodle selection. Individual bowl names, broths and prices are not dependable enough to publish here. The schedule is straightforward: 11 a. m. to 10 p. m. every day. Diners may eat in, collect takeout or order delivery; wheelchair access is listed for seats and washrooms. The restaurant is described as family-friendly and serves alcohol. The restaurant’s January 2026 menu images make the six-bowl ramen section concrete. Veggie Ramen costs $17; Tan Tan with minced pork, Shoyu Beef, Beef Tomato, Miso Pork and Chicken Ramen are each $19. Ramen remains a substantial category inside a much larger Chinese and Japanese menu rather than the restaurant’s only focus.",
+        "whatToOrder": "Veggie Ramen is the $17 low end; Tan Tan, Shoyu Beef and Miso Pork each cost $19 and cover three distinct seasoning directions.",
+        "caveats": "The six ramen bowls share a broad kitchen with many other dishes. Veggie is not explicitly labelled vegan, and halal suitability, allergen controls and noodle production remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_c64ee9168ca3ab2796ec",
+      "replacesMenuUrl": "https://yoka.ca/menu/",
+      "menuUrl": "https://yoka.ca/menu/",
+      "permanentItemCount": 3,
+      "items": [
+        {
+          "name": "Tonkotsu Ramen Build",
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Gomami Ramen Build",
+          "brothBase": [
+            "sesame"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "sesame"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan_option"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegetarian Ramen Build",
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan_option"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://yoka.ca/wp-content/uploads/2025/05/RAMEN-MENU-EN-with-KAKIGORI-LONG-NO-PRICES.png"
+      ],
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "pork_bone",
+          "sesame",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "sesame"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "no",
+        "miso": "no",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Friday–Saturday reach 11 p. m. ; weekday afternoons include a service break. Yokato Yokabai’s official build sheet now confirms tonkotsu, sesame-based gomami and vegetable broths, thin or thick noodles, vegan noodles and selectable pork, chicken or vegetable toppings.",
+        "editorialDescription": "Yokato Yokabai is at 4185 Rue Drolet in Le Plateau-Mont-Royal. Monday through Wednesday serve 11:30 a. m. –2:30 p. m. and 5–10 p. m. ; Thursday dinner ends at 10:30 p. m. , and Friday reaches 11 p. m. Saturday runs continuously from 11:30 a. m. –11 p. m. , while Sunday ends at 10 p. m. Reservations are not accepted. Customers can dine in, collect food, order delivery or use outdoor seating. Yokato’s current menu is a build sheet rather than a fixed bowl list. The standing bases are pork-broth Tonkotsu, sesame-broth Gomami and vegetable broth; chicken Torikotsu is marked limited. Diners choose thin, thick or vegan noodles, then pork shoulder, chicken teriyaki or vegetables, with optional egg and garnishes. No dependable prices appear on this sheet.",
+        "whatToOrder": "Start with tonkotsu for pork broth, gomami for sesame or the vegetable base; then choose noodle style, topping and whether egg should be omitted.",
+        "caveats": "A potentially vegan build requires the restaurant-labelled vegetable or gomami broth, vegan noodles, vegetable topping and no egg. Cross-contact is not documented, so this page does not call it a verified complete vegan bowl."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_290af28142e3dc9c30a8",
+      "replacesMenuUrl": "https://ramen-tabetai.ca/contact/",
+      "menuUrl": "https://ramen-tabetai.ca/contact/",
+      "permanentItemCount": 1,
+      "items": [
+        {
+          "name": "Saito Ramen",
+          "price": 22.88,
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://ramen-tabetai.ca/wp-content/uploads/2025/04/RAMEN-TABETAI-MENU-2_compressed.pdf"
+      ],
+      "prices": {
+        "observedCount": 1,
+        "min": 22.88,
+        "max": 22.88,
+        "median": 22.88,
+        "typical": 22.88,
+        "band": "premium",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [],
+        "brothStyles": [],
+        "tares": [],
+        "servingStyles": [
+          "ramen",
+          "jiro_style"
+        ],
+        "tonkotsu": "unknown",
+        "shoyu": "unknown",
+        "miso": "unknown",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ramen Tabetai on Cumberland Street is closed Monday, serves to 9 p. m. Tuesday-Thursday and Sunday, and reaches 1 a. m. Friday-Saturday. Ramen Tabetai’s current menu centres on one customizable Jiro-inspired Saito Ramen at $22.88, with thick noodles, pork chashu, back fat, vegetables and selectable intensity levels.",
+        "editorialDescription": "Ramen Tabetai is at 154 Cumberland Street in Old Toronto. Monday is closed. Tuesday through Thursday and Sunday run from 11:30 a. m. to 9 p. m. , while Friday and Saturday continue to 1 a. m. The available service information confirms dine-in and alcohol service but does not establish takeout, delivery, reservations or accessibility. A restaurant page is linked as a menu source, yet it does not supply dependable current bowl names, broth styles or prices. Vegan, halal and noodle-production details are also unknown. The official menu PDF now identifies the focused offering: Saito Ramen is a Jiro-inspired bowl with thick noodles, pork chashu, back fat and vegetables, priced at $22.88. Diners can adjust back-fat, garlic, vegetable and saltiness levels. A $17.88 club price requires a student-only annual membership, so it is not used as the general price.",
+        "whatToOrder": "Saito Ramen is the single standing bowl at $22.88; use the four customization controls for back fat, garlic, vegetables and saltiness rather than expecting several broth styles.",
+        "caveats": "The discounted $17.88 price requires an eligible student membership and is not the standard rate. The source does not verify vegan, halal, allergen or noodle-production details, and no broth taxonomy is inferred from appearance."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_e2b8d5841b81fb93e8f5",
+      "replacesMenuUrl": "https://menbowramenbar.com/",
+      "menuUrl": "https://menbowramenbar.com/",
+      "permanentItemCount": 8,
+      "items": [
+        {
+          "name": "Shio Ramen",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shio"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "shoyu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Miso Ramen",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tsukemen",
+          "brothBase": [],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "tsukemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "pork_bone"
+        ],
+        "brothStyles": [
+          "tonkotsu",
+          "tori_paitan"
+        ],
+        "tares": [
+          "miso",
+          "shio",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tsukemen",
+          "mazesoba"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "yes",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Menbow Ramen at 5000 Canoe Pass Way in Delta opens seven days, with 9 p. m. closing Thursday–Saturday. Menbow’s current official page names shio, spicy shio, shoyu, spicy miso, tomato ramen, tsukemen and mazemen while describing both pork-bone and clear chicken broths.",
+        "editorialDescription": "Menbow Ramen operates at 5000 Canoe Pass Way in Delta. Monday through Wednesday run 10 a. m. –7 p. m. ; Thursday, Friday and Saturday extend to 9 p. m. ; Sunday is 11 a. m. –7 p. m. Dine-in, takeaway and delivery are available, and the entrance, seating and washroom are all listed as wheelchair accessible. Reservations are unspecified. Menbow’s official page now supports an eight-item working menu set through its photo labels and restaurant description: Shio, Spicy Shio, Shoyu, Spicy Miso, Tomato Ramen, Tsukemen and Mazemen join the advertised pork-bone and chicken-broth directions. Soup is described as prepared daily from fresh bones. Readable current prices are not published.",
+        "whatToOrder": "Use Shio or Shoyu to compare seasonings, Spicy Miso for heat, and Tsukemen or Mazemen when a dipping or brothless format is preferred.",
+        "caveats": "The official page establishes styles and named dishes but not dependable text prices or every ingredient. Tomato Ramen is described as vegetarian, not verified vegan; halal and noodle-production details remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_1db54e71a0faee5d195d",
+      "replacesMenuUrl": "https://nekoramenduncan.com/rice-menu",
+      "menuUrl": "https://nekoramenduncan.com/ramen/",
+      "permanentItemCount": 13,
+      "items": [
+        {
+          "name": "Miso Ramen",
+          "price": 15.6,
+          "brothBase": [
+            "chicken",
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tonkotsu Ramen",
+          "price": 16,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Tantan Men",
+          "price": 16,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso",
+            "sesame"
+          ],
+          "servingStyle": [
+            "tantanmen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://nekoramenduncan.com/wp-content/uploads/2026/04/menu-1.png",
+        "https://nekoramenduncan.com/wp-content/uploads/2026/04/menu-2.png",
+        "https://nekoramenduncan.com/wp-content/uploads/2026/04/menu-3.png"
+      ],
+      "prices": {
+        "observedCount": 13,
+        "min": 15.6,
+        "max": 16,
+        "median": 15.6,
+        "typical": 15.6,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "chicken",
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "curry",
+          "miso",
+          "sesame",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen",
+          "tantanmen"
+        ],
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 3,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Miso Ramen",
+          "Vegan Tantan Men",
+          "Vegan Curry Miso Ramen"
+        ],
+        "note": "The April 2026 menu gives these bowls a vegan base with plant-based broth and egg-free vegan noodles; cross-contact is not documented.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "noodles": {
+        "status": "restaurant_claimed_unspecified",
+        "verified": "yes",
+        "scope": "The menu describes egg noodles as house-made and separately offers egg-free vegan and bean-based gluten-free noodles; the production location is not stated.",
+        "makingLocation": "",
+        "styleValues": [
+          "egg_noodles",
+          "vegan_noodles",
+          "gluten_free_noodles"
+        ],
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Neko Ramen’s official site says its noodles are handcrafted daily for the Duncan shop. The restaurant closes Sunday and Monday, has shorter Saturday hours, and still requires a live-menu check for current bowls and prices. Neko’s April 2026 menu now documents 13 ramen bowls at $15.60–$16, including tonkotsu, shoyu, miso, tantanmen and three complete vegan selections.",
+        "editorialDescription": "Neko Ramen operates at 171 Canada Avenue in Duncan. The official site presents ramen as the main focus and describes noodles as handcrafted daily for its bowls; that is an attributed restaurant claim, not an independent production audit. Tuesday through Friday run 11:30 a. m. –6:30 p. m. , Saturday ends at 3 p. m. , and both Sunday and Monday are closed. Dine-in, takeout and delivery are listed, but reservations are not verified. The April 2026 menu images establish 13 bowls in a narrow $15.60–$16 range. Tonkotsu is $16; Miso and Soy Sauce Ramen are $15.60. Three separate vegan bowls—Miso, Tantan Men and Curry Miso—use plant-based broth and egg-free vegan noodles. The same menu calls its regular egg noodles house-made without specifying the production site.",
+        "whatToOrder": "Tonkotsu is $16, standard Miso is $15.60, and Vegan Tantan Men is a complete $16 plant-based bowl rather than an omission-based modification.",
+        "caveats": "The menu labels three complete vegan bowls, but it does not describe cross-contact. House-made egg noodles are restaurant-claimed without a stated production location; halal suitability remains unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_01e5c6e221b772630a77",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Ajisen Original",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Church and Carlton’s Ajisen in Toronto stays open until 1 a.m. most nights and 2 a.m. Friday–Saturday, with 16 current ramen choices and two verified vegan recipes.",
+        "editorialDescription": "Ajisen Ramen and Bar at 399 Church Street has the latest verified closing time in this branch set: 1 a.m. Sunday–Thursday and 2 a.m. on Friday and Saturday. The national menu ranges from $16.99 to $23.99 across 16 bowls. Ajisen Original costs $16.99, while both Vegan Harvest and Beyond Meat Ramen list at $18.99. The latter two use vegan broth and noodles according to a dedicated menu section, but the restaurant cautions that equipment is shared. Reservations, delivery, takeout, dine-in and outdoor seating are listed here. Halal preparation and the location of noodle production remain outside the available evidence.",
+        "whatToOrder": "Ajisen Original begins at $16.99; Vegan Harvest and Beyond Meat each cost $18.99 and are presented as complete vegan ramen recipes.",
+        "caveats": "The Church Street branch may sell out of items shown nationally. Shared kitchen equipment is disclosed, and neither halal controls nor on-site noodle making has been verified."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_264365598c55d586624c",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Black Garlic Sliced Pork",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Ramen + Karaage",
+          "price": 18.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ajisen Vaughan at Rutherford Road closes at 11 p.m. early in the week and midnight Thursday–Saturday, with 16 current bowls spanning $16.99 to $23.99 in Vaughan today.",
+        "editorialDescription": "Unit 9 at 3175 Rutherford Road serves as Ajisen’s Vaughan address. It closes at 11 p.m. Monday–Wednesday and Sunday, then midnight from Thursday through Saturday. From the verified Canadian menu, Black Garlic Sliced Pork is $16.99, Miso Ramen with karaage is $18.50 and Vegan Harvest is $18.99; the complete ramen count is 16. Vegan Harvest and Beyond Meat occupy a plant-based section specifying vegan broth and noodles, alongside a notice about shared equipment. Dine-in, takeaway and delivery are supported, and all three recorded accessibility points—entrance, seating and washroom—are positive. The reservation policy, halal handling and noodle-production site are not known.",
+        "whatToOrder": "Black Garlic Sliced Pork is $16.99; Miso with karaage costs $18.50, while the $18.99 Vegan Harvest is explicitly plant-based.",
+        "caveats": "Rutherford Road availability can diverge from the national document. Cross-contact remains possible for vegan orders, and no halal protocol is published."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_3a1bfdd1bcd030daeafd",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Tender Pork Ribs Original",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Chicken",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "North York’s 5229 Yonge Street Ajisen is open until midnight seven days a week and offers a researched $16.99–$23.99 menu with pork, chicken and vegan ramen plus delivery.",
+        "editorialDescription": "For a North York late meal, Ajisen at 5229 Yonge Street lists uninterrupted 11 a.m.–midnight hours across all seven days. The Canadian menu now supplies the missing item detail: Tender Pork Ribs Original and Spicy Chicken are $17.99 apiece, while Beyond Meat Ramen is $18.99. Those sit within 16 permanent ramen choices. Beyond Meat and Vegan Harvest carry explicit vegan broth-and-noodle descriptions, tempered by a warning about common preparation equipment. Reservations are reported as accepted, with dine-in, pickup and delivery also available. No booking channel is supplied, and the reviewed sources do not verify halal handling or where this branch’s noodles are produced.",
+        "whatToOrder": "Tender Pork Ribs Original and Spicy Chicken share a $17.99 price; the $18.99 Beyond Meat bowl provides the documented vegan route.",
+        "caveats": "Confirm inventory with the North York restaurant because the source menu covers Canada generally. Equipment is shared, so the vegan labels do not remove cross-contact risk."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_4b90e14f4ce4d7377930",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Ajisen Spicy",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Japanese Curry Chicken",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ajisen Chinatown at 332 Spadina Avenue operates 11 a.m.–11 p.m. all week, with 16 researched ramen options priced $16.99–$23.99 and two menu-labelled vegan selections for comparison.",
+        "editorialDescription": "Spadina Avenue’s Chinatown Ajisen keeps the same 11 a.m.–11 p.m. timetable seven days a week. Its newly checked national menu makes the bowl choice concrete: Ajisen Spicy and Japanese Curry Chicken are each $17.99, while Vegan Harvest is $18.99. Across the document, 16 ramen preparations fall between $16.99 and $23.99. Vegan Harvest joins Beyond Meat Ramen in a dedicated section whose broth and noodles are described as vegan; a shared-equipment notice prevents stronger allergy assurances. The branch lists dine-in, takeaway and delivery, plus wheelchair access at the entrance and seating area. Reservations, halal preparation and noodle-production location have not been confirmed.",
+        "whatToOrder": "Choose between $17.99 Ajisen Spicy and Japanese Curry Chicken, or use the $18.99 Vegan Harvest when a fully plant-based recipe is the priority.",
+        "caveats": "Availability can differ from the Canada menu at 332 Spadina. The vegan section is explicit, but cross-contact is possible and halal status remains unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_83ad59b7d2878cea63af",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Ramen + Pork Katsu",
+          "price": 18.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tom Yum Ramen + Grilled Shrimp",
+          "price": 18.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "The Warden–Steeles Ajisen is open to midnight every day and now has a verified national menu: 16 ramen choices, $16.99–$23.99, including two complete vegan bowls locally.",
+        "editorialDescription": "Daily 11 a.m.–midnight hours distinguish the Ajisen near Warden and Steeles at 7010 Warden Avenue. For menu planning, the live Canada document establishes 16 bowls and a median observed price of $18.50. Ramen with pork katsu and the grilled-shrimp Tom Yum combination each list at $18.50; Beyond Meat Ramen is $18.99. The separate vegan section states that Beyond Meat and Vegan Harvest use plant-based broth and noodles, while also disclosing shared cooking equipment. This Markham location accepts reservations and supports dine-in, collection and delivery. Wheelchair seating and washroom access are listed; halal suitability and on-site noodle making are not established.",
+        "whatToOrder": "Pork Katsu and grilled-shrimp Tom Yum both cost $18.50, while the $18.99 Beyond Meat bowl is the clearly labelled vegan alternative.",
+        "caveats": "The menu is Canada-wide rather than a Warden inventory sheet. Ask about same-day availability, and treat the stated equipment-sharing risk seriously when cross-contact is a concern."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_a7a8c844184a7af31196",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Spicy Beef Ramen",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Black Garlic Filet Mignon",
+          "price": 20.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ajisen Scarborough near Midland and McNicoll serves until 2 a.m. every night, pairing full wheelchair-access information with a current 16-bowl menu priced $16.99–$23.99 at its Midland Avenue address.",
+        "editorialDescription": "Every day at 3720 Midland Avenue follows the same late schedule: Ajisen Scarborough opens at 11:30 a.m. and closes at 2 a.m. The 16-item Canada menu puts Spicy Beef Ramen at $17.99, Black Garlic Filet Mignon at $20.99 and Vegan Harvest at $18.99. A second complete vegan option, Beyond Meat Ramen, appears in the same plant-based section; the source also flags possible transfer from shared tools and surfaces. This branch accepts reservations and offers outdoor seating, delivery, pickup and dine-in. Its entrance, seating and washroom are marked wheelchair accessible. Current evidence does not establish halal practices or locally made noodles.",
+        "whatToOrder": "Spicy Beef is $17.99, Black Garlic Filet Mignon rises to $20.99, and $18.99 Vegan Harvest is the plant-based contrast.",
+        "caveats": "Use the Canadian menu as a selection guide, not a guarantee of overnight stock. Vegan designation does not negate the restaurant’s shared-equipment advisory."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_b4229c73e99410116192",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Tom Yum Ramen + Steak",
+          "price": 23.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Ramen + Karaage",
+          "price": 18.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [
+            "miso"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Midtown Ajisen at 2359 Yonge Street runs to midnight nightly; its verified 16-bowl menu includes $18.50 miso-karaage, $18.99 Beyond Meat and a $23.99 steak Tom Yum for late diners.",
+        "editorialDescription": "The Midtown listing refers specifically to 2359 Yonge Street, where service is scheduled from 11 a.m. until midnight every day. Among 16 current Canadian ramen choices, the $23.99 Tom Yum with steak marks the top of the observed range. Miso Ramen with karaage is $18.50, and Beyond Meat Ramen costs $18.99. Beyond Meat and Vegan Harvest are the two complete menu-labelled vegan recipes, made with vegan broth and noodles; shared equipment is disclosed. Reservations are accepted, and customers can dine in, collect or order delivery. Wheelchair seating and washroom facilities are reported, while halal suitability and the noodle-making location are still unknown.",
+        "whatToOrder": "The $23.99 steak Tom Yum is the premium choice; Miso with karaage costs $18.50, and Beyond Meat is a complete vegan bowl at $18.99.",
+        "caveats": "Prices come from Ajisen Canada’s current menu, not a Yonge Street stock feed. Vegan wording is clear, though the published cross-contact warning still applies."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_bd244596a4de7ee7c545",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Pork Original",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Ajisen Original",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ajisen Waterloo at 15 King Street North combines midnight-or-later hours with a 16-bowl researched menu; Original ramen begins at $16.99 and vegan choices cost $18.99, plus delivery and dine-in.",
+        "editorialDescription": "Downtown Waterloo’s Ajisen opens at 11:30 a.m., finishing at midnight Sunday–Thursday and 1 a.m. on the weekend. Instead of advance bookings, this branch uses an online waitlist. The current Canada menu lists 16 ramen dishes: Pork Original and Ajisen Original are both $16.99, while Vegan Harvest is $18.99. Vegan Harvest and Beyond Meat Ramen are made with vegan soup and noodles according to the menu, which separately warns about shared equipment. Delivery, takeout and dine-in are available at 15 King Street North. Wheelchair entrance, seating and washroom access are all reported. Halal status and the site of noodle production have not been confirmed.",
+        "whatToOrder": "Pork Original and Ajisen Original share the $16.99 low end; Vegan Harvest is the menu-labelled vegan option at $18.99.",
+        "caveats": "The Waterloo branch uses a waitlist rather than reservations. Confirm live stock, and account for the published equipment-sharing warning when avoiding cross-contact."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_bed77556deebf6597222",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Black Garlic Sliced Pork",
+          "price": 16.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Beef Ramen",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Ajisen Ajax combines a current 16-bowl Canada menu with Rossland Road hours extending to midnight most nights and 1 a.m. Friday–Saturday; ramen prices locally span $16.99–$23.99.",
+        "editorialDescription": "At 334 Rossland Road East, Ajisen’s Ajax branch is useful for ramen after many nearby kitchens close: Sunday through Thursday end at midnight, with Friday and Saturday continuing to 1 a.m. The current Canadian menu contains 16 ramen choices from $16.99 to $23.99. Black Garlic Sliced Pork is $16.99, Spicy Beef costs $17.99 and Beyond Meat Ramen is $18.99. Both Beyond Meat and Vegan Harvest are presented with vegan broth and noodles, although the allergen notice warns that shared equipment can cause cross-contact. Dine-in, takeout and delivery are available; advance reservations are not offered at this address.",
+        "whatToOrder": "Black Garlic Sliced Pork offers the $16.99 entry point; Spicy Beef is $17.99, and Beyond Meat provides an explicitly vegan $18.99 comparison.",
+        "caveats": "Ajisen publishes one Canadian menu, so Ajax stock may change. Vegan recipes are identified, but the shared-equipment warning matters for allergy-sensitive diners; halal preparation is not verified."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_cac15c545e242b15fc92",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Tender Pork Ribs Original",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Japanese Curry Chicken",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "The Kennedy–Highway 7 Ajisen in Unionville keeps 11 a.m.–midnight daily hours and now connects to 16 verified ramen choices, including curry, pork-rib and vegan bowls for late dining.",
+        "editorialDescription": "At 8360 Kennedy Road, this Unionville Ajisen provides a simple seven-day timetable of 11 a.m. to midnight. The current menu research fills in 16 ramen choices: Tender Pork Ribs Original and Japanese Curry Chicken each cost $17.99, whereas Vegan Harvest is $18.99. Vegan Harvest and Beyond Meat Ramen are described with both plant-based soup and noodles, followed by an explicit cross-contact warning. Wheelchair access is reported for the entrance, dining area and washroom. Other service modes and the reservation policy remain unresolved for this exact branch, so they are not inferred from sister locations. Halal preparation and noodle provenance are likewise unverified.",
+        "whatToOrder": "Tender Pork Ribs Original and Japanese Curry Chicken are both $17.99; Vegan Harvest adds a documented plant-based choice for $18.99.",
+        "caveats": "Branch stock is not synchronized with the Canada-wide menu. Service details beyond accessibility need confirmation, and allergy-sensitive guests should note shared equipment."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_dd3c5a45fd35a451e4e1",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Ajisen Spicy",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Ramen + Fried Shrimp",
+          "price": 18.5,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Beyond Meat Ramen",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "South Windsor Ajisen on Dougall Avenue serves until 11:30 p.m. Friday–Saturday and offers a verified 16-bowl menu with fried-shrimp, spicy and vegan options for late-night diners.",
+        "editorialDescription": "The Dougall Avenue Ajisen starts at 11:30 a.m. daily, with closing times that vary: 10:30 p.m. Sunday, 11 p.m. Monday–Thursday and 11:30 p.m. on Friday and Saturday. Reservations are accepted at this South Windsor branch. On the Canadian menu, Ajisen Spicy costs $17.99, Ramen with fried shrimp is $18.50 and Beyond Meat Ramen is $18.99, within 16 researched choices. Beyond Meat and Vegan Harvest are explicitly built with vegan broth and noodles, but a shared-equipment notice limits allergy assurances. Dine-in, collection and delivery are listed, as are wheelchair-accessible entrance, seating and washroom. Halal procedures and noodle origin are not documented.",
+        "whatToOrder": "Ajisen Spicy is $17.99, fried-shrimp ramen costs $18.50, and Beyond Meat supplies a complete vegan recipe for $18.99.",
+        "caveats": "Dougall Avenue inventory may not mirror the national page minute by minute. The vegan section is useful, while its equipment-sharing disclosure should not be overlooked."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_ebbb61b99d710de1858c",
+      "replacesMenuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "menuUrl": "https://www.ajisenramen.ca/fullmenu",
+      "permanentItemCount": 16,
+      "items": [
+        {
+          "name": "Spicy Chicken",
+          "price": 17.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tom Yum Ramen + Steak",
+          "price": 23.99,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Vegan Harvest",
+          "price": 18.99,
+          "brothBase": [
+            "vegetable"
+          ],
+          "brothStyle": [],
+          "tare": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [
+            "vegan"
+          ],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "linkedDocuments": [
+        "https://www.ajisenramen.ca/_files/ugd/b11f3d_d9c7e03dba1a4dd4b81504c3674eb6a3.pdf"
+      ],
+      "prices": {
+        "observedCount": 16,
+        "min": 16.99,
+        "max": 23.99,
+        "median": 18.5,
+        "typical": 18.5,
+        "band": "moderate",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "brothBases": [
+          "pork_bone",
+          "vegetable"
+        ],
+        "brothStyles": [],
+        "tares": [
+          "curry",
+          "miso",
+          "shoyu",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "tonkotsu": "no",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "no",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "vegan": {
+        "status": "multiple_complete_bowls",
+        "bowlCount": 2,
+        "customizationRequired": "no",
+        "itemNames": [
+          "Vegan Harvest",
+          "Beyond Meat Ramen"
+        ],
+        "note": "The current Canada menu places both bowls in a vegan section with 100 percent vegan broth and vegan noodles, while warning that shared equipment can create cross-contact.",
+        "confidence": "high",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "East Windsor’s Lauzon Parkway Ajisen serves 16 verified ramen choices, with $17.99 Spicy Chicken, $18.99 Vegan Harvest and a $23.99 steak Tom Yum, plus dine-in, takeout and delivery.",
+        "editorialDescription": "Ajisen East Windsor occupies Unit 1400 at 2601 Lauzon Parkway. Hours end at 10 p.m. Sunday through Thursday and 11 p.m. Friday–Saturday, following an 11 a.m. opening. Menu verification found 16 current Canadian bowls across a $16.99–$23.99 span. Spicy Chicken is $17.99, Vegan Harvest is $18.99 and Tom Yum Ramen with steak reaches $23.99. The vegan dish—along with Beyond Meat Ramen—uses vegan noodles and broth, though shared preparation equipment is disclosed. Customers can dine in, collect or request delivery. Entrance, seating and washroom accessibility are reported; reservations, halal controls and noodle-making location remain unknown.",
+        "whatToOrder": "Spicy Chicken costs $17.99; Vegan Harvest is $18.99, and the $23.99 steak Tom Yum anchors the premium end.",
+        "caveats": "The source is Ajisen’s Canadian menu rather than an East Windsor stock list. Its two vegan recipes still carry a cross-contact caution."
       }
     }
   ]

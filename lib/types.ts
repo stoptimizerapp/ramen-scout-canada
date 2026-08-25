@@ -52,10 +52,18 @@ export type Restaurant = {
       verifiedAt: string;
       url: string;
       finalUrl: string;
-      extractionMethod: "crawl4ai_normalized_markdown";
+      extractionMethod: "crawl4ai_normalized_markdown" | "crawl4ai_page_plus_verified_document";
       contentHash: string;
+      pageContentHash: string;
       statusCode: number;
       markdownChars: number;
+      linkedDocuments: Array<{
+        url: string;
+        finalUrl: string;
+        contentType: string;
+        bytes: number;
+        contentHash: string;
+      }>;
       crawl4aiSuccess: boolean;
       corroboration: {
         ramenTerms: number;

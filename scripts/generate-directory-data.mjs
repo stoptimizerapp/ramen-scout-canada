@@ -483,16 +483,30 @@ const draftRestaurants = rawRows.map((row) => {
 
 const maximumSupplementAgeMs = 120 * 24 * 60 * 60 * 1000;
 const currentBuildTime = Date.now();
-const enrichedDraftRestaurants = draftRestaurants.map((restaurant) => applySearchReadinessEnrichment(restaurant, readinessEnrichmentById.get(restaurant.id)));
+const enrichedDraftRestaurants = draftRestaurants.map((restaurant) => applySearchReadinessEnrichment(
+  restaurant,
+  readinessEnrichmentById.get(restaurant.id),
+  { allowPendingSupplementEvidence: true },
+));
 for (const restaurantId of readinessEnrichmentById.keys()) {
   if (!draftRestaurants.some((restaurant) => restaurant.id === restaurantId)) throw new Error(`Search-readiness menu enrichment references unknown restaurant ID ${restaurantId}.`);
 }
 const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) => {
   const supplement = readinessSupplementById.get(restaurant.id);
-  if (!supplement) return restaurant;
   const enrichment = readinessEnrichmentById.get(restaurant.id);
+  const enrichmentReferences = enrichment ? [
+    ...enrichment.items.flatMap((item) => item.evidenceRefs || []),
+    ...(enrichment.prices?.evidenceRefs || []),
+    ...(enrichment.vegan?.evidenceRefs || []),
+    ...(enrichment.taxonomy?.evidenceRefs || []),
+    ...(enrichment.noodles?.evidenceRefs || []),
+  ] : [];
+  if (!supplement) {
+    if (enrichmentReferences.includes("SR1")) throw new Error(`Search-readiness enrichment for ${restaurant.name} requires a matching fresh supplement.`);
+    return restaurant;
+  }
   const retrievedAt = Date.parse(supplement.retrievedAt || "");
-  if (supplement.crawl4aiSuccess !== true || supplement.extractionMethod !== "crawl4ai_normalized_markdown") {
+  if (supplement.crawl4aiSuccess !== true || !["crawl4ai_normalized_markdown", "crawl4ai_page_plus_verified_document"].includes(supplement.extractionMethod)) {
     throw new Error(`Search-readiness supplement for ${restaurant.name} is not a successful normalized Crawl4AI capture.`);
   }
   if (supplement.url !== restaurant.menu.url) throw new Error(`Search-readiness supplement for ${restaurant.name} does not match its current menu URL.`);
@@ -502,12 +516,36 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
   if (!/^[a-f0-9]{64}$/.test(supplement.contentHash || "") || !Number.isInteger(supplement.markdownChars) || supplement.markdownChars < 200) {
     throw new Error(`Search-readiness supplement for ${restaurant.name} lacks a substantial hashed menu capture.`);
   }
+  if (!/^[a-f0-9]{64}$/.test(supplement.pageContentHash || "")) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} lacks its normalized page hash.`);
+  }
+  const documentBacked = supplement.extractionMethod === "crawl4ai_page_plus_verified_document";
+  if (documentBacked && (!Array.isArray(supplement.linkedDocuments) || !supplement.linkedDocuments.length || supplement.linkedDocuments.some((document) => (
+    !/^https:\/\//i.test(document.url || "")
+    || !/^https:\/\//i.test(document.finalUrl || "")
+    || !/^(?:image\/|application\/pdf$)/.test(document.contentType || "")
+    || !Number.isInteger(document.bytes)
+    || document.bytes < 1_000
+    || !/^[a-f0-9]{64}$/.test(document.contentHash || "")
+  )))) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} has invalid linked menu-document evidence.`);
+  }
+  if (!documentBacked && (supplement.linkedDocuments || []).length) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} attaches documents to the wrong extraction method.`);
+  }
+  const expectedContentHash = documentBacked
+    ? sha256(JSON.stringify({ pageContentHash: supplement.pageContentHash, linkedDocuments: supplement.linkedDocuments }))
+    : supplement.pageContentHash;
+  if (supplement.contentHash !== expectedContentHash) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} is detached from its page or linked-document hashes.`);
+  }
   if (!Number.isFinite(retrievedAt) || retrievedAt > currentBuildTime + 5 * 60 * 1000 || currentBuildTime - retrievedAt > maximumSupplementAgeMs) {
     throw new Error(`Search-readiness supplement for ${restaurant.name} is stale or has an invalid retrieval time.`);
   }
-  if ((supplement.corroboration?.ramenTerms || 0) < 2 || !(
+  if ((supplement.corroboration?.ramenTerms || 0) < (documentBacked ? 1 : 2) || !(
     (supplement.corroboration?.matchedItems || 0) >= 1
     || (supplement.corroboration?.priceSignals || 0) >= 2
+    || documentBacked
   )) {
     throw new Error(`Search-readiness supplement for ${restaurant.name} does not sufficiently corroborate a ramen menu.`);
   }
@@ -517,6 +555,8 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
   const menuItems = enrichment ? restaurant.menu.items.map((item) => ({ ...item, evidenceRefs: [...new Set([...(item.evidenceRefs || []), evidenceId])] })) : restaurant.menu.items;
   const prices = enrichment?.prices ? { ...restaurant.prices, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.prices.evidenceRefs || []), evidenceId])] } : restaurant.prices;
   const vegan = enrichment?.vegan ? { ...restaurant.vegan, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.vegan.evidenceRefs || []), evidenceId])] } : restaurant.vegan;
+  const taxonomy = enrichment?.taxonomy ? { ...restaurant.taxonomy, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.taxonomy.evidenceRefs || []), evidenceId])] } : restaurant.taxonomy;
+  const noodles = enrichment?.noodles ? { ...restaurant.noodles, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...(restaurant.noodles.evidenceRefs || []), evidenceId])] } : restaurant.noodles;
   const supplemented = {
     ...restaurant,
     publication: {
@@ -527,8 +567,10 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
         finalUrl: supplement.finalUrl,
         extractionMethod: supplement.extractionMethod,
         contentHash: supplement.contentHash,
+        pageContentHash: supplement.pageContentHash,
         statusCode: supplement.statusCode,
         markdownChars: supplement.markdownChars,
+        linkedDocuments: supplement.linkedDocuments || [],
         crawl4aiSuccess: true,
         corroboration: supplement.corroboration,
         qualityScore: supplement.derivedQualityScore,
@@ -539,6 +581,8 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
     menu: { ...restaurant.menu, verifiedAt: supplement.retrievedAt, items: menuItems, evidenceRefs: menuEvidenceRefs },
     prices,
     vegan,
+    taxonomy,
+    noodles,
     evidence: [...restaurant.evidence, {
       id: evidenceId,
       url: supplement.url,
@@ -546,7 +590,16 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
       publisher: new URL(supplement.finalUrl).hostname,
       retrievedAt: supplement.retrievedAt,
       effectiveDate: supplement.retrievedAt.slice(0, 10),
-      supports: ["menu_status", "menu_items", "menu_verification_date", "search_readiness_corroboration"],
+      supports: [
+        "menu_status",
+        "menu_items",
+        "menu_verification_date",
+        "search_readiness_corroboration",
+        ...(enrichment?.prices ? ["prices"] : []),
+        ...(enrichment?.vegan ? ["vegan"] : []),
+        ...(enrichment?.taxonomy ? ["taxonomy"] : []),
+        ...(enrichment?.noodles ? ["noodles"] : []),
+      ],
       contentHash: supplement.contentHash,
     }],
     refreshedAt: supplement.retrievedAt,

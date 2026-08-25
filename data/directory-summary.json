@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-08-25T15:46:37.323Z",
+  "generatedAt": "2026-08-25T17:22:33.222Z",
   "baseRestaurantCount": 380,
   "curatedAdditionCount": 33,
   "restaurantCount": 413,
   "provinceCount": 10,
   "cityCount": 105,
-  "verifiedMenuCount": 145,
-  "pricedMenuCount": 95,
+  "verifiedMenuCount": 173,
+  "pricedMenuCount": 127,
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
-    "tonkotsu": 45,
-    "shoyu": 98,
-    "miso": 121,
-    "tsukemen": 74
+    "tonkotsu": 57,
+    "shoyu": 130,
+    "miso": 153,
+    "tsukemen": 76
   },
-  "veganCompleteCount": 10,
+  "veganCompleteCount": 24,
   "verifiedHalalCount": 0,
   "houseMadeNoodleCount": 4,
   "provinces": [
@@ -29,8 +29,8 @@
           "name": "Toronto",
           "slug": "toronto",
           "count": 71,
-          "verifiedMenus": 19,
-          "pricedMenus": 15,
+          "verifiedMenus": 29,
+          "pricedMenus": 26,
           "lateNight": 21
         },
         {
@@ -38,15 +38,15 @@
           "slug": "mississauga",
           "count": 9,
           "verifiedMenus": 6,
-          "pricedMenus": 4,
+          "pricedMenus": 5,
           "lateNight": 5
         },
         {
           "name": "Markham",
           "slug": "markham",
           "count": 8,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
           "lateNight": 1
         },
         {
@@ -70,7 +70,7 @@
           "slug": "richmond-hill",
           "count": 6,
           "verifiedMenus": 1,
-          "pricedMenus": 0,
+          "pricedMenus": 1,
           "lateNight": 1
         },
         {
@@ -78,7 +78,7 @@
           "slug": "london",
           "count": 5,
           "verifiedMenus": 3,
-          "pricedMenus": 1,
+          "pricedMenus": 2,
           "lateNight": 1
         },
         {
@@ -93,24 +93,24 @@
           "name": "Waterloo",
           "slug": "waterloo",
           "count": 4,
-          "verifiedMenus": 2,
-          "pricedMenus": 1,
+          "verifiedMenus": 3,
+          "pricedMenus": 2,
           "lateNight": 2
         },
         {
           "name": "Windsor",
           "slug": "windsor",
           "count": 3,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "verifiedMenus": 3,
+          "pricedMenus": 3,
           "lateNight": 3
         },
         {
           "name": "Ajax",
           "slug": "ajax",
           "count": 2,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
           "lateNight": 1
         },
         {
@@ -118,7 +118,7 @@
           "slug": "burlington",
           "count": 2,
           "verifiedMenus": 1,
-          "pricedMenus": 0,
+          "pricedMenus": 1,
           "lateNight": 1
         },
         {
@@ -141,7 +141,7 @@
           "name": "Kanata",
           "slug": "kanata",
           "count": 2,
-          "verifiedMenus": 0,
+          "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 0
         },
@@ -165,8 +165,8 @@
           "name": "Vaughan",
           "slug": "vaughan",
           "count": 2,
-          "verifiedMenus": 1,
-          "pricedMenus": 1,
+          "verifiedMenus": 2,
+          "pricedMenus": 2,
           "lateNight": 1
         },
         {
@@ -277,8 +277,8 @@
           "name": "Unionville",
           "slug": "unionville",
           "count": 1,
-          "verifiedMenus": 0,
-          "pricedMenus": 0,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
           "lateNight": 1
         }
       ]
@@ -293,15 +293,15 @@
           "name": "Vancouver",
           "slug": "vancouver",
           "count": 32,
-          "verifiedMenus": 14,
-          "pricedMenus": 6,
+          "verifiedMenus": 15,
+          "pricedMenus": 9,
           "lateNight": 13
         },
         {
           "name": "Burnaby",
           "slug": "burnaby",
           "count": 9,
-          "verifiedMenus": 3,
+          "verifiedMenus": 4,
           "pricedMenus": 1,
           "lateNight": 2
         },
@@ -318,7 +318,7 @@
           "slug": "richmond",
           "count": 8,
           "verifiedMenus": 2,
-          "pricedMenus": 1,
+          "pricedMenus": 2,
           "lateNight": 1
         },
         {
@@ -341,8 +341,8 @@
           "name": "Kelowna",
           "slug": "kelowna",
           "count": 4,
-          "verifiedMenus": 3,
-          "pricedMenus": 3,
+          "verifiedMenus": 4,
+          "pricedMenus": 4,
           "lateNight": 0
         },
         {
@@ -357,7 +357,7 @@
           "name": "Delta",
           "slug": "delta",
           "count": 2,
-          "verifiedMenus": 0,
+          "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 0
         },
@@ -390,7 +390,7 @@
           "slug": "new-westminster",
           "count": 2,
           "verifiedMenus": 1,
-          "pricedMenus": 0,
+          "pricedMenus": 1,
           "lateNight": 1
         },
         {
@@ -405,8 +405,8 @@
           "name": "Duncan",
           "slug": "duncan",
           "count": 1,
-          "verifiedMenus": 0,
-          "pricedMenus": 0,
+          "verifiedMenus": 1,
+          "pricedMenus": 1,
           "lateNight": 0
         },
         {
@@ -453,7 +453,7 @@
           "name": "West Vancouver",
           "slug": "west-vancouver",
           "count": 1,
-          "verifiedMenus": 0,
+          "verifiedMenus": 1,
           "pricedMenus": 0,
           "lateNight": 0
         },
@@ -477,8 +477,8 @@
           "name": "Montreal",
           "slug": "montreal",
           "count": 36,
-          "verifiedMenus": 11,
-          "pricedMenus": 7,
+          "verifiedMenus": 13,
+          "pricedMenus": 8,
           "lateNight": 8
         },
         {
@@ -709,16 +709,16 @@
           "name": "Calgary",
           "slug": "calgary",
           "count": 27,
-          "verifiedMenus": 11,
-          "pricedMenus": 7,
+          "verifiedMenus": 12,
+          "pricedMenus": 8,
           "lateNight": 5
         },
         {
           "name": "Edmonton",
           "slug": "edmonton",
           "count": 19,
-          "verifiedMenus": 8,
-          "pricedMenus": 6,
+          "verifiedMenus": 9,
+          "pricedMenus": 7,
           "lateNight": 7
         },
         {
