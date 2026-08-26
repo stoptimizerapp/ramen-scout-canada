@@ -486,11 +486,13 @@ test("homepage renders useful discovery content with staged indexing safeguards"
   assert.doesNotMatch(html, /adsbygoogle|pagead2|googlesyndication|AggregateRating|reviewCount/i);
 });
 
-test("privacy and publisher details match the browser-local location design", async () => {
-  const [privacyHtml, homeFinderSource, searchSource] = await Promise.all([
+test("privacy, Analytics and publisher details match the implemented data flows", async () => {
+  const [privacyHtml, homeFinderSource, searchSource, analyticsSource, layoutSource] = await Promise.all([
     htmlFor("/privacy"),
     readFile(new URL("../components/NearbyFinder.tsx", import.meta.url), "utf8"),
     readFile(new URL("../components/SearchDirectory.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/FirebaseAnalytics.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
   ]);
   assert.match(privacyHtml, /Nocturnal Devs/);
   assert.match(privacyHtml, /419 Markham Road/);
@@ -498,6 +500,12 @@ test("privacy and publisher details match the browser-local location design", as
   assert.match(privacyHtml, /does not add them to the URL, cookies, local storage or session storage/i);
   assert.match(privacyHtml, /browser, operating system or device location provider/i);
   assert.match(privacyHtml, /homepage discards them after calculating the nearest matches/i);
+  assert.match(privacyHtml, /uses Firebase Analytics, a Google Analytics service/i);
+  assert.match(privacyHtml, /Google Analytics opt-out browser add-on/i);
+  assert.match(privacyHtml, /Google AdSense is not currently loaded/i);
+  assert.match(analyticsSource, /G-KKD42WHEGE/);
+  assert.match(analyticsSource, /firebase\/analytics/);
+  assert.match(layoutSource, /<FirebaseAnalytics \/>/);
   assert.match(homeFinderSource, /navigator\.geolocation\.getCurrentPosition/);
   assert.match(homeFinderSource, /NEARBY_LIMIT = 6/);
   assert.match(homeFinderSource, /aria-label="Nearest ramen restaurants"/);

@@ -20,7 +20,7 @@ interface ExecutionContext {
 }
 
 const securityHeaders = {
-  "Content-Security-Policy": "default-src 'self'; base-uri 'self'; connect-src 'self'; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'",
+  "Content-Security-Policy": "default-src 'self'; base-uri 'self'; connect-src 'self' https://*.analytics.google.com https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; form-action 'self'; frame-ancestors 'none'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'",
   "Permissions-Policy": "camera=(), geolocation=(self), microphone=(), payment=(), usb=()",
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "X-Content-Type-Options": "nosniff",

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { FirebaseAnalytics } from "@/components/FirebaseAnalytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { PUBLISHER, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -20,5 +21,5 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#FFF8EA", colorScheme: "light" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en-CA"><body><SiteHeader /><div id="main-content" tabIndex={-1}>{children}</div><SiteFooter /></body></html>;
+  return <html lang="en-CA"><body><SiteHeader /><div id="main-content" tabIndex={-1}>{children}</div><SiteFooter /><FirebaseAnalytics /></body></html>;
 }
