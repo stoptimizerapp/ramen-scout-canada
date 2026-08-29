@@ -4494,6 +4494,336 @@
         "whatToOrder": "Spicy Chicken costs $17.99; Vegan Harvest is $18.99, and the $23.99 steak Tom Yum anchors the premium end.",
         "caveats": "The source is Ajisen’s Canadian menu rather than an East Windsor stock list. Its two vegan recipes still carry a cross-contact caution."
       }
+    },
+    {
+      "restaurantId": "ramen_ca_e5a950fd454d5d9b4c15",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://umamiramengrill.com/menu/",
+      "permanentItemCount": 20,
+      "items": [
+        { "name": "Shio Tonkotsu Black Garlic", "price": 16.95, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu", "black_garlic"], "tare": ["shio"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Miso Tonkotsu Ramen", "price": 15.95, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Vegetarian Shouyu Ramen", "price": 15.45, "brothBase": ["vegetable"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": ["vegetarian"], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 20, "min": 15.45, "max": 17.95, "median": 15.95, "typical": 15.95, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "vegetable"], "brothStyles": ["tonkotsu", "black_garlic"], "tares": ["shio", "miso", "shoyu"], "servingStyles": ["ramen"], "tonkotsu": "yes", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Umami Ramen + Grill in Surrey publishes a current 20-bowl ramen section with pork-bone and vegetable choices. The verified range runs from $15.45 to $17.95: Miso Tonkotsu is $15.95, Shio Tonkotsu Black Garlic is $16.95 and Vegetarian Shouyu is $15.45. The breadth makes this a useful stop for diners comparing shio, shoyu and miso rather than choosing from a one-style menu. Vegetarian wording is preserved exactly; the restaurant does not document vegan preparation or cross-contact controls.",
+        "whatToOrder": "Compare the $15.95 Miso Tonkotsu with the $16.95 Shio Tonkotsu Black Garlic; Vegetarian Shouyu is the lower-priced $15.45 option.",
+        "caveats": "Vegetarian Shouyu is restaurant-labelled vegetarian, not verified vegan. Halal controls, reservations and noodle production remain undocumented."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_3600d61396e39d46b586",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://kenzo-ramen.com/menu/",
+      "permanentItemCount": 24,
+      "items": [
+        { "name": "King Shoyu Ramen", "price": 21, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tonkotsu King Ramen", "price": 24, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tsuke-Men", "price": 19, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 24, "min": 14, "max": 24, "median": 19, "typical": 19, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "vegetable"], "brothStyles": ["tonkotsu"], "tares": ["shoyu", "miso", "spicy_other"], "servingStyles": ["ramen", "tsukemen"], "tonkotsu": "yes", "shoyu": "yes", "miso": "yes", "tsukemen": "yes", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Kenzo Ramen’s Oshawa location at 24 King Street East now has a branch-matched menu with 24 adult ramen and dipping-noodle choices. Published prices span $14–$24. King Shoyu is $21, Tsuke-Men is $19 and the larger Tonkotsu King reaches $24. Diners can compare tonkotsu, shoyu, miso, spicy bowls, vegetarian recipes and tsukemen on one current source instead of relying on a generic chain description.",
+        "whatToOrder": "King Shoyu at $21 is a useful baseline; Tsuke-Men is $19, while Tonkotsu King is the $24 large-format choice.",
+        "caveats": "The count excludes yakisoba and combination meals. Vegetarian menu labels do not establish vegan preparation, and halal controls remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_2290fed978a75ee1dab9",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://kenzoramenspadina.com/menu/",
+      "permanentItemCount": 18,
+      "items": [
+        { "name": "King Shoyu Ramen", "price": 21, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Miso Ramen", "price": 15, "brothBase": [], "brothStyle": [], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tsuke-Men", "price": 18, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 18, "min": 13.5, "max": 23, "median": 18, "typical": 18, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "vegetable"], "brothStyles": ["tonkotsu"], "tares": ["shoyu", "miso", "spicy_other"], "servingStyles": ["ramen", "tsukemen"], "tonkotsu": "yes", "shoyu": "yes", "miso": "yes", "tsukemen": "yes", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Kenzo Ramen Spadina is verified against the menu for 372 Bloor Street West, rather than another Kenzo branch. Eighteen adult ramen and tsukemen choices remain after excluding yakisoba. Prices run from $13.50 to $23: Miso Ramen is $15, Tsuke-Men is $18 and King Shoyu is $21. The menu also documents tonkotsu and vegetarian alternatives, giving Annex diners a concrete style and price comparison before visiting.",
+        "whatToOrder": "Miso Ramen is the $15 value reference, Tsuke-Men costs $18, and the larger King Shoyu is listed at $21.",
+        "caveats": "Yakisoba is excluded from the ramen count. Vegetarian wording is not treated as vegan verification, and preparation controls are not published."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_ce7f77d414ab9ad53070",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://yokohamaramenrichmondhill.com/menu/",
+      "permanentItemCount": 16,
+      "items": [
+        { "name": "BBQ Pork Ramen", "price": 15.5, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Miso Ramen", "price": 14.5, "brothBase": [], "brothStyle": [], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Yokohama Shoyu Ramen", "price": 13.99, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 16, "min": 13.99, "max": 16.5, "median": 15.25, "typical": 15, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": [], "brothStyles": [], "tares": ["shoyu", "miso"], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Yokohama Ramen in Richmond Hill publishes 16 current ramen choices priced from $13.99 to $16.50. Yokohama Shoyu is the entry point at $13.99, Miso Ramen is $14.50 and BBQ Pork Ramen is $15.50. The compact price spread makes the page useful for comparing flavour rather than guessing at a broad cost range. Shoyu and miso are explicit; the source does not establish tonkotsu, vegan handling, halal controls or noodle production.",
+        "whatToOrder": "Start with the $13.99 Yokohama Shoyu, compare the $14.50 Miso, or choose BBQ Pork Ramen at $15.50.",
+        "caveats": "The current full menu does not list tsukemen. Tonkotsu, verified vegan choices and production details remain unknown rather than inferred."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_8eeb43a69b5df96eecbd",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://taishoken-ramen.com/menu/",
+      "permanentItemCount": 11,
+      "items": [
+        { "name": "Tonkotsu Ramen", "price": 18.95, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Miso Tonkotsu Ramen", "price": 19.5, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tsukemen", "price": 20.5, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 11, "min": 18.95, "max": 20.95, "median": 19.95, "typical": 19.95, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "vegetable"], "brothStyles": ["tonkotsu"], "tares": ["miso", "spicy_other"], "servingStyles": ["ramen", "tsukemen"], "tonkotsu": "yes", "shoyu": "no", "miso": "yes", "tsukemen": "yes", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Taishoken Ramen in Vancouver has 11 permanent noodle dishes on its current menu, including soup ramen, chilled noodles and tsukemen. Prices cluster between $18.95 and $20.95: Tonkotsu is $18.95, Miso Tonkotsu is $19.50 and Tsukemen is $20.50. That verified mix makes this page especially useful for diners seeking dipping noodles as well as conventional pork-bone ramen. A veggie ramen is published, but the restaurant does not label it vegan or document cross-contact.",
+        "whatToOrder": "Tonkotsu starts at $18.95, Miso Tonkotsu is $19.50, and the restaurant’s namesake dipping style, Tsukemen, costs $20.50.",
+        "caveats": "The complete current menu supports miso and tsukemen but not shoyu. Vegetarian availability is not promoted to verified vegan status."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_62a6d09858dad55a6f20",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://ichirakukawaki.com/fr/menu/",
+      "permanentItemCount": 5,
+      "items": [
+        { "name": "Tonkotsu Ramen", "price": 18.79, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Seafood Ramen", "price": 19.79, "brothBase": ["fish_seafood"], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Vegetarian Ramen", "price": 16.79, "brothBase": ["vegetable"], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": ["vegetarian"], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 5, "min": 16.79, "max": 19.79, "median": 18.79, "typical": 18.79, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "fish_seafood", "vegetable"], "brothStyles": ["tonkotsu"], "tares": [], "servingStyles": ["ramen"], "tonkotsu": "yes", "shoyu": "no", "miso": "no", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Ichiraku Kawaki in Montréal currently lists five ramen bowls across pork, seafood and vegetarian bases. Vegetarian Ramen is $16.79, Tonkotsu is $18.79 and Seafood Ramen is $19.79. The verified menu is concise enough to compare the full permanent selection without mixing in curry or other rice dishes. Tonkotsu is explicit, while shoyu, miso and tsukemen are absent from the current ramen section. Vegetarian does not by itself establish vegan preparation.",
+        "whatToOrder": "Vegetarian Ramen is the $16.79 entry choice, Tonkotsu costs $18.79 and Seafood Ramen tops the verified range at $19.79.",
+        "caveats": "Curry dishes are excluded from the five-bowl count. Vegan preparation, halal controls and noodle-making location are not documented."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_cd8dcac830a2a20c0320",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://oishiandkawaiitea.com/menu/",
+      "permanentItemCount": 8,
+      "items": [
+        { "name": "Buddha Ramen", "price": 15.49, "brothBase": ["vegetable"], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": ["vegan"], "evidenceRefs": ["SR1"] },
+        { "name": "Kamikaze Ramen", "price": 16.49, "brothBase": [], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Sumo Ramen", "price": 17.49, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 8, "min": 13.49, "max": 17.49, "median": 16.49, "typical": 16.49, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["vegetable"], "brothStyles": [], "tares": ["spicy_other"], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "unknown", "miso": "unknown", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "vegan": { "status": "one_complete_bowl", "bowlCount": 1, "customizationRequired": "no", "itemNames": ["Buddha Ramen"], "note": "Buddha Ramen is explicitly labelled vegan on the current restaurant menu; shared-equipment and cross-contact practices are not published.", "confidence": "high", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Oishi and Kawaii Tea in Red Deer publishes eight fixed ramen bowls priced from $13.49 to $17.49, apart from its build-your-own option. Buddha Ramen is a complete vegan bowl at $15.49, Kamikaze is $16.49 and Sumo Ramen is $17.49. That gives diners a verified plant-based choice as well as a clear permanent price range. The menu does not identify shoyu, miso or tonkotsu styles, so those filters remain unknown rather than being guessed from toppings.",
+        "whatToOrder": "Buddha Ramen is the verified vegan bowl at $15.49; Kamikaze costs $16.49 and Sumo Ramen is $17.49.",
+        "caveats": "Build-your-own ramen is not counted among the eight fixed bowls. The vegan label is verified, but cross-contact controls are not documented."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_3b531fdc1f551e0f9077",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://kirijapanesecuisine.com/menu/",
+      "permanentItemCount": 4,
+      "items": [
+        { "name": "Beef Ramen", "price": 16.05, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "BBQ Pork Ramen", "price": 16.49, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Chicken Ramen", "price": 15.39, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 4, "min": 15.39, "max": 16.49, "median": 15.72, "typical": 15.72, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": [], "brothStyles": [], "tares": [], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "unknown", "miso": "unknown", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Kiri Japanese Cuisine in Camrose has a focused four-bowl ramen section rather than a ramen-specialist list. Chicken and Pork Katsu Ramen are each $15.39, Beef Ramen is $16.05 and BBQ Pork Ramen is $16.49. The narrow $1.10 spread makes protein choice more important than price. The source confirms ramen service and exact prices but does not name broth bases or shoyu, miso and tonkotsu styles, so those fields stay unknown.",
+        "whatToOrder": "Chicken or Pork Katsu Ramen starts at $15.39; Beef is $16.05 and BBQ Pork is the $16.49 top of the verified range.",
+        "caveats": "This is a four-item ramen section inside a broader Japanese menu. Broth style, vegan preparation, halal controls and house-made noodles remain undocumented."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_c0acd6109d03aaa75547",
+      "replacesMenuUrl": "https://koichiramen.com/locations/",
+      "menuUrl": "https://koichiramen.com/",
+      "permanentItemCount": 12,
+      "items": [
+        { "name": "Hakata Tonkotsu", "price": 18.25, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Miso Tonkotsu", "price": 19, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Shoyu Ramen", "price": 18.25, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 12, "min": 17.5, "max": 19, "median": 18.25, "typical": 18.25, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "chicken", "fish_seafood", "vegetable"], "brothStyles": ["tonkotsu"], "tares": ["miso", "shoyu", "shio", "curry"], "servingStyles": ["ramen"], "tonkotsu": "yes", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Koichi Ramen’s current site identifies both Ottawa branches and publishes a 12-bowl menu that applies to the Somerset Street location. Prices sit in a compact $17.50–$19 range. Hakata Tonkotsu and Shoyu Ramen are each $18.25, while Miso Tonkotsu is $19. Diners can compare pork, chicken, fish and vegetable broths plus shio, shoyu, miso and curry seasoning. Vegetarian descriptions are retained, but the restaurant’s current page does not establish vegan handling.",
+        "whatToOrder": "Hakata Tonkotsu and Shoyu Ramen both cost $18.25; Miso Tonkotsu is a $19 comparison for a richer seasoned pork broth.",
+        "caveats": "The same first-party page covers Somerset and Westboro. This listing is address-matched to Somerset; item stock and vegan cross-contact can vary."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_97a59905510b08fa91e3",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://koisakanaramen.com/menu/",
+      "permanentItemCount": 18,
+      "items": [
+        { "name": "Hokkaido Ramen", "price": 17.5, "brothBase": [], "brothStyle": [], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tonkotsu Ramen", "price": 16.5, "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Shoyu Ramen", "price": 16.5, "brothBase": [], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 18, "min": 15, "max": 24.5, "median": 18.5, "typical": 18.5, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "vegetable"], "brothStyles": ["tonkotsu"], "tares": ["miso", "shoyu", "spicy_other"], "servingStyles": ["ramen"], "tonkotsu": "yes", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Koi Sakana Ramen in Markham publishes 18 ramen choices across a verified $15–$24.50 range. Tonkotsu and Shoyu are both $16.50, while Hokkaido Ramen is $17.50. The broader menu also includes miso and spicy recipes, giving diners several clear style comparisons before visiting. A vegetarian bowl contains egg on the published menu, so it is not represented as a verified vegan option. No tsukemen appears in the current ramen section.",
+        "whatToOrder": "Tonkotsu and Shoyu are parallel $16.50 starting points; Hokkaido Ramen is the $17.50 miso comparison.",
+        "caveats": "The vegetarian ramen includes egg and is not treated as vegan. Halal certification, noodle production and cross-contact controls remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_60889715c5dc1502b85f",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://www.takiramen.ca/",
+      "permanentItemCount": 2,
+      "items": [
+        { "name": "Tonkotsu Ramen", "brothBase": ["pork_bone"], "brothStyle": ["tonkotsu"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Shio Ramen", "brothBase": [], "brothStyle": [], "tare": ["shio"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "taxonomy": { "brothBases": ["pork_bone"], "brothStyles": ["tonkotsu"], "tares": ["shio"], "servingStyles": ["ramen"], "tonkotsu": "yes", "shoyu": "unknown", "miso": "unknown", "tsukemen": "unknown", "evidenceRefs": ["SR1"] },
+      "noodles": { "status": "restaurant_claimed_unspecified", "verified": "yes", "scope": "The official restaurant page states that its noodles are handmade, without naming a separate production address.", "makingLocation": "", "styleValues": ["handmade_noodles"], "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Taki Ramen in Ottawa currently highlights two permanent bowls on its official page: classic Tonkotsu Ramen and a lighter Shio Ramen. The restaurant also states that its noodles are handmade, although it does not identify a separate production location or publish current bowl prices. The two-bowl format suits diners choosing between rich pork-bone tonkotsu and salt-seasoned shio. Shoyu, miso, tsukemen, vegan preparation and halal controls remain unverified.",
+        "whatToOrder": "Choose Tonkotsu for the explicitly pork-bone style or Shio for the restaurant’s lighter salt-seasoned alternative.",
+        "caveats": "Current prices are not published on the crawled first-party page. Handmade noodles are restaurant-claimed, but the making location is unspecified."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_340ce65aa7a1b0730639",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://menu.mysticramen.ca/menu/TWVudTozMzM=",
+      "permanentItemCount": 11,
+      "items": [
+        { "name": "Tori Paitan", "price": 22.5, "brothBase": ["chicken"], "brothStyle": ["tori_paitan"], "tare": ["shio"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Spicy Miso Ramen", "price": 22.5, "brothBase": [], "brothStyle": [], "tare": ["miso", "spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Vegan Tantanmen", "price": 22.5, "brothBase": ["vegetable"], "brothStyle": [], "tare": ["sesame", "spicy_other"], "servingStyle": ["tantanmen"], "dietary": ["vegan"], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 11, "min": 21.99, "max": 22.5, "median": 22.5, "typical": 22.5, "band": "premium", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["chicken", "vegetable"], "brothStyles": ["tori_paitan"], "tares": ["shio", "miso", "shoyu", "sesame", "spicy_other"], "servingStyles": ["ramen", "mazesoba", "tantanmen"], "tonkotsu": "no", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "vegan": { "status": "multiple_complete_bowls", "bowlCount": 4, "customizationRequired": "no", "itemNames": ["Vegan Tantanmen", "Vegan Spicy Miso", "Vegan Tamari", "Vegan Miso"], "note": "Four complete bowls are explicitly labelled vegan on Mystic Ramen's current ordering menu; cross-contact controls are not stated.", "confidence": "high", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Mystic Ramen in Hamilton now exposes an 11-item adult noodle menu through its official ordering subdomain. Most bowls are $22.50, with Ginger Chicken Leek Mazesoba at $21.99. The list spans chicken tori paitan, spicy miso, shoyu, tantanmen and four complete vegan bowls: Tantanmen, Spicy Miso, Tamari and Miso. This is unusually useful for mixed dietary groups, although the restaurant does not publish cross-contact controls. Tonkotsu and tsukemen are absent from the current menu.",
+        "whatToOrder": "Tori Paitan and Spicy Miso are each $22.50; Vegan Tantanmen is a complete $22.50 plant-based bowl rather than a customization.",
+        "caveats": "Four bowls are explicitly vegan, but shared-equipment practices are not documented. Prices come from the restaurant-controlled ordering menu."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_b2135d722df735e59f90",
+      "replacesMenuUrl": "https://ryusnoodlebar.com/ramen_ryu",
+      "menuUrl": "https://gosnappy.io/owa/r/ramen-buta-nibo/5604/menu_127/",
+      "permanentItemCount": 16,
+      "items": [
+        { "name": "Original Ramen", "price": 17.9, "brothBase": ["pork_bone"], "brothStyle": ["jiro_style"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Niboshi Shoyu Ramen", "price": 17.9, "brothBase": ["fish_seafood"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Nibo Miso Tsukemen", "price": 18.9, "brothBase": ["fish_seafood"], "brothStyle": [], "tare": ["miso"], "servingStyle": ["tsukemen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 16, "min": 16.9, "max": 32.5, "median": 19.55, "typical": 19.9, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["pork_bone", "fish_seafood", "vegetable"], "brothStyles": ["jiro_style", "black_garlic"], "tares": ["shoyu", "miso", "spicy_other"], "servingStyles": ["ramen", "tsukemen"], "tonkotsu": "unknown", "shoyu": "yes", "miso": "yes", "tsukemen": "yes", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Ramen Buta-Nibo at 547 Danforth Avenue is now tied to the ordering menu linked from its own branch page, not the separate Ryu’s Noodle Bar menu. Sixteen permanent ramen and tsukemen choices include Jiro-style pork bowls, niboshi fish-broth ramen and vegetarian recipes. Original and Niboshi Shoyu are each $17.90; Nibo Miso Tsukemen is $18.90. The overall verified range is $16.90–$32.50, with the top price attached to a mega-size bowl rather than a typical serving.",
+        "whatToOrder": "Original Ramen and Niboshi Shoyu both cost $17.90; Nibo Miso Tsukemen is the $18.90 dipping-noodle comparison.",
+        "caveats": "The $32.50 maximum is a mega-size outlier. Vegetarian bowls are not called vegan, even though a vegan noodle substitution is offered."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_79d1556c2cc7c1f9bbbb",
+      "replacesMenuUrl": "https://ryusnoodlebar.com/ramen_ryu",
+      "menuUrl": "https://ryusnoodlebar.com/ramen_ryu",
+      "permanentItemCount": 3,
+      "items": [
+        { "name": "Original I-E-KEI Ramen", "brothBase": ["pork_bone", "chicken"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Black Garlic I-E-KEI Ramen", "brothBase": ["pork_bone", "chicken"], "brothStyle": ["black_garlic"], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Red Spicy I-E-KEI Ramen", "brothBase": ["pork_bone", "chicken"], "brothStyle": [], "tare": ["shoyu", "spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "taxonomy": { "brothBases": ["pork_bone", "chicken"], "brothStyles": ["black_garlic"], "tares": ["shoyu", "spicy_other"], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "yes", "miso": "unknown", "tsukemen": "unknown", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Ryu’s Noodle Bar on Broadview now presents three core I-E-KEI bowls on its official branch page. Original pairs pork and chicken broth with shoyu; Black Garlic adds roasted allium depth, and Red Spicy supplies the heat option. The focused selection is useful for diners specifically seeking Yokohama-style mixed-broth ramen rather than a broad multi-style list. Current prices are not displayed on the crawled page, and tonkotsu is not inferred merely from the presence of pork bone.",
+        "whatToOrder": "Use Original I-E-KEI as the baseline, Black Garlic for a darker aromatic profile, or Red Spicy for heat.",
+        "caveats": "The official branch page names three highlights but does not publish current prices. Miso, tsukemen, vegan handling and halal controls remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_fff7ee5d989f8ea60fae",
+      "replacesMenuUrl": "https://craftyramen.com/blogs/noodlinaround/ramen-101-the-need-to-know-on-ramen",
+      "menuUrl": "https://craftyramen.com/pages/crafty-ramen-restaurant",
+      "permanentItemCount": 12,
+      "items": [
+        { "name": "Spicy Chicken Tantanmen", "price": 17.25, "brothBase": ["chicken"], "brothStyle": [], "tare": ["sesame", "spicy_other"], "servingStyle": ["tantanmen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Tokyo Salaryman", "price": 16.85, "brothBase": ["chicken"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Redeye Mazemen", "price": 14.75, "brothBase": [], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["mazemen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 12, "min": 14.75, "max": 20.85, "median": 17.25, "typical": 17.25, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["chicken", "vegetable", "beef"], "brothStyles": [], "tares": ["shoyu", "miso", "shio", "sesame", "spicy_other"], "servingStyles": ["ramen", "mazemen", "tantanmen"], "tonkotsu": "no", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "noodles": { "status": "made_on_site", "verified": "yes", "scope": "The Guelph restaurant page states that noodles are made daily and that the bowls are scratch-made in the shop.", "makingLocation": "17 Macdonell Street, Guelph, Ontario", "styleValues": ["thick_noodles", "thin_noodles"], "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Crafty Ramen Guelph at 17 Macdonell Street now has a branch-specific menu instead of the dietary blog previously attached to this listing. Twelve adult bowls and brothless noodles range from $14.75 to $20.85. Redeye Mazemen is $14.75, Tokyo Salaryman is $16.85 and Spicy Chicken Tantanmen is $17.25. The restaurant states that it makes thick and thin noodles daily in the shop, a meaningful distinction for diners filtering for house-made noodles.",
+        "whatToOrder": "Redeye Mazemen is the $14.75 brothless option; Tokyo Salaryman costs $16.85 and Spicy Chicken Tantanmen is $17.25.",
+        "caveats": "The Guelph page supports on-site noodle making and branch prices. Customizable plant-based wording is not converted into a verified vegan-bowl claim."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_7122fa986e074adb9abb",
+      "replacesMenuUrl": "https://ramenyutaka.com/",
+      "menuUrl": "https://ramenyutaka.com/",
+      "permanentItemCount": 8,
+      "items": [
+        { "name": "Shoyu Ramen", "price": 22, "brothBase": ["chicken"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Yuzu Oat Miso Ramen", "price": 24, "brothBase": ["vegetable"], "brothStyle": [], "tare": ["miso"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Soy Tan Tan Ramen", "price": 26, "brothBase": ["vegetable"], "brothStyle": [], "tare": ["sesame", "spicy_other"], "servingStyle": ["tantanmen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 8, "min": 20, "max": 26, "median": 23, "typical": 22, "band": "premium", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": ["chicken", "vegetable"], "brothStyles": [], "tares": ["shio", "shoyu", "miso", "sesame", "spicy_other"], "servingStyles": ["ramen", "tantanmen"], "tonkotsu": "no", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "noodles": { "status": "restaurant_claimed_unspecified", "verified": "yes", "scope": "The current official menu describes its noodles as homemade without identifying a production address.", "makingLocation": "", "styleValues": ["homemade_noodles"], "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Ramen Yutaka in Aurora publishes eight current bowls from $20 to $26. Shoyu is $22, Yuzu Oat Miso is $24 and Soy Tan Tan reaches $26; shio and additional chicken or vegetable recipes fill out the list. The restaurant describes its noodles as homemade, although it does not specify where production occurs. Tonkotsu and tsukemen are absent from the current menu. Plant-focused ingredients are reported as written without upgrading them to verified vegan status.",
+        "whatToOrder": "Shoyu at $22 is the central chicken-broth reference; Yuzu Oat Miso is $24 and Soy Tan Tan is the $26 sesame-spiced choice.",
+        "caveats": "Homemade noodles are restaurant-claimed but the making location is unspecified. Vegan preparation and cross-contact controls are not published."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_18eba8c8fbc4c17d6278",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://tokyostreetmarket.com/tokyo-station/",
+      "linkedDocuments": [
+        "https://tokyostreetmarket.com/wp-content/uploads/2025/12/tsm2-4.png",
+        "https://tokyostreetmarket.com/wp-content/uploads/2025/12/tsm2-5.png",
+        "https://tokyostreetmarket.com/wp-content/uploads/2025/12/tsm2-6.png"
+      ],
+      "permanentItemCount": 5,
+      "items": [
+        { "name": "Red Ramen", "brothBase": ["pork_bone"], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Black Ramen", "brothBase": ["pork_bone"], "brothStyle": ["black_garlic"], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Shoyu Ramen", "brothBase": ["pork_bone"], "brothStyle": [], "tare": ["shoyu"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "taxonomy": { "brothBases": ["pork_bone", "fish_seafood"], "brothStyles": ["black_garlic"], "tares": ["miso", "shoyu", "spicy_other"], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "yes", "miso": "yes", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Tokyo Station at Calgary’s Tokyo Street Market is verified from its restaurant page and three linked menu panels. Five named ramen bowls are visible: Red, Black, Bold, Miso and Shoyu, each offered in regular and deluxe formats. The venue describes a pork broth and also advertises a seafood-broth special. Red is the spicy option, Black uses black garlic, and the separate Miso and Shoyu bowls support those filters. Current prices are not visible in the reviewed panels, so no price estimate is supplied.",
+        "whatToOrder": "Use Shoyu for the soy-seasoned baseline, Black for black garlic, or Red for the explicitly spicy bowl; regular and deluxe formats are shown.",
+        "caveats": "Five names were verified visually across the linked menu panels. The page says six flavours, but an unreadable sixth name is not invented and prices remain unknown."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_8760d6218045b7090add",
+      "replacesMenuUrl": "",
+      "menuUrl": "https://menyainoichi.com/",
+      "permanentItemCount": 5,
+      "items": [
+        { "name": "Original King Butao", "price": 15.99, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Spicy King Akao", "price": 16.99, "brothBase": [], "brothStyle": [], "tare": ["spicy_other"], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] },
+        { "name": "Dark King Kuroo", "price": 16.99, "brothBase": [], "brothStyle": [], "tare": [], "servingStyle": ["ramen"], "dietary": [], "evidenceRefs": ["SR1"] }
+      ],
+      "prices": { "observedCount": 5, "min": 15.99, "max": 16.99, "median": 16.99, "typical": 16.99, "band": "moderate", "evidenceRefs": ["SR1"] },
+      "taxonomy": { "brothBases": [], "brothStyles": [], "tares": ["spicy_other"], "servingStyles": ["ramen"], "tonkotsu": "unknown", "shoyu": "unknown", "miso": "unknown", "tsukemen": "no", "evidenceRefs": ["SR1"] },
+      "content": {
+        "editorialDescription": "Men-ya Inoichi Ramen is matched to its Mississauga address, not the separate Concord listing. Five current bowls span a narrow $15.99–$16.99 range: Original King Butao is $15.99, while Spicy King Akao and Dark King Kuroo are $16.99. Green King Midoio completes the flavoured choices. One item is titled Vegan Soup but the published description includes a soft-boiled egg, so Ramen Scout does not classify it as a verified vegan bowl without clarification.",
+        "whatToOrder": "Original King Butao is $15.99; Spicy King Akao and Dark King Kuroo are both $16.99 flavour upgrades.",
+        "caveats": "The menu’s Vegan Soup description includes egg, so vegan status remains unverified. Broth style, halal controls and noodle production are undocumented."
+      }
     }
   ]
 }

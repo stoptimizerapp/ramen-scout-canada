@@ -220,7 +220,7 @@ test("curated discoveries retain every researched menu item in listings and sear
 
 test("fresh Crawl4AI supplements promote only listings whose live facts clear the quality gate", () => {
   assert.equal(readinessSupplements.schemaVersion, "1.0");
-  assert.equal(readinessSupplements.records.length, 94);
+  assert.equal(readinessSupplements.records.length, 112);
   assert.equal(readinessSupplements.rejected.length, 0);
   assert.equal(new Set(readinessSupplements.records.map((record) => record.restaurantId)).size, readinessSupplements.records.length);
   const now = Date.now();
@@ -294,7 +294,7 @@ test("fresh Crawl4AI supplements promote only listings whose live facts clear th
 
 test("item-level menu repairs remain evidence-linked, specific and conservative", () => {
   assert.equal(readinessEnrichments.schemaVersion, "1.0");
-  assert.equal(readinessEnrichments.records.length, 42);
+  assert.equal(readinessEnrichments.records.length, 60);
   for (const enrichment of readinessEnrichments.records) {
     const restaurant = restaurants.find((entry) => entry.id === enrichment.restaurantId);
     const supplement = readinessSupplements.records.find((entry) => entry.restaurantId === enrichment.restaurantId);
@@ -650,7 +650,7 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
     const expectedUrls = expectedPaths.map((path) => `https://ramenscout.ca${path}`).sort();
     assert.deepEqual(urls, expectedUrls);
     assert.doesNotMatch(sitemap, /\/search(?:<|\?|\/)/i);
-    assert.equal(ready.restaurantPaths.length, 171);
+    assert.equal(ready.restaurantPaths.length, 189);
     assert.equal(ready.cityPaths.length, 10);
     assert.equal(ready.provincePaths.length, 4);
     assert.equal(ready.stylePaths.length, 4);
@@ -664,8 +664,8 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
 
 test("search-ready listings meet the anti-thin-content and originality gates", () => {
   const ready = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant));
-  assert.equal(ready.length, 171);
-  assert.equal(restaurants.length - ready.length, 242, "weaker listings must remain noindex rather than entering the sitemap");
+  assert.equal(ready.length, 189);
+  assert.equal(restaurants.length - ready.length, 224, "weaker listings must remain noindex rather than entering the sitemap");
 
   const shortDescriptions = new Set();
   const editorialDescriptions = new Set();
