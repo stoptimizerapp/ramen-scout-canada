@@ -3,6 +3,7 @@ import { spawnSync } from "node:child_process";
 import crypto from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { ADSENSE_CLIENT, ADSENSE_SELLER_RECORD } from "../lib/adsense.ts";
 import { distanceKm, formatDistance, rankByDistance } from "../lib/geo.ts";
 import { createRetryableLoader } from "../lib/retryable-loader.ts";
 import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
@@ -35,6 +36,7 @@ const rendererContractPaths = [
   "components/SiteFooter.tsx",
   "components/Logo.tsx",
   "components/SiteLink.tsx",
+  "lib/adsense.ts",
   "lib/directory.ts",
   "lib/format.ts",
   "lib/search-readiness.js",
@@ -190,6 +192,16 @@ test("IndexNow ownership uses one valid root key file", async () => {
   const content = await readFile(new URL(`public/${indexNowKey}.txt`, siteRoot), "utf8");
   assert.equal(content.trim(), indexNowKey);
   assert.match(indexNowKey, /^[A-Za-z0-9-]{8,128}$/);
+});
+
+test("AdSense review identity uses the authenticated publisher and an exact seller record", async () => {
+  const [homeHtml, adsTxt] = await Promise.all([
+    htmlFor("/"),
+    readFile(new URL("public/ads.txt", siteRoot), "utf8"),
+  ]);
+  assert.match(homeHtml, new RegExp(`<meta[^>]*name="google-adsense-account"[^>]*content="${ADSENSE_CLIENT}"`, "i"));
+  assert.equal(adsTxt.trim(), ADSENSE_SELLER_RECORD);
+  assert.doesNotMatch(homeHtml, /adsbygoogle|pagead2|googlesyndication/i, "site review must not silently enable ad requests");
 });
 
 test("publication renderer hashes bind the exact listing source and canonical origin", () => {
@@ -483,6 +495,7 @@ test("homepage renders useful discovery content with staged indexing safeguards"
   const publisher = schema["@graph"].find((entry) => entry["@type"] === "Organization");
   assert.equal(publisher.name, "Nocturnal Devs");
   assert.equal(publisher.url, "https://www.nocturnaldevs.com/");
+  assert.match(html, new RegExp(`<meta[^>]*name="google-adsense-account"[^>]*content="${ADSENSE_CLIENT}"`, "i"));
   assert.doesNotMatch(html, /adsbygoogle|pagead2|googlesyndication|AggregateRating|reviewCount/i);
 });
 
@@ -502,7 +515,9 @@ test("privacy, Analytics and publisher details match the implemented data flows"
   assert.match(privacyHtml, /homepage discards them after calculating the nearest matches/i);
   assert.match(privacyHtml, /uses Firebase Analytics, a Google Analytics service/i);
   assert.match(privacyHtml, /Google Analytics opt-out browser add-on/i);
-  assert.match(privacyHtml, /Google AdSense is not currently loaded/i);
+  assert.match(privacyHtml, /connected to Google AdSense for domain ownership verification and program review/i);
+  assert.match(privacyHtml, /ad-serving code and manual ad units are not active/i);
+  assert.match(privacyHtml, /Google’s certified consent-management message/i);
   assert.match(analyticsSource, /G-KKD42WHEGE/);
   assert.match(analyticsSource, /firebase\/analytics/);
   assert.match(layoutSource, /<FirebaseAnalytics \/>/);

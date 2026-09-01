@@ -27,6 +27,7 @@ const rendererContractPaths = [
   "components/SiteFooter.tsx",
   "components/Logo.tsx",
   "components/SiteLink.tsx",
+  "lib/adsense.ts",
   "lib/directory.ts",
   "lib/format.ts",
   "lib/search-readiness.js",

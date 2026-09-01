@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { FirebaseAnalytics } from "@/components/FirebaseAnalytics";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ADSENSE_CLIENT } from "@/lib/adsense";
 import { PUBLISHER, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   category: "food and dining",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg", apple: "/favicon.svg" },
   manifest: "/manifest.webmanifest",
+  other: { "google-adsense-account": ADSENSE_CLIENT },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#FFF8EA", colorScheme: "light" };

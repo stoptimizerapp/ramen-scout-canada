@@ -1,0 +1,3 @@
+export const ADSENSE_CLIENT = "ca-pub-2494233247909241";
+export const ADSENSE_PUBLISHER_ID = "pub-2494233247909241";
+export const ADSENSE_SELLER_RECORD = `google.com, ${ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0`;
