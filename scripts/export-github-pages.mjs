@@ -24,6 +24,7 @@ const allStaticContentRoutes = new Set([
   "/corrections",
   "/privacy",
   "/terms",
+  "/guides/choosing-ramen",
 ]);
 
 const [restaurants, summary] = await Promise.all([
@@ -43,6 +44,7 @@ const routes = new Set([
   "/privacy",
   "/search",
   "/terms",
+  "/guides/choosing-ramen",
   ...["tonkotsu", "shoyu", "miso", "tsukemen"].map((style) => `/styles/${style}`),
   ...["late-night", "reservations", "vegan", "house-made-noodles"].map((feature) => `/features/${feature}`),
   ...summary.provinces.map((province) => `/locations/${province.slug}`),
@@ -50,7 +52,7 @@ const routes = new Set([
   ...restaurants.map((restaurant) => restaurant.canonicalPath),
 ]);
 
-if (routes.size !== 1 + 10 + 4 + 4 + summary.provinces.length + summary.cityCount + restaurants.length) {
+if (routes.size !== 1 + 11 + 4 + 4 + summary.provinces.length + summary.cityCount + restaurants.length) {
   throw new Error("Static route inventory contains a duplicate or unexpected count");
 }
 

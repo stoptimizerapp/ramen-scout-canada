@@ -22,6 +22,9 @@ const rendererContractPaths = [
   "components/Breadcrumbs.tsx",
   "components/FactBadge.tsx",
   "components/RestaurantList.tsx",
+  "components/NearbyAlternatives.tsx",
+  "lib/menu-planning.ts",
+  "lib/geo.ts",
   "components/RestaurantCard.tsx",
   "components/SiteHeader.tsx",
   "components/SiteFooter.tsx",
@@ -484,7 +487,18 @@ const draftRestaurants = rawRows.map((row) => {
 
 const maximumSupplementAgeMs = 120 * 24 * 60 * 60 * 1000;
 const currentBuildTime = Date.now();
-const enrichedDraftRestaurants = draftRestaurants.map((restaurant) => applySearchReadinessEnrichment(
+const linkCorrections = JSON.parse(await fs.readFile(path.join(siteRoot, "data/source-link-corrections.json"), "utf8"));
+const correctedDraftRestaurants = draftRestaurants.map((restaurant) => {
+  const correction = linkCorrections.corrections.find((c) => c.restaurantIds.includes(restaurant.id));
+  if (!correction) return restaurant;
+  if (restaurant.menu.url !== correction.previousUrl || !/^https:\/\//.test(correction.menuUrl) || !/^[a-f0-9]{64}$/.test(correction.contentHash)) throw new Error(`Invalid source-link correction for ${restaurant.id}`);
+  return { ...restaurant,
+    contact: { ...restaurant.contact, menuUrl: correction.menuUrl },
+    menu: { ...restaurant.menu, url: correction.menuUrl },
+    evidence: [...restaurant.evidence, { id: "LINK1", url: correction.menuUrl, sourceType: "official_site", publisher: new URL(correction.menuUrl).hostname, retrievedAt: correction.retrievedAt, contentHash: correction.contentHash, supports: ["official_menu_link_only"] }],
+  };
+});
+const enrichedDraftRestaurants = correctedDraftRestaurants.map((restaurant) => applySearchReadinessEnrichment(
   restaurant,
   readinessEnrichmentById.get(restaurant.id),
   { allowPendingSupplementEvidence: true },
@@ -501,6 +515,7 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
     ...(enrichment.vegan?.evidenceRefs || []),
     ...(enrichment.taxonomy?.evidenceRefs || []),
     ...(enrichment.noodles?.evidenceRefs || []),
+    ...(enrichment.reservations?.evidenceRefs || []),
   ] : [];
   if (!supplement) {
     if (enrichmentReferences.includes("SR1")) throw new Error(`Search-readiness enrichment for ${restaurant.name} requires a matching fresh supplement.`);
@@ -584,6 +599,7 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
     vegan,
     taxonomy,
     noodles,
+    reservations: enrichment?.reservations ? { ...restaurant.reservations, verifiedAt: supplement.retrievedAt, evidenceRefs: [...new Set([...restaurant.reservations.evidenceRefs, evidenceId])] } : restaurant.reservations,
     evidence: [...restaurant.evidence, {
       id: evidenceId,
       url: supplement.url,
@@ -600,6 +616,7 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
         ...(enrichment?.vegan ? ["vegan"] : []),
         ...(enrichment?.taxonomy ? ["taxonomy"] : []),
         ...(enrichment?.noodles ? ["noodles"] : []),
+        ...(enrichment?.reservations ? ["reservations"] : []),
       ],
       contentHash: supplement.contentHash,
     }],

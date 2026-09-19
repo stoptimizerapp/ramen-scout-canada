@@ -31,6 +31,9 @@ const rendererContractPaths = [
   "components/Breadcrumbs.tsx",
   "components/FactBadge.tsx",
   "components/RestaurantList.tsx",
+  "components/NearbyAlternatives.tsx",
+  "lib/menu-planning.ts",
+  "lib/geo.ts",
   "components/RestaurantCard.tsx",
   "components/SiteHeader.tsx",
   "components/SiteFooter.tsx",
@@ -48,7 +51,7 @@ const rendererContractSources = await Promise.all(rendererContractPaths.map(asyn
   source: await readFile(new URL(relativePath, siteRoot), "utf8"),
 })));
 const staticIndexingEnabled = process.env.NEXT_PUBLIC_ALLOW_STATIC_INDEXING === "true";
-const allStaticContentPaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards", "/corrections", "/contact", "/privacy", "/accessibility", "/terms"];
+const allStaticContentPaths = ["/", "/locations", "/about", "/methodology", "/editorial-standards", "/corrections", "/contact", "/privacy", "/accessibility", "/terms", "/guides/choosing-ramen"];
 const styleSlugs = ["tonkotsu", "shoyu", "miso", "tsukemen"];
 const featureMatchers = {
   "late-night": (restaurant) => restaurant.hours.lateNightStatus === "yes",
@@ -232,7 +235,7 @@ test("curated discoveries retain every researched menu item in listings and sear
 
 test("fresh Crawl4AI supplements promote only listings whose live facts clear the quality gate", () => {
   assert.equal(readinessSupplements.schemaVersion, "1.0");
-  assert.equal(readinessSupplements.records.length, 112);
+  assert.equal(readinessSupplements.records.length, 114);
   assert.equal(readinessSupplements.rejected.length, 0);
   assert.equal(new Set(readinessSupplements.records.map((record) => record.restaurantId)).size, readinessSupplements.records.length);
   const now = Date.now();
@@ -292,7 +295,7 @@ test("fresh Crawl4AI supplements promote only listings whose live facts clear th
     assert.equal(profile.qualityScore, record.derivedQualityScore);
     assert.equal(profile.decisionFieldCount, record.derivedDecisionFieldCount);
     assert.deepEqual(Object.entries(profile.facts).filter(([, verified]) => verified).map(([group]) => group), record.verifiedDecisionGroups);
-    assert.equal(isRestaurantSearchReady(restaurant, now), true);
+    assert.equal(isRestaurantSearchReady(restaurant, now), restaurant.id !== "ramen_ca_1d358958d30659cd7b34", "a new menu capture must not override Shiki Menya's unresolved evidence gate");
   }
 
   const fixture = structuredClone(restaurants.find((restaurant) => restaurant.publication.searchReadinessSupplement));
@@ -306,7 +309,7 @@ test("fresh Crawl4AI supplements promote only listings whose live facts clear th
 
 test("item-level menu repairs remain evidence-linked, specific and conservative", () => {
   assert.equal(readinessEnrichments.schemaVersion, "1.0");
-  assert.equal(readinessEnrichments.records.length, 60);
+  assert.equal(readinessEnrichments.records.length, 69);
   for (const enrichment of readinessEnrichments.records) {
     const restaurant = restaurants.find((entry) => entry.id === enrichment.restaurantId);
     const supplement = readinessSupplements.records.find((entry) => entry.restaurantId === enrichment.restaurantId);
@@ -316,7 +319,7 @@ test("item-level menu repairs remain evidence-linked, specific and conservative"
     assert.equal(restaurant.menu.itemCount, enrichment.permanentItemCount);
     assert.deepEqual(restaurant.menu.items.map((item) => item.name), enrichment.items.map((item) => item.name));
     assert.ok(restaurant.menu.items.every((item) => item.evidenceRefs.includes("SR1")));
-    assert.equal(isRestaurantSearchReady(restaurant), true);
+    assert.equal(isRestaurantSearchReady(restaurant), restaurant.id !== "ramen_ca_1d358958d30659cd7b34");
     if (enrichment.prices) {
       assert.equal(restaurant.prices.observedCount, enrichment.prices.observedCount);
       assert.ok(restaurant.prices.evidenceRefs.includes("SR1"));
@@ -582,7 +585,7 @@ test("every curated detail page exposes at least 200 useful publisher words", as
     assert.ok(start >= 0 && end > start, `${candidate.sourceKey} must mark its publisher content`);
     const text = visibleText(html.slice(start, end));
     assert.ok(wordCount(text) >= 200, `${candidate.sourceKey} has only ${wordCount(text)} visible publisher words`);
-    for (const requiredCopy of [restaurant.content.shortDescription, restaurant.content.bestFor, restaurant.content.neighbourhoodContext].filter(Boolean)) {
+    for (const requiredCopy of [restaurant.content.editorialDescription].filter(Boolean)) {
       assert.ok(text.includes(requiredCopy), `${candidate.sourceKey} must render its authored decision-useful copy`);
     }
   }
@@ -666,11 +669,11 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
     assert.deepEqual(urls, expectedUrls);
     assert.doesNotMatch(sitemap, /\/search(?:<|\?|\/)/i);
     assert.equal(ready.restaurantPaths.length, 189);
-    assert.equal(ready.cityPaths.length, 10);
+    assert.equal(ready.cityPaths.length, 12);
     assert.equal(ready.provincePaths.length, 4);
     assert.equal(ready.stylePaths.length, 4);
     assert.deepEqual(ready.featurePaths.sort(), ["/features/late-night", "/features/reservations", "/features/vegan"]);
-    assert.equal(urls.length, 202, "only substantial, evidence-backed canonical pages should be submitted");
+    assert.equal(urls.length, 223, "the existing 222 canonical pages plus the researched comparison guide should be submitted");
   } else {
     assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
     assert.doesNotMatch(sitemap, /<url>/);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteLink as Link } from "@/components/SiteLink";
 import { NearbyFinder } from "@/components/NearbyFinder";
 import { RestaurantList } from "@/components/RestaurantList";
+import { diverseMenuSelections } from "@/lib/menu-planning";
 import { directoryRestaurants, summary } from "@/lib/directory";
 import { absoluteUrl, buildPageMetadata, PUBLISHER } from "@/lib/site";
 import styles from "./home.module.css";
@@ -16,7 +17,7 @@ const featuredCities = featuredCityNames.map((name) => {
   }
   return null;
 }).filter(Boolean) as Array<{ name: string; slug: string; count: number; verifiedMenus: number; province: (typeof summary.provinces)[number] }>;
-const featuredRestaurants = directoryRestaurants.filter((restaurant) => restaurant.menu.status === "verified_current" && restaurant.prices.observedCount > 0).slice(0, 6);
+const featuredRestaurants = diverseMenuSelections(directoryRestaurants);
 
 export default function Home() {
   const websiteSchema = {
@@ -74,8 +75,11 @@ export default function Home() {
 
       <section className="section featured-section">
         <div className="section-heading"><div><p className="eyebrow"><span /> Useful starting points</p><h2>Menu-rich listings to explore.</h2></div><Link href="/search">Search all restaurants <span aria-hidden="true">→</span></Link></div>
+        <p>Different cities and restaurant brands, with named bowls and recorded prices. This is a browsing selection, not a taste ranking or a report of personal visits.</p>
         <RestaurantList restaurants={featuredRestaurants} />
       </section>
+
+      <section className="section decision-feature"><div><p className="eyebrow"><span /> From menu to meal</p><h2>What the menu name doesn’t tell you.</h2><p>Chicken toppings can sit in pork broth. A vegetarian bowl may use egg noodles. And a low headline price can exclude the toppings you want. Our researched guide compares actual Canadian menus, including base-price calculations and branch-specific exceptions.</p><Link className="button primary" href="/guides/choosing-ramen">Compare bowls, budgets &amp; dietary claims →</Link></div><ul><li>DANBO: vegan versus pork bowls at the same base price</li><li>Tokiwa: chicken soup with pork toppings</li><li>Isshin: soup ramen versus stone-bowl tsukemen</li><li>Shiki Menya: how upgrades change the budget</li></ul></section>
 
       <section className="method" id="how-it-works">
         <div><p className="eyebrow light"><span /> Useful by design</p><h2>Less guessing. Better bowls.</h2></div>

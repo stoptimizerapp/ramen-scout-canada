@@ -55,4 +55,5 @@ export const ALL_STATIC_CONTENT_PATHS = [
   "/privacy",
   "/accessibility",
   "/terms",
+  "/guides/choosing-ramen",
 ];

@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-09-01T13:39:43.818Z",
+  "generatedAt": "2026-09-19T17:43:56.933Z",
   "baseRestaurantCount": 380,
   "curatedAdditionCount": 33,
   "restaurantCount": 413,
   "provinceCount": 10,
   "cityCount": 105,
-  "verifiedMenuCount": 191,
-  "pricedMenuCount": 142,
+  "verifiedMenuCount": 192,
+  "pricedMenuCount": 149,
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
-    "tonkotsu": 65,
-    "shoyu": 142,
-    "miso": 165,
+    "tonkotsu": 66,
+    "shoyu": 143,
+    "miso": 166,
     "tsukemen": 80
   },
   "veganCompleteCount": 26,
   "verifiedHalalCount": 0,
-  "houseMadeNoodleCount": 5,
+  "houseMadeNoodleCount": 4,
   "provinces": [
     {
       "code": "ON",
@@ -294,7 +294,7 @@
           "slug": "vancouver",
           "count": 32,
           "verifiedMenus": 16,
-          "pricedMenus": 10,
+          "pricedMenus": 14,
           "lateNight": 13
         },
         {
@@ -350,7 +350,7 @@
           "slug": "north-vancouver",
           "count": 3,
           "verifiedMenus": 2,
-          "pricedMenus": 1,
+          "pricedMenus": 2,
           "lateNight": 2
         },
         {
@@ -709,8 +709,8 @@
           "name": "Calgary",
           "slug": "calgary",
           "count": 27,
-          "verifiedMenus": 13,
-          "pricedMenus": 8,
+          "verifiedMenus": 14,
+          "pricedMenus": 9,
           "lateNight": 5
         },
         {
@@ -718,7 +718,7 @@
           "slug": "edmonton",
           "count": 19,
           "verifiedMenus": 9,
-          "pricedMenus": 7,
+          "pricedMenus": 8,
           "lateNight": 7
         },
         {

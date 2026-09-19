@@ -10,7 +10,7 @@ export function SiteHeader() {
         <nav aria-label="Primary navigation">
           <Link href="/locations">Locations</Link>
           <Link href="/search">Search</Link>
-          <Link href="/methodology">How we verify</Link>
+          <Link href="/guides/choosing-ramen">Menu guide</Link>
           <Link className="nav-cta" href="/about">About</Link>
         </nav>
       </header>

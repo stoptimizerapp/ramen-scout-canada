@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-08-29T21:25:38.954Z",
+  "generatedAt": "2026-09-19T17:29:59.232Z",
   "crawler": "Crawl4AI",
   "policy": "Fresh Crawl4AI menu corroboration, optionally paired with hashed first-party-linked menu images or PDFs that received an item-level editorial review, for existing source-backed listings whose runtime facts independently recompute to at least 90 quality points and six verified decision groups.",
   "records": [
@@ -243,6 +243,45 @@
         "taxonomy",
         "prices",
         "vegan",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_1d358958d30659cd7b34",
+      "url": "https://shikimenya.ca/pages/shiki-menya-summer-menu",
+      "finalUrl": "https://shikimenya.ca/pages/shiki-menya-summer-menu",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_page_plus_verified_document",
+      "contentHash": "0bd5c19271c62c6fa216461c1221a8890baf3d0f9ad8501feac3f415927d3406",
+      "pageContentHash": "d12dca4bc5c8f74922b5512dc45c79ec8cea7489c9757f8be63772047bfb2874",
+      "markdownChars": 1733,
+      "linkedDocuments": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0274/9713/6200/files/12_Year_Honda_Edit.jpg?v=1781531142",
+          "finalUrl": "https://cdn.shopify.com/s/files/1/0274/9713/6200/files/12_Year_Honda_Edit.jpg?v=1781531142",
+          "contentType": "image/jpeg",
+          "bytes": 301208,
+          "contentHash": "7fbbece9d6c5ee51ba35c551cf09cc80f608722b89c00ebf9ca2559d5fdb13a9"
+        }
+      ],
+      "corroboration": {
+        "ramenTerms": 2,
+        "priceSignals": 0,
+        "matchedItems": 0
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "reservations",
         "services"
       ]
     },
@@ -580,21 +619,21 @@
       "restaurantId": "ramen_ca_2f8f8196e3117eec5b8e",
       "url": "https://ramendanbo.com/our-menu-vancouver/",
       "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
-      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "pageContentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "markdownChars": 13211,
+      "contentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "pageContentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "markdownChars": 13261,
       "linkedDocuments": [],
       "corroboration": {
         "ramenTerms": 41,
         "priceSignals": 61,
-        "matchedItems": 10
+        "matchedItems": 40
       },
-      "derivedQualityScore": 93,
-      "derivedDecisionFieldCount": 9,
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -602,6 +641,7 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "vegan",
         "reservations",
         "services"
@@ -758,6 +798,37 @@
         "lateNight",
         "taxonomy",
         "prices",
+        "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_376b924d920c31ee2b03",
+      "url": "https://www.ramenisshin.ca/vaughanmenu",
+      "finalUrl": "https://www.ramenisshin.ca/vaughanmenu",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "44254a34edb04ddc0e859378409683dcfd23ef134d68df9820979b589e3f14b2",
+      "pageContentHash": "44254a34edb04ddc0e859378409683dcfd23ef134d68df9820979b589e3f14b2",
+      "markdownChars": 17727,
+      "linkedDocuments": [],
+      "corroboration": {
+        "ramenTerms": 61,
+        "priceSignals": 0,
+        "matchedItems": 19
+      },
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices",
+        "vegan",
         "services"
       ]
     },
@@ -1351,21 +1422,21 @@
       "restaurantId": "ramen_ca_61e99e2371a89cd6ff3b",
       "url": "https://ramendanbo.com/our-menu-vancouver/",
       "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
-      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "pageContentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "markdownChars": 13211,
+      "contentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "pageContentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "markdownChars": 13261,
       "linkedDocuments": [],
       "corroboration": {
         "ramenTerms": 41,
         "priceSignals": 61,
-        "matchedItems": 10
+        "matchedItems": 40
       },
-      "derivedQualityScore": 92,
-      "derivedDecisionFieldCount": 8,
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -1373,7 +1444,9 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "vegan",
+        "reservations",
         "services"
       ]
     },
@@ -2549,21 +2622,21 @@
       "restaurantId": "ramen_ca_adc66d9fa854183d105f",
       "url": "https://ramendanbo.com/our-menu-vancouver/",
       "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
-      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "pageContentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "markdownChars": 13211,
+      "contentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "pageContentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "markdownChars": 13261,
       "linkedDocuments": [],
       "corroboration": {
         "ramenTerms": 41,
         "priceSignals": 61,
-        "matchedItems": 10
+        "matchedItems": 40
       },
-      "derivedQualityScore": 93,
-      "derivedDecisionFieldCount": 9,
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -2571,6 +2644,7 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "vegan",
         "reservations",
         "services"
@@ -3088,21 +3162,21 @@
       "restaurantId": "ramen_ca_d065af9ea1e4bf604b82",
       "url": "https://ramendanbo.com/our-menu-vancouver/",
       "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
-      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "pageContentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "markdownChars": 13211,
+      "contentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "pageContentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "markdownChars": 13261,
       "linkedDocuments": [],
       "corroboration": {
         "ramenTerms": 41,
         "priceSignals": 61,
-        "matchedItems": 10
+        "matchedItems": 40
       },
-      "derivedQualityScore": 93,
-      "derivedDecisionFieldCount": 9,
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -3110,6 +3184,7 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "vegan",
         "reservations",
         "services"
@@ -3119,7 +3194,7 @@
       "restaurantId": "ramen_ca_d803b44fefafa757981e",
       "url": "https://tokiwaramen.ca/menu",
       "finalUrl": "https://tokiwaramen.ca/menu",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
@@ -3130,10 +3205,10 @@
       "corroboration": {
         "ramenTerms": 3,
         "priceSignals": 1,
-        "matchedItems": 1
+        "matchedItems": 10
       },
-      "derivedQualityScore": 92,
-      "derivedDecisionFieldCount": 8,
+      "derivedQualityScore": 97,
+      "derivedDecisionFieldCount": 9,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -3141,6 +3216,7 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "reservations",
         "services"
       ]
@@ -3471,7 +3547,7 @@
       "restaurantId": "ramen_ca_f43841040f91ed0862cc",
       "url": "https://ramengojiro.com/menu.html",
       "finalUrl": "https://ramengojiro.com/menu.html",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
@@ -3482,7 +3558,7 @@
       "corroboration": {
         "ramenTerms": 31,
         "priceSignals": 0,
-        "matchedItems": 2
+        "matchedItems": 9
       },
       "derivedQualityScore": 93,
       "derivedDecisionFieldCount": 9,
@@ -3596,21 +3672,21 @@
       "restaurantId": "ramen_ca_fdf92f34dfc5f41d550d",
       "url": "https://ramendanbo.com/our-menu-vancouver/",
       "finalUrl": "https://ramendanbo.com/our-menu-vancouver/",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
-      "contentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "pageContentHash": "dd30ea208e47426d559052bb99608b53d4783771817973f7b40a451d742ff765",
-      "markdownChars": 13211,
+      "contentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "pageContentHash": "5274103e31ccf9ce152318ab60efd85464fa7605500ccc814977ba6af1ce8f4a",
+      "markdownChars": 13261,
       "linkedDocuments": [],
       "corroboration": {
         "ramenTerms": 41,
         "priceSignals": 61,
-        "matchedItems": 10
+        "matchedItems": 40
       },
-      "derivedQualityScore": 93,
-      "derivedDecisionFieldCount": 9,
+      "derivedQualityScore": 98,
+      "derivedDecisionFieldCount": 10,
       "verifiedDecisionGroups": [
         "identity",
         "relevance",
@@ -3618,6 +3694,7 @@
         "hours",
         "lateNight",
         "taxonomy",
+        "prices",
         "vegan",
         "reservations",
         "services"
@@ -3627,7 +3704,7 @@
       "restaurantId": "ramen_ca_fff7ee5d989f8ea60fae",
       "url": "https://craftyramen.com/pages/crafty-ramen-restaurant",
       "finalUrl": "https://craftyramen.com/pages/crafty-ramen-restaurant",
-      "retrievedAt": "2026-08-29T21:25:38.954Z",
+      "retrievedAt": "2026-09-19T17:29:59.232Z",
       "statusCode": 200,
       "crawl4aiSuccess": true,
       "extractionMethod": "crawl4ai_normalized_markdown",
@@ -3638,7 +3715,7 @@
       "corroboration": {
         "ramenTerms": 62,
         "priceSignals": 30,
-        "matchedItems": 3
+        "matchedItems": 12
       },
       "derivedQualityScore": 99,
       "derivedDecisionFieldCount": 11,

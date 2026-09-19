@@ -10,6 +10,8 @@ const root = path.resolve(here, "..");
 const inputPath = path.join(root, "data", "restaurants.json");
 const outputPath = path.join(root, "data", "search-readiness-supplements.json");
 const enrichmentsPath = path.join(root, "data", "search-readiness-menu-enrichments.json");
+// Targeted refreshes preserve unrelated captures and fail closed on a rejected menu.
+const selectedIds = new Set((process.env.RESTAURANT_IDS || "").split(",").filter(Boolean));
 const crawl4aiUrl = (process.env.CRAWL4AI_URL || "http://192.168.1.201:11235").replace(/\/+$/, "");
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const normalizeText = (value) => String(value || "").normalize("NFKC").replace(/\r\n?/g, "\n").trim();
@@ -176,7 +178,7 @@ for (const restaurantId of enrichmentById.keys()) if (!restaurants.some((restaur
 const candidates = enrichedRestaurants.map((restaurant) => ({ restaurant, profile: deriveSearchReadinessProfile(restaurant) })).filter(({ restaurant, profile }) => (
   restaurant.publication.gates.identity === "yes"
   && restaurant.publication.gates.relevance === "yes"
-  && restaurant.publication.gates.evidence === "yes"
+  && (restaurant.publication.gates.evidence === "yes" || selectedIds.has(restaurant.id) && profile.evidenceStrong)
   && restaurant.publication.gates.originality === "yes"
   && restaurant.publication.gates.rights === "yes"
   && ["primary", "substantial"].includes(restaurant.relevance.classification)
@@ -185,8 +187,9 @@ const candidates = enrichedRestaurants.map((restaurant) => ({ restaurant, profil
   && /^https?:\/\//.test(restaurant.menu.url || "")
   && profile.qualityScore >= 90
   && profile.decisionFieldCount >= 6
-  && (restaurant.publication.qualityScore < 90 || restaurant.publication.verifiedDecisionFieldCount < 6)
+  && (selectedIds.size ? selectedIds.has(restaurant.id) : restaurant.publication.qualityScore < 90 || restaurant.publication.verifiedDecisionFieldCount < 6)
 ));
+if (selectedIds.size && candidates.length !== selectedIds.size) throw new Error("A selected restaurant did not pass the existing evidence/quality gates.");
 
 const restaurantsByUrl = new Map();
 for (const candidate of candidates) {
@@ -288,6 +291,12 @@ for (const [url, candidateEntries] of restaurantsByUrl) {
   }
 }
 
+if (selectedIds.size) {
+  if (records.length !== selectedIds.size || rejected.length) throw new Error("Selected menu refresh failed; existing supplements were not changed.");
+  const previous = JSON.parse(await fs.readFile(outputPath, "utf8"));
+  records.push(...previous.records.filter((record) => !selectedIds.has(record.restaurantId)));
+  rejected.push(...(previous.rejected || []).filter((record) => !(record.restaurantIds || []).some((id) => selectedIds.has(id))));
+}
 records.sort((left, right) => left.restaurantId.localeCompare(right.restaurantId));
 const output = {
   schemaVersion: "1.0",

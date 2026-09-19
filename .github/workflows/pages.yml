@@ -40,6 +40,9 @@ jobs:
       - name: Build static directory
         run: npm run build:pages
 
+      - name: Verify rendered pages and menu comparisons
+        run: node --experimental-strip-types --test tests/*.test.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

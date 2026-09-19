@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "corrections": [
+    {
+      "restaurantIds": [
+        "ramen_ca_d72154a5158228ce1731",
+        "ramen_ca_9116d1fa3c115777f59c",
+        "ramen_ca_99367dca831358090f0e",
+        "ramen_ca_35c89ff4d6ef554de6d2",
+        "ramen_ca_b7c3512cada0328ebe79",
+        "ramen_ca_0ed10f11b7cccf804429",
+        "ramen_ca_3d963d281a6f9b85d005",
+        "ramen_ca_990f599509ef721f42cf",
+        "ramen_ca_84a9cd5d27e99d740d04",
+        "ramen_ca_c41e802def6a5fe5f044",
+        "ramen_ca_6e1ec25ebf86bd9631fc",
+        "ramen_ca_e11f14f90da5c80e67ba",
+        "ramen_ca_d0fc7970ce9c364b444a",
+        "ramen_ca_cd26ea7cb0c3dc3c5844",
+        "ramen_ca_a0331eefd46b5a2d652d",
+        "ramen_ca_2dd9595746921eacc36f"
+      ],
+      "previousUrl": "https://www.sansotei.com/menu",
+      "menuUrl": "https://www.sansotei.com/copy-of-menu-%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC",
+      "retrievedAt": "2026-09-19T17:36:23.340Z",
+      "contentHash": "6b10fbd139624f719ac312028780d32d2e0857b54854d9a8475aff1d0a708c11",
+      "note": "Replaced a soft-404 with the current official brand menu. The menu expressly varies by location; branch-specific choices remain unverified. No indexing or dietary status is promoted."
+    }
+  ]
+}

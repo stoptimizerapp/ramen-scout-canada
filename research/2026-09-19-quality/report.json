@@ -1,0 +1,284 @@
+{
+  "auditedAt": "2026-09-19T17:45:39.949Z",
+  "baselineRef": "a313808",
+  "notice": {
+    "domain": "ramenscout.ca",
+    "publisher": "pub-2494233247909241",
+    "verifiedReason": "Low value content",
+    "dashboardUpdated": "2026-09-16",
+    "adsTxt": "Authorised",
+    "reviewRequestedThisPass": false
+  },
+  "caveat": "A technical or internal content-score pass is not an AdSense approval assessment. Noindex does not exempt weak public pages from site-wide review.",
+  "inventory": {
+    "restaurants": 413,
+    "cities": 105,
+    "indexableRestaurants": 189,
+    "noindexRestaurants": 224,
+    "withoutItemLevelMenus": 222
+  },
+  "improvements": {
+    "reviewedMenus": [
+      {
+        "id": "ramen_ca_1d358958d30659cd7b34",
+        "name": "Shiki Menya",
+        "path": "/restaurants/ab/calgary/shiki-menya",
+        "beforeItems": 0,
+        "afterItems": 9,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_d803b44fefafa757981e",
+        "name": "Tokiwa Ramen",
+        "path": "/restaurants/ab/edmonton/tokiwa-ramen",
+        "beforeItems": 1,
+        "afterItems": 10,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_d065af9ea1e4bf604b82",
+        "name": "Ramen DANBO Lonsdale",
+        "path": "/restaurants/bc/north-vancouver/ramen-danbo-lonsdale",
+        "beforeItems": 3,
+        "afterItems": 8,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_61e99e2371a89cd6ff3b",
+        "name": "Ramen DANBO Kerrisdale",
+        "path": "/restaurants/bc/vancouver/ramen-danbo-kerrisdale",
+        "beforeItems": 3,
+        "afterItems": 8,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_fdf92f34dfc5f41d550d",
+        "name": "Ramen Danbo Kitsilano",
+        "path": "/restaurants/bc/vancouver/ramen-danbo-kitsilano",
+        "beforeItems": 3,
+        "afterItems": 8,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_2f8f8196e3117eec5b8e",
+        "name": "Ramen DANBO Main St",
+        "path": "/restaurants/bc/vancouver/ramen-danbo-main-st",
+        "beforeItems": 3,
+        "afterItems": 8,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_adc66d9fa854183d105f",
+        "name": "Ramen Danbo Robson",
+        "path": "/restaurants/bc/vancouver/ramen-danbo-robson",
+        "beforeItems": 3,
+        "afterItems": 8,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_f43841040f91ed0862cc",
+        "name": "Ramen Gojiro",
+        "path": "/restaurants/bc/vancouver/ramen-gojiro",
+        "beforeItems": 3,
+        "afterItems": 10,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_376b924d920c31ee2b03",
+        "name": "Ramen Isshin",
+        "path": "/restaurants/on/concord/ramen-isshin",
+        "beforeItems": 3,
+        "afterItems": 19,
+        "checked": "2026-09-19T17:29:59.232Z"
+      },
+      {
+        "id": "ramen_ca_fff7ee5d989f8ea60fae",
+        "name": "Crafty Ramen Guelph",
+        "path": "/restaurants/on/guelph/crafty-ramen-guelph",
+        "beforeItems": 3,
+        "afterItems": 12,
+        "checked": "2026-09-19T17:29:59.232Z"
+      }
+    ],
+    "correctedMenuLinks": [
+      "/restaurants/on/kanata/sansotei-ramen",
+      "/restaurants/on/kitchener/sansotei-ramen",
+      "/restaurants/on/markham/sansotei-ramen",
+      "/restaurants/on/mississauga/sansotei-ramen",
+      "/restaurants/on/ottawa/sansotei-ramen-barrhaven-ottawa",
+      "/restaurants/on/richmond-hill/sansotei-ramen",
+      "/restaurants/on/toronto/sansotei-ramen-179-dundas-st-w",
+      "/restaurants/on/toronto/sansotei-ramen-650-yonge-st",
+      "/restaurants/on/toronto/sansotei-ramen-30-adelaide-st-e",
+      "/restaurants/on/toronto/sansotei-ramen-220-yonge-st",
+      "/restaurants/on/toronto/sansotei-ramen-stc",
+      "/restaurants/on/toronto/sansotei-ramen-union-station",
+      "/restaurants/qc/montreal/sansotei-ramen-mackay",
+      "/restaurants/qc/montreal/sansotei-ramen-mont-royal",
+      "/restaurants/qc/montreal/sansotei-ramen-royalmount",
+      "/restaurants/qc/montreal/sansotei-ramen-sainte-catherine"
+    ],
+    "templates": [
+      "413 listing routes: redundant overview/why-go/best-for/FAQ/visit-tip blocks removed; known facts and actual menu examples retained",
+      "413 listing routes: geo-ranked alternatives with named dishes where coordinates and a researched menu exist within 60 km",
+      "105 city routes: item-level comparison when available, separate compact contact-only records, nearby alternatives for sparse menu coverage",
+      "8 style/feature routes: decision guidance, precisely matched bowl examples, source dates",
+      "Homepage: diverse city/brand selection and new researched guide",
+      "One original menu-comparison guide with six restaurants, arithmetic, ingredient distinctions and source methodology"
+    ]
+  },
+  "searchContinuity": {
+    "lostIndexedRestaurantPaths": [],
+    "addedIndexedRestaurantPaths": [],
+    "changedRestaurantCanonicals": []
+  },
+  "unresolved": [
+    "222 contact-only restaurant pages still lack item-level menus; consolidation versus further enrichment was put to the owner",
+    "Two additional noindex restaurants have menu facts but do not clear all pre-existing search-readiness gates",
+    "The 189 indexable listings have not all received an individual editorial rewrite in this pass",
+    "Legacy prose/evidence remains on many listings; generated comparisons supplement it but do not establish firsthand experience or guaranteed originality",
+    "No AdSense re-review requested; publisher decision and additional cohort work remain"
+  ],
+  "sources": [
+    {
+      "requestedUrl": "https://www.sansotei.com/locations",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 18132,
+      "sha256": "4709c0e468bf4f197d958dd44097f1531b4392ea2cb4c079fa1809f467e35c5d",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://www.sansotei.com/menu",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": false,
+      "soft404": true,
+      "markdownChars": 101,
+      "sha256": "ffe359fe4d56d877644a6a3edf3cf1b861a8121b48d7ebbcbaa5ae2bd077b3a2",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://craftyramen.com/pages/crafty-ramen-restaurant",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 14971,
+      "sha256": "fe26ce6e7967ed2884963277d8877768b2edf24db0a72a78195bbdf3f3ac1022",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://ramendanbo.com/our-menu-vancouver/",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 14140,
+      "sha256": "0990e613ead7d205d0d4b99d54542edbaf68f41304c5c2ea8adbc7caff4e13e8",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://www.ajisenramen.ca/fullmenu",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 2462,
+      "sha256": "d235b67036dc67fe622e629978f310beebeb1605bbecb7d5a64f01af0ccc67ce",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://www.ramenisshin.ca/vaughanmenu",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 18513,
+      "sha256": "904343d0ca108165ca14cc0dfc16bec5e02973873c1bdbbc73d4e820181b0b25",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://ramendanbo.com/locations/",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 5784,
+      "sha256": "4202ca81ab4d76a6e856d0da5870acb2a29426ccec49e33b781e9b98d068bfa7",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://shikimenya.ca/pages/shiki-menya-summer-menu",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 2065,
+      "sha256": "9ca5b00c2ba22d9caaebd33b950bf4053ea7adb0e603ca888020533fa365504f",
+      "capturedOn": "2026-09-19",
+      "note": "Linked menu image visually transcribed; document hash is in supplements"
+    },
+    {
+      "requestedUrl": "https://tokiwaramen.ca/menu",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 2394,
+      "sha256": "0b54523262d42368f5650ee4f2f84d4f0120b8540c9487025f6fe2076f9dbdee",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://yoka.ca/menu/",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 3650,
+      "sha256": "833ab9269fd7a483fd29409a9a382ee2171bfa3c5c6b51864389863aafe48710",
+      "capturedOn": "2026-09-19",
+      "note": "Production/reservation text read; menu image not used for new item claims"
+    },
+    {
+      "requestedUrl": "https://ramengojiro.com/menu.html",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 5847,
+      "sha256": "a5e74887ed27446422dedebedb64d76bd59ba2545a4e3966297ea1ee324f5c79",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://www.ramenarashi.ca/our-story/our-ramen",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 9162,
+      "sha256": "6ad4ca26e49c4147a8c28e0a73c08cebbb3933340c39630c7779662cf28e7213",
+      "capturedOn": "2026-09-19",
+      "note": "Brand description only; no new branch-level claims applied"
+    },
+    {
+      "requestedUrl": "https://www.sansotei.com",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 14015,
+      "sha256": "590255195bb1204cc3ecb314add27738e7bdc8fb495c5686bfd02171e263eb0d",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    },
+    {
+      "requestedUrl": "https://www.sansotei.com/copy-of-menu-%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC",
+      "crawlerSuccess": true,
+      "usableForMenuFacts": true,
+      "soft404": false,
+      "markdownChars": 9458,
+      "sha256": "6b10fbd139624f719ac312028780d32d2e0857b54854d9a8475aff1d0a708c11",
+      "capturedOn": "2026-09-19",
+      "note": ""
+    }
+  ]
+}

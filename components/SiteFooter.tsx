@@ -5,6 +5,7 @@ import { Logo } from "./Logo";
 const explore = [
   ["Locations", "/locations"], ["Search", "/search"], ["Tonkotsu", "/styles/tonkotsu"],
   ["Miso", "/styles/miso"], ["Late night", "/features/late-night"], ["Reservations", "/features/reservations"],
+  ["Shoyu", "/styles/shoyu"], ["Tsukemen", "/styles/tsukemen"], ["Vegan bowls", "/features/vegan"],
 ];
 const trust = [
   ["About", "/about"], ["Methodology", "/methodology"], ["Editorial standards", "/editorial-standards"],

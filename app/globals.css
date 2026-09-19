@@ -175,3 +175,22 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
 }
 
 @media (forced-colors:active) { .fact-badge,.button,.search-controls,.restaurant-card,.province-card { border:1px solid CanvasText; }.badge-positive::before { forced-color-adjust:none; } }
+.menu-comparison { margin-block: 2rem; }
+.comparison-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 640px; }
+.comparison-table caption { text-align: left; color: #555; padding: .7rem 0; font-size: .85rem; }
+.comparison-table th, .comparison-table td { border-bottom: 1px solid #dfd9ce; padding: 1rem; vertical-align: top; }
+.comparison-table thead { background: #f1ebdf; }
+.comparison-table small, .comparison-table td strong { display: block; margin-top: .4rem; }
+.comparison-table small { font-weight: 400; color: #555; }
+.nearby-comparisons { margin-block: 2rem; }
+.decision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 1rem; }
+.decision-grid article, .basic-location-list article { border: 1px solid #dfd9ce; border-radius: 12px; padding: 1.2rem; background: #fffdf8; }
+.decision-grid h3 { margin-block: .6rem; }
+.decision-grid p { font-size: .92rem; }
+.budget-note { background: #f7f1e5; padding: 1.4rem; border-radius: 12px; }
+.decision-feature { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; border-block: 1px solid #dfd9ce; }
+.decision-feature li { margin-block: 1rem; }
+.basic-location-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.basic-location-list h3 { font-size: 1.05rem; }
+.guide-toc { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; padding-block: 1rem; border-block: 1px solid #dfd9ce; }
+@media (max-width: 700px) { .decision-feature { grid-template-columns: 1fr; gap: 1rem; } .site-header nav { flex-wrap: wrap; } }

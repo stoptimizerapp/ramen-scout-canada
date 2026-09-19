@@ -18,7 +18,7 @@ const [restaurants, summary] = await Promise.all([
   fs.readFile(path.join(root, "data", "directory-summary.json"), "utf8").then(JSON.parse),
 ]);
 
-const staticRoutes = ["/", "/locations", "/about", "/methodology", "/editorial-standards", "/corrections", "/contact", "/privacy", "/accessibility", "/terms"];
+const staticRoutes = ["/", "/locations", "/about", "/methodology", "/editorial-standards", "/corrections", "/contact", "/privacy", "/accessibility", "/terms", "/guides/choosing-ramen"];
 const styleSlugs = ["tonkotsu", "shoyu", "miso", "tsukemen"];
 const featureMatchers = {
   "late-night": (restaurant) => restaurant.hours.lateNightStatus === "yes",
