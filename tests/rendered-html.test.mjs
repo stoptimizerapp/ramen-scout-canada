@@ -375,7 +375,20 @@ test("the full directory loader retries after a transient failure", async () => 
   assert.equal(attempts, 2, "a successful request should remain cached");
 });
 
-test("production indexing fails closed while no restaurant passes every publication gate", () => {
+test("production indexing fails closed while no restaurant passes every publication gate", async (t) => {
+  // The public CI build deliberately consumes checked-in, reviewed snapshots;
+  // the private raw CSV lives outside this repository. Always exercise the gate,
+  // and also exercise the full generator when that local research input exists.
+  const approved = restaurants.filter((restaurant) => passesPublicationGate(restaurant));
+  assert.equal(approved.length, 0);
+  assert.equal(passesSiteLaunchGate(approved), false);
+  try {
+    await readFile(new URL("../outputs/ramen_directory_enrichment_20260824/ramen_restaurants_canada_enriched.csv", siteRoot));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+    t.diagnostic("Verified the gate against the published snapshot; local CSV generator integration is unavailable in this checkout.");
+    return;
+  }
   const result = spawnSync(process.execPath, ["scripts/generate-directory-data.mjs"], {
     cwd: new URL("..", import.meta.url),
     encoding: "utf8",
