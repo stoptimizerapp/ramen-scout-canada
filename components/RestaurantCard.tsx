@@ -2,6 +2,7 @@ import { SiteLink as Link } from "@/components/SiteLink";
 import { formatDate, formatPriceRange } from "@/lib/format";
 import type { Restaurant } from "@/lib/types";
 import { FactBadge } from "./FactBadge";
+import { usableMenuItems } from "@/lib/content-publication.js";
 
 function badges(restaurant: Restaurant) {
   const values: string[] = [];
@@ -25,7 +26,7 @@ export function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
       </div>
       <h3><Link href={restaurant.canonicalPath}>{restaurant.name}</Link></h3>
       <p className="card-address">{restaurant.location.neighbourhood ? `${restaurant.location.neighbourhood} · ` : ""}{restaurant.location.city}</p>
-      <p className="card-description">{restaurant.content.shortDescription}</p>
+      <p className="card-description">{usableMenuItems(restaurant).length ? `Menu examples: ${usableMenuItems(restaurant).slice(0, 3).map(item => item.name).join(", ")}.` : "Business contact record; menu details not verified."}</p>
       <div className="badge-list">
         {knownBadges.length ? knownBadges.map((badge) => <FactBadge tone="positive" key={badge}>{badge}</FactBadge>) : <FactBadge>Menu styles not confirmed</FactBadge>}
       </div>

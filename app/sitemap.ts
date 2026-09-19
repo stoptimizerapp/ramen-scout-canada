@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { publicPath } from "@/lib/content-publication.js";
 import { directoryRestaurants, featureDefinitions, getProvinceRestaurants, isCitySearchReady, isFacetSearchReady, isProvinceSearchReady, isRestaurantSearchReady, restaurantsForFeature, restaurantsForStyle, styleDefinitions, summary, type FeatureSlug, type StyleSlug } from "@/lib/directory";
 import { absoluteUrl, ALL_STATIC_CONTENT_PATHS, STATIC_INDEXING_ENABLED } from "@/lib/site";
 
@@ -17,5 +18,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   const stylePages = (Object.keys(styleDefinitions) as StyleSlug[]).flatMap((style) => isFacetSearchReady(restaurantsForStyle(style)) ? [{ url: absoluteUrl(`/styles/${style}`), lastModified: changed, changeFrequency: "monthly" as const, priority: .7 }] : []);
   const featurePages = (Object.keys(featureDefinitions) as FeatureSlug[]).flatMap((feature) => isFacetSearchReady(restaurantsForFeature(feature)) ? [{ url: absoluteUrl(`/features/${feature}`), lastModified: changed, changeFrequency: "monthly" as const, priority: .7 }] : []);
-  return [...staticPages, ...provincePages, ...cityPages, ...stylePages, ...featurePages, ...restaurantPages];
+  return [...staticPages, ...provincePages, ...cityPages, ...stylePages, ...featurePages, ...restaurantPages].filter(page => publicPath(new URL(page.url).pathname) === new URL(page.url).pathname);
 }

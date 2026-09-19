@@ -23,7 +23,7 @@ export function SiteFooter() {
       </div>
       <div><h2>Explore</h2>{explore.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>
       <div><h2>Trust</h2>{trust.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</div>
-      <div><h2>Legal</h2><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/editorial-standards#advertising">Advertising policy</Link></div>
+      <div><h2>Legal</h2><Link href="/privacy">Privacy</Link><a href="#analytics-privacy">Analytics privacy settings</a><Link href="/terms">Terms</Link><Link href="/editorial-standards#advertising">Advertising policy</Link></div>
       <p className="footer-fineprint">© {new Date().getFullYear()} Ramen Scout Canada. Published by {PUBLISHER.name}. Restaurant details change; confirm critical information with the restaurant before travelling.</p>
     </footer>
   );

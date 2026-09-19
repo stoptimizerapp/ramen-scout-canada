@@ -2706,7 +2706,7 @@
       },
       "content": {
         "shortDescription": "Tasty House in Edmonton lists six Japanese ramen bowls within a broader Chinese and Japanese noodle menu. It opens daily from 11 a. m. to 10 p. m. with dine-in, takeout and delivery. Tasty House’s January 2026 menu names six Japanese ramen bowls: Veggie is $17, while tan tan, shoyu beef, beef tomato, miso pork and chicken are $19.",
-        "editorialDescription": "Tasty House Chinese and Japanese Noodle Restaurant is at 11113 87 Avenue Northwest in south-central Edmonton. Its current ordering menu contains six Japanese ramen bowls, making ramen a substantial category within a wider noodle selection. The schedule is straightforward: 11 a. m. to 10 p. m. every day. Diners may eat in, collect takeout or order delivery; wheelchair access is listed for seats and washrooms. The restaurant is described as family-friendly and serves alcohol. The restaurant’s January 2026 menu images make the six-bowl ramen section concrete. Veggie Ramen costs $17; Tan Tan with minced pork, Shoyu Beef, Beef Tomato, Miso Pork and Chicken Ramen are each $19. Ramen remains a substantial category inside a much larger Chinese and Japanese menu rather than the restaurant’s only focus.",
+        "editorialDescription": "Tasty House’s six-bowl Japanese ramen section sits inside a wider Chinese and Japanese noodle menu. Its January 2026 menu images price Veggie Ramen at $17 and the five meat bowls at $19. That $2 difference is more useful than treating the whole restaurant as one price category. Tan Tan uses minced pork, Shoyu is paired with beef, and Miso with pork; Beef Tomato and Chicken Ramen provide alternatives to those three seasoning labels. A group can compare these named choices without assuming that all bowls have the same broth. The location is 11113 87 Avenue Northwest in Edmonton, with a separately sourced daily 11 a.m.–10 p.m. schedule.",
         "whatToOrder": "Veggie Ramen is the $17 low end; Tan Tan, Shoyu Beef and Miso Pork each cost $19 and cover three distinct seasoning directions.",
         "caveats": "The six ramen bowls share a broad kitchen with many other dishes. Veggie is not explicitly labelled vegan, and halal suitability, allergen controls and noodle production remain unknown."
       }
@@ -8570,6 +8570,217 @@
         "evidenceRefs": [
           "SR1"
         ]
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_ff25f125c395f1b05cb3",
+      "replacesMenuUrl": "https://shiawaseramen.ca/",
+      "menuUrl": "https://shiawaseramen.ca/menu.html",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Tonkotsu Ramen",
+          "price": 19.25,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Tonkotsu Ramen",
+          "price": 19.25,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tonkotsu Black Garlic",
+          "price": 19.25,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Miso Ramen",
+          "price": 21.95,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "miso"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Miso Ramen",
+          "price": 21.95,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shio Ramen",
+          "price": 17.5,
+          "brothBase": [],
+          "tare": [
+            "shio"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "price": 17.5,
+          "brothBase": [],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chicken Shoyu",
+          "price": 18.5,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Chicken Shio",
+          "price": 18.5,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "shio"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "taxonomy": {
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "unknown",
+        "brothBases": [
+          "pork_bone",
+          "chicken"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "shio",
+          "shoyu",
+          "miso",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "prices": {
+        "observedCount": 9,
+        "min": 17.5,
+        "max": 21.95,
+        "median": 19.25,
+        "typical": 19.25,
+        "band": "mid_range",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "Shiawase’s dedicated menu separates $17.50 clear-broth bowls, $18.50 chicken bowls and $19.25 tonkotsu; miso bowls cost $21.95. These are menu facts, not descriptions drawn from embedded customer reviews.",
+        "editorialDescription": "At Shiawase in Cameron Heights, the important distinction is between the regular clear-broth bowls and the specifically named chicken versions. Shio and Shoyu each cost $17.50 and include pork chashu, whereas Chicken Shio and Chicken Shoyu cost $18.50 and explicitly describe chicken broth and chicken chashu. Tonkotsu, Spicy Tonkotsu and Black Garlic all share a $19.25 price. Moving from that group to Miso or Spicy Miso adds $2.70; those bowls retain pork-bone broth and add a miso blend, pork and egg. The dedicated menu supports these choices directly without relying on the customer comments embedded on the homepage.",
+        "whatToOrder": "For chicken broth and chicken topping together, choose one of the explicitly named Chicken Shio or Chicken Shoyu bowls. For pork-bone soup at a fixed price, compare regular, spicy and black-garlic tonkotsu at $19.25. The clear-broth Shio and Shoyu contain pork topping, so their lower price does not imply a vegetarian recipe.",
+        "caveats": "The menu prominently asks guests to discuss peanuts with staff. No complete vegan bowl is established by the nine checked ramen entries. Mapo tofu ramen mentioned in a customer comment is not treated as a current menu item. Prices exclude any applicable tax, tip and add-ons; hours retain their separate source date."
       }
     }
   ]

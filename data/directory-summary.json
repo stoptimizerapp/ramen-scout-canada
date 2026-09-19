@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-09-19T17:43:56.933Z",
+  "generatedAt": "2026-09-19T18:18:15.264Z",
   "baseRestaurantCount": 380,
   "curatedAdditionCount": 33,
   "restaurantCount": 413,
   "provinceCount": 10,
   "cityCount": 105,
   "verifiedMenuCount": 192,
-  "pricedMenuCount": 149,
+  "pricedMenuCount": 150,
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
     "tonkotsu": 66,
-    "shoyu": 143,
+    "shoyu": 144,
     "miso": 166,
     "tsukemen": 80
   },
@@ -718,7 +718,7 @@
           "slug": "edmonton",
           "count": 19,
           "verifiedMenus": 9,
-          "pricedMenus": 8,
+          "pricedMenus": 9,
           "lateNight": 7
         },
         {

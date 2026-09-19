@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { contentPublication, publicPath } from "../lib/content-publication.js";
 import {
   isCitySearchReady,
   isFacetSearchReady,
@@ -116,11 +117,24 @@ const indexableRoutes = new Set([
   ...featureRoutes,
   ...restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant)).map((restaurant) => restaurant.canonicalPath),
 ]);
+for (const route of Object.keys(contentPublication.redirects)) indexableRoutes.delete(route);
 let nextRoute = 0;
 const htmlByRoute = new Map();
 const renderWorkers = Array.from({ length: Math.min(12, routeList.length) }, async () => {
   while (nextRoute < routeList.length) {
     const route = routeList[nextRoute++];
+    if (contentPublication.redirects[route]) {
+      const target = contentPublication.redirects[route];
+      const url = `${canonicalOrigin}${target}`;
+      // GitHub Pages cannot set per-route HTTP status/Location. Immediate HTML
+      // redirects are permanent user-visible migrations, with a no-JS link.
+      const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, follow"><meta http-equiv="refresh" content="0; url=${url}"><link rel="canonical" href="${url.split('#')[0]}"><title>Location details have moved | Ramen Scout</title></head><body><main><h1>Find these details in the local guide</h1><p>This record is now part of a location comparison.</p><a href="${target}">Continue to the restaurant’s location details</a></main></body></html>`;
+      const destination = routeFile(route);
+      await fs.mkdir(path.dirname(destination), { recursive: true });
+      await fs.writeFile(destination, html);
+      htmlByRoute.set(route, html);
+      continue;
+    }
     const response = await render(route);
     const html = await response.text();
     if (!/^<!DOCTYPE html>/i.test(html)) throw new Error(`${route} did not return a complete HTML document`);
@@ -139,6 +153,7 @@ for (const [route, html] of htmlByRoute) {
   for (const match of html.matchAll(/(?:href|src|action)="(\/[^"]*)"/g)) {
     const target = new URL(match[1], canonicalOrigin);
     const pathname = decodeURI(target.pathname).replace(/\/$/, "") || "/";
+    if (!contentPublication.redirects[route] && publicPath(pathname) !== pathname) throw new Error(`${route} links to a retired route ${pathname}`);
     if (routes.has(pathname)) continue;
     const assetPath = path.join(outputRoot, pathname.slice(1));
     if (await fs.stat(assetPath).then((value) => value.isFile()).catch(() => false)) continue;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteLink as Link } from "@/components/SiteLink";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
+import { hasRestaurantGuide, publicPath } from "@/lib/content-publication.js";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FactBadge } from "@/components/FactBadge";
 import { NearbyAlternatives } from "@/components/NearbyAlternatives";
@@ -18,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ province:
   const route = await params;
   const restaurant = getRestaurant(route.province, route.city, route.slug);
   if (!restaurant) return {};
+  if (!hasRestaurantGuide(restaurant)) return { robots: pageRobots(false) };
   return {
     title: { absolute: restaurant.seo.title },
     description: restaurant.seo.description,
@@ -115,6 +117,7 @@ export default async function RestaurantPage({ params }: { params: Promise<{ pro
   const route = await params;
   const restaurant = getRestaurant(route.province, route.city, route.slug);
   if (!restaurant) notFound();
+  if (!hasRestaurantGuide(restaurant)) permanentRedirect(publicPath(restaurant.canonicalPath));
   const schema = buildSchema(restaurant);
   const serializedSchema = JSON.stringify(schema).replace(/</g, "\\u003c");
   const priced = pricedItems(restaurant.menu.items);

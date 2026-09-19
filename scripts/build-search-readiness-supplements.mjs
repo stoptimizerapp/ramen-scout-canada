@@ -51,7 +51,7 @@ async function crawlBatch(urls, delayBeforeReturnHtml = 1) {
         wait_until: "domcontentloaded",
         delay_before_return_html: delayBeforeReturnHtml,
         scan_full_page: true,
-        remove_overlay_elements: true,
+        remove_overlay_elements: false,
         process_iframes: true,
         check_robots_txt: true,
       } },
@@ -95,7 +95,7 @@ function menuSignals(markdown, restaurants) {
       if (distinctive.length && distinctive.slice(0, 2).every((token) => plain.includes(token))) matchedItems += 1;
     }
   }
-  return { ramenTerms, priceSignals, matchedItems, qualifies: ramenTerms >= 2 && (matchedItems >= 1 || priceSignals >= 2 || /\bmenu\b/.test(plain)) };
+  return { ramenTerms, priceSignals, matchedItems, qualifies: ramenTerms >= 2 && (matchedItems >= 1 || priceSignals >= 2) };
 }
 
 function pendingSupplementReferences(enrichment) {

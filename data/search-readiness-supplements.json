@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-19T17:29:59.232Z",
+  "generatedAt": "2026-09-19T18:11:37.814Z",
   "crawler": "Crawl4AI",
   "policy": "Fresh Crawl4AI menu corroboration, optionally paired with hashed first-party-linked menu images or PDFs that received an item-level editorial review, for existing source-backed listings whose runtime facts independently recompute to at least 90 quality points and six verified decision groups.",
   "records": [
@@ -3698,6 +3698,35 @@
         "vegan",
         "reservations",
         "services"
+      ]
+    },
+    {
+      "restaurantId": "ramen_ca_ff25f125c395f1b05cb3",
+      "url": "https://shiawaseramen.ca/menu.html",
+      "finalUrl": "https://shiawaseramen.ca/menu.html",
+      "retrievedAt": "2026-09-19T18:11:37.814Z",
+      "statusCode": 200,
+      "crawl4aiSuccess": true,
+      "extractionMethod": "crawl4ai_normalized_markdown",
+      "contentHash": "7835ee682d801dbd06d69dc77d4e04982f602ab59b5e3786ae2d7538d25963c1",
+      "pageContentHash": "7835ee682d801dbd06d69dc77d4e04982f602ab59b5e3786ae2d7538d25963c1",
+      "markdownChars": 7786,
+      "linkedDocuments": [],
+      "corroboration": {
+        "ramenTerms": 16,
+        "priceSignals": 37,
+        "matchedItems": 9
+      },
+      "derivedQualityScore": 95,
+      "derivedDecisionFieldCount": 7,
+      "verifiedDecisionGroups": [
+        "identity",
+        "relevance",
+        "menu",
+        "hours",
+        "lateNight",
+        "taxonomy",
+        "prices"
       ]
     },
     {

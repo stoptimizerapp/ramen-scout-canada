@@ -3,6 +3,7 @@ import crypto from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
+import { publicPath, usableMenuItems } from "../lib/content-publication.js";
 import { deriveSearchReadinessProfile } from "../lib/search-readiness-profile.js";
 import { applySearchReadinessEnrichment, validateSearchReadinessEnrichments } from "../lib/search-readiness-enrichments.js";
 
@@ -30,6 +31,8 @@ const rendererContractPaths = [
   "components/SiteFooter.tsx",
   "components/Logo.tsx",
   "components/SiteLink.tsx",
+  "lib/content-publication.js",
+  "data/content-publication.json",
   "lib/adsense.ts",
   "lib/directory.ts",
   "lib/format.ts",
@@ -682,7 +685,9 @@ function expectedApprovalHash(approval) {
   }));
 }
 
-const restaurants = supplementedDraftRestaurants.map((restaurant) => {
+const editorialNotes = JSON.parse(await fs.readFile(path.join(siteRoot, "data/editorial-notes.json"), "utf8"));
+const restaurants = supplementedDraftRestaurants.map((original) => {
+  const restaurant = { ...original, content: { ...original.content, ...(editorialNotes[original.id] || {}) } };
   const hashes = approvalHashes(restaurant);
   const publication = { ...restaurant.publication, ...hashes };
   const approval = approvalById.get(restaurant.id);
@@ -831,7 +836,7 @@ const searchIndex = directoryRestaurants.map((restaurant) => ({
   alternateNames: restaurant.alternateNames,
   brandName: restaurant.brandName,
   branchName: restaurant.branchName,
-  path: restaurant.canonicalPath,
+  path: publicPath(restaurant.canonicalPath),
   city: restaurant.location.city,
   citySlug: restaurant.citySlug,
   province: restaurant.location.provinceName,
@@ -850,10 +855,10 @@ const searchIndex = directoryRestaurants.map((restaurant) => ({
     ...restaurant.taxonomy.tares,
     ...restaurant.taxonomy.servingStyles,
   ])],
-  signatureItems: restaurant.menu.items.map((item) => item.name),
+  signatureItems: usableMenuItems(restaurant).map((item) => item.name),
   latitude: restaurant.location.latitude,
   longitude: restaurant.location.longitude,
-  description: restaurant.content.shortDescription,
+  description: usableMenuItems(restaurant).length ? `Menu examples: ${usableMenuItems(restaurant).slice(0, 3).map(item => item.name).join(", ")}.` : `Business contact record in ${restaurant.location.city}; menu details not verified.`,
   menuStatus: restaurant.menu.status,
   menuVerifiedAt: restaurant.menu.verifiedAt,
   priceMin: restaurant.prices.min,

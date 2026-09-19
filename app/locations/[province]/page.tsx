@@ -1,28 +1,31 @@
-import type { Metadata } from "next";
-import { SiteLink as Link } from "@/components/SiteLink";
-import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { RestaurantList } from "@/components/RestaurantList";
-import { getProvince, getProvinceRestaurants, isProvinceSearchReady, summary } from "@/lib/directory";
-import { buildPageMetadata } from "@/lib/site";
+import type { Metadata } from 'next';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { SiteLink as Link } from '@/components/SiteLink';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { MenuComparison } from '@/components/MenuComparison';
+import { LocationRecords } from '@/components/LocationRecords';
+import { getProvince, getProvinceRestaurants, isProvinceSearchReady, summary } from '@/lib/directory';
+import { hasCityGuide, hasProvinceGuide, publicPath } from '@/lib/content-publication.js';
+import { buildPageMetadata } from '@/lib/site';
 
-export function generateStaticParams() { return summary.provinces.map((province) => ({ province: province.slug })); }
-
-export async function generateMetadata({ params }: { params: Promise<{ province: string }> }): Promise<Metadata> {
-  const { province: slug } = await params;
-  const province = getProvince(slug);
-  if (!province) return {};
-  const entries = getProvinceRestaurants(slug);
-  return buildPageMetadata({ title: `Ramen restaurants in ${province.name}`, description: `Browse ${province.count} ramen restaurants across ${province.cities.length} ${province.name} cities, with menu, price, service and verification details.`, path: `/locations/${slug}`, indexable: isProvinceSearchReady(entries) });
+export function generateStaticParams() { return summary.provinces.map(p => ({province:p.slug})); }
+export async function generateMetadata({params}:{params:Promise<{province:string}>}):Promise<Metadata> {
+  const {province:slug}=await params; const p=getProvince(slug);
+  if(!p || !hasProvinceGuide(`/locations/${slug}`)) return {};
+  return buildPageMetadata({title:`Ramen menus and locations in ${p.name}`,description:`Compare documented ramen bowls across ${p.name}, then find branch addresses, menu sources, hours and city comparisons.`,path:`/locations/${slug}`,indexable:isProvinceSearchReady(getProvinceRestaurants(slug))});
 }
-
-export default async function ProvincePage({ params }: { params: Promise<{ province: string }> }) {
-  const { province: slug } = await params;
-  const province = getProvince(slug);
-  if (!province) notFound();
-  const entries = getProvinceRestaurants(slug);
-  const verified = entries.filter((restaurant) => restaurant.menu.status === "verified_current").length;
-  const lateNight = entries.filter((restaurant) => restaurant.hours.lateNightStatus === "yes").length;
-  const sample = entries.filter((restaurant) => restaurant.menu.status === "verified_current").slice(0, 6);
-  return <main className="page-shell"><Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations", href: "/locations" }, { label: province.name }]} /><header className="page-hero"><p className="eyebrow"><span /> {province.code} field guide</p><h1>Ramen restaurants in {province.name}.</h1><p>Explore {province.count} ramen spots across {province.cities.length} {province.cities.length === 1 ? "city" : "cities"}. We found {verified} current menu sources and {lateNight} restaurants with service until at least 11 p.m. on one or more days.</p></header><section className="metric-row" aria-label={`${province.name} directory summary`}><div><strong>{province.count}</strong><span>restaurants</span></div><div><strong>{province.cities.length}</strong><span>cities</span></div><div><strong>{verified}</strong><span>menus checked</span></div><div><strong>{lateNight}</strong><span>late night</span></div></section><section className="content-section"><div className="section-heading"><div><p className="eyebrow"><span /> Choose a city</p><h2>Explore {province.name} by city.</h2></div></div><div className="city-directory">{province.cities.map((city) => <Link href={`/locations/${province.slug}/${city.slug}`} key={city.slug}><div><h3>{city.name}</h3><p>{city.verifiedMenus} verified {city.verifiedMenus === 1 ? "menu" : "menus"} · {city.lateNight} late-night</p></div><strong>{city.count}<span> spots</span></strong></Link>)}</div></section>{sample.length ? <section className="content-section"><div className="section-heading"><div><p className="eyebrow"><span /> Menu-rich listings</p><h2>A useful place to start.</h2></div></div><RestaurantList restaurants={sample} /></section> : null}</main>;
+export default async function ProvincePage({params}:{params:Promise<{province:string}>}) {
+  const {province:slug}=await params;const p=getProvince(slug);if(!p)notFound();
+  if(!hasProvinceGuide(`/locations/${slug}`))permanentRedirect(publicPath(`/locations/${slug}`));
+  const entries=getProvinceRestaurants(slug);
+  const comparisonCities=p.cities.filter(c=>hasCityGuide(`/locations/${slug}/${c.slug}`));
+  const otherCities=p.cities.filter(c=>!hasCityGuide(`/locations/${slug}/${c.slug}`));
+  return <main className="page-shell"><Breadcrumbs items={[{label:'Home',href:'/'},{label:'Locations',href:'/locations'},{label:p.name}]} />
+    <header className="page-hero"><p className="eyebrow">{p.code} menu and location guide</p><h1>Ramen in {p.name}.</h1><p>Compare named bowls across the province, or jump to a city for local options. Smaller communities are grouped below so you can see their actual menu coverage without opening an incomplete restaurant page. Restaurant counts reflect our research, not a complete census.</p></header>
+    <MenuComparison restaurants={entries} title={`Menu examples across ${p.name}`} />
+    {comparisonCities.length ? <section className="content-section"><h2>Compare restaurants within a city</h2><div className="city-directory">{comparisonCities.map(c=><Link href={`/locations/${slug}/${c.slug}`} key={c.slug}><h3>{c.name}</h3><span>{c.count} locations</span></Link>)}</div></section>:null}
+    {otherCities.length ? <nav className="neighbourhood-links" aria-label="Smaller communities">{otherCities.map(c=><a href={`#city-${slug}-${c.slug}`} key={c.slug}>{c.name}</a>)}</nav>:null}
+    {otherCities.map(c=><section className="content-section" id={`city-${slug}-${c.slug}`} key={c.slug}><h2>{c.name}</h2><LocationRecords restaurants={entries.filter(r=>r.citySlug===c.slug)} /></section>)}
+    <aside className="editorial-note"><h2>Compare the same kind of order</h2><p>These are named menu examples, not provincial price rankings. Delivery prices and branch exceptions can change the comparison. A vegetarian dish is not assumed vegan, and a chicken topping does not establish chicken-only stock. The source date beside each menu tells you when the evidence was checked.</p><Link href="/guides/choosing-ramen">Worked examples: stocks, toppings and extras →</Link></aside>
+  </main>;
 }

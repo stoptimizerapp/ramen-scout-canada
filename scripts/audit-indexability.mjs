@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { contentPublication, publicPath, hasRestaurantGuide } from "../lib/content-publication.js";
 import {
   isCitySearchReady,
   isFacetSearchReady,
@@ -33,6 +34,7 @@ const provinceRoutes = summary.provinces.map((province) => `/locations/${provinc
 const styleRoutes = styleSlugs.map((style) => `/styles/${style}`);
 const featureRoutes = Object.keys(featureMatchers).map((feature) => `/features/${feature}`);
 const canonicalRoutes = new Set([...staticRoutes, ...restaurantRoutes, ...cityRoutes, ...provinceRoutes, ...styleRoutes, ...featureRoutes]);
+for (const route of Object.keys(contentPublication.redirects)) canonicalRoutes.delete(route);
 
 const readyRestaurantRoutes = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant)).map((restaurant) => restaurant.canonicalPath);
 const readyCityRoutes = summary.provinces.flatMap((province) => province.cities.flatMap((city) => {
@@ -52,6 +54,7 @@ const readyFeatureRoutes = Object.entries(featureMatchers).flatMap(([feature, ma
   return isFacetSearchReady(entries) ? [`/features/${feature}`] : [];
 });
 const indexableRoutes = new Set([...staticRoutes, ...readyRestaurantRoutes, ...readyCityRoutes, ...readyProvinceRoutes, ...readyStyleRoutes, ...readyFeatureRoutes]);
+for (const route of Object.keys(contentPublication.redirects)) indexableRoutes.delete(route);
 
 function routeFile(route) {
   return route === "/" ? path.join(output, "index.html") : path.join(output, route.slice(1), "index.html");
@@ -155,6 +158,7 @@ for (const route of indexableRoutes) {
 }
 
 for (const restaurant of restaurants) {
+  if (!hasRestaurantGuide(restaurant)) continue;
   const ready = isRestaurantSearchReady(restaurant);
   if (ready) {
     assert.ok(publisherContentWordCount(restaurant) >= 200, `${restaurant.name} has insufficient authored content`);
@@ -188,11 +192,24 @@ const notFound = await fs.readFile(path.join(output, "404.html"), "utf8");
 assert.match(notFound, /name=["']robots["'][^>]*content=["']noindex/i);
 assert.doesNotMatch(notFound, /rel=["']canonical["']/i);
 
+// Verify every migrated URL and every preserved business anchor, not a sample.
+for (const [route, target] of Object.entries(contentPublication.redirects)) {
+  const html = await fs.readFile(routeFile(route), 'utf8');
+  assert.match(html, /http-equiv="refresh" content="0;/);
+  assert.match(html, /name="robots" content="noindex, follow"/);
+  assert.ok(html.includes(`href="${target}"`), `${route} needs a no-JS destination link`);
+  const [destination, anchor] = target.split('#');
+  assert.equal(publicPath(destination), destination, 'redirect chains are prohibited');
+  assert.ok(canonicalRoutes.has(destination), `${route} destination must be a content page`);
+  if (anchor) assert.ok((await fs.readFile(routeFile(destination), 'utf8')).includes(`id="${anchor}"`), `${target} anchor missing`);
+}
+
 console.log(JSON.stringify({
   canonicalPagesAudited: canonicalRoutes.size,
   indexablePages: indexableRoutes.size,
   noindexCanonicalPages: canonicalRoutes.size - indexableRoutes.size,
-  indexableRestaurants: readyRestaurantRoutes.length,
+  redirectedPages: Object.keys(contentPublication.redirects).length,
+  indexableRestaurants: readyRestaurantRoutes.filter(route => indexableRoutes.has(route)).length,
   indexableCities: readyCityRoutes.length,
   indexableProvinces: readyProvinceRoutes.length,
   indexableStyles: readyStyleRoutes.length,

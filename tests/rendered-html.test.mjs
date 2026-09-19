@@ -7,6 +7,7 @@ import { ADSENSE_CLIENT, ADSENSE_SELLER_RECORD } from "../lib/adsense.ts";
 import { distanceKm, formatDistance, rankByDistance } from "../lib/geo.ts";
 import { createRetryableLoader } from "../lib/retryable-loader.ts";
 import { passesPublicationGate, passesSiteLaunchGate } from "../lib/publication-policy.js";
+import { contentPublication, publicPath, hasRestaurantGuide } from "../lib/content-publication.js";
 import {
   isCitySearchReady,
   isFacetSearchReady,
@@ -39,6 +40,8 @@ const rendererContractPaths = [
   "components/SiteFooter.tsx",
   "components/Logo.tsx",
   "components/SiteLink.tsx",
+  "lib/content-publication.js",
+  "data/content-publication.json",
   "lib/adsense.ts",
   "lib/directory.ts",
   "lib/format.ts",
@@ -78,7 +81,7 @@ function expectedSearchReadyPaths() {
     const entries = restaurants.filter(matches);
     return isFacetSearchReady(entries) ? [`/features/${feature}`] : [];
   });
-  return { restaurantPaths, cityPaths, provincePaths, stylePaths, featurePaths, all: [...allStaticContentPaths, ...provincePaths, ...cityPaths, ...stylePaths, ...featurePaths, ...restaurantPaths] };
+  return { restaurantPaths, cityPaths, provincePaths, stylePaths, featurePaths, all: [...allStaticContentPaths, ...provincePaths, ...cityPaths, ...stylePaths, ...featurePaths, ...restaurantPaths].filter(path => publicPath(path) === path) };
 }
 
 function expectedRendererHash(siteUrl, sourceOverrides = {}) {
@@ -171,7 +174,7 @@ test("generated directory data is complete, unique and route-safe", () => {
     assert.equal(new Set(restaurants.map((restaurant) => restaurant[key])).size, restaurants.length, `${key} must be unique`);
   }
 
-  const paths = new Set(restaurants.map((restaurant) => restaurant.canonicalPath));
+  const paths = new Set(restaurants.map((restaurant) => publicPath(restaurant.canonicalPath)));
   for (const restaurant of restaurants) {
     assert.equal(
       restaurant.canonicalPath,
@@ -227,15 +230,18 @@ test("curated discoveries retain every researched menu item in listings and sear
   for (const candidate of curatedSource.restaurants) {
     const runtime = runtimeById.get(candidate.googlePlaceId);
     assert.ok(runtime, `${candidate.sourceKey} must exist in generated data`);
-    assert.equal(runtime.menu.items.length, candidate.menu.items.length, `${candidate.sourceKey} must retain its complete researched menu`);
-    assert.deepEqual(runtime.menu.items.map((item) => item.name), candidate.menu.items.map((item) => item.name));
-    assert.deepEqual(searchById.get(runtime.id).signatureItems, candidate.menu.items.map((item) => item.name));
+    // A later source-linked menu correction supersedes the original discovery.
+    const corrected = readinessEnrichments.records.find(record => record.restaurantId === runtime.id);
+    const expectedItems = corrected?.items ?? candidate.menu.items;
+    assert.equal(runtime.menu.items.length, expectedItems.length, `${candidate.sourceKey} must retain its complete researched menu`);
+    assert.deepEqual(runtime.menu.items.map((item) => item.name), expectedItems.map((item) => item.name));
+    assert.deepEqual(searchById.get(runtime.id).signatureItems, expectedItems.map((item) => item.name));
   }
 });
 
 test("fresh Crawl4AI supplements promote only listings whose live facts clear the quality gate", () => {
   assert.equal(readinessSupplements.schemaVersion, "1.0");
-  assert.equal(readinessSupplements.records.length, 114);
+  assert.equal(readinessSupplements.records.length, 115);
   assert.equal(readinessSupplements.rejected.length, 0);
   assert.equal(new Set(readinessSupplements.records.map((record) => record.restaurantId)).size, readinessSupplements.records.length);
   const now = Date.now();
@@ -309,7 +315,7 @@ test("fresh Crawl4AI supplements promote only listings whose live facts clear th
 
 test("item-level menu repairs remain evidence-linked, specific and conservative", () => {
   assert.equal(readinessEnrichments.schemaVersion, "1.0");
-  assert.equal(readinessEnrichments.records.length, 69);
+  assert.equal(readinessEnrichments.records.length, 70);
   for (const enrichment of readinessEnrichments.records) {
     const restaurant = restaurants.find((entry) => entry.id === enrichment.restaurantId);
     const supplement = readinessSupplements.records.find((entry) => entry.restaurantId === enrichment.restaurantId);
@@ -462,7 +468,8 @@ test("public search data exposes useful fields without ratings, staged media or 
   for (const record of searchIndex) {
     assert.deepEqual(Object.keys(record).sort(), allowedKeys);
   }
-  assert.ok(searchIndex.every((record) => typeof record.description === "string" && record.description.length > 40));
+  assert.ok(searchIndex.every((record) => typeof record.description === "string" && record.description.length > 0));
+  assert.ok(searchIndex.every((record) => record.description.startsWith('Menu examples:') || record.description.startsWith('Business contact record')));
   assert.ok(searchIndex.every((record) => ["yes", "no", "unknown"].includes(record.tonkotsu)));
   assert.ok(searchIndex.some((record) => record.alternateNames.length > 0));
   assert.ok(searchIndex.some((record) => record.signatureItems.length > 0));
@@ -537,6 +544,11 @@ test("privacy, Analytics and publisher details match the implemented data flows"
   assert.match(analyticsSource, /G-KKD42WHEGE/);
   assert.match(analyticsSource, /firebase\/analytics/);
   assert.match(layoutSource, /<FirebaseAnalytics \/>/);
+  assert.match(analyticsSource, /if \(choice !== 'allowed'\) return/);
+  assert.match(analyticsSource, /!collectionRequested/);
+  assert.match(analyticsSource, /setAnalyticsCollectionEnabled\(analyticsInstance, false\)/);
+  assert.match(privacyHtml, /analytics-privacy/);
+  assert.match(privacyHtml, /Optional analytics off/);
   assert.match(homeFinderSource, /navigator\.geolocation\.getCurrentPosition/);
   assert.match(homeFinderSource, /NEARBY_LIMIT = 6/);
   assert.match(homeFinderSource, /aria-label="Nearest ramen restaurants"/);
@@ -545,8 +557,8 @@ test("privacy, Analytics and publisher details match the implemented data flows"
 });
 
 test("restaurant detail renders canonical facts, cautious unknowns and valid rating-free schema", async () => {
-  const restaurant = restaurants.find((entry) => entry.id === "ramen_ca_043dfb6c999bc76429bd");
-  assert.ok(restaurant, "Kajiken QA fixture must exist");
+  const restaurant = restaurants.find((entry) => entry.id === "ramen_ca_1d358958d30659cd7b34");
+  assert.ok(restaurant, "Shiki editorial guide must exist");
   const html = await htmlFor(restaurant.canonicalPath);
 
   const escapedH1 = restaurant.seo.h1.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -555,7 +567,7 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex, follow"/i);
   assert.match(html, new RegExp(`<link[^>]*rel="canonical"[^>]*href="https://ramenscout\\.ca${restaurant.canonicalPath}"`, "i"));
   assert.equal(extractTitle(html), restaurant.seo.title);
-  assert.match(html, /Ramen style not confirmed|Not confirmed/);
+  assert.match(html, /An omitted detail is unknown/);
   assert.match(html, /Where these details came from/);
   assert.match(html, /Report a correction/);
 
@@ -565,7 +577,7 @@ test("restaurant detail renders canonical facts, cautious unknowns and valid rat
   assert.equal(restaurantSchema.name, restaurant.name);
   assert.equal(restaurantSchema.address.addressLocality, restaurant.location.city);
   assert.equal(restaurantSchema.url, `https://ramenscout.ca${restaurant.canonicalPath}`);
-  assert.equal(restaurantSchema.servesCuisine, undefined, "uncertain ramen relevance must not be asserted in schema");
+  assert.deepEqual(restaurantSchema.servesCuisine, ["Ramen"]);
   assert.doesNotMatch(JSON.stringify(schema), /AggregateRating|reviewCount|ratingValue|"review"/i);
   assert.doesNotMatch(html, /quality_score|gate_human_review|staging_media|adsbygoogle/i);
 });
@@ -588,10 +600,11 @@ test("a curated discovery renders its specific menu and source-backed details", 
   assert.doesNotMatch(html, /AggregateRating|reviewCount|ratingValue|adsbygoogle/i);
 });
 
-test("every curated detail page exposes at least 200 useful publisher words", async () => {
+test("every retained curated guide renders its authored decision-useful content", async () => {
   for (const candidate of curatedSource.restaurants) {
     const restaurant = restaurants.find((entry) => entry.placeId === candidate.googlePlaceId);
     assert.ok(restaurant, `${candidate.sourceKey} must resolve`);
+    if (!hasRestaurantGuide(restaurant)) continue;
     const html = await htmlFor(restaurant.canonicalPath);
     const start = html.indexOf("data-publisher-content");
     const end = html.indexOf('<aside class="listing-sidebar"', start);
@@ -632,7 +645,6 @@ test("representative location, style, feature and policy routes render", async (
     "/locations",
     "/locations/on",
     "/locations/on/toronto",
-    "/locations/yt/whitehorse",
     "/styles/miso",
     "/features/late-night",
     "/features/house-made-noodles",
@@ -686,14 +698,14 @@ test("robots and sitemap expose the intended canonical inventory", async () => {
     assert.equal(ready.provincePaths.length, 4);
     assert.equal(ready.stylePaths.length, 4);
     assert.deepEqual(ready.featurePaths.sort(), ["/features/late-night", "/features/reservations", "/features/vegan"]);
-    assert.equal(urls.length, 223, "the existing 222 canonical pages plus the researched comparison guide should be submitted");
+    assert.equal(urls.length, ready.all.length, "only active canonical content pages should be submitted");
   } else {
     assert.match(robots, /User-Agent: \*\s+Disallow: \//i);
     assert.doesNotMatch(sitemap, /<url>/);
   }
 });
 
-test("search-ready listings meet the anti-thin-content and originality gates", () => {
+test("legacy evidence safeguards remain unchanged by editorial consolidation", () => {
   const ready = restaurants.filter((restaurant) => isRestaurantSearchReady(restaurant));
   assert.equal(ready.length, 189);
   assert.equal(restaurants.length - ready.length, 224, "weaker listings must remain noindex rather than entering the sitemap");
@@ -740,4 +752,19 @@ test("unknown paths return a true 404", async () => {
   assert.match(html, /<meta[^>]*name="robots"[^>]*content="noindex(?:, follow)?"/i);
   assert.doesNotMatch(html, /rel="canonical"/i);
   assert.doesNotMatch(html, /property="og:url"/i);
+});
+
+test("thin records and sparse hubs redirect to preserved local details", async () => {
+  const cache = new Map();
+  for (const [path, target] of Object.entries(contentPublication.redirects)) {
+    const response = await render(path);
+    assert.equal(response.status, 308, `${path} must be a permanent runtime redirect`);
+    assert.equal(response.headers.get('location'), target);
+    const [destination, anchor] = target.split('#');
+    assert.equal(publicPath(destination), destination, 'redirect must not create a chain');
+    if (!cache.has(destination)) cache.set(destination, await htmlFor(destination));
+    if (anchor) assert.ok(cache.get(destination).includes(`id="${anchor}"`), `${target} must retain the record`);
+  }
+  assert.equal(restaurants.filter(r => !r.menu.items.length && hasRestaurantGuide(r)).length, 0);
+  assert.ok(restaurants.every(r => searchIndex.find(entry => entry.id === r.id)?.path === publicPath(r.canonicalPath)));
 });

@@ -194,3 +194,16 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
 .basic-location-list h3 { font-size: 1.05rem; }
 .guide-toc { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; padding-block: 1rem; border-block: 1px solid #dfd9ce; }
 @media (max-width: 700px) { .decision-feature { grid-template-columns: 1fr; gap: 1rem; } .site-header nav { flex-wrap: wrap; } }
+/* Compact records replace thin detail pages; all details are real static HTML. */
+.location-records { display: grid; gap: 1.25rem; }
+.location-record { padding: 1.5rem; border: 1px solid var(--border, #d5dbdf); border-radius: 12px; scroll-margin-top: 6rem; }
+.location-record h3 { font-size: 1.25rem; margin: 0 0 .6rem; }
+.record-menu { list-style: none; padding: 0; max-width: 50rem; }
+.record-menu li { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; border-bottom: 1px solid #d5dbdf; }
+.record-menu strong { white-space: nowrap; }
+.record-links { display: flex; flex-wrap: wrap; gap: .8rem 1.3rem; margin-top: 1rem; }
+.record-links a { text-decoration: underline; text-underline-offset: .2rem; }
+.record-hours { max-width: 34rem; }
+.record-hours div { display: flex; justify-content: space-between; gap: 1rem; }
+.location-record summary { cursor: pointer; padding: .75rem 0; }
+[id^="city-"], [id^="province-"] { scroll-margin-top: 6rem; }

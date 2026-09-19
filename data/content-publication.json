@@ -1,0 +1,3019 @@
+{
+  "reviewedAt": "2026-09-19",
+  "restaurantIds": [
+    "ramen_ca_1d358958d30659cd7b34",
+    "ramen_ca_5c9ac40ac8e5d19b9e8e",
+    "ramen_ca_d803b44fefafa757981e",
+    "ramen_ca_d065af9ea1e4bf604b82",
+    "ramen_ca_61e99e2371a89cd6ff3b",
+    "ramen_ca_fdf92f34dfc5f41d550d",
+    "ramen_ca_2f8f8196e3117eec5b8e",
+    "ramen_ca_adc66d9fa854183d105f",
+    "ramen_ca_f43841040f91ed0862cc",
+    "ramen_ca_376b924d920c31ee2b03",
+    "ramen_ca_fff7ee5d989f8ea60fae",
+    "ramen_ca_7b0b8a1d58592b2ec48c",
+    "ramen_ca_1da6c619935047d1e8d8",
+    "ramen_ca_51c42f34d0802e1577de",
+    "ramen_ca_032269276c4661356407",
+    "ramen_ca_fbb1b15a482943af0647",
+    "ramen_ca_01c8949ce9e17eb6cb9a",
+    "ramen_ca_8b54514b80ab0ad1c9a8",
+    "ramen_ca_230bf56cc5f74712eb72",
+    "ramen_ca_30739b451af55a810522",
+    "ramen_ca_e687fd43f6741086b553",
+    "ramen_ca_83dcedc0fd4de41765a4",
+    "ramen_ca_ff25f125c395f1b05cb3",
+    "ramen_ca_489bb344b4f5cce7fe91",
+    "ramen_ca_127baa60edce046d4075",
+    "ramen_ca_cf147eb22a9f60855b4c",
+    "ramen_ca_c7738b4fba26b9ec5e29",
+    "ramen_ca_7c0b011576a423e9ccb7",
+    "ramen_ca_da96078a270ba813e3d1"
+  ],
+  "provincePaths": [
+    "/locations/ab",
+    "/locations/bc",
+    "/locations/mb",
+    "/locations/nb",
+    "/locations/on",
+    "/locations/qc",
+    "/locations/sk"
+  ],
+  "cityPaths": [
+    "/locations/ab/calgary",
+    "/locations/ab/edmonton",
+    "/locations/bc/burnaby",
+    "/locations/bc/coquitlam",
+    "/locations/bc/kelowna",
+    "/locations/bc/north-vancouver",
+    "/locations/bc/richmond",
+    "/locations/bc/surrey",
+    "/locations/bc/vancouver",
+    "/locations/bc/victoria",
+    "/locations/mb/winnipeg",
+    "/locations/nb/saint-john",
+    "/locations/on/ajax",
+    "/locations/on/guelph",
+    "/locations/on/hamilton",
+    "/locations/on/london",
+    "/locations/on/markham",
+    "/locations/on/mississauga",
+    "/locations/on/ottawa",
+    "/locations/on/richmond-hill",
+    "/locations/on/toronto",
+    "/locations/on/vaughan",
+    "/locations/on/waterloo",
+    "/locations/on/windsor",
+    "/locations/qc/brossard",
+    "/locations/qc/montreal",
+    "/locations/qc/pointe-claire",
+    "/locations/sk/regina",
+    "/locations/qc/longueuil"
+  ],
+  "redirects": {
+    "/locations/ns": "/locations#province-ns",
+    "/locations/pe": "/locations#province-pe",
+    "/locations/yt": "/locations#province-yt",
+    "/locations/ab/banff": "/locations/ab#city-ab-banff",
+    "/locations/ab/brooks": "/locations/ab#city-ab-brooks",
+    "/locations/ab/camrose": "/locations/ab#city-ab-camrose",
+    "/locations/ab/canmore": "/locations/ab#city-ab-canmore",
+    "/locations/ab/lacombe": "/locations/ab#city-ab-lacombe",
+    "/locations/ab/lethbridge": "/locations/ab#city-ab-lethbridge",
+    "/locations/ab/red-deer": "/locations/ab#city-ab-red-deer",
+    "/locations/ab/red-deer-county": "/locations/ab#city-ab-red-deer-county",
+    "/locations/bc/courtenay": "/locations/bc#city-bc-courtenay",
+    "/locations/bc/delta": "/locations/bc#city-bc-delta",
+    "/locations/bc/duncan": "/locations/bc#city-bc-duncan",
+    "/locations/bc/kamloops": "/locations/bc#city-bc-kamloops",
+    "/locations/bc/langley": "/locations/bc#city-bc-langley",
+    "/locations/bc/nanaimo": "/locations/bc#city-bc-nanaimo",
+    "/locations/bc/nelson": "/locations/bc#city-bc-nelson",
+    "/locations/bc/new-westminster": "/locations/bc#city-bc-new-westminster",
+    "/locations/bc/parksville": "/locations/bc#city-bc-parksville",
+    "/locations/bc/vernon": "/locations/bc#city-bc-vernon",
+    "/locations/bc/west-kelowna": "/locations/bc#city-bc-west-kelowna",
+    "/locations/bc/west-vancouver": "/locations/bc#city-bc-west-vancouver",
+    "/locations/nb/dieppe": "/locations/nb#city-nb-dieppe",
+    "/locations/nb/moncton": "/locations/nb#city-nb-moncton",
+    "/locations/nb/shediac": "/locations/nb#city-nb-shediac",
+    "/locations/ns/bedford": "/locations#city-ns-bedford",
+    "/locations/ns/dartmouth": "/locations#city-ns-dartmouth",
+    "/locations/ns/halifax": "/locations#city-ns-halifax",
+    "/locations/on/alliston": "/locations/on#city-on-alliston",
+    "/locations/on/aurora": "/locations/on#city-on-aurora",
+    "/locations/on/barrie": "/locations/on#city-on-barrie",
+    "/locations/on/brampton": "/locations/on#city-on-brampton",
+    "/locations/on/burlington": "/locations/on#city-on-burlington",
+    "/locations/on/concord": "/locations/on#city-on-concord",
+    "/locations/on/east-gwillimbury": "/locations/on#city-on-east-gwillimbury",
+    "/locations/on/greater-sudbury": "/locations/on#city-on-greater-sudbury",
+    "/locations/on/kanata": "/locations/on#city-on-kanata",
+    "/locations/on/kingston": "/locations/on#city-on-kingston",
+    "/locations/on/kitchener": "/locations/on#city-on-kitchener",
+    "/locations/on/komoka": "/locations/on#city-on-komoka",
+    "/locations/on/oakville": "/locations/on#city-on-oakville",
+    "/locations/on/orleans": "/locations/on#city-on-orleans",
+    "/locations/on/oshawa": "/locations/on#city-on-oshawa",
+    "/locations/on/pickering": "/locations/on#city-on-pickering",
+    "/locations/on/st-catharines": "/locations/on#city-on-st-catharines",
+    "/locations/on/unionville": "/locations/on#city-on-unionville",
+    "/locations/on/whitby": "/locations/on#city-on-whitby",
+    "/locations/pe/charlottetown": "/locations#city-pe-charlottetown",
+    "/locations/qc/anjou": "/locations/qc#city-qc-anjou",
+    "/locations/qc/boucherville": "/locations/qc#city-qc-boucherville",
+    "/locations/qc/dollard-des-ormeaux": "/locations/qc#city-qc-dollard-des-ormeaux",
+    "/locations/qc/farnham": "/locations/qc#city-qc-farnham",
+    "/locations/qc/gatineau": "/locations/qc#city-qc-gatineau",
+    "/locations/qc/jonquiere": "/locations/qc#city-qc-jonquiere",
+    "/locations/qc/la-prairie": "/locations/qc#city-qc-la-prairie",
+    "/locations/qc/lasalle": "/locations/qc#city-qc-lasalle",
+    "/locations/qc/laval": "/locations/qc#city-qc-laval",
+    "/locations/qc/quebec-city": "/locations/qc#city-qc-quebec-city",
+    "/locations/qc/repentigny": "/locations/qc#city-qc-repentigny",
+    "/locations/qc/saint-hubert": "/locations/qc#city-qc-saint-hubert",
+    "/locations/qc/saint-hyacinthe": "/locations/qc#city-qc-saint-hyacinthe",
+    "/locations/qc/saint-sauveur": "/locations/qc#city-qc-saint-sauveur",
+    "/locations/qc/shawinigan": "/locations/qc#city-qc-shawinigan",
+    "/locations/qc/sherbrooke": "/locations/qc#city-qc-sherbrooke",
+    "/locations/qc/westmount": "/locations/qc#city-qc-westmount",
+    "/locations/sk/saskatoon": "/locations/sk#city-sk-saskatoon",
+    "/locations/yt/whitehorse": "/locations#city-yt-whitehorse",
+    "/locations/on/newmarket": "/locations/on#city-on-newmarket",
+    "/locations/qc/terrebonne": "/locations/qc#city-qc-terrebonne",
+    "/locations/qc/sainte-therese": "/locations/qc#city-qc-sainte-therese",
+    "/locations/qc/vaudreuil-dorion": "/locations/qc#city-qc-vaudreuil-dorion",
+    "/locations/nb/fredericton": "/locations/nb#city-nb-fredericton",
+    "/locations/qc/rimouski": "/locations/qc#city-qc-rimouski",
+    "/locations/qc/saint-raymond": "/locations/qc#city-qc-saint-raymond",
+    "/locations/qc/trois-rivieres": "/locations/qc#city-qc-trois-rivieres",
+    "/locations/qc/saint-laurent": "/locations/qc#city-qc-saint-laurent",
+    "/locations/bc/langford": "/locations/bc#city-bc-langford",
+    "/locations/bc/whistler": "/locations/bc#city-bc-whistler",
+    "/restaurants/ab/banff/chaya": "/locations/ab#ramen_ca_05201e29ce67c753b32c",
+    "/restaurants/ab/banff/jugemu-banff-modern-japanese-dining": "/locations/ab#ramen_ca_a3441831934eeda5223a",
+    "/restaurants/ab/banff/ramen-arashi-banff": "/locations/ab#ramen_ca_1a1815210aa7d6ddc360",
+    "/restaurants/ab/brooks/nikko-sushi": "/locations/ab#ramen_ca_272bfead353f4e35fa5b",
+    "/restaurants/ab/calgary/arashi-japanese-restaurant": "/locations/ab/calgary#ramen_ca_45e7855c6d6bd15da824",
+    "/restaurants/ab/calgary/chicking-yyc-ramen-and-onigiri-shop": "/locations/ab/calgary#ramen_ca_8b0ac3122c28d1afb87e",
+    "/restaurants/ab/calgary/globefish-ramen-and-izakaya": "/locations/ab/calgary#ramen_ca_7b1c872d0770a502efaa",
+    "/restaurants/ab/calgary/gogi-korean-kitchen": "/locations/ab/calgary#ramen_ca_fa2f0be9e73136f1af9c",
+    "/restaurants/ab/calgary/jinya-ramen-bar-calgary": "/locations/ab/calgary#ramen_ca_b23ba21493273736eaef",
+    "/restaurants/ab/calgary/jinya-ramen-bar-macleod": "/locations/ab/calgary#ramen_ca_4cc9427415777f0362e6",
+    "/restaurants/ab/calgary/kinton-ramen-mission-calgary": "/locations/ab/calgary#ramen_ca_4256cc072cc8c571d6c8",
+    "/restaurants/ab/calgary/kinton-ramen-south-trail-calgary": "/locations/ab/calgary#ramen_ca_4bfecd3bd7b89bfcb2ba",
+    "/restaurants/ab/calgary/kinton-ramen-university-heights-calgary": "/locations/ab/calgary#ramen_ca_570fb37df368a647936c",
+    "/restaurants/ab/calgary/koya-japan": "/locations/ab/calgary#ramen_ca_acf364a902a31f9cba1b",
+    "/restaurants/ab/calgary/monsoon-izakaya-japanese-restaurant": "/locations/ab/calgary#ramen_ca_284d23914c34c51e1382",
+    "/restaurants/ab/calgary/ramen-ichinen": "/locations/ab/calgary#ramen_ca_1ea2417885713547a8ef",
+    "/restaurants/ab/calgary/redheads-japa-cafe": "/locations/ab/calgary#ramen_ca_166fef28a590edc29f7d",
+    "/restaurants/ab/calgary/samurai-ramen-and-sushi": "/locations/ab/calgary#ramen_ca_b489856d937947826cd0",
+    "/restaurants/ab/calgary/shibuya-izakaya-sushi-restaurant": "/locations/ab/calgary#ramen_ca_ab5dcfb3f594cdb60921",
+    "/restaurants/ab/calgary/shimizu-kitchen": "/locations/ab/calgary#ramen_ca_c563c1913417a781f37f",
+    "/restaurants/ab/calgary/takumi-sushi-sw-springborough": "/locations/ab/calgary#ramen_ca_7614dfc8b9d8399bbc2f",
+    "/restaurants/ab/calgary/takumi-sushi-crowfoot-nw": "/locations/ab/calgary#ramen_ca_0951607bb88250dc69b4",
+    "/restaurants/ab/calgary/tokyo-station": "/locations/ab/calgary#ramen_ca_18eba8c8fbc4c17d6278",
+    "/restaurants/ab/calgary/wakado-ramen": "/locations/ab/calgary#ramen_ca_ea562ad5252e47cb7e21",
+    "/restaurants/ab/calgary/y93-sushi-crave-japanese-cafe-ramen-and-curry-house": "/locations/ab/calgary#ramen_ca_f044b82802b3fef8f84e",
+    "/restaurants/ab/camrose/kiri-japanese-cuisine": "/locations/ab#ramen_ca_3b531fdc1f551e0f9077",
+    "/restaurants/ab/canmore/ramen-arashi-canmore": "/locations/ab#ramen_ca_98e64a42825bd50edbc9",
+    "/restaurants/ab/edmonton/dorinku-osaka": "/locations/ab/edmonton#ramen_ca_ef7a4b0ec8d0652bcb16",
+    "/restaurants/ab/edmonton/jinya-ramen-bar-edmonton": "/locations/ab/edmonton#ramen_ca_7a0a4f599121e0831463",
+    "/restaurants/ab/edmonton/kazoku-ramen": "/locations/ab/edmonton#ramen_ca_99986ee3ecb92be65a35",
+    "/restaurants/ab/edmonton/kinshi-rinji": "/locations/ab/edmonton#ramen_ca_f40971e4a8582c9378cd",
+    "/restaurants/ab/edmonton/kinton-ramen-terra-losa-edmonton": "/locations/ab/edmonton#ramen_ca_4402ce69cafa1c3cc115",
+    "/restaurants/ab/edmonton/mama-ramen": "/locations/ab/edmonton#ramen_ca_91e2cb2630ccdcdd3b6e",
+    "/restaurants/ab/edmonton/menjiro-ramen": "/locations/ab/edmonton#ramen_ca_fdba69083e2743a91ff8",
+    "/restaurants/ab/edmonton/menya-mori": "/locations/ab/edmonton#ramen_ca_22e799af919d938549c8",
+    "/restaurants/ab/edmonton/midori-ramen": "/locations/ab/edmonton#ramen_ca_4972cdc60c0d98bead80",
+    "/restaurants/ab/edmonton/ramen-misoya-edmonton": "/locations/ab/edmonton#ramen_ca_0fb446d8949535745428",
+    "/restaurants/ab/edmonton/sapporo": "/locations/ab/edmonton#ramen_ca_56e447889b9c6b8f62ff",
+    "/restaurants/ab/edmonton/tokyo-express-12930-82-st-nw": "/locations/ab/edmonton#ramen_ca_86cbe235928b6d4c0b8a",
+    "/restaurants/ab/edmonton/tokyo-express-12816-137-ave-nw": "/locations/ab/edmonton#ramen_ca_4986178a8716bdfaf020",
+    "/restaurants/ab/edmonton/tokyo-noodle-shop": "/locations/ab/edmonton#ramen_ca_fa0d8d5bfa7c3c9d15a5",
+    "/restaurants/ab/edmonton/toro-sushi-bar-and-grill": "/locations/ab/edmonton#ramen_ca_9cb262ce5814a84c2c28",
+    "/restaurants/ab/lacombe/oishidesu-ramen-shack-lacombe": "/locations/ab#ramen_ca_cad618850f8c59ef0831",
+    "/restaurants/ab/lethbridge/koko-japanese-restaurant": "/locations/ab#ramen_ca_8b8c9c3fe803db10afd5",
+    "/restaurants/ab/red-deer/oishi-and-kawaii-tea": "/locations/ab#ramen_ca_cd8dcac830a2a20c0320",
+    "/restaurants/ab/red-deer/pink-bow-restaurant": "/locations/ab#ramen_ca_b8305c6fd7ace1a571e7",
+    "/restaurants/ab/red-deer-county/oishidesu-gasoline-alley": "/locations/ab#ramen_ca_a9fab45a3d150da8bdb1",
+    "/restaurants/bc/burnaby/horin-ramen-metrotown": "/locations/bc/burnaby#ramen_ca_dec615954e127425b399",
+    "/restaurants/bc/burnaby/jinya-ramen-bar-amazing-brentwood": "/locations/bc/burnaby#ramen_ca_663e16e0d3429be199f1",
+    "/restaurants/bc/burnaby/kamamarui-ramen-and-don": "/locations/bc/burnaby#ramen_ca_b336def5bae45853cf70",
+    "/restaurants/bc/burnaby/kinton-ramen-gilmore-place": "/locations/bc/burnaby#ramen_ca_7b121e1939bee0a5432b",
+    "/restaurants/bc/burnaby/kokoro-tokyo-mazesoba-brentwood": "/locations/bc/burnaby#ramen_ca_bf71a4cffd41dd404789",
+    "/restaurants/bc/burnaby/koya-japan": "/locations/bc/burnaby#ramen_ca_13bf4c18e9aaed5fb676",
+    "/restaurants/bc/burnaby/maruhachi-ra-men-metrotown": "/locations/bc/burnaby#ramen_ca_db7a582e4e7df3ddec75",
+    "/restaurants/bc/burnaby/the-ramen-butcher-burnaby": "/locations/bc/burnaby#ramen_ca_c0c4dff5e1c82c3175d7",
+    "/restaurants/bc/burnaby/zubu-ramen-metrotown": "/locations/bc/burnaby#ramen_ca_398211e3bd9819b3eccf",
+    "/restaurants/bc/coquitlam/honjin-ramen": "/locations/bc/coquitlam#ramen_ca_ee990835a8edae101524",
+    "/restaurants/bc/coquitlam/japanese-rojiura-ramen": "/locations/bc/coquitlam#ramen_ca_ac2c2c87accb934e03a5",
+    "/restaurants/bc/coquitlam/kinton-ramen-coquitlam-centre": "/locations/bc/coquitlam#ramen_ca_51d022c915574d43172e",
+    "/restaurants/bc/coquitlam/kinton-ramen-sunwood-coquitlam": "/locations/bc/coquitlam#ramen_ca_3ba23fe4b57a0e311bb7",
+    "/restaurants/bc/coquitlam/kokoro-tokyo-mazesoba-lougheed-town-centre": "/locations/bc/coquitlam#ramen_ca_180a80a37ad28bbe64c3",
+    "/restaurants/bc/coquitlam/koya-japan": "/locations/bc/coquitlam#ramen_ca_e382beba7a0750529bd7",
+    "/restaurants/bc/coquitlam/maruhachi-ra-men-coquitlam": "/locations/bc/coquitlam#ramen_ca_699b7c3b9cfa48011e8a",
+    "/restaurants/bc/coquitlam/sho-bu-japanese-noodle": "/locations/bc/coquitlam#ramen_ca_364342768cd2cee0d652",
+    "/restaurants/bc/coquitlam/smoking-pig": "/locations/bc/coquitlam#ramen_ca_e8fa848c665d950f5fa1",
+    "/restaurants/bc/courtenay/nikkei-ramen-ya": "/locations/bc#ramen_ca_3ab75dca088ceba4df69",
+    "/restaurants/bc/delta/kawabe-kitchen": "/locations/bc#ramen_ca_82bf463513103c43fae6",
+    "/restaurants/bc/delta/menbow-ramen": "/locations/bc#ramen_ca_e2b8d5841b81fb93e8f5",
+    "/restaurants/bc/duncan/neko-ramen": "/locations/bc#ramen_ca_1db54e71a0faee5d195d",
+    "/restaurants/bc/kamloops/kongfu-cat-ramen-bar": "/locations/bc#ramen_ca_f4293b68f600744962b2",
+    "/restaurants/bc/kamloops/tiger-ramen": "/locations/bc#ramen_ca_41fa75caa6f725d7389d",
+    "/restaurants/bc/kelowna/kinton-ramen-kelowna-downtown": "/locations/bc/kelowna#ramen_ca_c1f0d17dcff848452a3c",
+    "/restaurants/bc/kelowna/ramen-arashi-kelowna": "/locations/bc/kelowna#ramen_ca_73050b83c2c3acb00150",
+    "/restaurants/bc/kelowna/soy-asian-fusion-restaurant": "/locations/bc/kelowna#ramen_ca_b2bf06dc12587143cb77",
+    "/restaurants/bc/kelowna/wasabi-ramen-and-izakaya": "/locations/bc/kelowna#ramen_ca_1e14122e386ea7ef6e6e",
+    "/restaurants/bc/langley/akedo-showten-ramen-gyoza": "/locations/bc#ramen_ca_22c707cf9f8a34ce832e",
+    "/restaurants/bc/langley/jinya-ramen-bar-langley": "/locations/bc#ramen_ca_fd9c677ad2ee87a57107",
+    "/restaurants/bc/nanaimo/wa-ku-north-ramen-izakaya": "/locations/bc#ramen_ca_7d3647e9a3126451fd34",
+    "/restaurants/bc/nelson/red-light-ramen": "/locations/bc#ramen_ca_d3943133aa7d1701adf9",
+    "/restaurants/bc/new-westminster/horin-ramen-new-westminster": "/locations/bc#ramen_ca_7744d906e104d93e742f",
+    "/restaurants/bc/new-westminster/kinton-ramen-uptown-new-westminster": "/locations/bc#ramen_ca_67c966cef17327e834c0",
+    "/restaurants/bc/north-vancouver/kinton-ramen-north-vancouver": "/locations/bc/north-vancouver#ramen_ca_7be190b8eba84022a050",
+    "/restaurants/bc/north-vancouver/sapporo-kitchen-deep-cove": "/locations/bc/north-vancouver#ramen_ca_af14d661eb1c5dc15655",
+    "/restaurants/bc/parksville/ramen-eight": "/locations/bc#ramen_ca_8891178b7c43d9268722",
+    "/restaurants/bc/richmond/g-men-at-steveston-ramen-shop": "/locations/bc/richmond#ramen_ca_0eeb857bdad6ae6b73e8",
+    "/restaurants/bc/richmond/hokkaido-ramen-santouka": "/locations/bc/richmond#ramen_ca_2b1b0c6431434181f1c7",
+    "/restaurants/bc/richmond/kinton-ramen-mcarthurglen-designer-outlet-yvr": "/locations/bc/richmond#ramen_ca_2c6784bc2d00382b5361",
+    "/restaurants/bc/richmond/maruhachi-ra-men-richmond": "/locations/bc/richmond#ramen_ca_0ac7e111ab43a2303ee8",
+    "/restaurants/bc/richmond/ramen-takanotsume": "/locations/bc/richmond#ramen_ca_f377c0a1396a7122ebef",
+    "/restaurants/bc/richmond/sanpoutei-ramen": "/locations/bc/richmond#ramen_ca_78693bef167fbd909e7c",
+    "/restaurants/bc/richmond/yah-yah-ya-ramen-richmond": "/locations/bc/richmond#ramen_ca_5c031815ef27758bb8cf",
+    "/restaurants/bc/richmond/yuu-japanese-tapas": "/locations/bc/richmond#ramen_ca_393c1a86ae4c7860871b",
+    "/restaurants/bc/surrey/isshin-sushi": "/locations/bc/surrey#ramen_ca_2d006a46ae088a836ed0",
+    "/restaurants/bc/surrey/kinton-ramen-surrey": "/locations/bc/surrey#ramen_ca_c2138d64eb94a0b21c70",
+    "/restaurants/bc/surrey/kokoro-japanese-ramen-house-surrey": "/locations/bc/surrey#ramen_ca_7a7a172f52ff78b6945e",
+    "/restaurants/bc/surrey/maruhachi-ra-men-surrey": "/locations/bc/surrey#ramen_ca_77642b500223501682ee",
+    "/restaurants/bc/surrey/menzou-ramen": "/locations/bc/surrey#ramen_ca_938d2a0d114c1faf0c96",
+    "/restaurants/bc/surrey/sushi-shun": "/locations/bc/surrey#ramen_ca_68b798930cc8580447c5",
+    "/restaurants/bc/surrey/umami-ramen-grill": "/locations/bc/surrey#ramen_ca_e5a950fd454d5d9b4c15",
+    "/restaurants/bc/vancouver/beest-ramen": "/locations/bc/vancouver#ramen_ca_7dcbaf9cde08ceeabcb6",
+    "/restaurants/bc/vancouver/fuku-ramen-and-udon": "/locations/bc/vancouver#ramen_ca_8939c43c6deac2d91c21",
+    "/restaurants/bc/vancouver/hokkaido-ramen-santouka-1690-robson-st": "/locations/bc/vancouver#ramen_ca_4cfd57a9f6182df57068",
+    "/restaurants/bc/vancouver/hokkaido-ramen-santouka-558-w-broadway": "/locations/bc/vancouver#ramen_ca_ae188e25ca8b82b5b594",
+    "/restaurants/bc/vancouver/horin-ramen-robson": "/locations/bc/vancouver#ramen_ca_fe4947a47179f7d9c466",
+    "/restaurants/bc/vancouver/ichiya-japanese-ramen": "/locations/bc/vancouver#ramen_ca_c80548f4d57a6068646d",
+    "/restaurants/bc/vancouver/jinya-ramen-bar-vancouver-downtown": "/locations/bc/vancouver#ramen_ca_5ae99e061b1666f37446",
+    "/restaurants/bc/vancouver/jinya-ramen-bar-vancouver-west": "/locations/bc/vancouver#ramen_ca_11713494229d047d8582",
+    "/restaurants/bc/vancouver/kintaro-ramen": "/locations/bc/vancouver#ramen_ca_5211513246e03ae53ad5",
+    "/restaurants/bc/vancouver/kinton-ramen-broadway-vancouver": "/locations/bc/vancouver#ramen_ca_a089a5c3afe75fc23a91",
+    "/restaurants/bc/vancouver/kinton-ramen-marine-gateway": "/locations/bc/vancouver#ramen_ca_9f654f713870be66fea8",
+    "/restaurants/bc/vancouver/kinton-ramen-robson": "/locations/bc/vancouver#ramen_ca_fb369f5fe3a66c1737a3",
+    "/restaurants/bc/vancouver/kinton-ramen-ubc": "/locations/bc/vancouver#ramen_ca_c6f07410edc7355c817b",
+    "/restaurants/bc/vancouver/kinton-ramen-waterfront-vancouver": "/locations/bc/vancouver#ramen_ca_36816c821ddb9381b1cd",
+    "/restaurants/bc/vancouver/kojima-ramen": "/locations/bc/vancouver#ramen_ca_1c761cd82248f802d3f7",
+    "/restaurants/bc/vancouver/kokoro-ramen": "/locations/bc/vancouver#ramen_ca_34f3d302a2648b86bbd4",
+    "/restaurants/bc/vancouver/kokoro-tokyo-mazesoba-downtown": "/locations/bc/vancouver#ramen_ca_fa60d773a37e2b3094c6",
+    "/restaurants/bc/vancouver/maruhachi-ra-men-central-library": "/locations/bc/vancouver#ramen_ca_7891e00942c296ceee8a",
+    "/restaurants/bc/vancouver/maruhachi-ra-men-westend": "/locations/bc/vancouver#ramen_ca_7b49de251f393570aaac",
+    "/restaurants/bc/vancouver/menya-raizo-by-zakkushi": "/locations/bc/vancouver#ramen_ca_d51d4e68b5bb5beeef9f",
+    "/restaurants/bc/vancouver/nin-nin-ramen-house": "/locations/bc/vancouver#ramen_ca_0cb26d9908b8145f1f8d",
+    "/restaurants/bc/vancouver/poke-n-chat-ramen-poke-bubble-tea": "/locations/bc/vancouver#ramen_ca_ce699dcb20cf7959c730",
+    "/restaurants/bc/vancouver/taishoken-ramen": "/locations/bc/vancouver#ramen_ca_8eeb43a69b5df96eecbd",
+    "/restaurants/bc/vancouver/the-ramen-butcher-chinatown": "/locations/bc/vancouver#ramen_ca_84b4e6fee3ccadee4add",
+    "/restaurants/bc/vancouver/tonkotsu-ramen-tsukiya": "/locations/bc/vancouver#ramen_ca_42425d61bdf498908400",
+    "/restaurants/bc/vancouver/torimaru-ramen": "/locations/bc/vancouver#ramen_ca_9b3cd982d90a7587beb6",
+    "/restaurants/bc/vancouver/betsutenjin-ramen": "/locations/bc/vancouver#ramen_ca_3d904f07b86ade1f8394",
+    "/restaurants/bc/vernon/raku-rice-and-noodle-bar": "/locations/bc#ramen_ca_48c5b64c454708372654",
+    "/restaurants/bc/victoria/horin-ramen-victoria": "/locations/bc/victoria#ramen_ca_ba057909fb16326225d5",
+    "/restaurants/bc/victoria/kinton-ramen-university-heights-victoria": "/locations/bc/victoria#ramen_ca_800b4a4e60846193a924",
+    "/restaurants/bc/victoria/kinton-ramen-victoria-downtown": "/locations/bc/victoria#ramen_ca_92cb15ead267c57a9b03",
+    "/restaurants/bc/victoria/kizuna-ramen-on-douglas": "/locations/bc/victoria#ramen_ca_f5ea1327cb25dc39e151",
+    "/restaurants/bc/victoria/mentora-ramen": "/locations/bc/victoria#ramen_ca_a4075cadd7152305eb05",
+    "/restaurants/bc/victoria/raku-ramen": "/locations/bc/victoria#ramen_ca_908aacb0eef3aa1bee9b",
+    "/restaurants/bc/victoria/ramen-arashi-victoria": "/locations/bc/victoria#ramen_ca_a5dcd04b1042aeb98bb4",
+    "/restaurants/bc/west-kelowna/kaiso-japanese-and-thai-cuisine": "/locations/bc#ramen_ca_3e281937ed55d12d9da9",
+    "/restaurants/bc/west-vancouver/zubu-ramen-park-royal": "/locations/bc#ramen_ca_836d91344db582e938e8",
+    "/restaurants/mb/winnipeg/hello-asian-fusion": "/locations/mb/winnipeg#ramen_ca_ff016d83aad3d5039d6d",
+    "/restaurants/mb/winnipeg/kinton-ramen-seasons-winnipeg": "/locations/mb/winnipeg#ramen_ca_2ee163626ddc55903cc5",
+    "/restaurants/mb/winnipeg/koya-japan-1120-grant-ave-1230": "/locations/mb/winnipeg#ramen_ca_04ae8821f02fb7ca9af1",
+    "/restaurants/mb/winnipeg/koya-japan-2305-mcphillips-st-unit-319": "/locations/mb/winnipeg#ramen_ca_513da26d1ddeb47cae63",
+    "/restaurants/mb/winnipeg/koya-japan-1555-regent-ave-w-f8": "/locations/mb/winnipeg#ramen_ca_c96d6465598af5e6c743",
+    "/restaurants/mb/winnipeg/koya-japan-food-hall-1225-st-mary-s-road-147-entrance-3": "/locations/mb/winnipeg#ramen_ca_5bc77d22a0e26c033851",
+    "/restaurants/mb/winnipeg/kyu-bistro": "/locations/mb/winnipeg#ramen_ca_de44e4135576083e8dfc",
+    "/restaurants/mb/winnipeg/sushi-gozen": "/locations/mb/winnipeg#ramen_ca_e5768b80be1bfe965261",
+    "/restaurants/nb/dieppe/sugar-roll-japanese-cuisine": "/locations/nb#ramen_ca_10a87db4f4e27acaba80",
+    "/restaurants/nb/moncton/tokai-ramen": "/locations/nb#ramen_ca_211c21d5b10339389754",
+    "/restaurants/nb/saint-john/mimimi": "/locations/nb/saint-john#ramen_ca_d34f82fc0b24ef53251c",
+    "/restaurants/nb/saint-john/ramenbox": "/locations/nb/saint-john#ramen_ca_1bdfdac8a5c5018be97c",
+    "/restaurants/nb/saint-john/umami-kid": "/locations/nb/saint-john#ramen_ca_5fb8118ab759cdc282a2",
+    "/restaurants/nb/saint-john/yoramen": "/locations/nb/saint-john#ramen_ca_673f77c73329cc03339c",
+    "/restaurants/nb/shediac/kuro-sushi": "/locations/nb#ramen_ca_97bff5b43abe55d43692",
+    "/restaurants/ns/bedford/buta-ramen": "/locations#ramen_ca_cb0d7e86b562b07deba1",
+    "/restaurants/ns/dartmouth/buta-ramen": "/locations#ramen_ca_53804fcc6b2d0a45f96e",
+    "/restaurants/ns/dartmouth/hojo-s-japanese-cuisine-dartmouth": "/locations#ramen_ca_f0fb36d5a581c5835b1c",
+    "/restaurants/ns/halifax/buta-ramen": "/locations#ramen_ca_e9261e643bf120d21d75",
+    "/restaurants/ns/halifax/ko-doraku": "/locations#ramen_ca_61ce9fec1ed1d069f19c",
+    "/restaurants/ns/halifax/truly-tasty": "/locations#ramen_ca_53685dd0ee6902b1fbb1",
+    "/restaurants/on/ajax/ajisen-ramen-ajax": "/locations/on/ajax#ramen_ca_bed77556deebf6597222",
+    "/restaurants/on/alliston/kokoro-japanese-cuisine": "/locations/on#ramen_ca_d586522942a575cff817",
+    "/restaurants/on/aurora/ramen-yutaka": "/locations/on#ramen_ca_7122fa986e074adb9abb",
+    "/restaurants/on/barrie/kinton-ramen-park-place-barrie": "/locations/on#ramen_ca_d5b5fa20412b78701917",
+    "/restaurants/on/brampton/kinton-ramen-brampton": "/locations/on#ramen_ca_9cd9098e452602d692d8",
+    "/restaurants/on/burlington/kinton-ramen-appleby-burlington": "/locations/on#ramen_ca_336bc9e9b7eddf0bf3d1",
+    "/restaurants/on/burlington/koya-japan": "/locations/on#ramen_ca_95fcb480e9fba10ef42c",
+    "/restaurants/on/concord/men-ya-inoichi-ramen": "/locations/on#ramen_ca_6241a439fc344c1cf887",
+    "/restaurants/on/concord/midori-ramen": "/locations/on#ramen_ca_25ba3bac1853391aeeb4",
+    "/restaurants/on/concord/monkee": "/locations/on#ramen_ca_252af2835a2678e5927c",
+    "/restaurants/on/east-gwillimbury/kinton-ramen-newmarket": "/locations/on#ramen_ca_cdcb1ccf0eae8001b5f8",
+    "/restaurants/on/greater-sudbury/the-self-serve-ramen-cart": "/locations/on#ramen_ca_e88bbc09119120a5628a",
+    "/restaurants/on/guelph/kinton-ramen-gordon-guelph": "/locations/on/guelph#ramen_ca_a04407fda23f2c3e1c8c",
+    "/restaurants/on/hamilton/kenzo-ramen-hamilton": "/locations/on/hamilton#ramen_ca_0175e58180fabd961f98",
+    "/restaurants/on/hamilton/kinton-ramen-hamilton": "/locations/on/hamilton#ramen_ca_84fdaf573e07944bf33b",
+    "/restaurants/on/hamilton/kinton-ramen-king-william-hamilton": "/locations/on/hamilton#ramen_ca_2bfe6e204da577d7f111",
+    "/restaurants/on/hamilton/menya-kyu": "/locations/on/hamilton#ramen_ca_418316558e135d8243f0",
+    "/restaurants/on/hamilton/mystic-ramen": "/locations/on/hamilton#ramen_ca_340ce65aa7a1b0730639",
+    "/restaurants/on/kanata/kuma-takumi": "/locations/on#ramen_ca_e02bb8d807d7f663b7a8",
+    "/restaurants/on/kanata/sansotei-ramen": "/locations/on#ramen_ca_d72154a5158228ce1731",
+    "/restaurants/on/kingston/crunchy-crunchy": "/locations/on#ramen_ca_66abd509a5037765219c",
+    "/restaurants/on/kingston/kinton-ramen-kingston": "/locations/on#ramen_ca_ac5dd91eb07ed7da962c",
+    "/restaurants/on/kitchener/sansotei-ramen": "/locations/on#ramen_ca_9116d1fa3c115777f59c",
+    "/restaurants/on/komoka/sakata-sushi-and-market": "/locations/on#ramen_ca_91c2656ec14910d2d77d",
+    "/restaurants/on/london/katsu-express": "/locations/on/london#ramen_ca_a9e7418324b875f45e1a",
+    "/restaurants/on/london/kenzo-ramen": "/locations/on/london#ramen_ca_89a7b98db76d2773f1e2",
+    "/restaurants/on/london/kinton-ramen-oxford-london": "/locations/on/london#ramen_ca_e872e4299aaf3668feb6",
+    "/restaurants/on/london/koya-japan": "/locations/on/london#ramen_ca_b07850f0b19ae388a37f",
+    "/restaurants/on/london/ramen-bowl": "/locations/on/london#ramen_ca_d607a8eb13757933eb5c",
+    "/restaurants/on/markham/ajisen-ramen-warden-steeles": "/locations/on/markham#ramen_ca_83ad59b7d2878cea63af",
+    "/restaurants/on/markham/brown-donkatsu-and-ramen": "/locations/on/markham#ramen_ca_62702483311f38ed26a8",
+    "/restaurants/on/markham/kinton-ramen-commerce-gate": "/locations/on/markham#ramen_ca_8a66a6c9f30ad697e77d",
+    "/restaurants/on/markham/kinton-ramen-markville": "/locations/on/markham#ramen_ca_a3fd6fc519e79159b211",
+    "/restaurants/on/markham/koi-sakana-ramen": "/locations/on/markham#ramen_ca_97a59905510b08fa91e3",
+    "/restaurants/on/markham/komeya": "/locations/on/markham#ramen_ca_792786eee15ee51fc6b6",
+    "/restaurants/on/markham/niwatei": "/locations/on/markham#ramen_ca_7c4d5d82300468ac23e2",
+    "/restaurants/on/markham/sansotei-ramen": "/locations/on/markham#ramen_ca_99367dca831358090f0e",
+    "/restaurants/on/mississauga/kamen": "/locations/on/mississauga#ramen_ca_1122848ae14de4d02c3d",
+    "/restaurants/on/mississauga/kinton-ramen-heartland-mississauga": "/locations/on/mississauga#ramen_ca_c32df422ddd6cddf33f8",
+    "/restaurants/on/mississauga/kinton-ramen-mississauga": "/locations/on/mississauga#ramen_ca_9b17add822d2af80327c",
+    "/restaurants/on/mississauga/men-ya-inoichi-ramen": "/locations/on/mississauga#ramen_ca_8760d6218045b7090add",
+    "/restaurants/on/mississauga/ramen-isshin-mississauga": "/locations/on/mississauga#ramen_ca_8135cdfb4ef4506f7c12",
+    "/restaurants/on/mississauga/sansotei-ramen": "/locations/on/mississauga#ramen_ca_35c89ff4d6ef554de6d2",
+    "/restaurants/on/mississauga/su-and-shi-noodle-bar": "/locations/on/mississauga#ramen_ca_adc7edbf17eb0ebc5ce1",
+    "/restaurants/on/mississauga/takumi-ramen": "/locations/on/mississauga#ramen_ca_ab2f62fd6e8bce16eb62",
+    "/restaurants/on/mississauga/tokasu-ramen-laksa-bar": "/locations/on/mississauga#ramen_ca_8d2bce6685dc7fba17de",
+    "/restaurants/on/oakville/kenzo-ramen-oakville": "/locations/on#ramen_ca_702d49fd86e25060514f",
+    "/restaurants/on/oakville/kinton-ramen-oakville": "/locations/on#ramen_ca_218fbb89d436487b9549",
+    "/restaurants/on/orleans/wei-s-noodle-house-portobello": "/locations/on#ramen_ca_b0bd572e0ffb62e5965e",
+    "/restaurants/on/oshawa/kenzo-ramen": "/locations/on#ramen_ca_3600d61396e39d46b586",
+    "/restaurants/on/ottawa/kimonos-ramen-and-poke": "/locations/on/ottawa#ramen_ca_b7252e2c1a3b07a36df2",
+    "/restaurants/on/ottawa/kinton-ramen-barrhaven-ottawa": "/locations/on/ottawa#ramen_ca_c2c790a6e0b0d6411f0a",
+    "/restaurants/on/ottawa/kinton-ramen-ottawa": "/locations/on/ottawa#ramen_ca_5a649060fcb6f8eb6b3d",
+    "/restaurants/on/ottawa/koichi-ramen": "/locations/on/ottawa#ramen_ca_c0acd6109d03aaa75547",
+    "/restaurants/on/ottawa/sansotei-ramen-barrhaven-ottawa": "/locations/on/ottawa#ramen_ca_b7c3512cada0328ebe79",
+    "/restaurants/on/ottawa/taki-ramen": "/locations/on/ottawa#ramen_ca_60889715c5dc1502b85f",
+    "/restaurants/on/ottawa/wei-s-noodle-house": "/locations/on/ottawa#ramen_ca_de4e62af46fb690eb6b4",
+    "/restaurants/on/pickering/ippon-ramen-pickering": "/locations/on#ramen_ca_584a0beebf604a36911f",
+    "/restaurants/on/richmond-hill/kinton-ramen-richmond-hill-bayview-x-major-mackenzie": "/locations/on/richmond-hill#ramen_ca_66426c38e7d2c36ae25d",
+    "/restaurants/on/richmond-hill/kome-shokudo": "/locations/on/richmond-hill#ramen_ca_1564d8a5d2fe4d01c559",
+    "/restaurants/on/richmond-hill/midori-ramen": "/locations/on/richmond-hill#ramen_ca_233b759c1cd9edf8fe15",
+    "/restaurants/on/richmond-hill/sansotei-ramen": "/locations/on/richmond-hill#ramen_ca_0ed10f11b7cccf804429",
+    "/restaurants/on/richmond-hill/yokohama-ramen": "/locations/on/richmond-hill#ramen_ca_ce7f77d414ab9ad53070",
+    "/restaurants/on/richmond-hill/aka-oni-izakaya-and-ramen-richmond-hil": "/locations/on/richmond-hill#ramen_ca_641b8edb987a9a24e1f5",
+    "/restaurants/on/st-catharines/nobu-s-noodles": "/locations/on#ramen_ca_2a2692b237c494401536",
+    "/restaurants/on/toronto/afuri-ramen-dumpling-toronto": "/locations/on/toronto#ramen_ca_f29a6d0c9ae8b8b6c972",
+    "/restaurants/on/toronto/ajisen-ramen-chinatown": "/locations/on/toronto#ramen_ca_4b90e14f4ce4d7377930",
+    "/restaurants/on/toronto/ajisen-ramen-midtown": "/locations/on/toronto#ramen_ca_b4229c73e99410116192",
+    "/restaurants/on/toronto/ajisen-ramen-north-york": "/locations/on/toronto#ramen_ca_3a1bfdd1bcd030daeafd",
+    "/restaurants/on/toronto/ajisen-ramen-and-bar-church-carlton": "/locations/on/toronto#ramen_ca_01e5c6e221b772630a77",
+    "/restaurants/on/toronto/ajisen-ramen-scarborough-midland-mcnicol": "/locations/on/toronto#ramen_ca_a7a8c844184a7af31196",
+    "/restaurants/on/toronto/e-a-k-ramen-brookfield-place-toronto": "/locations/on/toronto#ramen_ca_bd180a241c54cef3312a",
+    "/restaurants/on/toronto/hako-noodle-bar": "/locations/on/toronto#ramen_ca_093dcc5255d4bd3be6dd",
+    "/restaurants/on/toronto/hana-ramen-1891-kennedy-rd": "/locations/on/toronto#ramen_ca_08eea37a65198328ca24",
+    "/restaurants/on/toronto/hana-ramen-1024-gerrard-st-e": "/locations/on/toronto#ramen_ca_13ad230b5d7a51bf1369",
+    "/restaurants/on/toronto/hokkaido-ramen-santouka-91-dundas-st-e": "/locations/on/toronto#ramen_ca_3b3e76c38e4b6325c1f0",
+    "/restaurants/on/toronto/hokkaido-ramen-santouka-3280-midland-ave-unit-23": "/locations/on/toronto#ramen_ca_a13ea3ff379ae3f53307",
+    "/restaurants/on/toronto/hokkaido-ramen-santouka-2057-yonge-st": "/locations/on/toronto#ramen_ca_e22eb26486ac63c024b7",
+    "/restaurants/on/toronto/homemade-ramen": "/locations/on/toronto#ramen_ca_199ace9771242d3f6a1f",
+    "/restaurants/on/toronto/ikkousha-ramen-chicken": "/locations/on/toronto#ramen_ca_d952994eafc78fa40942",
+    "/restaurants/on/toronto/ikkousha-ramen-toronto": "/locations/on/toronto#ramen_ca_32295bb473c8fef0a0c9",
+    "/restaurants/on/toronto/ikkousha-ramen-yonge-dundas": "/locations/on/toronto#ramen_ca_7c8c5ec0c51f36e66a34",
+    "/restaurants/on/toronto/issai-japanese-eatery": "/locations/on/toronto#ramen_ca_db85b1fc9b0ea18e9427",
+    "/restaurants/on/toronto/kajiken-4850-yonge-st": "/locations/on/toronto#ramen_ca_0c97ba5b8f5aefcf9cb5",
+    "/restaurants/on/toronto/kajiken-214-queen-st-w": "/locations/on/toronto#ramen_ca_043dfb6c999bc76429bd",
+    "/restaurants/on/toronto/kaminari-ramen-bar": "/locations/on/toronto#ramen_ca_f3dc97c19364b8d85f0f",
+    "/restaurants/on/toronto/kawa-sushi": "/locations/on/toronto#ramen_ca_08fc320c76b7708ae78f",
+    "/restaurants/on/toronto/kenzo-ramen-etobicoke": "/locations/on/toronto#ramen_ca_c32f9409ec591728af2b",
+    "/restaurants/on/toronto/kenzo-ramen-spadina": "/locations/on/toronto#ramen_ca_2290fed978a75ee1dab9",
+    "/restaurants/on/toronto/kinton-ramen": "/locations/on/toronto#ramen_ca_8349d2b665530eb5d50d",
+    "/restaurants/on/toronto/kinton-ramen-don-mills": "/locations/on/toronto#ramen_ca_9ab6a5a88b5966bed902",
+    "/restaurants/on/toronto/kinton-ramen-harbourfront": "/locations/on/toronto#ramen_ca_aca9bc5a28136d591501",
+    "/restaurants/on/toronto/kinton-ramen-high-park": "/locations/on/toronto#ramen_ca_4f88fadc087892b14fdd",
+    "/restaurants/on/toronto/kinton-ramen-kennedy-commons": "/locations/on/toronto#ramen_ca_818cfc40afc4cf2a6f80",
+    "/restaurants/on/toronto/kinton-ramen-king-east": "/locations/on/toronto#ramen_ca_3c9e6db7dc02543ed3bc",
+    "/restaurants/on/toronto/kinton-ramen-koreatown": "/locations/on/toronto#ramen_ca_729cb9cf7650b49f8658",
+    "/restaurants/on/toronto/kinton-ramen-liberty-village": "/locations/on/toronto#ramen_ca_3f3a7786497f3d911270",
+    "/restaurants/on/toronto/kinton-ramen-north-york": "/locations/on/toronto#ramen_ca_22b7654a127fdc803348",
+    "/restaurants/on/toronto/kinton-ramen-queen-and-spadina": "/locations/on/toronto#ramen_ca_477b87f0860309e0fcd0",
+    "/restaurants/on/toronto/kinton-ramen-yonge-and-eglinton": "/locations/on/toronto#ramen_ca_85c380deac774bb36d32",
+    "/restaurants/on/toronto/kinton-ramen-yonge-x-richmond": "/locations/on/toronto#ramen_ca_e56717c98e0a6f5e988d",
+    "/restaurants/on/toronto/konjiki-ramen": "/locations/on/toronto#ramen_ca_64142e3952aa35b32706",
+    "/restaurants/on/toronto/konjiki-ramen-yorkdale": "/locations/on/toronto#ramen_ca_c960e47b275be4ea5cec",
+    "/restaurants/on/toronto/konjiki-ramen-downtown": "/locations/on/toronto#ramen_ca_1b69f8021e67f3dacf92",
+    "/restaurants/on/toronto/kyouka-ramen": "/locations/on/toronto#ramen_ca_42da023c8314cd884310",
+    "/restaurants/on/toronto/machida-shoten-college-st": "/locations/on/toronto#ramen_ca_88bb66dab4bc0456eb1d",
+    "/restaurants/on/toronto/megumi-mazesoba": "/locations/on/toronto#ramen_ca_af9d805658d8816f37aa",
+    "/restaurants/on/toronto/midori-ramen-3700-midland-ave-112": "/locations/on/toronto#ramen_ca_4734e7a7f8d8148f0d4a",
+    "/restaurants/on/toronto/midori-ramen-5313-yonge-st": "/locations/on/toronto#ramen_ca_9b9ba0a62e540be5c421",
+    "/restaurants/on/toronto/midori-ramen-3401-dufferin-st-unit-cru-fc-14": "/locations/on/toronto#ramen_ca_44fdbb026908e2f78084",
+    "/restaurants/on/toronto/musoshin-ramen-9-boustead-ave": "/locations/on/toronto#ramen_ca_9911f4c2bb74880023f2",
+    "/restaurants/on/toronto/musoshin-ramen-130-harbord-st": "/locations/on/toronto#ramen_ca_495e29bc766f0d26e3e0",
+    "/restaurants/on/toronto/musoshin-ramen-50-brant-st": "/locations/on/toronto#ramen_ca_4599d14d197dea4e7a0e",
+    "/restaurants/on/toronto/nakayoshi-izakaya": "/locations/on/toronto#ramen_ca_dbf1b9ec1cbcc4c2915a",
+    "/restaurants/on/toronto/oji-seichi": "/locations/on/toronto#ramen_ca_cb4aeba57ddc0dfd3a16",
+    "/restaurants/on/toronto/petit-potato-5095-yonge-st-unit-a13-b10": "/locations/on/toronto#ramen_ca_0b3956684e2ac4e439a8",
+    "/restaurants/on/toronto/petit-potato-10-ravel-rd-1-2": "/locations/on/toronto#ramen_ca_0257746d8a87caaa1dc2",
+    "/restaurants/on/toronto/ramen-buta-nibo": "/locations/on/toronto#ramen_ca_b2135d722df735e59f90",
+    "/restaurants/on/toronto/ramen-isshin-421-college-st": "/locations/on/toronto#ramen_ca_1b536e66069e63fb910f",
+    "/restaurants/on/toronto/ramen-isshin-609-queen-st-w": "/locations/on/toronto#ramen_ca_d9c5f855d17e0352ac3f",
+    "/restaurants/on/toronto/ramen-raijin": "/locations/on/toronto#ramen_ca_f56b3a4d9e2ec94ce1bc",
+    "/restaurants/on/toronto/ramen-tabetai": "/locations/on/toronto#ramen_ca_290af28142e3dc9c30a8",
+    "/restaurants/on/toronto/ramen-takao": "/locations/on/toronto#ramen_ca_33efeb5cac5293926812",
+    "/restaurants/on/toronto/ramen-x-remix-ramen-and-bar": "/locations/on/toronto#ramen_ca_4e3ef8a7d78b95525556",
+    "/restaurants/on/toronto/ryus-noodle-bar": "/locations/on/toronto#ramen_ca_79d1556c2cc7c1f9bbbb",
+    "/restaurants/on/toronto/sansotei-ramen-179-dundas-st-w": "/locations/on/toronto#ramen_ca_3d963d281a6f9b85d005",
+    "/restaurants/on/toronto/sansotei-ramen-650-yonge-st": "/locations/on/toronto#ramen_ca_990f599509ef721f42cf",
+    "/restaurants/on/toronto/sansotei-ramen-30-adelaide-st-e": "/locations/on/toronto#ramen_ca_84a9cd5d27e99d740d04",
+    "/restaurants/on/toronto/sansotei-ramen-220-yonge-st": "/locations/on/toronto#ramen_ca_c41e802def6a5fe5f044",
+    "/restaurants/on/toronto/sansotei-ramen-stc": "/locations/on/toronto#ramen_ca_6e1ec25ebf86bd9631fc",
+    "/restaurants/on/toronto/sansotei-ramen-union-station": "/locations/on/toronto#ramen_ca_e11f14f90da5c80e67ba",
+    "/restaurants/on/toronto/shin-ramen-and-sushi": "/locations/on/toronto#ramen_ca_2486b361dcbea78abf5f",
+    "/restaurants/on/toronto/tondou-ramen": "/locations/on/toronto#ramen_ca_9a678149ff4b838ab955",
+    "/restaurants/on/toronto/touhenboku-ramen": "/locations/on/toronto#ramen_ca_ed9d6384b7016dd8450b",
+    "/restaurants/on/toronto/viet-chay-vegan-cuisine": "/locations/on/toronto#ramen_ca_52bef32f53f46091a492",
+    "/restaurants/on/toronto/zen-kyoto": "/locations/on/toronto#ramen_ca_b6dca25325e5af9aa849",
+    "/restaurants/on/unionville/ajisen-ramen-kennedy-hwy7": "/locations/on#ramen_ca_cac15c545e242b15fc92",
+    "/restaurants/on/vaughan/ajisen-ramen-vaughan": "/locations/on/vaughan#ramen_ca_264365598c55d586624c",
+    "/restaurants/on/vaughan/kinton-ramen-vaughan": "/locations/on/vaughan#ramen_ca_cd19b9bf32d034a0a406",
+    "/restaurants/on/waterloo/ajisen-ramen-waterloo": "/locations/on/waterloo#ramen_ca_bd244596a4de7ee7c545",
+    "/restaurants/on/waterloo/exclamation-waterloo": "/locations/on/waterloo#ramen_ca_43b4bce2f9fd530a2cdd",
+    "/restaurants/on/waterloo/kenzo-ramen-waterloo": "/locations/on/waterloo#ramen_ca_c4a8be5a7f1f2e056851",
+    "/restaurants/on/waterloo/kinton-ramen-waterloo": "/locations/on/waterloo#ramen_ca_544f1d6c1e3e95645e89",
+    "/restaurants/on/whitby/ippon-ramen-whitby": "/locations/on#ramen_ca_71156993df07facae477",
+    "/restaurants/on/whitby/j7-ramen": "/locations/on#ramen_ca_641066c6993a4c6ab7c7",
+    "/restaurants/on/windsor/ajisen-ramen-east-windsor": "/locations/on/windsor#ramen_ca_ebbb61b99d710de1858c",
+    "/restaurants/on/windsor/ajisen-ramen-south-windsor": "/locations/on/windsor#ramen_ca_dd3c5a45fd35a451e4e1",
+    "/restaurants/on/windsor/kinton-ramen-windsor": "/locations/on/windsor#ramen_ca_fa502ae1240b1635a4d8",
+    "/restaurants/pe/charlottetown/hojo-s-japanese-cuisine": "/locations#ramen_ca_bb90155e6093c78541e1",
+    "/restaurants/qc/anjou/ramen-isshin": "/locations/qc#ramen_ca_0b0376105a372047458a",
+    "/restaurants/qc/boucherville/panda-boba-t-boucherville": "/locations/qc#ramen_ca_db5740b6ba189f53c5a1",
+    "/restaurants/qc/brossard/kinton-ramen-brossard": "/locations/qc/brossard#ramen_ca_0c23d22867898f6f15e9",
+    "/restaurants/qc/dollard-des-ormeaux/ramen-misoya": "/locations/qc#ramen_ca_52ef2f26207e5c2fba37",
+    "/restaurants/qc/farnham/restaurant-le-bol-chez-vic-farnham": "/locations/qc#ramen_ca_2e3f34cb39b6c6365e3a",
+    "/restaurants/qc/gatineau/ras-l-bol": "/locations/qc#ramen_ca_4aeef4cbde52b5af380e",
+    "/restaurants/qc/gatineau/sukiyaki": "/locations/qc#ramen_ca_1c6c358a021933b3afa8",
+    "/restaurants/qc/jonquiere/nouille-libre-ramen-en-livraison-a-jonquiere": "/locations/qc#ramen_ca_9bf1859dcd44db22d3f7",
+    "/restaurants/qc/la-prairie/poke-yasu-sushi-and-ramen-and-pokebowl": "/locations/qc#ramen_ca_fdf10e259da32a60fa75",
+    "/restaurants/qc/lasalle/bistro-isakaya": "/locations/qc#ramen_ca_1736cc8730edada3fcd4",
+    "/restaurants/qc/laval/kinton-ramen-carrefour-laval": "/locations/qc#ramen_ca_6857bac7a076e1dd2f1b",
+    "/restaurants/qc/montreal/atelier-asie": "/locations/qc/montreal#ramen_ca_7c29de3d0a5f891e9521",
+    "/restaurants/qc/montreal/bar-otto": "/locations/qc/montreal#ramen_ca_cfcaf2c0fd50cf0b9bda",
+    "/restaurants/qc/montreal/ichi-shop-and-ramen": "/locations/qc/montreal#ramen_ca_f1c9bcc6b7eea60aba64",
+    "/restaurants/qc/montreal/ichiraku-kawaki": "/locations/qc/montreal#ramen_ca_62a6d09858dad55a6f20",
+    "/restaurants/qc/montreal/imadake-izakaya": "/locations/qc/montreal#ramen_ca_aa9674d799e2d8b7e067",
+    "/restaurants/qc/montreal/kinton-ramen-cote-des-neiges": "/locations/qc/montreal#ramen_ca_5766f0e97ccc78de2dea",
+    "/restaurants/qc/montreal/kinton-ramen-mont-royal": "/locations/qc/montreal#ramen_ca_5ea1f7e81cee1838bf7b",
+    "/restaurants/qc/montreal/kinton-ramen-sainte-catherine-x-guy": "/locations/qc/montreal#ramen_ca_95b53665657eeb7ff044",
+    "/restaurants/qc/montreal/kinton-ramen-square-victoria": "/locations/qc/montreal#ramen_ca_38c43683d3434df315c7",
+    "/restaurants/qc/montreal/kinton-ramen-union": "/locations/qc/montreal#ramen_ca_28c4338e1f7411e66a09",
+    "/restaurants/qc/montreal/kotora-ramen": "/locations/qc/montreal#ramen_ca_c1630acb4e5fb772f60b",
+    "/restaurants/qc/montreal/machiya-ramen-chinatown": "/locations/qc/montreal#ramen_ca_681c2d840970929e1897",
+    "/restaurants/qc/montreal/neotokyo": "/locations/qc/montreal#ramen_ca_da6cdad1cee92fb4dadc",
+    "/restaurants/qc/montreal/nouille-de-riz-yunnan-rice-noodle-ramen-chinese-noodle-shop": "/locations/qc/montreal#ramen_ca_cc981288791a9a8f3f55",
+    "/restaurants/qc/montreal/otto-ramen": "/locations/qc/montreal#ramen_ca_5fff18235a553bc58a00",
+    "/restaurants/qc/montreal/panda-boba-t": "/locations/qc/montreal#ramen_ca_90aae98293f15b6d269a",
+    "/restaurants/qc/montreal/ramen-isshin-1217-mont-royal-ave-e": "/locations/qc/montreal#ramen_ca_20f331807bb0b81f84ce",
+    "/restaurants/qc/montreal/ramen-isshin-1-r-de-la-gauchetiere-e": "/locations/qc/montreal#ramen_ca_484520fca8adaa4c6e17",
+    "/restaurants/qc/montreal/ramen-isshin-verdun": "/locations/qc/montreal#ramen_ca_7a527c4d5287da88f112",
+    "/restaurants/qc/montreal/ramen-misoya-montreal": "/locations/qc/montreal#ramen_ca_50311886663601723a33",
+    "/restaurants/qc/montreal/ramen-nakamichi": "/locations/qc/montreal#ramen_ca_fe52721117ee78a2e273",
+    "/restaurants/qc/montreal/ramen-seoul": "/locations/qc/montreal#ramen_ca_27799beeb93e83a44aa0",
+    "/restaurants/qc/montreal/sansotei-ramen-mackay": "/locations/qc/montreal#ramen_ca_d0fc7970ce9c364b444a",
+    "/restaurants/qc/montreal/sansotei-ramen-mont-royal": "/locations/qc/montreal#ramen_ca_cd26ea7cb0c3dc3c5844",
+    "/restaurants/qc/montreal/sansotei-ramen-royalmount": "/locations/qc/montreal#ramen_ca_a0331eefd46b5a2d652d",
+    "/restaurants/qc/montreal/sansotei-ramen-sainte-catherine": "/locations/qc/montreal#ramen_ca_2dd9595746921eacc36f",
+    "/restaurants/qc/montreal/shushuto-bar-a-ramen-tapas": "/locations/qc/montreal#ramen_ca_aa229a370699121f5265",
+    "/restaurants/qc/montreal/sukiyaki": "/locations/qc/montreal#ramen_ca_28da4a811c323c3d4652",
+    "/restaurants/qc/montreal/sumo-ramen": "/locations/qc/montreal#ramen_ca_e41d769455a603592362",
+    "/restaurants/qc/montreal/tori-ramen": "/locations/qc/montreal#ramen_ca_813be266a6ec9c0d0b1c",
+    "/restaurants/qc/montreal/tsujiri-montreal": "/locations/qc/montreal#ramen_ca_3981134b63a262efda83",
+    "/restaurants/qc/montreal/tsukuyomi-ramen-bishop": "/locations/qc/montreal#ramen_ca_656996cc3dab1046d800",
+    "/restaurants/qc/montreal/tsukuyomi-ramen-mile-end": "/locations/qc/montreal#ramen_ca_cb9c210d1e815ee38d0f",
+    "/restaurants/qc/montreal/yokato-yokabai-ramen": "/locations/qc/montreal#ramen_ca_c64ee9168ca3ab2796ec",
+    "/restaurants/qc/pointe-claire/kinton-ramen-pointe-claire": "/locations/qc/pointe-claire#ramen_ca_63ea131bf211b7401c24",
+    "/restaurants/qc/pointe-claire/ramen-isshin-pointe-claire": "/locations/qc/pointe-claire#ramen_ca_8dd8f8fe509b41e4870a",
+    "/restaurants/qc/quebec-city/gaijin-ramen": "/locations/qc#ramen_ca_ba9bf826c7150102ad8f",
+    "/restaurants/qc/quebec-city/hono-ramen": "/locations/qc#ramen_ca_3d1bb9b7823f959978c3",
+    "/restaurants/qc/quebec-city/station-o-ramen": "/locations/qc#ramen_ca_1aecb75d8bd385e4816b",
+    "/restaurants/qc/quebec-city/tora-ya-ramen": "/locations/qc#ramen_ca_62938dc2df3532648083",
+    "/restaurants/qc/repentigny/sukiyaki": "/locations/qc#ramen_ca_a3fbcb7cffea1dab7b52",
+    "/restaurants/qc/saint-hubert/kimpo-bbq-coreen-and-sushi-saint-hubert": "/locations/qc#ramen_ca_316b5e58105015e3c26b",
+    "/restaurants/qc/saint-hyacinthe/sushi-yoko": "/locations/qc#ramen_ca_09c0b497785a417b6132",
+    "/restaurants/qc/saint-sauveur/arcadia-restaurant-et-jeux": "/locations/qc#ramen_ca_72096c0348bd6080234d",
+    "/restaurants/qc/shawinigan/zes-t-bulle-les-des-truques": "/locations/qc#ramen_ca_9b6a59963e5009955479",
+    "/restaurants/qc/sherbrooke/kobo-ramen": "/locations/qc#ramen_ca_e607928c23bbd5f65cea",
+    "/restaurants/qc/westmount/bistro-moku": "/locations/qc#ramen_ca_79c694ac61785cf09dc3",
+    "/restaurants/sk/regina/rising-sun-pop-up-ramen": "/locations/sk/regina#ramen_ca_5852819449c3579cb505",
+    "/restaurants/sk/regina/wann-izakaya-japanese-gastropub": "/locations/sk/regina#ramen_ca_36eeb5a5c4c7f6dbe1c0",
+    "/restaurants/sk/saskatoon/cafe-japa-bowl": "/locations/sk#ramen_ca_2d32022e71e0fa78c431",
+    "/restaurants/sk/saskatoon/october-authentic-asian-cuisine": "/locations/sk#ramen_ca_d1d36682d91fede81e9b",
+    "/restaurants/yt/whitehorse/wood-street-ramen-night-market": "/locations#ramen_ca_53830a33b3e28aa946ed",
+    "/restaurants/on/newmarket/ajisen-ramen-newmarket": "/locations/on#ramen_ca_3f4380213188cf491c3b",
+    "/restaurants/on/hamilton/ramen-isshin-hamilton": "/locations/on/hamilton#ramen_ca_9e221f5f301ad2e21b9c",
+    "/restaurants/qc/terrebonne/ramen-isshin-terrebonne": "/locations/qc#ramen_ca_4d69fccb495f9920a36c",
+    "/restaurants/qc/sainte-therese/ramen-isshin-sainte-therese": "/locations/qc#ramen_ca_7d163edcdce0bcf59eb7",
+    "/restaurants/qc/vaudreuil-dorion/ramen-isshin-vaudreuil-dorion": "/locations/qc#ramen_ca_1cec4e546a9ffcb2d7ed",
+    "/restaurants/qc/montreal/ramen-isshin-sainte-catherine-west": "/locations/qc/montreal#ramen_ca_007795fdb94af5994fcc",
+    "/restaurants/qc/brossard/ramen-isshin-dix30-brossard": "/locations/qc/brossard#ramen_ca_435a985f53d32bd0a09e",
+    "/restaurants/qc/longueuil/ramen-isshin-longueuil": "/locations/qc/longueuil#ramen_ca_15e0918698a301a95d36",
+    "/restaurants/qc/rimouski/poke-et-ramen-moi-rimouski": "/locations/qc#ramen_ca_e0f490177025c12f998a",
+    "/restaurants/qc/saint-raymond/poke-et-ramen-moi-saint-raymond": "/locations/qc#ramen_ca_83d9e819a23ac4931da4",
+    "/restaurants/qc/trois-rivieres/poke-et-ramen-moi-trois-rivieres-papineau": "/locations/qc#ramen_ca_60b0fa8bd506126b5013",
+    "/restaurants/ns/halifax/poke-go-broth-house-granville-street": "/locations#ramen_ca_ee4a3b5dbc84c953aa26",
+    "/restaurants/bc/langford/ramen-arashi-langford": "/locations/bc#ramen_ca_bf5f157b34bf7403e79c",
+    "/restaurants/ab/calgary/ramen-arashi-calgary": "/locations/ab/calgary#ramen_ca_3e3907413885c1b43948",
+    "/restaurants/ab/calgary/nan-s-noodle-house-edmonton-trail": "/locations/ab/calgary#ramen_ca_4d35e06798a81d5a5fc1"
+  },
+  "reviews": [
+    {
+      "id": "ramen_ca_05201e29ce67c753b32c",
+      "path": "/restaurants/ab/banff/chaya",
+      "target": "/locations/ab#ramen_ca_05201e29ce67c753b32c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a3441831934eeda5223a",
+      "path": "/restaurants/ab/banff/jugemu-banff-modern-japanese-dining",
+      "target": "/locations/ab#ramen_ca_a3441831934eeda5223a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1a1815210aa7d6ddc360",
+      "path": "/restaurants/ab/banff/ramen-arashi-banff",
+      "target": "/locations/ab#ramen_ca_1a1815210aa7d6ddc360",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_272bfead353f4e35fa5b",
+      "path": "/restaurants/ab/brooks/nikko-sushi",
+      "target": "/locations/ab#ramen_ca_272bfead353f4e35fa5b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_45e7855c6d6bd15da824",
+      "path": "/restaurants/ab/calgary/arashi-japanese-restaurant",
+      "target": "/locations/ab/calgary#ramen_ca_45e7855c6d6bd15da824",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_8b0ac3122c28d1afb87e",
+      "path": "/restaurants/ab/calgary/chicking-yyc-ramen-and-onigiri-shop",
+      "target": "/locations/ab/calgary#ramen_ca_8b0ac3122c28d1afb87e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7b1c872d0770a502efaa",
+      "path": "/restaurants/ab/calgary/globefish-ramen-and-izakaya",
+      "target": "/locations/ab/calgary#ramen_ca_7b1c872d0770a502efaa",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_fa2f0be9e73136f1af9c",
+      "path": "/restaurants/ab/calgary/gogi-korean-kitchen",
+      "target": "/locations/ab/calgary#ramen_ca_fa2f0be9e73136f1af9c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_b23ba21493273736eaef",
+      "path": "/restaurants/ab/calgary/jinya-ramen-bar-calgary",
+      "target": "/locations/ab/calgary#ramen_ca_b23ba21493273736eaef",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_4cc9427415777f0362e6",
+      "path": "/restaurants/ab/calgary/jinya-ramen-bar-macleod",
+      "target": "/locations/ab/calgary#ramen_ca_4cc9427415777f0362e6",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_4256cc072cc8c571d6c8",
+      "path": "/restaurants/ab/calgary/kinton-ramen-mission-calgary",
+      "target": "/locations/ab/calgary#ramen_ca_4256cc072cc8c571d6c8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_4bfecd3bd7b89bfcb2ba",
+      "path": "/restaurants/ab/calgary/kinton-ramen-south-trail-calgary",
+      "target": "/locations/ab/calgary#ramen_ca_4bfecd3bd7b89bfcb2ba",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_570fb37df368a647936c",
+      "path": "/restaurants/ab/calgary/kinton-ramen-university-heights-calgary",
+      "target": "/locations/ab/calgary#ramen_ca_570fb37df368a647936c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_acf364a902a31f9cba1b",
+      "path": "/restaurants/ab/calgary/koya-japan",
+      "target": "/locations/ab/calgary#ramen_ca_acf364a902a31f9cba1b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_284d23914c34c51e1382",
+      "path": "/restaurants/ab/calgary/monsoon-izakaya-japanese-restaurant",
+      "target": "/locations/ab/calgary#ramen_ca_284d23914c34c51e1382",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1ea2417885713547a8ef",
+      "path": "/restaurants/ab/calgary/ramen-ichinen",
+      "target": "/locations/ab/calgary#ramen_ca_1ea2417885713547a8ef",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_166fef28a590edc29f7d",
+      "path": "/restaurants/ab/calgary/redheads-japa-cafe",
+      "target": "/locations/ab/calgary#ramen_ca_166fef28a590edc29f7d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_b489856d937947826cd0",
+      "path": "/restaurants/ab/calgary/samurai-ramen-and-sushi",
+      "target": "/locations/ab/calgary#ramen_ca_b489856d937947826cd0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ab5dcfb3f594cdb60921",
+      "path": "/restaurants/ab/calgary/shibuya-izakaya-sushi-restaurant",
+      "target": "/locations/ab/calgary#ramen_ca_ab5dcfb3f594cdb60921",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1d358958d30659cd7b34",
+      "path": "/restaurants/ab/calgary/shiki-menya",
+      "target": "/restaurants/ab/calgary/shiki-menya",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_c563c1913417a781f37f",
+      "path": "/restaurants/ab/calgary/shimizu-kitchen",
+      "target": "/locations/ab/calgary#ramen_ca_c563c1913417a781f37f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7614dfc8b9d8399bbc2f",
+      "path": "/restaurants/ab/calgary/takumi-sushi-sw-springborough",
+      "target": "/locations/ab/calgary#ramen_ca_7614dfc8b9d8399bbc2f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0951607bb88250dc69b4",
+      "path": "/restaurants/ab/calgary/takumi-sushi-crowfoot-nw",
+      "target": "/locations/ab/calgary#ramen_ca_0951607bb88250dc69b4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_18eba8c8fbc4c17d6278",
+      "path": "/restaurants/ab/calgary/tokyo-station",
+      "target": "/locations/ab/calgary#ramen_ca_18eba8c8fbc4c17d6278",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_ea562ad5252e47cb7e21",
+      "path": "/restaurants/ab/calgary/wakado-ramen",
+      "target": "/locations/ab/calgary#ramen_ca_ea562ad5252e47cb7e21",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_f044b82802b3fef8f84e",
+      "path": "/restaurants/ab/calgary/y93-sushi-crave-japanese-cafe-ramen-and-curry-house",
+      "target": "/locations/ab/calgary#ramen_ca_f044b82802b3fef8f84e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3b531fdc1f551e0f9077",
+      "path": "/restaurants/ab/camrose/kiri-japanese-cuisine",
+      "target": "/locations/ab#ramen_ca_3b531fdc1f551e0f9077",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_98e64a42825bd50edbc9",
+      "path": "/restaurants/ab/canmore/ramen-arashi-canmore",
+      "target": "/locations/ab#ramen_ca_98e64a42825bd50edbc9",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ef7a4b0ec8d0652bcb16",
+      "path": "/restaurants/ab/edmonton/dorinku-osaka",
+      "target": "/locations/ab/edmonton#ramen_ca_ef7a4b0ec8d0652bcb16",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7a0a4f599121e0831463",
+      "path": "/restaurants/ab/edmonton/jinya-ramen-bar-edmonton",
+      "target": "/locations/ab/edmonton#ramen_ca_7a0a4f599121e0831463",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_99986ee3ecb92be65a35",
+      "path": "/restaurants/ab/edmonton/kazoku-ramen",
+      "target": "/locations/ab/edmonton#ramen_ca_99986ee3ecb92be65a35",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_f40971e4a8582c9378cd",
+      "path": "/restaurants/ab/edmonton/kinshi-rinji",
+      "target": "/locations/ab/edmonton#ramen_ca_f40971e4a8582c9378cd",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4402ce69cafa1c3cc115",
+      "path": "/restaurants/ab/edmonton/kinton-ramen-terra-losa-edmonton",
+      "target": "/locations/ab/edmonton#ramen_ca_4402ce69cafa1c3cc115",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_91e2cb2630ccdcdd3b6e",
+      "path": "/restaurants/ab/edmonton/mama-ramen",
+      "target": "/locations/ab/edmonton#ramen_ca_91e2cb2630ccdcdd3b6e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fdba69083e2743a91ff8",
+      "path": "/restaurants/ab/edmonton/menjiro-ramen",
+      "target": "/locations/ab/edmonton#ramen_ca_fdba69083e2743a91ff8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_22e799af919d938549c8",
+      "path": "/restaurants/ab/edmonton/menya-mori",
+      "target": "/locations/ab/edmonton#ramen_ca_22e799af919d938549c8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4972cdc60c0d98bead80",
+      "path": "/restaurants/ab/edmonton/midori-ramen",
+      "target": "/locations/ab/edmonton#ramen_ca_4972cdc60c0d98bead80",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0fb446d8949535745428",
+      "path": "/restaurants/ab/edmonton/ramen-misoya-edmonton",
+      "target": "/locations/ab/edmonton#ramen_ca_0fb446d8949535745428",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_56e447889b9c6b8f62ff",
+      "path": "/restaurants/ab/edmonton/sapporo",
+      "target": "/locations/ab/edmonton#ramen_ca_56e447889b9c6b8f62ff",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_5c9ac40ac8e5d19b9e8e",
+      "path": "/restaurants/ab/edmonton/tasty-house-chinese-and-japanese-noodle-restaurant",
+      "target": "/restaurants/ab/edmonton/tasty-house-chinese-and-japanese-noodle-restaurant",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_d803b44fefafa757981e",
+      "path": "/restaurants/ab/edmonton/tokiwa-ramen",
+      "target": "/restaurants/ab/edmonton/tokiwa-ramen",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_86cbe235928b6d4c0b8a",
+      "path": "/restaurants/ab/edmonton/tokyo-express-12930-82-st-nw",
+      "target": "/locations/ab/edmonton#ramen_ca_86cbe235928b6d4c0b8a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4986178a8716bdfaf020",
+      "path": "/restaurants/ab/edmonton/tokyo-express-12816-137-ave-nw",
+      "target": "/locations/ab/edmonton#ramen_ca_4986178a8716bdfaf020",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_fa0d8d5bfa7c3c9d15a5",
+      "path": "/restaurants/ab/edmonton/tokyo-noodle-shop",
+      "target": "/locations/ab/edmonton#ramen_ca_fa0d8d5bfa7c3c9d15a5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9cb262ce5814a84c2c28",
+      "path": "/restaurants/ab/edmonton/toro-sushi-bar-and-grill",
+      "target": "/locations/ab/edmonton#ramen_ca_9cb262ce5814a84c2c28",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cad618850f8c59ef0831",
+      "path": "/restaurants/ab/lacombe/oishidesu-ramen-shack-lacombe",
+      "target": "/locations/ab#ramen_ca_cad618850f8c59ef0831",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8b8c9c3fe803db10afd5",
+      "path": "/restaurants/ab/lethbridge/koko-japanese-restaurant",
+      "target": "/locations/ab#ramen_ca_8b8c9c3fe803db10afd5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cd8dcac830a2a20c0320",
+      "path": "/restaurants/ab/red-deer/oishi-and-kawaii-tea",
+      "target": "/locations/ab#ramen_ca_cd8dcac830a2a20c0320",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b8305c6fd7ace1a571e7",
+      "path": "/restaurants/ab/red-deer/pink-bow-restaurant",
+      "target": "/locations/ab#ramen_ca_b8305c6fd7ace1a571e7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a9fab45a3d150da8bdb1",
+      "path": "/restaurants/ab/red-deer-county/oishidesu-gasoline-alley",
+      "target": "/locations/ab#ramen_ca_a9fab45a3d150da8bdb1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_dec615954e127425b399",
+      "path": "/restaurants/bc/burnaby/horin-ramen-metrotown",
+      "target": "/locations/bc/burnaby#ramen_ca_dec615954e127425b399",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_663e16e0d3429be199f1",
+      "path": "/restaurants/bc/burnaby/jinya-ramen-bar-amazing-brentwood",
+      "target": "/locations/bc/burnaby#ramen_ca_663e16e0d3429be199f1",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b336def5bae45853cf70",
+      "path": "/restaurants/bc/burnaby/kamamarui-ramen-and-don",
+      "target": "/locations/bc/burnaby#ramen_ca_b336def5bae45853cf70",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7b121e1939bee0a5432b",
+      "path": "/restaurants/bc/burnaby/kinton-ramen-gilmore-place",
+      "target": "/locations/bc/burnaby#ramen_ca_7b121e1939bee0a5432b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_bf71a4cffd41dd404789",
+      "path": "/restaurants/bc/burnaby/kokoro-tokyo-mazesoba-brentwood",
+      "target": "/locations/bc/burnaby#ramen_ca_bf71a4cffd41dd404789",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_13bf4c18e9aaed5fb676",
+      "path": "/restaurants/bc/burnaby/koya-japan",
+      "target": "/locations/bc/burnaby#ramen_ca_13bf4c18e9aaed5fb676",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_db7a582e4e7df3ddec75",
+      "path": "/restaurants/bc/burnaby/maruhachi-ra-men-metrotown",
+      "target": "/locations/bc/burnaby#ramen_ca_db7a582e4e7df3ddec75",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c0c4dff5e1c82c3175d7",
+      "path": "/restaurants/bc/burnaby/the-ramen-butcher-burnaby",
+      "target": "/locations/bc/burnaby#ramen_ca_c0c4dff5e1c82c3175d7",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_398211e3bd9819b3eccf",
+      "path": "/restaurants/bc/burnaby/zubu-ramen-metrotown",
+      "target": "/locations/bc/burnaby#ramen_ca_398211e3bd9819b3eccf",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_ee990835a8edae101524",
+      "path": "/restaurants/bc/coquitlam/honjin-ramen",
+      "target": "/locations/bc/coquitlam#ramen_ca_ee990835a8edae101524",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ac2c2c87accb934e03a5",
+      "path": "/restaurants/bc/coquitlam/japanese-rojiura-ramen",
+      "target": "/locations/bc/coquitlam#ramen_ca_ac2c2c87accb934e03a5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_51d022c915574d43172e",
+      "path": "/restaurants/bc/coquitlam/kinton-ramen-coquitlam-centre",
+      "target": "/locations/bc/coquitlam#ramen_ca_51d022c915574d43172e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3ba23fe4b57a0e311bb7",
+      "path": "/restaurants/bc/coquitlam/kinton-ramen-sunwood-coquitlam",
+      "target": "/locations/bc/coquitlam#ramen_ca_3ba23fe4b57a0e311bb7",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_180a80a37ad28bbe64c3",
+      "path": "/restaurants/bc/coquitlam/kokoro-tokyo-mazesoba-lougheed-town-centre",
+      "target": "/locations/bc/coquitlam#ramen_ca_180a80a37ad28bbe64c3",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_e382beba7a0750529bd7",
+      "path": "/restaurants/bc/coquitlam/koya-japan",
+      "target": "/locations/bc/coquitlam#ramen_ca_e382beba7a0750529bd7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_699b7c3b9cfa48011e8a",
+      "path": "/restaurants/bc/coquitlam/maruhachi-ra-men-coquitlam",
+      "target": "/locations/bc/coquitlam#ramen_ca_699b7c3b9cfa48011e8a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_364342768cd2cee0d652",
+      "path": "/restaurants/bc/coquitlam/sho-bu-japanese-noodle",
+      "target": "/locations/bc/coquitlam#ramen_ca_364342768cd2cee0d652",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e8fa848c665d950f5fa1",
+      "path": "/restaurants/bc/coquitlam/smoking-pig",
+      "target": "/locations/bc/coquitlam#ramen_ca_e8fa848c665d950f5fa1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3ab75dca088ceba4df69",
+      "path": "/restaurants/bc/courtenay/nikkei-ramen-ya",
+      "target": "/locations/bc#ramen_ca_3ab75dca088ceba4df69",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_82bf463513103c43fae6",
+      "path": "/restaurants/bc/delta/kawabe-kitchen",
+      "target": "/locations/bc#ramen_ca_82bf463513103c43fae6",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e2b8d5841b81fb93e8f5",
+      "path": "/restaurants/bc/delta/menbow-ramen",
+      "target": "/locations/bc#ramen_ca_e2b8d5841b81fb93e8f5",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1db54e71a0faee5d195d",
+      "path": "/restaurants/bc/duncan/neko-ramen",
+      "target": "/locations/bc#ramen_ca_1db54e71a0faee5d195d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_f4293b68f600744962b2",
+      "path": "/restaurants/bc/kamloops/kongfu-cat-ramen-bar",
+      "target": "/locations/bc#ramen_ca_f4293b68f600744962b2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_41fa75caa6f725d7389d",
+      "path": "/restaurants/bc/kamloops/tiger-ramen",
+      "target": "/locations/bc#ramen_ca_41fa75caa6f725d7389d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c1f0d17dcff848452a3c",
+      "path": "/restaurants/bc/kelowna/kinton-ramen-kelowna-downtown",
+      "target": "/locations/bc/kelowna#ramen_ca_c1f0d17dcff848452a3c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_73050b83c2c3acb00150",
+      "path": "/restaurants/bc/kelowna/ramen-arashi-kelowna",
+      "target": "/locations/bc/kelowna#ramen_ca_73050b83c2c3acb00150",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b2bf06dc12587143cb77",
+      "path": "/restaurants/bc/kelowna/soy-asian-fusion-restaurant",
+      "target": "/locations/bc/kelowna#ramen_ca_b2bf06dc12587143cb77",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1e14122e386ea7ef6e6e",
+      "path": "/restaurants/bc/kelowna/wasabi-ramen-and-izakaya",
+      "target": "/locations/bc/kelowna#ramen_ca_1e14122e386ea7ef6e6e",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_22c707cf9f8a34ce832e",
+      "path": "/restaurants/bc/langley/akedo-showten-ramen-gyoza",
+      "target": "/locations/bc#ramen_ca_22c707cf9f8a34ce832e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fd9c677ad2ee87a57107",
+      "path": "/restaurants/bc/langley/jinya-ramen-bar-langley",
+      "target": "/locations/bc#ramen_ca_fd9c677ad2ee87a57107",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7d3647e9a3126451fd34",
+      "path": "/restaurants/bc/nanaimo/wa-ku-north-ramen-izakaya",
+      "target": "/locations/bc#ramen_ca_7d3647e9a3126451fd34",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d3943133aa7d1701adf9",
+      "path": "/restaurants/bc/nelson/red-light-ramen",
+      "target": "/locations/bc#ramen_ca_d3943133aa7d1701adf9",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7744d906e104d93e742f",
+      "path": "/restaurants/bc/new-westminster/horin-ramen-new-westminster",
+      "target": "/locations/bc#ramen_ca_7744d906e104d93e742f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_67c966cef17327e834c0",
+      "path": "/restaurants/bc/new-westminster/kinton-ramen-uptown-new-westminster",
+      "target": "/locations/bc#ramen_ca_67c966cef17327e834c0",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7be190b8eba84022a050",
+      "path": "/restaurants/bc/north-vancouver/kinton-ramen-north-vancouver",
+      "target": "/locations/bc/north-vancouver#ramen_ca_7be190b8eba84022a050",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_d065af9ea1e4bf604b82",
+      "path": "/restaurants/bc/north-vancouver/ramen-danbo-lonsdale",
+      "target": "/restaurants/bc/north-vancouver/ramen-danbo-lonsdale",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_af14d661eb1c5dc15655",
+      "path": "/restaurants/bc/north-vancouver/sapporo-kitchen-deep-cove",
+      "target": "/locations/bc/north-vancouver#ramen_ca_af14d661eb1c5dc15655",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_8891178b7c43d9268722",
+      "path": "/restaurants/bc/parksville/ramen-eight",
+      "target": "/locations/bc#ramen_ca_8891178b7c43d9268722",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0eeb857bdad6ae6b73e8",
+      "path": "/restaurants/bc/richmond/g-men-at-steveston-ramen-shop",
+      "target": "/locations/bc/richmond#ramen_ca_0eeb857bdad6ae6b73e8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2b1b0c6431434181f1c7",
+      "path": "/restaurants/bc/richmond/hokkaido-ramen-santouka",
+      "target": "/locations/bc/richmond#ramen_ca_2b1b0c6431434181f1c7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2c6784bc2d00382b5361",
+      "path": "/restaurants/bc/richmond/kinton-ramen-mcarthurglen-designer-outlet-yvr",
+      "target": "/locations/bc/richmond#ramen_ca_2c6784bc2d00382b5361",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_0ac7e111ab43a2303ee8",
+      "path": "/restaurants/bc/richmond/maruhachi-ra-men-richmond",
+      "target": "/locations/bc/richmond#ramen_ca_0ac7e111ab43a2303ee8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_f377c0a1396a7122ebef",
+      "path": "/restaurants/bc/richmond/ramen-takanotsume",
+      "target": "/locations/bc/richmond#ramen_ca_f377c0a1396a7122ebef",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_78693bef167fbd909e7c",
+      "path": "/restaurants/bc/richmond/sanpoutei-ramen",
+      "target": "/locations/bc/richmond#ramen_ca_78693bef167fbd909e7c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5c031815ef27758bb8cf",
+      "path": "/restaurants/bc/richmond/yah-yah-ya-ramen-richmond",
+      "target": "/locations/bc/richmond#ramen_ca_5c031815ef27758bb8cf",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_393c1a86ae4c7860871b",
+      "path": "/restaurants/bc/richmond/yuu-japanese-tapas",
+      "target": "/locations/bc/richmond#ramen_ca_393c1a86ae4c7860871b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2d006a46ae088a836ed0",
+      "path": "/restaurants/bc/surrey/isshin-sushi",
+      "target": "/locations/bc/surrey#ramen_ca_2d006a46ae088a836ed0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c2138d64eb94a0b21c70",
+      "path": "/restaurants/bc/surrey/kinton-ramen-surrey",
+      "target": "/locations/bc/surrey#ramen_ca_c2138d64eb94a0b21c70",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7a7a172f52ff78b6945e",
+      "path": "/restaurants/bc/surrey/kokoro-japanese-ramen-house-surrey",
+      "target": "/locations/bc/surrey#ramen_ca_7a7a172f52ff78b6945e",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_77642b500223501682ee",
+      "path": "/restaurants/bc/surrey/maruhachi-ra-men-surrey",
+      "target": "/locations/bc/surrey#ramen_ca_77642b500223501682ee",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_938d2a0d114c1faf0c96",
+      "path": "/restaurants/bc/surrey/menzou-ramen",
+      "target": "/locations/bc/surrey#ramen_ca_938d2a0d114c1faf0c96",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_68b798930cc8580447c5",
+      "path": "/restaurants/bc/surrey/sushi-shun",
+      "target": "/locations/bc/surrey#ramen_ca_68b798930cc8580447c5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e5a950fd454d5d9b4c15",
+      "path": "/restaurants/bc/surrey/umami-ramen-grill",
+      "target": "/locations/bc/surrey#ramen_ca_e5a950fd454d5d9b4c15",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7dcbaf9cde08ceeabcb6",
+      "path": "/restaurants/bc/vancouver/beest-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_7dcbaf9cde08ceeabcb6",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_8939c43c6deac2d91c21",
+      "path": "/restaurants/bc/vancouver/fuku-ramen-and-udon",
+      "target": "/locations/bc/vancouver#ramen_ca_8939c43c6deac2d91c21",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4cfd57a9f6182df57068",
+      "path": "/restaurants/bc/vancouver/hokkaido-ramen-santouka-1690-robson-st",
+      "target": "/locations/bc/vancouver#ramen_ca_4cfd57a9f6182df57068",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ae188e25ca8b82b5b594",
+      "path": "/restaurants/bc/vancouver/hokkaido-ramen-santouka-558-w-broadway",
+      "target": "/locations/bc/vancouver#ramen_ca_ae188e25ca8b82b5b594",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fe4947a47179f7d9c466",
+      "path": "/restaurants/bc/vancouver/horin-ramen-robson",
+      "target": "/locations/bc/vancouver#ramen_ca_fe4947a47179f7d9c466",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c80548f4d57a6068646d",
+      "path": "/restaurants/bc/vancouver/ichiya-japanese-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_c80548f4d57a6068646d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5ae99e061b1666f37446",
+      "path": "/restaurants/bc/vancouver/jinya-ramen-bar-vancouver-downtown",
+      "target": "/locations/bc/vancouver#ramen_ca_5ae99e061b1666f37446",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_11713494229d047d8582",
+      "path": "/restaurants/bc/vancouver/jinya-ramen-bar-vancouver-west",
+      "target": "/locations/bc/vancouver#ramen_ca_11713494229d047d8582",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_5211513246e03ae53ad5",
+      "path": "/restaurants/bc/vancouver/kintaro-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_5211513246e03ae53ad5",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_a089a5c3afe75fc23a91",
+      "path": "/restaurants/bc/vancouver/kinton-ramen-broadway-vancouver",
+      "target": "/locations/bc/vancouver#ramen_ca_a089a5c3afe75fc23a91",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9f654f713870be66fea8",
+      "path": "/restaurants/bc/vancouver/kinton-ramen-marine-gateway",
+      "target": "/locations/bc/vancouver#ramen_ca_9f654f713870be66fea8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_fb369f5fe3a66c1737a3",
+      "path": "/restaurants/bc/vancouver/kinton-ramen-robson",
+      "target": "/locations/bc/vancouver#ramen_ca_fb369f5fe3a66c1737a3",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_c6f07410edc7355c817b",
+      "path": "/restaurants/bc/vancouver/kinton-ramen-ubc",
+      "target": "/locations/bc/vancouver#ramen_ca_c6f07410edc7355c817b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_36816c821ddb9381b1cd",
+      "path": "/restaurants/bc/vancouver/kinton-ramen-waterfront-vancouver",
+      "target": "/locations/bc/vancouver#ramen_ca_36816c821ddb9381b1cd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1c761cd82248f802d3f7",
+      "path": "/restaurants/bc/vancouver/kojima-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_1c761cd82248f802d3f7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_34f3d302a2648b86bbd4",
+      "path": "/restaurants/bc/vancouver/kokoro-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_34f3d302a2648b86bbd4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fa60d773a37e2b3094c6",
+      "path": "/restaurants/bc/vancouver/kokoro-tokyo-mazesoba-downtown",
+      "target": "/locations/bc/vancouver#ramen_ca_fa60d773a37e2b3094c6",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7891e00942c296ceee8a",
+      "path": "/restaurants/bc/vancouver/maruhachi-ra-men-central-library",
+      "target": "/locations/bc/vancouver#ramen_ca_7891e00942c296ceee8a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7b49de251f393570aaac",
+      "path": "/restaurants/bc/vancouver/maruhachi-ra-men-westend",
+      "target": "/locations/bc/vancouver#ramen_ca_7b49de251f393570aaac",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d51d4e68b5bb5beeef9f",
+      "path": "/restaurants/bc/vancouver/menya-raizo-by-zakkushi",
+      "target": "/locations/bc/vancouver#ramen_ca_d51d4e68b5bb5beeef9f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0cb26d9908b8145f1f8d",
+      "path": "/restaurants/bc/vancouver/nin-nin-ramen-house",
+      "target": "/locations/bc/vancouver#ramen_ca_0cb26d9908b8145f1f8d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ce699dcb20cf7959c730",
+      "path": "/restaurants/bc/vancouver/poke-n-chat-ramen-poke-bubble-tea",
+      "target": "/locations/bc/vancouver#ramen_ca_ce699dcb20cf7959c730",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_61e99e2371a89cd6ff3b",
+      "path": "/restaurants/bc/vancouver/ramen-danbo-kerrisdale",
+      "target": "/restaurants/bc/vancouver/ramen-danbo-kerrisdale",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_fdf92f34dfc5f41d550d",
+      "path": "/restaurants/bc/vancouver/ramen-danbo-kitsilano",
+      "target": "/restaurants/bc/vancouver/ramen-danbo-kitsilano",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_2f8f8196e3117eec5b8e",
+      "path": "/restaurants/bc/vancouver/ramen-danbo-main-st",
+      "target": "/restaurants/bc/vancouver/ramen-danbo-main-st",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_adc66d9fa854183d105f",
+      "path": "/restaurants/bc/vancouver/ramen-danbo-robson",
+      "target": "/restaurants/bc/vancouver/ramen-danbo-robson",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_f43841040f91ed0862cc",
+      "path": "/restaurants/bc/vancouver/ramen-gojiro",
+      "target": "/restaurants/bc/vancouver/ramen-gojiro",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_8eeb43a69b5df96eecbd",
+      "path": "/restaurants/bc/vancouver/taishoken-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_8eeb43a69b5df96eecbd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_84b4e6fee3ccadee4add",
+      "path": "/restaurants/bc/vancouver/the-ramen-butcher-chinatown",
+      "target": "/locations/bc/vancouver#ramen_ca_84b4e6fee3ccadee4add",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_42425d61bdf498908400",
+      "path": "/restaurants/bc/vancouver/tonkotsu-ramen-tsukiya",
+      "target": "/locations/bc/vancouver#ramen_ca_42425d61bdf498908400",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9b3cd982d90a7587beb6",
+      "path": "/restaurants/bc/vancouver/torimaru-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_9b3cd982d90a7587beb6",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3d904f07b86ade1f8394",
+      "path": "/restaurants/bc/vancouver/betsutenjin-ramen",
+      "target": "/locations/bc/vancouver#ramen_ca_3d904f07b86ade1f8394",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_48c5b64c454708372654",
+      "path": "/restaurants/bc/vernon/raku-rice-and-noodle-bar",
+      "target": "/locations/bc#ramen_ca_48c5b64c454708372654",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ba057909fb16326225d5",
+      "path": "/restaurants/bc/victoria/horin-ramen-victoria",
+      "target": "/locations/bc/victoria#ramen_ca_ba057909fb16326225d5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_800b4a4e60846193a924",
+      "path": "/restaurants/bc/victoria/kinton-ramen-university-heights-victoria",
+      "target": "/locations/bc/victoria#ramen_ca_800b4a4e60846193a924",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_92cb15ead267c57a9b03",
+      "path": "/restaurants/bc/victoria/kinton-ramen-victoria-downtown",
+      "target": "/locations/bc/victoria#ramen_ca_92cb15ead267c57a9b03",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_f5ea1327cb25dc39e151",
+      "path": "/restaurants/bc/victoria/kizuna-ramen-on-douglas",
+      "target": "/locations/bc/victoria#ramen_ca_f5ea1327cb25dc39e151",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a4075cadd7152305eb05",
+      "path": "/restaurants/bc/victoria/mentora-ramen",
+      "target": "/locations/bc/victoria#ramen_ca_a4075cadd7152305eb05",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_908aacb0eef3aa1bee9b",
+      "path": "/restaurants/bc/victoria/raku-ramen",
+      "target": "/locations/bc/victoria#ramen_ca_908aacb0eef3aa1bee9b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_a5dcd04b1042aeb98bb4",
+      "path": "/restaurants/bc/victoria/ramen-arashi-victoria",
+      "target": "/locations/bc/victoria#ramen_ca_a5dcd04b1042aeb98bb4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3e281937ed55d12d9da9",
+      "path": "/restaurants/bc/west-kelowna/kaiso-japanese-and-thai-cuisine",
+      "target": "/locations/bc#ramen_ca_3e281937ed55d12d9da9",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_836d91344db582e938e8",
+      "path": "/restaurants/bc/west-vancouver/zubu-ramen-park-royal",
+      "target": "/locations/bc#ramen_ca_836d91344db582e938e8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_ff016d83aad3d5039d6d",
+      "path": "/restaurants/mb/winnipeg/hello-asian-fusion",
+      "target": "/locations/mb/winnipeg#ramen_ca_ff016d83aad3d5039d6d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2ee163626ddc55903cc5",
+      "path": "/restaurants/mb/winnipeg/kinton-ramen-seasons-winnipeg",
+      "target": "/locations/mb/winnipeg#ramen_ca_2ee163626ddc55903cc5",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_04ae8821f02fb7ca9af1",
+      "path": "/restaurants/mb/winnipeg/koya-japan-1120-grant-ave-1230",
+      "target": "/locations/mb/winnipeg#ramen_ca_04ae8821f02fb7ca9af1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_513da26d1ddeb47cae63",
+      "path": "/restaurants/mb/winnipeg/koya-japan-2305-mcphillips-st-unit-319",
+      "target": "/locations/mb/winnipeg#ramen_ca_513da26d1ddeb47cae63",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c96d6465598af5e6c743",
+      "path": "/restaurants/mb/winnipeg/koya-japan-1555-regent-ave-w-f8",
+      "target": "/locations/mb/winnipeg#ramen_ca_c96d6465598af5e6c743",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5bc77d22a0e26c033851",
+      "path": "/restaurants/mb/winnipeg/koya-japan-food-hall-1225-st-mary-s-road-147-entrance-3",
+      "target": "/locations/mb/winnipeg#ramen_ca_5bc77d22a0e26c033851",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_de44e4135576083e8dfc",
+      "path": "/restaurants/mb/winnipeg/kyu-bistro",
+      "target": "/locations/mb/winnipeg#ramen_ca_de44e4135576083e8dfc",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e5768b80be1bfe965261",
+      "path": "/restaurants/mb/winnipeg/sushi-gozen",
+      "target": "/locations/mb/winnipeg#ramen_ca_e5768b80be1bfe965261",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_10a87db4f4e27acaba80",
+      "path": "/restaurants/nb/dieppe/sugar-roll-japanese-cuisine",
+      "target": "/locations/nb#ramen_ca_10a87db4f4e27acaba80",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_211c21d5b10339389754",
+      "path": "/restaurants/nb/moncton/tokai-ramen",
+      "target": "/locations/nb#ramen_ca_211c21d5b10339389754",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d34f82fc0b24ef53251c",
+      "path": "/restaurants/nb/saint-john/mimimi",
+      "target": "/locations/nb/saint-john#ramen_ca_d34f82fc0b24ef53251c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1bdfdac8a5c5018be97c",
+      "path": "/restaurants/nb/saint-john/ramenbox",
+      "target": "/locations/nb/saint-john#ramen_ca_1bdfdac8a5c5018be97c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5fb8118ab759cdc282a2",
+      "path": "/restaurants/nb/saint-john/umami-kid",
+      "target": "/locations/nb/saint-john#ramen_ca_5fb8118ab759cdc282a2",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_673f77c73329cc03339c",
+      "path": "/restaurants/nb/saint-john/yoramen",
+      "target": "/locations/nb/saint-john#ramen_ca_673f77c73329cc03339c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_97bff5b43abe55d43692",
+      "path": "/restaurants/nb/shediac/kuro-sushi",
+      "target": "/locations/nb#ramen_ca_97bff5b43abe55d43692",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cb0d7e86b562b07deba1",
+      "path": "/restaurants/ns/bedford/buta-ramen",
+      "target": "/locations#ramen_ca_cb0d7e86b562b07deba1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_53804fcc6b2d0a45f96e",
+      "path": "/restaurants/ns/dartmouth/buta-ramen",
+      "target": "/locations#ramen_ca_53804fcc6b2d0a45f96e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_f0fb36d5a581c5835b1c",
+      "path": "/restaurants/ns/dartmouth/hojo-s-japanese-cuisine-dartmouth",
+      "target": "/locations#ramen_ca_f0fb36d5a581c5835b1c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e9261e643bf120d21d75",
+      "path": "/restaurants/ns/halifax/buta-ramen",
+      "target": "/locations#ramen_ca_e9261e643bf120d21d75",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_61ce9fec1ed1d069f19c",
+      "path": "/restaurants/ns/halifax/ko-doraku",
+      "target": "/locations#ramen_ca_61ce9fec1ed1d069f19c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_53685dd0ee6902b1fbb1",
+      "path": "/restaurants/ns/halifax/truly-tasty",
+      "target": "/locations#ramen_ca_53685dd0ee6902b1fbb1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_bed77556deebf6597222",
+      "path": "/restaurants/on/ajax/ajisen-ramen-ajax",
+      "target": "/locations/on/ajax#ramen_ca_bed77556deebf6597222",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_d586522942a575cff817",
+      "path": "/restaurants/on/alliston/kokoro-japanese-cuisine",
+      "target": "/locations/on#ramen_ca_d586522942a575cff817",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7122fa986e074adb9abb",
+      "path": "/restaurants/on/aurora/ramen-yutaka",
+      "target": "/locations/on#ramen_ca_7122fa986e074adb9abb",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_d5b5fa20412b78701917",
+      "path": "/restaurants/on/barrie/kinton-ramen-park-place-barrie",
+      "target": "/locations/on#ramen_ca_d5b5fa20412b78701917",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9cd9098e452602d692d8",
+      "path": "/restaurants/on/brampton/kinton-ramen-brampton",
+      "target": "/locations/on#ramen_ca_9cd9098e452602d692d8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_336bc9e9b7eddf0bf3d1",
+      "path": "/restaurants/on/burlington/kinton-ramen-appleby-burlington",
+      "target": "/locations/on#ramen_ca_336bc9e9b7eddf0bf3d1",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_95fcb480e9fba10ef42c",
+      "path": "/restaurants/on/burlington/koya-japan",
+      "target": "/locations/on#ramen_ca_95fcb480e9fba10ef42c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_6241a439fc344c1cf887",
+      "path": "/restaurants/on/concord/men-ya-inoichi-ramen",
+      "target": "/locations/on#ramen_ca_6241a439fc344c1cf887",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_25ba3bac1853391aeeb4",
+      "path": "/restaurants/on/concord/midori-ramen",
+      "target": "/locations/on#ramen_ca_25ba3bac1853391aeeb4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_252af2835a2678e5927c",
+      "path": "/restaurants/on/concord/monkee",
+      "target": "/locations/on#ramen_ca_252af2835a2678e5927c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_376b924d920c31ee2b03",
+      "path": "/restaurants/on/concord/ramen-isshin",
+      "target": "/restaurants/on/concord/ramen-isshin",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_cdcb1ccf0eae8001b5f8",
+      "path": "/restaurants/on/east-gwillimbury/kinton-ramen-newmarket",
+      "target": "/locations/on#ramen_ca_cdcb1ccf0eae8001b5f8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_e88bbc09119120a5628a",
+      "path": "/restaurants/on/greater-sudbury/the-self-serve-ramen-cart",
+      "target": "/locations/on#ramen_ca_e88bbc09119120a5628a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fff7ee5d989f8ea60fae",
+      "path": "/restaurants/on/guelph/crafty-ramen-guelph",
+      "target": "/restaurants/on/guelph/crafty-ramen-guelph",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_a04407fda23f2c3e1c8c",
+      "path": "/restaurants/on/guelph/kinton-ramen-gordon-guelph",
+      "target": "/locations/on/guelph#ramen_ca_a04407fda23f2c3e1c8c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_0175e58180fabd961f98",
+      "path": "/restaurants/on/hamilton/kenzo-ramen-hamilton",
+      "target": "/locations/on/hamilton#ramen_ca_0175e58180fabd961f98",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_84fdaf573e07944bf33b",
+      "path": "/restaurants/on/hamilton/kinton-ramen-hamilton",
+      "target": "/locations/on/hamilton#ramen_ca_84fdaf573e07944bf33b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_2bfe6e204da577d7f111",
+      "path": "/restaurants/on/hamilton/kinton-ramen-king-william-hamilton",
+      "target": "/locations/on/hamilton#ramen_ca_2bfe6e204da577d7f111",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_418316558e135d8243f0",
+      "path": "/restaurants/on/hamilton/menya-kyu",
+      "target": "/locations/on/hamilton#ramen_ca_418316558e135d8243f0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_340ce65aa7a1b0730639",
+      "path": "/restaurants/on/hamilton/mystic-ramen",
+      "target": "/locations/on/hamilton#ramen_ca_340ce65aa7a1b0730639",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_e02bb8d807d7f663b7a8",
+      "path": "/restaurants/on/kanata/kuma-takumi",
+      "target": "/locations/on#ramen_ca_e02bb8d807d7f663b7a8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_d72154a5158228ce1731",
+      "path": "/restaurants/on/kanata/sansotei-ramen",
+      "target": "/locations/on#ramen_ca_d72154a5158228ce1731",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_66abd509a5037765219c",
+      "path": "/restaurants/on/kingston/crunchy-crunchy",
+      "target": "/locations/on#ramen_ca_66abd509a5037765219c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ac5dd91eb07ed7da962c",
+      "path": "/restaurants/on/kingston/kinton-ramen-kingston",
+      "target": "/locations/on#ramen_ca_ac5dd91eb07ed7da962c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9116d1fa3c115777f59c",
+      "path": "/restaurants/on/kitchener/sansotei-ramen",
+      "target": "/locations/on#ramen_ca_9116d1fa3c115777f59c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_91c2656ec14910d2d77d",
+      "path": "/restaurants/on/komoka/sakata-sushi-and-market",
+      "target": "/locations/on#ramen_ca_91c2656ec14910d2d77d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a9e7418324b875f45e1a",
+      "path": "/restaurants/on/london/katsu-express",
+      "target": "/locations/on/london#ramen_ca_a9e7418324b875f45e1a",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_89a7b98db76d2773f1e2",
+      "path": "/restaurants/on/london/kenzo-ramen",
+      "target": "/locations/on/london#ramen_ca_89a7b98db76d2773f1e2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e872e4299aaf3668feb6",
+      "path": "/restaurants/on/london/kinton-ramen-oxford-london",
+      "target": "/locations/on/london#ramen_ca_e872e4299aaf3668feb6",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b07850f0b19ae388a37f",
+      "path": "/restaurants/on/london/koya-japan",
+      "target": "/locations/on/london#ramen_ca_b07850f0b19ae388a37f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d607a8eb13757933eb5c",
+      "path": "/restaurants/on/london/ramen-bowl",
+      "target": "/locations/on/london#ramen_ca_d607a8eb13757933eb5c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_83ad59b7d2878cea63af",
+      "path": "/restaurants/on/markham/ajisen-ramen-warden-steeles",
+      "target": "/locations/on/markham#ramen_ca_83ad59b7d2878cea63af",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_62702483311f38ed26a8",
+      "path": "/restaurants/on/markham/brown-donkatsu-and-ramen",
+      "target": "/locations/on/markham#ramen_ca_62702483311f38ed26a8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_8a66a6c9f30ad697e77d",
+      "path": "/restaurants/on/markham/kinton-ramen-commerce-gate",
+      "target": "/locations/on/markham#ramen_ca_8a66a6c9f30ad697e77d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_a3fd6fc519e79159b211",
+      "path": "/restaurants/on/markham/kinton-ramen-markville",
+      "target": "/locations/on/markham#ramen_ca_a3fd6fc519e79159b211",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_97a59905510b08fa91e3",
+      "path": "/restaurants/on/markham/koi-sakana-ramen",
+      "target": "/locations/on/markham#ramen_ca_97a59905510b08fa91e3",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_792786eee15ee51fc6b6",
+      "path": "/restaurants/on/markham/komeya",
+      "target": "/locations/on/markham#ramen_ca_792786eee15ee51fc6b6",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_7c4d5d82300468ac23e2",
+      "path": "/restaurants/on/markham/niwatei",
+      "target": "/locations/on/markham#ramen_ca_7c4d5d82300468ac23e2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_99367dca831358090f0e",
+      "path": "/restaurants/on/markham/sansotei-ramen",
+      "target": "/locations/on/markham#ramen_ca_99367dca831358090f0e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1122848ae14de4d02c3d",
+      "path": "/restaurants/on/mississauga/kamen",
+      "target": "/locations/on/mississauga#ramen_ca_1122848ae14de4d02c3d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c32df422ddd6cddf33f8",
+      "path": "/restaurants/on/mississauga/kinton-ramen-heartland-mississauga",
+      "target": "/locations/on/mississauga#ramen_ca_c32df422ddd6cddf33f8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9b17add822d2af80327c",
+      "path": "/restaurants/on/mississauga/kinton-ramen-mississauga",
+      "target": "/locations/on/mississauga#ramen_ca_9b17add822d2af80327c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8760d6218045b7090add",
+      "path": "/restaurants/on/mississauga/men-ya-inoichi-ramen",
+      "target": "/locations/on/mississauga#ramen_ca_8760d6218045b7090add",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8135cdfb4ef4506f7c12",
+      "path": "/restaurants/on/mississauga/ramen-isshin-mississauga",
+      "target": "/locations/on/mississauga#ramen_ca_8135cdfb4ef4506f7c12",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_35c89ff4d6ef554de6d2",
+      "path": "/restaurants/on/mississauga/sansotei-ramen",
+      "target": "/locations/on/mississauga#ramen_ca_35c89ff4d6ef554de6d2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_adc7edbf17eb0ebc5ce1",
+      "path": "/restaurants/on/mississauga/su-and-shi-noodle-bar",
+      "target": "/locations/on/mississauga#ramen_ca_adc7edbf17eb0ebc5ce1",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_ab2f62fd6e8bce16eb62",
+      "path": "/restaurants/on/mississauga/takumi-ramen",
+      "target": "/locations/on/mississauga#ramen_ca_ab2f62fd6e8bce16eb62",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8d2bce6685dc7fba17de",
+      "path": "/restaurants/on/mississauga/tokasu-ramen-laksa-bar",
+      "target": "/locations/on/mississauga#ramen_ca_8d2bce6685dc7fba17de",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_702d49fd86e25060514f",
+      "path": "/restaurants/on/oakville/kenzo-ramen-oakville",
+      "target": "/locations/on#ramen_ca_702d49fd86e25060514f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_218fbb89d436487b9549",
+      "path": "/restaurants/on/oakville/kinton-ramen-oakville",
+      "target": "/locations/on#ramen_ca_218fbb89d436487b9549",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b0bd572e0ffb62e5965e",
+      "path": "/restaurants/on/orleans/wei-s-noodle-house-portobello",
+      "target": "/locations/on#ramen_ca_b0bd572e0ffb62e5965e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3600d61396e39d46b586",
+      "path": "/restaurants/on/oshawa/kenzo-ramen",
+      "target": "/locations/on#ramen_ca_3600d61396e39d46b586",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b7252e2c1a3b07a36df2",
+      "path": "/restaurants/on/ottawa/kimonos-ramen-and-poke",
+      "target": "/locations/on/ottawa#ramen_ca_b7252e2c1a3b07a36df2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c2c790a6e0b0d6411f0a",
+      "path": "/restaurants/on/ottawa/kinton-ramen-barrhaven-ottawa",
+      "target": "/locations/on/ottawa#ramen_ca_c2c790a6e0b0d6411f0a",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_5a649060fcb6f8eb6b3d",
+      "path": "/restaurants/on/ottawa/kinton-ramen-ottawa",
+      "target": "/locations/on/ottawa#ramen_ca_5a649060fcb6f8eb6b3d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_c0acd6109d03aaa75547",
+      "path": "/restaurants/on/ottawa/koichi-ramen",
+      "target": "/locations/on/ottawa#ramen_ca_c0acd6109d03aaa75547",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b7c3512cada0328ebe79",
+      "path": "/restaurants/on/ottawa/sansotei-ramen-barrhaven-ottawa",
+      "target": "/locations/on/ottawa#ramen_ca_b7c3512cada0328ebe79",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_60889715c5dc1502b85f",
+      "path": "/restaurants/on/ottawa/taki-ramen",
+      "target": "/locations/on/ottawa#ramen_ca_60889715c5dc1502b85f",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_de4e62af46fb690eb6b4",
+      "path": "/restaurants/on/ottawa/wei-s-noodle-house",
+      "target": "/locations/on/ottawa#ramen_ca_de4e62af46fb690eb6b4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_584a0beebf604a36911f",
+      "path": "/restaurants/on/pickering/ippon-ramen-pickering",
+      "target": "/locations/on#ramen_ca_584a0beebf604a36911f",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_66426c38e7d2c36ae25d",
+      "path": "/restaurants/on/richmond-hill/kinton-ramen-richmond-hill-bayview-x-major-mackenzie",
+      "target": "/locations/on/richmond-hill#ramen_ca_66426c38e7d2c36ae25d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1564d8a5d2fe4d01c559",
+      "path": "/restaurants/on/richmond-hill/kome-shokudo",
+      "target": "/locations/on/richmond-hill#ramen_ca_1564d8a5d2fe4d01c559",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_233b759c1cd9edf8fe15",
+      "path": "/restaurants/on/richmond-hill/midori-ramen",
+      "target": "/locations/on/richmond-hill#ramen_ca_233b759c1cd9edf8fe15",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0ed10f11b7cccf804429",
+      "path": "/restaurants/on/richmond-hill/sansotei-ramen",
+      "target": "/locations/on/richmond-hill#ramen_ca_0ed10f11b7cccf804429",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ce7f77d414ab9ad53070",
+      "path": "/restaurants/on/richmond-hill/yokohama-ramen",
+      "target": "/locations/on/richmond-hill#ramen_ca_ce7f77d414ab9ad53070",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_641b8edb987a9a24e1f5",
+      "path": "/restaurants/on/richmond-hill/aka-oni-izakaya-and-ramen-richmond-hil",
+      "target": "/locations/on/richmond-hill#ramen_ca_641b8edb987a9a24e1f5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2a2692b237c494401536",
+      "path": "/restaurants/on/st-catharines/nobu-s-noodles",
+      "target": "/locations/on#ramen_ca_2a2692b237c494401536",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_f29a6d0c9ae8b8b6c972",
+      "path": "/restaurants/on/toronto/afuri-ramen-dumpling-toronto",
+      "target": "/locations/on/toronto#ramen_ca_f29a6d0c9ae8b8b6c972",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4b90e14f4ce4d7377930",
+      "path": "/restaurants/on/toronto/ajisen-ramen-chinatown",
+      "target": "/locations/on/toronto#ramen_ca_4b90e14f4ce4d7377930",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_b4229c73e99410116192",
+      "path": "/restaurants/on/toronto/ajisen-ramen-midtown",
+      "target": "/locations/on/toronto#ramen_ca_b4229c73e99410116192",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_3a1bfdd1bcd030daeafd",
+      "path": "/restaurants/on/toronto/ajisen-ramen-north-york",
+      "target": "/locations/on/toronto#ramen_ca_3a1bfdd1bcd030daeafd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_01e5c6e221b772630a77",
+      "path": "/restaurants/on/toronto/ajisen-ramen-and-bar-church-carlton",
+      "target": "/locations/on/toronto#ramen_ca_01e5c6e221b772630a77",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_a7a8c844184a7af31196",
+      "path": "/restaurants/on/toronto/ajisen-ramen-scarborough-midland-mcnicol",
+      "target": "/locations/on/toronto#ramen_ca_a7a8c844184a7af31196",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_bd180a241c54cef3312a",
+      "path": "/restaurants/on/toronto/e-a-k-ramen-brookfield-place-toronto",
+      "target": "/locations/on/toronto#ramen_ca_bd180a241c54cef3312a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_093dcc5255d4bd3be6dd",
+      "path": "/restaurants/on/toronto/hako-noodle-bar",
+      "target": "/locations/on/toronto#ramen_ca_093dcc5255d4bd3be6dd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_08eea37a65198328ca24",
+      "path": "/restaurants/on/toronto/hana-ramen-1891-kennedy-rd",
+      "target": "/locations/on/toronto#ramen_ca_08eea37a65198328ca24",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_13ad230b5d7a51bf1369",
+      "path": "/restaurants/on/toronto/hana-ramen-1024-gerrard-st-e",
+      "target": "/locations/on/toronto#ramen_ca_13ad230b5d7a51bf1369",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3b3e76c38e4b6325c1f0",
+      "path": "/restaurants/on/toronto/hokkaido-ramen-santouka-91-dundas-st-e",
+      "target": "/locations/on/toronto#ramen_ca_3b3e76c38e4b6325c1f0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a13ea3ff379ae3f53307",
+      "path": "/restaurants/on/toronto/hokkaido-ramen-santouka-3280-midland-ave-unit-23",
+      "target": "/locations/on/toronto#ramen_ca_a13ea3ff379ae3f53307",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e22eb26486ac63c024b7",
+      "path": "/restaurants/on/toronto/hokkaido-ramen-santouka-2057-yonge-st",
+      "target": "/locations/on/toronto#ramen_ca_e22eb26486ac63c024b7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_199ace9771242d3f6a1f",
+      "path": "/restaurants/on/toronto/homemade-ramen",
+      "target": "/locations/on/toronto#ramen_ca_199ace9771242d3f6a1f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d952994eafc78fa40942",
+      "path": "/restaurants/on/toronto/ikkousha-ramen-chicken",
+      "target": "/locations/on/toronto#ramen_ca_d952994eafc78fa40942",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_32295bb473c8fef0a0c9",
+      "path": "/restaurants/on/toronto/ikkousha-ramen-toronto",
+      "target": "/locations/on/toronto#ramen_ca_32295bb473c8fef0a0c9",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7c8c5ec0c51f36e66a34",
+      "path": "/restaurants/on/toronto/ikkousha-ramen-yonge-dundas",
+      "target": "/locations/on/toronto#ramen_ca_7c8c5ec0c51f36e66a34",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_db85b1fc9b0ea18e9427",
+      "path": "/restaurants/on/toronto/issai-japanese-eatery",
+      "target": "/locations/on/toronto#ramen_ca_db85b1fc9b0ea18e9427",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0c97ba5b8f5aefcf9cb5",
+      "path": "/restaurants/on/toronto/kajiken-4850-yonge-st",
+      "target": "/locations/on/toronto#ramen_ca_0c97ba5b8f5aefcf9cb5",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_043dfb6c999bc76429bd",
+      "path": "/restaurants/on/toronto/kajiken-214-queen-st-w",
+      "target": "/locations/on/toronto#ramen_ca_043dfb6c999bc76429bd",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_f3dc97c19364b8d85f0f",
+      "path": "/restaurants/on/toronto/kaminari-ramen-bar",
+      "target": "/locations/on/toronto#ramen_ca_f3dc97c19364b8d85f0f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_08fc320c76b7708ae78f",
+      "path": "/restaurants/on/toronto/kawa-sushi",
+      "target": "/locations/on/toronto#ramen_ca_08fc320c76b7708ae78f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c32f9409ec591728af2b",
+      "path": "/restaurants/on/toronto/kenzo-ramen-etobicoke",
+      "target": "/locations/on/toronto#ramen_ca_c32f9409ec591728af2b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2290fed978a75ee1dab9",
+      "path": "/restaurants/on/toronto/kenzo-ramen-spadina",
+      "target": "/locations/on/toronto#ramen_ca_2290fed978a75ee1dab9",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8349d2b665530eb5d50d",
+      "path": "/restaurants/on/toronto/kinton-ramen",
+      "target": "/locations/on/toronto#ramen_ca_8349d2b665530eb5d50d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9ab6a5a88b5966bed902",
+      "path": "/restaurants/on/toronto/kinton-ramen-don-mills",
+      "target": "/locations/on/toronto#ramen_ca_9ab6a5a88b5966bed902",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_aca9bc5a28136d591501",
+      "path": "/restaurants/on/toronto/kinton-ramen-harbourfront",
+      "target": "/locations/on/toronto#ramen_ca_aca9bc5a28136d591501",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_4f88fadc087892b14fdd",
+      "path": "/restaurants/on/toronto/kinton-ramen-high-park",
+      "target": "/locations/on/toronto#ramen_ca_4f88fadc087892b14fdd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_818cfc40afc4cf2a6f80",
+      "path": "/restaurants/on/toronto/kinton-ramen-kennedy-commons",
+      "target": "/locations/on/toronto#ramen_ca_818cfc40afc4cf2a6f80",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_3c9e6db7dc02543ed3bc",
+      "path": "/restaurants/on/toronto/kinton-ramen-king-east",
+      "target": "/locations/on/toronto#ramen_ca_3c9e6db7dc02543ed3bc",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_729cb9cf7650b49f8658",
+      "path": "/restaurants/on/toronto/kinton-ramen-koreatown",
+      "target": "/locations/on/toronto#ramen_ca_729cb9cf7650b49f8658",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_3f3a7786497f3d911270",
+      "path": "/restaurants/on/toronto/kinton-ramen-liberty-village",
+      "target": "/locations/on/toronto#ramen_ca_3f3a7786497f3d911270",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_22b7654a127fdc803348",
+      "path": "/restaurants/on/toronto/kinton-ramen-north-york",
+      "target": "/locations/on/toronto#ramen_ca_22b7654a127fdc803348",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_477b87f0860309e0fcd0",
+      "path": "/restaurants/on/toronto/kinton-ramen-queen-and-spadina",
+      "target": "/locations/on/toronto#ramen_ca_477b87f0860309e0fcd0",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_85c380deac774bb36d32",
+      "path": "/restaurants/on/toronto/kinton-ramen-yonge-and-eglinton",
+      "target": "/locations/on/toronto#ramen_ca_85c380deac774bb36d32",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_e56717c98e0a6f5e988d",
+      "path": "/restaurants/on/toronto/kinton-ramen-yonge-x-richmond",
+      "target": "/locations/on/toronto#ramen_ca_e56717c98e0a6f5e988d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_64142e3952aa35b32706",
+      "path": "/restaurants/on/toronto/konjiki-ramen",
+      "target": "/locations/on/toronto#ramen_ca_64142e3952aa35b32706",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_c960e47b275be4ea5cec",
+      "path": "/restaurants/on/toronto/konjiki-ramen-yorkdale",
+      "target": "/locations/on/toronto#ramen_ca_c960e47b275be4ea5cec",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1b69f8021e67f3dacf92",
+      "path": "/restaurants/on/toronto/konjiki-ramen-downtown",
+      "target": "/locations/on/toronto#ramen_ca_1b69f8021e67f3dacf92",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_42da023c8314cd884310",
+      "path": "/restaurants/on/toronto/kyouka-ramen",
+      "target": "/locations/on/toronto#ramen_ca_42da023c8314cd884310",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_88bb66dab4bc0456eb1d",
+      "path": "/restaurants/on/toronto/machida-shoten-college-st",
+      "target": "/locations/on/toronto#ramen_ca_88bb66dab4bc0456eb1d",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_af9d805658d8816f37aa",
+      "path": "/restaurants/on/toronto/megumi-mazesoba",
+      "target": "/locations/on/toronto#ramen_ca_af9d805658d8816f37aa",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4734e7a7f8d8148f0d4a",
+      "path": "/restaurants/on/toronto/midori-ramen-3700-midland-ave-112",
+      "target": "/locations/on/toronto#ramen_ca_4734e7a7f8d8148f0d4a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9b9ba0a62e540be5c421",
+      "path": "/restaurants/on/toronto/midori-ramen-5313-yonge-st",
+      "target": "/locations/on/toronto#ramen_ca_9b9ba0a62e540be5c421",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_44fdbb026908e2f78084",
+      "path": "/restaurants/on/toronto/midori-ramen-3401-dufferin-st-unit-cru-fc-14",
+      "target": "/locations/on/toronto#ramen_ca_44fdbb026908e2f78084",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9911f4c2bb74880023f2",
+      "path": "/restaurants/on/toronto/musoshin-ramen-9-boustead-ave",
+      "target": "/locations/on/toronto#ramen_ca_9911f4c2bb74880023f2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_495e29bc766f0d26e3e0",
+      "path": "/restaurants/on/toronto/musoshin-ramen-130-harbord-st",
+      "target": "/locations/on/toronto#ramen_ca_495e29bc766f0d26e3e0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4599d14d197dea4e7a0e",
+      "path": "/restaurants/on/toronto/musoshin-ramen-50-brant-st",
+      "target": "/locations/on/toronto#ramen_ca_4599d14d197dea4e7a0e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_dbf1b9ec1cbcc4c2915a",
+      "path": "/restaurants/on/toronto/nakayoshi-izakaya",
+      "target": "/locations/on/toronto#ramen_ca_dbf1b9ec1cbcc4c2915a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cb4aeba57ddc0dfd3a16",
+      "path": "/restaurants/on/toronto/oji-seichi",
+      "target": "/locations/on/toronto#ramen_ca_cb4aeba57ddc0dfd3a16",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0b3956684e2ac4e439a8",
+      "path": "/restaurants/on/toronto/petit-potato-5095-yonge-st-unit-a13-b10",
+      "target": "/locations/on/toronto#ramen_ca_0b3956684e2ac4e439a8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0257746d8a87caaa1dc2",
+      "path": "/restaurants/on/toronto/petit-potato-10-ravel-rd-1-2",
+      "target": "/locations/on/toronto#ramen_ca_0257746d8a87caaa1dc2",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_b2135d722df735e59f90",
+      "path": "/restaurants/on/toronto/ramen-buta-nibo",
+      "target": "/locations/on/toronto#ramen_ca_b2135d722df735e59f90",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1b536e66069e63fb910f",
+      "path": "/restaurants/on/toronto/ramen-isshin-421-college-st",
+      "target": "/locations/on/toronto#ramen_ca_1b536e66069e63fb910f",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_d9c5f855d17e0352ac3f",
+      "path": "/restaurants/on/toronto/ramen-isshin-609-queen-st-w",
+      "target": "/locations/on/toronto#ramen_ca_d9c5f855d17e0352ac3f",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_f56b3a4d9e2ec94ce1bc",
+      "path": "/restaurants/on/toronto/ramen-raijin",
+      "target": "/locations/on/toronto#ramen_ca_f56b3a4d9e2ec94ce1bc",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_290af28142e3dc9c30a8",
+      "path": "/restaurants/on/toronto/ramen-tabetai",
+      "target": "/locations/on/toronto#ramen_ca_290af28142e3dc9c30a8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_33efeb5cac5293926812",
+      "path": "/restaurants/on/toronto/ramen-takao",
+      "target": "/locations/on/toronto#ramen_ca_33efeb5cac5293926812",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4e3ef8a7d78b95525556",
+      "path": "/restaurants/on/toronto/ramen-x-remix-ramen-and-bar",
+      "target": "/locations/on/toronto#ramen_ca_4e3ef8a7d78b95525556",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_79d1556c2cc7c1f9bbbb",
+      "path": "/restaurants/on/toronto/ryus-noodle-bar",
+      "target": "/locations/on/toronto#ramen_ca_79d1556c2cc7c1f9bbbb",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_3d963d281a6f9b85d005",
+      "path": "/restaurants/on/toronto/sansotei-ramen-179-dundas-st-w",
+      "target": "/locations/on/toronto#ramen_ca_3d963d281a6f9b85d005",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_990f599509ef721f42cf",
+      "path": "/restaurants/on/toronto/sansotei-ramen-650-yonge-st",
+      "target": "/locations/on/toronto#ramen_ca_990f599509ef721f42cf",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_84a9cd5d27e99d740d04",
+      "path": "/restaurants/on/toronto/sansotei-ramen-30-adelaide-st-e",
+      "target": "/locations/on/toronto#ramen_ca_84a9cd5d27e99d740d04",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c41e802def6a5fe5f044",
+      "path": "/restaurants/on/toronto/sansotei-ramen-220-yonge-st",
+      "target": "/locations/on/toronto#ramen_ca_c41e802def6a5fe5f044",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_6e1ec25ebf86bd9631fc",
+      "path": "/restaurants/on/toronto/sansotei-ramen-stc",
+      "target": "/locations/on/toronto#ramen_ca_6e1ec25ebf86bd9631fc",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e11f14f90da5c80e67ba",
+      "path": "/restaurants/on/toronto/sansotei-ramen-union-station",
+      "target": "/locations/on/toronto#ramen_ca_e11f14f90da5c80e67ba",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2486b361dcbea78abf5f",
+      "path": "/restaurants/on/toronto/shin-ramen-and-sushi",
+      "target": "/locations/on/toronto#ramen_ca_2486b361dcbea78abf5f",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9a678149ff4b838ab955",
+      "path": "/restaurants/on/toronto/tondou-ramen",
+      "target": "/locations/on/toronto#ramen_ca_9a678149ff4b838ab955",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ed9d6384b7016dd8450b",
+      "path": "/restaurants/on/toronto/touhenboku-ramen",
+      "target": "/locations/on/toronto#ramen_ca_ed9d6384b7016dd8450b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_52bef32f53f46091a492",
+      "path": "/restaurants/on/toronto/viet-chay-vegan-cuisine",
+      "target": "/locations/on/toronto#ramen_ca_52bef32f53f46091a492",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_b6dca25325e5af9aa849",
+      "path": "/restaurants/on/toronto/zen-kyoto",
+      "target": "/locations/on/toronto#ramen_ca_b6dca25325e5af9aa849",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cac15c545e242b15fc92",
+      "path": "/restaurants/on/unionville/ajisen-ramen-kennedy-hwy7",
+      "target": "/locations/on#ramen_ca_cac15c545e242b15fc92",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_264365598c55d586624c",
+      "path": "/restaurants/on/vaughan/ajisen-ramen-vaughan",
+      "target": "/locations/on/vaughan#ramen_ca_264365598c55d586624c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_cd19b9bf32d034a0a406",
+      "path": "/restaurants/on/vaughan/kinton-ramen-vaughan",
+      "target": "/locations/on/vaughan#ramen_ca_cd19b9bf32d034a0a406",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_bd244596a4de7ee7c545",
+      "path": "/restaurants/on/waterloo/ajisen-ramen-waterloo",
+      "target": "/locations/on/waterloo#ramen_ca_bd244596a4de7ee7c545",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_43b4bce2f9fd530a2cdd",
+      "path": "/restaurants/on/waterloo/exclamation-waterloo",
+      "target": "/locations/on/waterloo#ramen_ca_43b4bce2f9fd530a2cdd",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_c4a8be5a7f1f2e056851",
+      "path": "/restaurants/on/waterloo/kenzo-ramen-waterloo",
+      "target": "/locations/on/waterloo#ramen_ca_c4a8be5a7f1f2e056851",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_544f1d6c1e3e95645e89",
+      "path": "/restaurants/on/waterloo/kinton-ramen-waterloo",
+      "target": "/locations/on/waterloo#ramen_ca_544f1d6c1e3e95645e89",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_71156993df07facae477",
+      "path": "/restaurants/on/whitby/ippon-ramen-whitby",
+      "target": "/locations/on#ramen_ca_71156993df07facae477",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_641066c6993a4c6ab7c7",
+      "path": "/restaurants/on/whitby/j7-ramen",
+      "target": "/locations/on#ramen_ca_641066c6993a4c6ab7c7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_ebbb61b99d710de1858c",
+      "path": "/restaurants/on/windsor/ajisen-ramen-east-windsor",
+      "target": "/locations/on/windsor#ramen_ca_ebbb61b99d710de1858c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_dd3c5a45fd35a451e4e1",
+      "path": "/restaurants/on/windsor/ajisen-ramen-south-windsor",
+      "target": "/locations/on/windsor#ramen_ca_dd3c5a45fd35a451e4e1",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_fa502ae1240b1635a4d8",
+      "path": "/restaurants/on/windsor/kinton-ramen-windsor",
+      "target": "/locations/on/windsor#ramen_ca_fa502ae1240b1635a4d8",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_bb90155e6093c78541e1",
+      "path": "/restaurants/pe/charlottetown/hojo-s-japanese-cuisine",
+      "target": "/locations#ramen_ca_bb90155e6093c78541e1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0b0376105a372047458a",
+      "path": "/restaurants/qc/anjou/ramen-isshin",
+      "target": "/locations/qc#ramen_ca_0b0376105a372047458a",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_db5740b6ba189f53c5a1",
+      "path": "/restaurants/qc/boucherville/panda-boba-t-boucherville",
+      "target": "/locations/qc#ramen_ca_db5740b6ba189f53c5a1",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_0c23d22867898f6f15e9",
+      "path": "/restaurants/qc/brossard/kinton-ramen-brossard",
+      "target": "/locations/qc/brossard#ramen_ca_0c23d22867898f6f15e9",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_52ef2f26207e5c2fba37",
+      "path": "/restaurants/qc/dollard-des-ormeaux/ramen-misoya",
+      "target": "/locations/qc#ramen_ca_52ef2f26207e5c2fba37",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2e3f34cb39b6c6365e3a",
+      "path": "/restaurants/qc/farnham/restaurant-le-bol-chez-vic-farnham",
+      "target": "/locations/qc#ramen_ca_2e3f34cb39b6c6365e3a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_4aeef4cbde52b5af380e",
+      "path": "/restaurants/qc/gatineau/ras-l-bol",
+      "target": "/locations/qc#ramen_ca_4aeef4cbde52b5af380e",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1c6c358a021933b3afa8",
+      "path": "/restaurants/qc/gatineau/sukiyaki",
+      "target": "/locations/qc#ramen_ca_1c6c358a021933b3afa8",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9bf1859dcd44db22d3f7",
+      "path": "/restaurants/qc/jonquiere/nouille-libre-ramen-en-livraison-a-jonquiere",
+      "target": "/locations/qc#ramen_ca_9bf1859dcd44db22d3f7",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fdf10e259da32a60fa75",
+      "path": "/restaurants/qc/la-prairie/poke-yasu-sushi-and-ramen-and-pokebowl",
+      "target": "/locations/qc#ramen_ca_fdf10e259da32a60fa75",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1736cc8730edada3fcd4",
+      "path": "/restaurants/qc/lasalle/bistro-isakaya",
+      "target": "/locations/qc#ramen_ca_1736cc8730edada3fcd4",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_6857bac7a076e1dd2f1b",
+      "path": "/restaurants/qc/laval/kinton-ramen-carrefour-laval",
+      "target": "/locations/qc#ramen_ca_6857bac7a076e1dd2f1b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7c29de3d0a5f891e9521",
+      "path": "/restaurants/qc/montreal/atelier-asie",
+      "target": "/locations/qc/montreal#ramen_ca_7c29de3d0a5f891e9521",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cfcaf2c0fd50cf0b9bda",
+      "path": "/restaurants/qc/montreal/bar-otto",
+      "target": "/locations/qc/montreal#ramen_ca_cfcaf2c0fd50cf0b9bda",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_f1c9bcc6b7eea60aba64",
+      "path": "/restaurants/qc/montreal/ichi-shop-and-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_f1c9bcc6b7eea60aba64",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_62a6d09858dad55a6f20",
+      "path": "/restaurants/qc/montreal/ichiraku-kawaki",
+      "target": "/locations/qc/montreal#ramen_ca_62a6d09858dad55a6f20",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_aa9674d799e2d8b7e067",
+      "path": "/restaurants/qc/montreal/imadake-izakaya",
+      "target": "/locations/qc/montreal#ramen_ca_aa9674d799e2d8b7e067",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5766f0e97ccc78de2dea",
+      "path": "/restaurants/qc/montreal/kinton-ramen-cote-des-neiges",
+      "target": "/locations/qc/montreal#ramen_ca_5766f0e97ccc78de2dea",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_5ea1f7e81cee1838bf7b",
+      "path": "/restaurants/qc/montreal/kinton-ramen-mont-royal",
+      "target": "/locations/qc/montreal#ramen_ca_5ea1f7e81cee1838bf7b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_95b53665657eeb7ff044",
+      "path": "/restaurants/qc/montreal/kinton-ramen-sainte-catherine-x-guy",
+      "target": "/locations/qc/montreal#ramen_ca_95b53665657eeb7ff044",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_38c43683d3434df315c7",
+      "path": "/restaurants/qc/montreal/kinton-ramen-square-victoria",
+      "target": "/locations/qc/montreal#ramen_ca_38c43683d3434df315c7",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_28c4338e1f7411e66a09",
+      "path": "/restaurants/qc/montreal/kinton-ramen-union",
+      "target": "/locations/qc/montreal#ramen_ca_28c4338e1f7411e66a09",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_c1630acb4e5fb772f60b",
+      "path": "/restaurants/qc/montreal/kotora-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_c1630acb4e5fb772f60b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_681c2d840970929e1897",
+      "path": "/restaurants/qc/montreal/machiya-ramen-chinatown",
+      "target": "/locations/qc/montreal#ramen_ca_681c2d840970929e1897",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_da6cdad1cee92fb4dadc",
+      "path": "/restaurants/qc/montreal/neotokyo",
+      "target": "/locations/qc/montreal#ramen_ca_da6cdad1cee92fb4dadc",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cc981288791a9a8f3f55",
+      "path": "/restaurants/qc/montreal/nouille-de-riz-yunnan-rice-noodle-ramen-chinese-noodle-shop",
+      "target": "/locations/qc/montreal#ramen_ca_cc981288791a9a8f3f55",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5fff18235a553bc58a00",
+      "path": "/restaurants/qc/montreal/otto-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_5fff18235a553bc58a00",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_90aae98293f15b6d269a",
+      "path": "/restaurants/qc/montreal/panda-boba-t",
+      "target": "/locations/qc/montreal#ramen_ca_90aae98293f15b6d269a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_20f331807bb0b81f84ce",
+      "path": "/restaurants/qc/montreal/ramen-isshin-1217-mont-royal-ave-e",
+      "target": "/locations/qc/montreal#ramen_ca_20f331807bb0b81f84ce",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_484520fca8adaa4c6e17",
+      "path": "/restaurants/qc/montreal/ramen-isshin-1-r-de-la-gauchetiere-e",
+      "target": "/locations/qc/montreal#ramen_ca_484520fca8adaa4c6e17",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7a527c4d5287da88f112",
+      "path": "/restaurants/qc/montreal/ramen-isshin-verdun",
+      "target": "/locations/qc/montreal#ramen_ca_7a527c4d5287da88f112",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_50311886663601723a33",
+      "path": "/restaurants/qc/montreal/ramen-misoya-montreal",
+      "target": "/locations/qc/montreal#ramen_ca_50311886663601723a33",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_fe52721117ee78a2e273",
+      "path": "/restaurants/qc/montreal/ramen-nakamichi",
+      "target": "/locations/qc/montreal#ramen_ca_fe52721117ee78a2e273",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_27799beeb93e83a44aa0",
+      "path": "/restaurants/qc/montreal/ramen-seoul",
+      "target": "/locations/qc/montreal#ramen_ca_27799beeb93e83a44aa0",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d0fc7970ce9c364b444a",
+      "path": "/restaurants/qc/montreal/sansotei-ramen-mackay",
+      "target": "/locations/qc/montreal#ramen_ca_d0fc7970ce9c364b444a",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cd26ea7cb0c3dc3c5844",
+      "path": "/restaurants/qc/montreal/sansotei-ramen-mont-royal",
+      "target": "/locations/qc/montreal#ramen_ca_cd26ea7cb0c3dc3c5844",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a0331eefd46b5a2d652d",
+      "path": "/restaurants/qc/montreal/sansotei-ramen-royalmount",
+      "target": "/locations/qc/montreal#ramen_ca_a0331eefd46b5a2d652d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_2dd9595746921eacc36f",
+      "path": "/restaurants/qc/montreal/sansotei-ramen-sainte-catherine",
+      "target": "/locations/qc/montreal#ramen_ca_2dd9595746921eacc36f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_aa229a370699121f5265",
+      "path": "/restaurants/qc/montreal/shushuto-bar-a-ramen-tapas",
+      "target": "/locations/qc/montreal#ramen_ca_aa229a370699121f5265",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_28da4a811c323c3d4652",
+      "path": "/restaurants/qc/montreal/sukiyaki",
+      "target": "/locations/qc/montreal#ramen_ca_28da4a811c323c3d4652",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e41d769455a603592362",
+      "path": "/restaurants/qc/montreal/sumo-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_e41d769455a603592362",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_813be266a6ec9c0d0b1c",
+      "path": "/restaurants/qc/montreal/tori-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_813be266a6ec9c0d0b1c",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3981134b63a262efda83",
+      "path": "/restaurants/qc/montreal/tsujiri-montreal",
+      "target": "/locations/qc/montreal#ramen_ca_3981134b63a262efda83",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_656996cc3dab1046d800",
+      "path": "/restaurants/qc/montreal/tsukuyomi-ramen-bishop",
+      "target": "/locations/qc/montreal#ramen_ca_656996cc3dab1046d800",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_cb9c210d1e815ee38d0f",
+      "path": "/restaurants/qc/montreal/tsukuyomi-ramen-mile-end",
+      "target": "/locations/qc/montreal#ramen_ca_cb9c210d1e815ee38d0f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_c64ee9168ca3ab2796ec",
+      "path": "/restaurants/qc/montreal/yokato-yokabai-ramen",
+      "target": "/locations/qc/montreal#ramen_ca_c64ee9168ca3ab2796ec",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_63ea131bf211b7401c24",
+      "path": "/restaurants/qc/pointe-claire/kinton-ramen-pointe-claire",
+      "target": "/locations/qc/pointe-claire#ramen_ca_63ea131bf211b7401c24",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8dd8f8fe509b41e4870a",
+      "path": "/restaurants/qc/pointe-claire/ramen-isshin-pointe-claire",
+      "target": "/locations/qc/pointe-claire#ramen_ca_8dd8f8fe509b41e4870a",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_ba9bf826c7150102ad8f",
+      "path": "/restaurants/qc/quebec-city/gaijin-ramen",
+      "target": "/locations/qc#ramen_ca_ba9bf826c7150102ad8f",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3d1bb9b7823f959978c3",
+      "path": "/restaurants/qc/quebec-city/hono-ramen",
+      "target": "/locations/qc#ramen_ca_3d1bb9b7823f959978c3",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_1aecb75d8bd385e4816b",
+      "path": "/restaurants/qc/quebec-city/station-o-ramen",
+      "target": "/locations/qc#ramen_ca_1aecb75d8bd385e4816b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_62938dc2df3532648083",
+      "path": "/restaurants/qc/quebec-city/tora-ya-ramen",
+      "target": "/locations/qc#ramen_ca_62938dc2df3532648083",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_a3fbcb7cffea1dab7b52",
+      "path": "/restaurants/qc/repentigny/sukiyaki",
+      "target": "/locations/qc#ramen_ca_a3fbcb7cffea1dab7b52",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_316b5e58105015e3c26b",
+      "path": "/restaurants/qc/saint-hubert/kimpo-bbq-coreen-and-sushi-saint-hubert",
+      "target": "/locations/qc#ramen_ca_316b5e58105015e3c26b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_09c0b497785a417b6132",
+      "path": "/restaurants/qc/saint-hyacinthe/sushi-yoko",
+      "target": "/locations/qc#ramen_ca_09c0b497785a417b6132",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_72096c0348bd6080234d",
+      "path": "/restaurants/qc/saint-sauveur/arcadia-restaurant-et-jeux",
+      "target": "/locations/qc#ramen_ca_72096c0348bd6080234d",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_9b6a59963e5009955479",
+      "path": "/restaurants/qc/shawinigan/zes-t-bulle-les-des-truques",
+      "target": "/locations/qc#ramen_ca_9b6a59963e5009955479",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_e607928c23bbd5f65cea",
+      "path": "/restaurants/qc/sherbrooke/kobo-ramen",
+      "target": "/locations/qc#ramen_ca_e607928c23bbd5f65cea",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_79c694ac61785cf09dc3",
+      "path": "/restaurants/qc/westmount/bistro-moku",
+      "target": "/locations/qc#ramen_ca_79c694ac61785cf09dc3",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_5852819449c3579cb505",
+      "path": "/restaurants/sk/regina/rising-sun-pop-up-ramen",
+      "target": "/locations/sk/regina#ramen_ca_5852819449c3579cb505",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_36eeb5a5c4c7f6dbe1c0",
+      "path": "/restaurants/sk/regina/wann-izakaya-japanese-gastropub",
+      "target": "/locations/sk/regina#ramen_ca_36eeb5a5c4c7f6dbe1c0",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_2d32022e71e0fa78c431",
+      "path": "/restaurants/sk/saskatoon/cafe-japa-bowl",
+      "target": "/locations/sk#ramen_ca_2d32022e71e0fa78c431",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_d1d36682d91fede81e9b",
+      "path": "/restaurants/sk/saskatoon/october-authentic-asian-cuisine",
+      "target": "/locations/sk#ramen_ca_d1d36682d91fede81e9b",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_53830a33b3e28aa946ed",
+      "path": "/restaurants/yt/whitehorse/wood-street-ramen-night-market",
+      "target": "/locations#ramen_ca_53830a33b3e28aa946ed",
+      "decision": "consolidate-contact-record"
+    },
+    {
+      "id": "ramen_ca_3f4380213188cf491c3b",
+      "path": "/restaurants/on/newmarket/ajisen-ramen-newmarket",
+      "target": "/locations/on#ramen_ca_3f4380213188cf491c3b",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_9e221f5f301ad2e21b9c",
+      "path": "/restaurants/on/hamilton/ramen-isshin-hamilton",
+      "target": "/locations/on/hamilton#ramen_ca_9e221f5f301ad2e21b9c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_4d69fccb495f9920a36c",
+      "path": "/restaurants/qc/terrebonne/ramen-isshin-terrebonne",
+      "target": "/locations/qc#ramen_ca_4d69fccb495f9920a36c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7d163edcdce0bcf59eb7",
+      "path": "/restaurants/qc/sainte-therese/ramen-isshin-sainte-therese",
+      "target": "/locations/qc#ramen_ca_7d163edcdce0bcf59eb7",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_1cec4e546a9ffcb2d7ed",
+      "path": "/restaurants/qc/vaudreuil-dorion/ramen-isshin-vaudreuil-dorion",
+      "target": "/locations/qc#ramen_ca_1cec4e546a9ffcb2d7ed",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_007795fdb94af5994fcc",
+      "path": "/restaurants/qc/montreal/ramen-isshin-sainte-catherine-west",
+      "target": "/locations/qc/montreal#ramen_ca_007795fdb94af5994fcc",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_435a985f53d32bd0a09e",
+      "path": "/restaurants/qc/brossard/ramen-isshin-dix30-brossard",
+      "target": "/locations/qc/brossard#ramen_ca_435a985f53d32bd0a09e",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_15e0918698a301a95d36",
+      "path": "/restaurants/qc/longueuil/ramen-isshin-longueuil",
+      "target": "/locations/qc/longueuil#ramen_ca_15e0918698a301a95d36",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_7b0b8a1d58592b2ec48c",
+      "path": "/restaurants/on/ottawa/jinsei-ramen-laurier-avenue",
+      "target": "/restaurants/on/ottawa/jinsei-ramen-laurier-avenue",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_1da6c619935047d1e8d8",
+      "path": "/restaurants/nb/fredericton/momo-ramen-izakaya-queen-street",
+      "target": "/restaurants/nb/fredericton/momo-ramen-izakaya-queen-street",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_e0f490177025c12f998a",
+      "path": "/restaurants/qc/rimouski/poke-et-ramen-moi-rimouski",
+      "target": "/locations/qc#ramen_ca_e0f490177025c12f998a",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_83d9e819a23ac4931da4",
+      "path": "/restaurants/qc/saint-raymond/poke-et-ramen-moi-saint-raymond",
+      "target": "/locations/qc#ramen_ca_83d9e819a23ac4931da4",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_60b0fa8bd506126b5013",
+      "path": "/restaurants/qc/trois-rivieres/poke-et-ramen-moi-trois-rivieres-papineau",
+      "target": "/locations/qc#ramen_ca_60b0fa8bd506126b5013",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_51c42f34d0802e1577de",
+      "path": "/restaurants/qc/montreal/umami-ramen-izakaya-little-italy",
+      "target": "/restaurants/qc/montreal/umami-ramen-izakaya-little-italy",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_032269276c4661356407",
+      "path": "/restaurants/qc/saint-laurent/tsukuyomi-ramen-bois-franc",
+      "target": "/restaurants/qc/saint-laurent/tsukuyomi-ramen-bois-franc",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_ee4a3b5dbc84c953aa26",
+      "path": "/restaurants/ns/halifax/poke-go-broth-house-granville-street",
+      "target": "/locations#ramen_ca_ee4a3b5dbc84c953aa26",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_fbb1b15a482943af0647",
+      "path": "/restaurants/qc/longueuil/gn-gourmet-fernand-lafontaine",
+      "target": "/restaurants/qc/longueuil/gn-gourmet-fernand-lafontaine",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_01c8949ce9e17eb6cb9a",
+      "path": "/restaurants/on/greater-sudbury/ramen-misoya-sudbury",
+      "target": "/restaurants/on/greater-sudbury/ramen-misoya-sudbury",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_bf5f157b34bf7403e79c",
+      "path": "/restaurants/bc/langford/ramen-arashi-langford",
+      "target": "/locations/bc#ramen_ca_bf5f157b34bf7403e79c",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_8b54514b80ab0ad1c9a8",
+      "path": "/restaurants/bc/whistler/ohyama-ramen-whistler",
+      "target": "/restaurants/bc/whistler/ohyama-ramen-whistler",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_230bf56cc5f74712eb72",
+      "path": "/restaurants/bc/nanaimo/nana-sushi-nanaimo",
+      "target": "/restaurants/bc/nanaimo/nana-sushi-nanaimo",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_3e3907413885c1b43948",
+      "path": "/restaurants/ab/calgary/ramen-arashi-calgary",
+      "target": "/locations/ab/calgary#ramen_ca_3e3907413885c1b43948",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_30739b451af55a810522",
+      "path": "/restaurants/ab/calgary/globefish-seton",
+      "target": "/restaurants/ab/calgary/globefish-seton",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_e687fd43f6741086b553",
+      "path": "/restaurants/ab/calgary/globefish-chinook",
+      "target": "/restaurants/ab/calgary/globefish-chinook",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_4d35e06798a81d5a5fc1",
+      "path": "/restaurants/ab/calgary/nan-s-noodle-house-edmonton-trail",
+      "target": "/locations/ab/calgary#ramen_ca_4d35e06798a81d5a5fc1",
+      "decision": "consolidate-menu-excerpt"
+    },
+    {
+      "id": "ramen_ca_83dcedc0fd4de41765a4",
+      "path": "/restaurants/ab/calgary/goro-gun-downtown-calgary",
+      "target": "/restaurants/ab/calgary/goro-gun-downtown-calgary",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_ff25f125c395f1b05cb3",
+      "path": "/restaurants/ab/edmonton/shiawase-ramen-edmonton",
+      "target": "/restaurants/ab/edmonton/shiawase-ramen-edmonton",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_489bb344b4f5cce7fe91",
+      "path": "/restaurants/ab/edmonton/hu-s-noodle-nook-edmonton",
+      "target": "/restaurants/ab/edmonton/hu-s-noodle-nook-edmonton",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_127baa60edce046d4075",
+      "path": "/restaurants/sk/regina/dojo-ramen-regina",
+      "target": "/restaurants/sk/regina/dojo-ramen-regina",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_cf147eb22a9f60855b4c",
+      "path": "/restaurants/sk/regina/pronto-regina",
+      "target": "/restaurants/sk/regina/pronto-regina",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_c7738b4fba26b9ec5e29",
+      "path": "/restaurants/mb/winnipeg/cho-ichi-ramen-winnipeg",
+      "target": "/restaurants/mb/winnipeg/cho-ichi-ramen-winnipeg",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_7c0b011576a423e9ccb7",
+      "path": "/restaurants/mb/winnipeg/gaijin-izakaya-winnipeg",
+      "target": "/restaurants/mb/winnipeg/gaijin-izakaya-winnipeg",
+      "decision": "retain-reviewed-guide"
+    },
+    {
+      "id": "ramen_ca_da96078a270ba813e3d1",
+      "path": "/restaurants/on/ajax/umi-sushi-ajax",
+      "target": "/restaurants/on/ajax/umi-sushi-ajax",
+      "decision": "retain-reviewed-guide"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 import type { MenuItem, Restaurant } from "./types";
+import { usableMenuItems } from "./content-publication.js";
 
 export function comparableItems(restaurant: Restaurant, filter?: string) {
   if (restaurant.menu.status !== "verified_current") return [];
-  return restaurant.menu.items.filter((item) => {
+  return usableMenuItems(restaurant).filter((item: MenuItem) => {
     if (!filter) return true;
     if (filter === "vegan") return item.dietary?.includes("vegan") || restaurant.vegan.itemNames.includes(item.name);
     if (["tonkotsu", "shoyu", "miso", "tsukemen"].includes(filter)) {
