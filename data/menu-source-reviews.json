@@ -1,0 +1,42 @@
+{
+  "https://www.tsukuyomi.ca/menu": {
+    "checkedOn": "2026-10-21",
+    "status": "branch_mismatch",
+    "note": "The source opens the Mile-End menu. These prices are not confirmed for Bois-Franc."
+  },
+  "https://www.clover.com/online-ordering/momo-ramen-fredericton": {
+    "checkedOn": "2026-10-21",
+    "status": "browser_verified",
+    "note": "The merchant menu was readable in the browser on October 21. Online ordering was unavailable at that moment; this does not establish a restaurant closure. Dining-room and ordering hours can differ."
+  },
+  "https://www.ubereats.com/ca/store/ramen-misoya-sudbury/cmk7qsTRVmiKY2TmwrDRcQ": {
+    "checkedOn": "2026-10-21",
+    "status": "unavailable",
+    "note": "Delivery-platform prices from the previous dated capture; the menu could not be rechecked on October 21."
+  },
+  "https://cloud.quickposhub.com/onlineorder/#/pages/order/tableurl?code=QIFBJnapqG": {
+    "checkedOn": "2026-10-21",
+    "status": "unavailable",
+    "note": "The online menu could not be read on October 21. Confirm the previous dated prices before planning an order."
+  },
+  "https://www.gopronto.ca/": {
+    "checkedOn": "2026-10-21",
+    "status": "partial",
+    "note": "The homepage shows hours but did not expose the full menu in the October 21 check. Prices retain their previous evidence date."
+  },
+  "https://tastyhouse.ca/menu/": {
+    "checkedOn": "2026-10-21",
+    "status": "conflict",
+    "note": "The official page gives both 9 p.m. and 10 p.m. closing times. Confirm tonight\u2019s close directly; the menu image has its own date."
+  },
+  "https://www.ohyamaramen.com/s/Ohyama-3-panel-Menu-JUNE2026.pdf": {
+    "checkedOn": "2026-10-21",
+    "status": "unavailable",
+    "note": "The June menu PDF could not be re-read on October 21. The official homepage now says dine-in until 10 p.m. and takeout until 8:45 p.m.; the older weekly schedule below needs confirmation."
+  },
+  "https://www.nanaimonanasushi.ca/menu": {
+    "checkedOn": "2026-10-21",
+    "status": "starting_prices",
+    "note": "Online ordering prices are starting prices. Cold Ramen is seasonal; customizations can increase the total."
+  }
+}

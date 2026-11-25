@@ -1,0 +1,53 @@
+{
+  "reviewDate": "2026-10-21",
+  "domain": "ramenscout.ca",
+  "deployment": "local only; earlier publication permission request remains pending",
+  "futureRankingGuaranteed": false,
+  "searchConsole": {
+    "property": "sc-domain:ramenscout.ca",
+    "manualActions": "No issues detected",
+    "securityIssues": "No issues detected",
+    "interpretation": "These reports do not rule out automated ranking changes or guarantee future eligibility."
+  },
+  "policyAssessment": {
+    "scaledContentAndDoorways": "The meaningful residual risk for this directory. Retained the existing 84 canonical content pages, 62 indexable pages, and 463 permanent-content-consolidation redirect destinations. Sparse records remain concise hub entries; no new keyword, city or filter landing pages generated in this pass. Original menu comparisons and calculators add practical value but do not guarantee a Google quality assessment.",
+    "cloaking": "No request-user-agent content branch found in reviewed app/components/lib. Rendered search variants were compared with a Googlebot user-agent and the same visible main content was returned. This is a scoped regression check, not a full server/security audit.",
+    "linkSpam": "Reviewed the domains linked from exported content and utility pages. No unexpected URL schemes in 86 non-redirect HTML files. No purchased-link or sponsored-placement mechanism found in the reviewed templates. This is not a backlink-profile audit.",
+    "structuredData": "Existing whole-inventory audit rejects imported AggregateRating/Review data and invalid JSON-LD. No fabricated first-hand reviews or venue imagery added.",
+    "freshness": "Removed build timestamps and restaurant source-check dates from sitemap lastmod. Optional lastmod remains omitted until meaningful page edits can be dated reliably.",
+    "searchVariants": "Removed robots.txt blocks that prevented reading search/filter noindex. Search stays absent from sitemap and canonicalizes to /search.",
+    "sourceWarnings": "Unresolved source warnings now also appear on compact restaurant cards used by style and feature pages."
+  },
+  "checks": {
+    "build": "passed",
+    "lint": "passed",
+    "testsPassed": 40,
+    "testsFailed": 0,
+    "canonicalPagesAudited": 84,
+    "indexablePages": 62,
+    "redirectsVerified": 463,
+    "adsenseTechnicalErrors": 0,
+    "adsenseTechnicalWarnings": 0,
+    "desktopWarningCardVisualCheck": "passed at 1280px; no document overflow"
+  },
+  "ongoingEditorialRequirements": [
+    "Do not automatically publish additional standalone city/restaurant pages based on word count or uniqueness scores.",
+    "Keep new guides focused on a distinct useful decision supported by venue-specific evidence.",
+    "Recheck source facts when due; do not rewrite dates to make unchanged content look newer.",
+    "Treat meals, prices, availability and source failures separately, retaining corrections and provenance.",
+    "Do not buy ranking links or publish unrelated sponsored pages.",
+    "Compare actual Search Console page/query changes if rankings fall; do not assume every decline is a spam penalty."
+  ],
+  "limitations": [
+    "No guarantee against future spam or core updates.",
+    "No full backlink audit, security penetration test, or new independent recheck of all 413 restaurant records.",
+    "Existing unresolved menu/branch evidence remains documented in review.json.",
+    "Changes are not on the public domain yet."
+  ],
+  "sources": [
+    "https://developers.google.com/search/docs/essentials/spam-policies",
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+    "https://developers.google.com/search/docs/crawling-indexing/block-indexing"
+  ]
+}

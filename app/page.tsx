@@ -69,7 +69,7 @@ export default function Home() {
       <section className="section" id="cities">
         <div className="section-heading"><div><p className="eyebrow"><span /> Start with a city</p><h2>Ramen, neighbourhood by neighbourhood.</h2></div><Link href="/locations">Browse all locations <span aria-hidden="true">→</span></Link></div>
         <div className="location-grid">
-          {featuredCities.map((city, index) => <Link className="location-card" href={`/locations/${city.province.slug}/${city.slug}`} key={city.name}><span className="card-index">0{index + 1}</span><div><p>{city.province.name}</p><h3>{city.name}</h3><span>{city.verifiedMenus ? `${city.verifiedMenus} current menus checked` : "Restaurant details available"}</span></div><strong>{city.count}<small> spots</small></strong></Link>)}
+          {featuredCities.map((city, index) => <Link className="location-card" href={`/locations/${city.province.slug}/${city.slug}`} key={city.name}><span className="card-index">0{index + 1}</span><div><p>{city.province.name}</p><h3>{city.name}</h3><span>{city.verifiedMenus ? `${city.verifiedMenus} documented menus` : "Restaurant details available"}</span></div><strong>{city.count}<small> spots</small></strong></Link>)}
         </div>
       </section>
 

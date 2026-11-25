@@ -1,0 +1,86 @@
+{
+  "reviewDate": "2026-10-21",
+  "domain": "ramenscout.ca",
+  "status": "local_candidate_awaiting_publication_permission",
+  "googleApprovalGuaranteed": false,
+  "valueAdded": {
+    "interactiveComparisonPages": 73,
+    "restaurantGuides": 29,
+    "cityAndProvinceHubs": 36,
+    "styleAndFeaturePages": 8,
+    "newCityDecisionSections": 7,
+    "menuRecordsCorrectedAndRefreshed": 5
+  },
+  "publicationInventory": {
+    "canonicalContentPages": 84,
+    "indexablePages": 62,
+    "noindexContentPages": 22,
+    "existingConsolidationRedirects": 463,
+    "htmlFilesIncluding404": 549,
+    "restaurantRecords": 413
+  },
+  "sourceScope": {
+    "initialUniqueUrlsAttempted": 28,
+    "retainedGuideMenuSourcesCovered": 29,
+    "everyClaimReverified": false,
+    "everyRestaurantReverified": false,
+    "initialCrawlerEmptyResultsAcceptedAsEvidence": false,
+    "momoRecoveredInBrowser": true,
+    "structuredMenuRefreshIds": [
+      "ramen_ca_fff7ee5d989f8ea60fae",
+      "ramen_ca_ff25f125c395f1b05cb3",
+      "ramen_ca_d952994eafc78fa40942",
+      "ramen_ca_32295bb473c8fef0a0c9",
+      "ramen_ca_7c8c5ec0c51f36e66a34"
+    ]
+  },
+  "remainingEvidenceLimits": [
+    "Tsukuyomi linked menu defaults to Mile-End, while the retained guide is Bois-Franc.",
+    "Misoya, Umi and Ohyama menus could not be refreshed; Pronto homepage was readable but not its full menu. These five source cases are explicitly labelled and excluded from price ceilings and subtotals.",
+    "Tasty House publishes inconsistent closing times. Ohyama homepage hours differ from the older weekly schedule. Visible caveats and Ohyama prose distinguish dates and services.",
+    "Shared chain menus retain branch-availability caveats. Dates are not globally reset.",
+    "The existing 384 consolidated restaurant records remain concise hub entries; 222 contact-only records have no verified menu and are labelled accordingly. These were not all independently researched in this pass.",
+    "Twenty-two canonical content pages remain noindex under existing evidence gates. This is not a claim that Google ignores them in site review."
+  ],
+  "account": {
+    "publisher": "pub-2494233247909241",
+    "ramenDomainInCurrentSitesList": false,
+    "siteRowsObserved": 2,
+    "reviewRequested": false,
+    "accountSettingsChanged": false,
+    "siteSpecificCurrentPolicyAndConsentState": "not verifiable because the domain is absent; September notes are historical"
+  },
+  "validation": {
+    "productionBuild": "passed",
+    "testsPassed": 40,
+    "testsFailed": 0,
+    "lint": "passed",
+    "adsenseErrors": 0,
+    "adsenseWarnings": 0,
+    "adServingLoaders": 0,
+    "adsOnNoindexPages": 0,
+    "mobileViewport": "390x844 no horizontal document overflow",
+    "desktopViewport": "1280 wide no horizontal document overflow",
+    "browserInteractions": [
+      "query and price filtering",
+      "explicit vegan selection",
+      "two distinct branch alternatives",
+      "quantity arithmetic",
+      "clear comparison",
+      "unknown prices excluded instead of converted to zero",
+      "empty results preserve selected alternatives"
+    ]
+  },
+  "deployment": {
+    "performed": false,
+    "reviewSubmissionPerformed": false,
+    "preview": "http://127.0.0.1:4177/locations/on/toronto/",
+    "productionWorkflow": "push main to github remote triggers GitHub Pages"
+  },
+  "policyReferences": [
+    "https://support.google.com/adsense/answer/7299563",
+    "https://support.google.com/adsense/answer/12176698",
+    "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+  ],
+  "spamPolicyFollowup": "See spam-review.json for October 21 follow-up, crawlability/freshness fixes, and live Search Console checks."
+}

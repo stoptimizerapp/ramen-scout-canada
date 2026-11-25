@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LocationRecords } from "@/components/LocationRecords";
 import { hasCityGuide, publicPath } from "@/lib/content-publication.js";
 import { MenuComparison } from "@/components/MenuComparison";
+import { CityDecisions } from "@/components/CityDecisions";
 import { NearbyAlternatives } from "@/components/NearbyAlternatives";
 import { cityFacts, getCity, isCitySearchReady, summary } from "@/lib/directory";
 import { buildPageMetadata } from "@/lib/site";
@@ -32,6 +33,7 @@ export default async function CityPage({ params }: { params: Promise<{ province:
     <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Locations", href: "/locations" }, { label: data.province.name, href: `/locations/${data.province.slug}` }, { label: data.city.name }]} />
     <header className="page-hero city-hero"><p className="eyebrow"><span /> Local ramen field guide</p><h1>Ramen in {data.city.name}, {data.province.code}.</h1><p>{facts.count} locations in our directory, with {menuListings.length} documented menus to compare. Start with a named bowl and its source date, then check the branch address and service schedule. Our coverage is not a claim that these are every ramen restaurant in {data.city.name}.</p></header>
     {styles.length ? <nav className="neighbourhood-links" aria-label={`Filter ramen in ${data.city.name}`}><span>Filter this city:</span>{styles.map(([style, count]) => <Link href={`/search?q=${encodeURIComponent(data.city.name)}&feature=${style}`} key={style}>{style} · {count}</Link>)}<Link href={`/search?q=${encodeURIComponent(data.city.name)}&feature=vegan`}>Vegan bowls</Link><Link href={`/search?q=${encodeURIComponent(data.city.name)}&feature=late-night`}>Late night</Link></nav> : null}
+    <CityDecisions cityKey={`${route.province}/${route.city}`} />
     <MenuComparison restaurants={data.restaurants} title={`A bowl-by-bowl starting point for ${data.city.name}`} />
     {menuListings.length < 3 && data.restaurants[0] ? <NearbyAlternatives origin={data.restaurants[0]} excludeIds={data.restaurants.map((r) => r.id)} title={`More menu choices outside ${data.city.name}`} /> : null}
     {facts.neighbourhoods.length ? <nav className="neighbourhood-links" aria-label={`${data.city.name} neighbourhoods`}><span>Explore by neighbourhood:</span>{facts.neighbourhoods.slice(0, 12).map((neighbourhood) => <Link href={`/search?q=${encodeURIComponent(`${neighbourhood} ${data.city.name}`)}`} key={neighbourhood}>{neighbourhood}</Link>)}</nav> : null}

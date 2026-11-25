@@ -2,6 +2,7 @@ import { SiteLink as Link } from "@/components/SiteLink";
 import { formatDate, formatPriceRange } from "@/lib/format";
 import type { Restaurant } from "@/lib/types";
 import { FactBadge } from "./FactBadge";
+import { menuContext } from "@/lib/menu-context";
 import { usableMenuItems } from "@/lib/content-publication.js";
 
 function badges(restaurant: Restaurant) {
@@ -30,6 +31,7 @@ export function RestaurantCard({ restaurant }: { restaurant: Restaurant }) {
       <div className="badge-list">
         {knownBadges.length ? knownBadges.map((badge) => <FactBadge tone="positive" key={badge}>{badge}</FactBadge>) : <FactBadge>Menu styles not confirmed</FactBadge>}
       </div>
+      {menuContext(restaurant).review ? <p className="source-note">{menuContext(restaurant).note}</p> : null}
       <div className="card-footer">
         <span>{formatPriceRange(restaurant)}</span>
         <Link href={restaurant.canonicalPath} aria-label={`View details for ${restaurant.name}`}>View details <span aria-hidden="true">→</span></Link>

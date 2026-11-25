@@ -1,0 +1,254 @@
+[
+  {
+    "url": "https://tastyhouse.ca/menu/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 3385,
+    "sha256": "72f0b0812daa3aab1ee5f957e37c896897b37472e6bcfa54c67b70485ad224d9",
+    "assessment": "conflict",
+    "note": "The official page gives both 9 p.m. and 10 p.m. closing times. Confirm tonight’s close directly; the menu image has its own date."
+  },
+  {
+    "url": "https://tokiwaramen.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 2394,
+    "sha256": "0b54523262d42368f5650ee4f2f84d4f0120b8540c9487025f6fe2076f9dbdee",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://shikimenya.ca/pages/shiki-menya-summer-menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 2065,
+    "sha256": "9ca5b00c2ba22d9caaebd33b950bf4053ea7adb0e603ca888020533fa365504f",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://ramendanbo.com/our-menu-vancouver/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 14140,
+    "sha256": "0990e613ead7d205d0d4b99d54542edbaf68f41304c5c2ea8adbc7caff4e13e8",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://ramengojiro.com/menu.html",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 5847,
+    "sha256": "a5e74887ed27446422dedebedb64d76bd59ba2545a4e3966297ea1ee324f5c79",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.ramenisshin.ca/vaughanmenu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 18513,
+    "sha256": "904343d0ca108165ca14cc0dfc16bec5e02973873c1bdbbc73d4e820181b0b25",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.clover.com/online-ordering/momo-ramen-fredericton",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "assessment": "browser_verified",
+    "note": "Crawler returned no useful menu. Subsequent authenticated-browser-independent public browser check displayed 602 Queen Street and all fourteen menu bowls with the recorded $16.95/$18.95 prices. Online ordering unavailable does not establish business closure. Existing structured menu evidence date retained."
+  },
+  {
+    "url": "https://jinseiramen.ca/dine-in-menu/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 6267,
+    "sha256": "6c28314b0148e96e6a5e32410f8864372c9e0530b3ab98cd2f75786d6a203c94",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://craftyramen.com/pages/crafty-ramen-restaurant",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 14625,
+    "sha256": "09b1dbd730941a2b14ace8810de037f1f372b36f8ef9faa409182325a2b83041",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.tsukuyomi.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 3331,
+    "sha256": "9b4cfd0584759b86fd9992509c9885a74e6c9f1c69805dc4abf2102fee4f6d6f",
+    "assessment": "branch_mismatch",
+    "note": "The source opens the Mile-End menu. These prices are not confirmed for Bois-Franc."
+  },
+  {
+    "url": "https://www.umamiramenizakaya.ca/menu?lang=en",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 19945,
+    "sha256": "151f3d5a320b73cf6dd30000620cf79fbbfb332e9c8082e8921fa3a9445e7ddb",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.gngourmet.com/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 55299,
+    "sha256": "c7061985fcdd3a9b87383b3e3962412939ec0aa5baf9033b7a19b38ca2dcba1f",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.ubereats.com/ca/store/ramen-misoya-sudbury/cmk7qsTRVmiKY2TmwrDRcQ",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 105,
+    "sha256": "99c4ebc97f03405074e0613781dd5a01f002280488e72bc5b5ee699c76d64a6e",
+    "assessment": "unavailable",
+    "note": "Delivery-platform prices from the previous dated capture; the menu could not be rechecked on October 21."
+  },
+  {
+    "url": "https://www.nanaimonanasushi.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 15702,
+    "sha256": "917d7d02621cc6d7e3fa3503d0363fb11d58509fbadfd763788c503fe7e4ece2",
+    "assessment": "starting_prices",
+    "note": "Online ordering prices are starting prices. Cold Ramen is seasonal; customizations can increase the total."
+  },
+  {
+    "url": "https://www.globefishseton.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 9146,
+    "sha256": "0bd79607b0f9b83bc93e6ecbd8680a71fcc1a0b82397abcb39341cef1db7afb8",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.globefishchinook.ca/ramen",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 3977,
+    "sha256": "da2403a8481da6d16927a39b011075b92ac9c34028489128b946bb32793b6a7b",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.goroandgun.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 11341,
+    "sha256": "65489dd5a34eee2bd04240694811da81877349c7d049f30662c8ae605da84231",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://shiawaseramen.ca/menu.html",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 7787,
+    "sha256": "ab51fb0c6c10bb3c9a6764f8e79bc4da6774f89f893715c913b08d6811ceacdc",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://order.husnoodlenook.ca/menu?menuId=308#cat_2401",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 13738,
+    "sha256": "ab2946415ec787dfdfa3db0d6dc154299ce9bc655db9c77272fb420f2bae3314",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.ohyamaramen.com/s/Ohyama-3-panel-Menu-JUNE2026.pdf",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": false,
+    "characters": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assessment": "unavailable",
+    "note": "The June menu PDF could not be re-read on October 21. Seasonal dishes and prices need direct confirmation."
+  },
+  {
+    "url": "https://www.dojoramen.ca/menu?menu=menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 7460,
+    "sha256": "294f9fbc8d19d57acddbff866f76593ae4bc5e9ac2be830f8a6fb33f6294404c",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.gopronto.ca/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 1118,
+    "sha256": "0ad4d2bb4984fa9ec79809a2a27d21645446a3b4d25de4cc55ebb84c34e857ba",
+    "assessment": "partial",
+    "note": "The homepage shows hours but did not expose the full menu in the October 21 check. Prices retain their previous evidence date."
+  },
+  {
+    "url": "https://www.choichi.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 9121,
+    "sha256": "1fb54aa6147d9695cd30c3b9f61d2047c3e060cc0966c57facda7584facb2253",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.gaijinizakaya.ca/dinein-menu/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 43111,
+    "sha256": "cfa5cb34567139985430165903db2a3f30dd07825a819a2c74276ea775eb992f",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://cloud.quickposhub.com/onlineorder/#/pages/order/tableurl?code=QIFBJnapqG",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 32,
+    "sha256": "d841c6bdc2c8150dfd81d032756ce8f39697ab574f389b16fd0c7aae8532e586",
+    "assessment": "unavailable",
+    "note": "The online menu could not be read on October 21. Confirm the previous dated prices before planning an order."
+  },
+  {
+    "url": "https://www.ajisenramen.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 2910,
+    "sha256": "0b34f59d8e9146596283e08650a5cdb4525b3da8859b865b569b50c3fd8985cb",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  },
+  {
+    "url": "https://www.ikkousha.ca/menu",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 100,
+    "sha256": "51380e28a3e5ab13658b96194f9ab52d35f8b6323a3ef449caffeeaa18adc238",
+    "assessment": "unusable",
+    "note": ""
+  },
+  {
+    "url": "https://www.kintonramen.com/menu/",
+    "retrievedOn": "2026-10-21",
+    "crawlerSuccess": true,
+    "characters": 5905,
+    "sha256": "25f75d4e1a77af20adc71d5cc7acd7be604a5fecd080330143a29734d1cfc82b",
+    "assessment": "content_retrieved_not_all_claims_reverified",
+    "note": ""
+  }
+]

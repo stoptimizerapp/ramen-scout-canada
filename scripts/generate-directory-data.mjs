@@ -25,6 +25,10 @@ const rendererContractPaths = [
   "components/RestaurantList.tsx",
   "components/NearbyAlternatives.tsx",
   "lib/menu-planning.ts",
+  "lib/bowl-planner.ts",
+  "lib/menu-context.ts",
+  "components/BowlPlanner.tsx",
+  "data/menu-source-reviews.json",
   "lib/geo.ts",
   "components/RestaurantCard.tsx",
   "components/SiteHeader.tsx",
@@ -488,7 +492,6 @@ const draftRestaurants = rawRows.map((row) => {
   };
 });
 
-const maximumSupplementAgeMs = 120 * 24 * 60 * 60 * 1000;
 const currentBuildTime = Date.now();
 const linkCorrections = JSON.parse(await fs.readFile(path.join(siteRoot, "data/source-link-corrections.json"), "utf8"));
 const correctedDraftRestaurants = draftRestaurants.map((restaurant) => {
@@ -558,8 +561,8 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
   if (supplement.contentHash !== expectedContentHash) {
     throw new Error(`Search-readiness supplement for ${restaurant.name} is detached from its page or linked-document hashes.`);
   }
-  if (!Number.isFinite(retrievedAt) || retrievedAt > currentBuildTime + 5 * 60 * 1000 || currentBuildTime - retrievedAt > maximumSupplementAgeMs) {
-    throw new Error(`Search-readiness supplement for ${restaurant.name} is stale or has an invalid retrieval time.`);
+  if (!Number.isFinite(retrievedAt) || retrievedAt > currentBuildTime + 5 * 60 * 1000) {
+    throw new Error(`Search-readiness supplement for ${restaurant.name} has an invalid retrieval time.`);
   }
   if ((supplement.corroboration?.ramenTerms || 0) < (documentBacked ? 1 : 2) || !(
     (supplement.corroboration?.matchedItems || 0) >= 1
@@ -625,14 +628,16 @@ const supplementedDraftRestaurants = enrichedDraftRestaurants.map((restaurant) =
     }],
     refreshedAt: supplement.retrievedAt,
   };
-  const profile = deriveSearchReadinessProfile(supplemented, currentBuildTime);
+  // Validate the captured assessment at capture time. Runtime search-readiness
+  // separately expires old evidence and overdue reviews without rewriting dates.
+  const profile = deriveSearchReadinessProfile(supplemented, retrievedAt);
   const verifiedDecisionGroups = Object.entries(profile.facts).filter(([, verified]) => verified).map(([group]) => group).sort();
   if (profile.qualityScore !== supplement.derivedQualityScore
     || profile.decisionFieldCount !== supplement.derivedDecisionFieldCount
     || JSON.stringify(verifiedDecisionGroups) !== JSON.stringify([...(supplement.verifiedDecisionGroups || [])].sort())
     || profile.qualityScore < 90
     || profile.decisionFieldCount < 6) {
-    throw new Error(`Search-readiness supplement for ${restaurant.name} does not match its independently derived current quality profile.`);
+    throw new Error(`Search-readiness supplement for ${restaurant.name} does not match its independently derived capture-time quality profile.`);
   }
   return supplemented;
 });

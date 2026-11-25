@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T18:18:15.264Z",
+  "generatedAt": "2026-11-25T14:16:55.347Z",
   "baseRestaurantCount": 380,
   "curatedAdditionCount": 33,
   "restaurantCount": 413,
@@ -10,7 +10,7 @@
   "lateNightCount": 95,
   "reservationCount": 143,
   "styleCounts": {
-    "tonkotsu": 66,
+    "tonkotsu": 68,
     "shoyu": 144,
     "miso": 166,
     "tsukemen": 80

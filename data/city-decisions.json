@@ -1,0 +1,65 @@
+{
+  "on/toronto": {
+    "title": "Queen Street: choose the shop before choosing the bowl",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"Two nearby addresses, different stocks","text":"Ikkousha at 249 Queen Street West uses the pork menu; 257 Queen Street West is the chicken shop. The Yonge–Dundas branch also links to the pork menu. A brand search alone can send you to the wrong menu, even when the bowl names look similar.","url":"https://www.ikkousha.ca/","source":"Official branch directory"},
+      {"title":"Compare the $16 baselines","text":"Signature Tonkotsu at the pork shop and Tori Paitan at the chicken shop both cost $16. The one-dollar step to Black Tonkotsu or Tori Black changes the recipe within the chosen shop. A two-bowl baseline is $32 before extras; two black-garlic bowls are $34.","url":"https://www.ikkousha.ca/tonkotsumenu","source":"Pork menu","secondUrl":"https://www.ikkousha.ca/chickenmenu","secondSource":"Chicken menu"},
+      {"title":"Separate fish, noodles and stock","text":"Tori Gyokai combines chicken and fish. The chicken-shop label does not exclude seafood. Both menus offer a $2 dine-in gluten-free noodle substitution, while explicitly warning that the kitchen is not gluten-free. A noodle substitution is a different decision from a broth choice.","url":"https://www.ikkousha.ca/chickenmenu","source":"Ingredient and substitution details"}
+    ]
+  },
+  "bc/vancouver": {
+    "title": "Vancouver: vegan menus, portion sizes and branch-only sides",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"A plant-based base without a surcharge","text":"DANBO’s shared Vancouver menu prices regular Classic pork and Classic Vegan bowls at $12.95 each. For a mixed-diet pair, those two base bowls total $25.90. Use the separate vegan ordering path; adding the regular ramen egg changes the dietary suitability.","url":"https://ramendanbo.com/our-menu-vancouver/","source":"DANBO Vancouver menu"},
+      {"title":"Let the side determine the branch","text":"The same menu labels its plant-based bun Main Street only and fried rice Kerrisdale only. If a side is the reason for choosing DANBO, decide the branch before travelling. Shared ramen pricing does not imply that the whole side menu is shared.","url":"https://ramendanbo.com/our-menu-vancouver/","source":"DANBO branch exceptions"},
+      {"title":"Portion versus preparation at Gojiro","text":"Gojiro’s Bakamori increases meat, noodles and toppings. Its tsukemen changes to a separate dipping soup instead. Those are two different ways to change a meal. The online page does not publish bowl prices, so Gojiro stays out of numeric budget comparisons until a price is confirmed.","url":"https://ramengojiro.com/menu.html","source":"Gojiro menu"}
+    ]
+  },
+  "ab/edmonton": {
+    "title": "Edmonton: compare the stock and the topping separately",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"The chicken-stock substitution","text":"Tokiwa’s Chuka Soba costs $16 but normally includes pork chashu. The listed chicken substitution adds $2, making an $18 base order. Shiawase’s Chicken Shoyu is $18.50 with chicken stock and chicken chashu. The useful comparison is $18 versus $18.50, not the two headline soup prices.","url":"https://tokiwaramen.ca/menu","source":"Tokiwa menu","secondUrl":"https://shiawaseramen.ca/menu.html","secondSource":"Shiawase menu"},
+      {"title":"Tofu does not settle the recipe","text":"Shiawase now lists Mapo Tofu Ramen at $18.50, and its description explicitly includes minced pork. Its $22.95 brothless mazemen contains pork, egg and fish powder. Neither name should be used as a vegetarian shortcut.","url":"https://shiawaseramen.ca/menu.html","source":"Shiawase ingredient descriptions"},
+      {"title":"A group budget has extra conditions","text":"Tokiwa states cash or debit, no split bills, and an automatic 18% gratuity for six or more. Six $16 bowls are a $96 food subtotal; 18% of that subtotal is $17.28. Confirm how the restaurant calculates its final bill before using that illustration for a group.","url":"https://tokiwaramen.ca/menu","source":"Tokiwa payment and group policy"}
+    ]
+  },
+  "ab/calgary": {
+    "title": "Calgary: two $17 orders with very different ingredients",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"Brothless is not plant-based","text":"At Goro + Gun, Vegan Mushroom and Mazemen both cost $17. The first is explicitly vegan; the second contains onsen egg and BBQ pork. A pair of either costs $34 before extras, so the decision is about format and ingredients rather than base price.","url":"https://www.goroandgun.ca/menu","source":"Goro + Gun food menu"},
+      {"title":"Chicken soup can carry pork","text":"Globefish Chinook’s Miso, Paitan and Kuro Garlic descriptions use chicken soup with pork chashu. Its separately named Vegan Creamy is the clear plant-based choice. Do not carry a broth preference over to the topping without checking both.","url":"https://www.globefishchinook.ca/ramen","source":"Chinook ramen descriptions"},
+      {"title":"Price the extra noodles deliberately","text":"Goro + Gun lists extra noodles at $4. A $17 Vegan Mushroom base plus extra noodles is $21 before other charges, while its $19 Smoked Brisket is a different recipe at a lower subtotal. Compare the meal you want, not an assumed ranking by price; ask about noodle ingredients for dietary needs.","url":"https://www.goroandgun.ca/menu","source":"Bowls and extras"}
+    ]
+  },
+  "on/guelph": {
+    "title": "Guelph: compare Crafty’s bowl upgrade with its combo",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"Seasoning at the same base price","text":"Crafty’s Tokyo Salaryman and Big City Smoke both start at $16.85. The first follows shoyu seasoning; the second follows miso. Both offer choices that pair a protein with a stock. Choosing tofu changes that pairing, but is not independent proof about every ingredient.","url":"https://craftyramen.com/pages/crafty-ramen-restaurant","source":"Guelph restaurant menu"},
+      {"title":"Two ways to spend around $20","text":"Tokyo Salaryman plus the $2.50 combo is $19.35, including a half snack and a pop. Meat Lover 2.0 alone is $20.85. The $1.50 difference compares an add-on combination with a more elaborate bowl; it does not establish equal portions or a universal better deal.","url":"https://craftyramen.com/pages/crafty-ramen-restaurant","source":"Bowl and combo prices"},
+      {"title":"Restaurant and freezer menus differ","text":"Use the menu attached to 17 Macdonell Street for this plan. Frozen products on the same website are a separate purchase. The October check no longer shows the chilled Redeye or Kimchi Mazemen from our earlier capture, so those are excluded from the current bowl selector.","url":"https://craftyramen.com/pages/crafty-ramen-restaurant","source":"Current restaurant selection"}
+    ]
+  },
+  "mb/winnipeg": {
+    "title": "Winnipeg: compare named recipes rather than protein labels",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"A chicken topping over mixed stock","text":"Gaijin’s Spicy Chicken Karaage Ramen is $17.50, but the described broth contains both pork and chicken. Its $16.50 Miso uses the same two stock ingredients. Changing the topping or choosing the lower price does not remove pork from the soup.","url":"https://www.gaijinizakaya.ca/dinein-menu/","source":"Gaijin dine-in menu"},
+      {"title":"An upgrade can close the price gap","text":"Cho Ichi lists Shoyu at $17.50 and extra noodles at $3: $20.50 together. Its Original bowl is $21.50. That one-dollar gap is a reason to compare included ingredients and appetite before adding noodles automatically; the two orders are not equivalent portions.","url":"https://www.choichi.ca/menu","source":"Cho Ichi menu and additions"},
+      {"title":"Read the full Tan Tan description","text":"Gaijin’s $17.50 Tan Tan explicitly includes peanuts and a pork-and-chicken stock. The $15.50 Vegetarian Ramen is labelled vegetarian, which does not establish vegan preparation. Use the exact recipe wording for a shortlist and ask the kitchen about essential dietary requirements.","url":"https://www.gaijinizakaya.ca/dinein-menu/","source":"Gaijin ingredient details"}
+    ]
+  },
+  "sk/regina": {
+    "title": "Regina: the vegetarian bowl is a separate recipe",
+    "checked": "October 21, 2026",
+    "decisions": [
+      {"title":"Three $19 directions","text":"Dojo’s Shoyu, Miso and Spicy bowls are each $19 and list pork broth and pork belly. Soy seasoning, miso and heat distinguish the choices without changing the base price. Two bowls from that group total $38 before additions.","url":"https://www.dojoramen.ca/menu?menu=menu","source":"Dojo menu"},
+      {"title":"Vegetarian includes an egg","text":"Dojo’s $21 Vegetarian Ramen lists a farm egg. It is $2 above the other three bowls, or a $4 increase for two. Removing meat from a preference filter is insufficient to turn the default recipe into a vegan order.","url":"https://www.dojoramen.ca/menu?menu=menu","source":"Dojo vegetarian recipe"},
+      {"title":"Pronto pricing needs a new check","text":"Pronto’s homepage still exposes its hours, but the full menu was not readable during the October source check. Its older menu snapshot remains dated below. We exclude that snapshot from price-ceiling calculations until the current prices can be confirmed.","url":"https://www.gopronto.ca/","source":"Pronto official site"}
+    ]
+  }
+}

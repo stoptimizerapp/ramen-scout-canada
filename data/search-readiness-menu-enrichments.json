@@ -6049,13 +6049,13 @@
           ]
         },
         {
-          "name": "Redeye Mazemen",
-          "price": 14.75,
+          "name": "Vampire Slayer",
+          "price": 16.85,
           "brothBase": [],
-          "brothStyle": [],
           "tare": [],
+          "brothStyle": [],
           "servingStyle": [
-            "mazemen"
+            "ramen"
           ],
           "dietary": [],
           "evidenceRefs": [
@@ -6063,13 +6063,17 @@
           ]
         },
         {
-          "name": "Kimchi Mazemen",
-          "price": 14.75,
-          "brothBase": [],
+          "name": "Szechuan Mapo Tofu",
+          "price": 16.85,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
           "brothStyle": [],
-          "tare": [],
           "servingStyle": [
-            "mazemen"
+            "ramen"
           ],
           "dietary": [],
           "evidenceRefs": [
@@ -6097,18 +6101,17 @@
         ],
         "servingStyles": [
           "ramen",
-          "tantanmen",
-          "mazemen"
+          "tantanmen"
         ],
         "evidenceRefs": [
           "SR1"
         ]
       },
       "content": {
-        "shortDescription": "Crafty Ramen's Guelph noodle shop has twelve adult bowls and mazemen from $14.75 to $20.85. Compare chilled noodles with soup bowls and choose stock and protein deliberately on its customizable dishes.",
-        "editorialDescription": "At 17 Macdonell Street in Guelph, Crafty Ramen separates chilled, brothless mazemen from its soup bowls. Both Redeye and Kimchi Mazemen cost $14.75, while Tokyo Salaryman's shoyu soup starts at $16.85. That $2.10 difference is a format choice, not a like-for-like discount on soup ramen. Tokyo Salaryman can be ordered with chicken, pork or tofu, and the tofu version uses veggie broth. The $20.85 Meat Lover 2.0 instead combines three meats and an egg. This is the restaurant menu attached to the Guelph address, not the separate frozen-ramen retail range.",
-        "whatToOrder": "For hot soup under $18 before extras, compare the $16.85 Tokyo Salaryman with the $17.25 Spicy Chicken Tantanmen. For a chilled bowl, Redeye includes pork and egg, whereas Kimchi Mazemen offers a protein choice. Selecting tofu is not, on its own, proof that every sauce and noodle ingredient is vegan.",
-        "caveats": "The twelve-item comparison excludes the $4.50 and $9 children's bowls. A $2.50 combo adds a half snack and a pop, not a full-size side. The page says noodles are made daily but does not explicitly locate current production; a house-made claim is not treated as independent proof of on-site production."
+        "shortDescription": "Compare twelve adult soup bowls at Crafty Ramen Guelph, with recorded base prices from $16.85 to $20.85 and several stock-and-protein choices.",
+        "editorialDescription": "At 17 Macdonell Street, Crafty Ramen offers a useful choice between fixed recipes and bowls with paired stock-and-protein options. Tokyo Salaryman costs $16.85 with chicken or pork in chicken broth, or tofu in vegetable broth. Big City Smoke has the same base price but moves to miso seasoning. Choosing between those two isolates the seasoning decision without changing the starting budget. The $17.25 Spicy Chicken Tantanmen is a different recipe built around ground chicken and sesame. At $20.85, Meat Lover 2.0 combines three meats and egg; its $4 premium over Tokyo Salaryman is more than the $2.50 advertised combo add-on.",
+        "whatToOrder": "For a $20 base-food budget, Tokyo Salaryman plus the half-snack-and-pop combo totals $19.35; Meat Lover 2.0 alone is $20.85. The current menu lists Vampire Slayer and Szechuan Mapo Tofu. The chilled Redeye and Kimchi Mazemen examples from our older capture are no longer listed and have been removed from this comparison.",
+        "caveats": "These are restaurant bowls, separate from frozen retail products. The twelve-item comparison excludes children’s portions. Tofu and vegetable broth do not by themselves verify every sauce or noodle ingredient as vegan. The daily noodle-making statement does not specify the production location."
       },
       "noodles": {
         "status": "restaurant_claimed_unspecified",
@@ -6125,7 +6128,7 @@
       },
       "prices": {
         "observedCount": 12,
-        "min": 14.75,
+        "min": 16.85,
         "max": 20.85,
         "median": 17.05,
         "typical": 17.05,
@@ -8576,7 +8579,7 @@
       "restaurantId": "ramen_ca_ff25f125c395f1b05cb3",
       "replacesMenuUrl": "https://shiawaseramen.ca/",
       "menuUrl": "https://shiawaseramen.ca/menu.html",
-      "permanentItemCount": 9,
+      "permanentItemCount": 11,
       "items": [
         {
           "name": "Tonkotsu Ramen",
@@ -8738,6 +8741,36 @@
           "evidenceRefs": [
             "SR1"
           ]
+        },
+        {
+          "name": "Mazesoba/Mazemen Ramen",
+          "price": 22.95,
+          "brothBase": [],
+          "tare": [],
+          "brothStyle": [],
+          "servingStyle": [
+            "mazemen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Mapo Tofu Ramen",
+          "price": 18.5,
+          "brothBase": [],
+          "tare": [
+            "spicy_other"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
         }
       ],
       "taxonomy": {
@@ -8759,16 +8792,17 @@
           "spicy_other"
         ],
         "servingStyles": [
-          "ramen"
+          "ramen",
+          "mazemen"
         ],
         "evidenceRefs": [
           "SR1"
         ]
       },
       "prices": {
-        "observedCount": 9,
+        "observedCount": 11,
         "min": 17.5,
-        "max": 21.95,
+        "max": 22.95,
         "median": 19.25,
         "typical": 19.25,
         "band": "mid_range",
@@ -8779,8 +8813,670 @@
       "content": {
         "shortDescription": "Shiawase’s dedicated menu separates $17.50 clear-broth bowls, $18.50 chicken bowls and $19.25 tonkotsu; miso bowls cost $21.95. These are menu facts, not descriptions drawn from embedded customer reviews.",
         "editorialDescription": "At Shiawase in Cameron Heights, the important distinction is between the regular clear-broth bowls and the specifically named chicken versions. Shio and Shoyu each cost $17.50 and include pork chashu, whereas Chicken Shio and Chicken Shoyu cost $18.50 and explicitly describe chicken broth and chicken chashu. Tonkotsu, Spicy Tonkotsu and Black Garlic all share a $19.25 price. Moving from that group to Miso or Spicy Miso adds $2.70; those bowls retain pork-bone broth and add a miso blend, pork and egg. The dedicated menu supports these choices directly without relying on the customer comments embedded on the homepage.",
-        "whatToOrder": "For chicken broth and chicken topping together, choose one of the explicitly named Chicken Shio or Chicken Shoyu bowls. For pork-bone soup at a fixed price, compare regular, spicy and black-garlic tonkotsu at $19.25. The clear-broth Shio and Shoyu contain pork topping, so their lower price does not imply a vegetarian recipe.",
-        "caveats": "The menu prominently asks guests to discuss peanuts with staff. No complete vegan bowl is established by the nine checked ramen entries. Mapo tofu ramen mentioned in a customer comment is not treated as a current menu item. Prices exclude any applicable tax, tip and add-ons; hours retain their separate source date."
+        "whatToOrder": "Compare the $18.50 Chicken Shio or Chicken Shoyu with $19.25 tonkotsu before adding toppings. The $22.95 Mazesoba/Mazemen is explicitly brothless and includes pork, onsen egg and fish powder. Mapo Tofu Ramen now appears on the official menu at $18.50; its description includes minced pork, so tofu is not a vegetarian signal.",
+        "caveats": "The menu asks guests to discuss peanuts with staff. No complete vegan bowl is established by these eleven menu examples. Prices exclude applicable tax, tip and extras. The source now explicitly lists Mapo Tofu Ramen; its inclusion is based on the menu, not a customer review. Hours retain their separate source date."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_d952994eafc78fa40942",
+      "replacesMenuUrl": "https://www.ikkousha.ca/chickenmenu",
+      "menuUrl": "https://www.ikkousha.ca/chickenmenu",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Tori Paitan Ramen",
+          "price": 16,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [
+            "tori_paitan"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "God Fire Spicy",
+          "price": 17,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tori_paitan"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tori Gyokai",
+          "price": 17,
+          "brothBase": [
+            "chicken",
+            "fish"
+          ],
+          "tare": [],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tori Chintan Ramen",
+          "price": 16,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "price": 16,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Veggie Ramen",
+          "price": 17,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tori Black Ramen",
+          "price": 17,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tori_paitan"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Tori Miso",
+          "price": 17,
+          "brothBase": [
+            "chicken"
+          ],
+          "tare": [
+            "miso"
+          ],
+          "brothStyle": [
+            "tori_paitan"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Veggie Ramen",
+          "price": 18,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu",
+            "spicy_other"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 9,
+        "min": 16,
+        "max": 18,
+        "median": 17,
+        "typical": 17,
+        "band": "mid_range",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "tonkotsu": "unknown",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "unknown",
+        "brothBases": [
+          "chicken",
+          "fish",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tori_paitan"
+        ],
+        "tares": [
+          "shoyu",
+          "shio",
+          "miso",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "The 257 Queen Street West chicken shop has its own tori menu; compare chicken-stock bowls separately from the nearby pork shop.",
+        "editorialDescription": "The chicken shop at 257 Queen Street West uses a distinct menu from the tonkotsu shop at 249 Queen Street West. Tori Paitan and Tori Chintan both cost $16; Tori Black and Tori Miso each add $1. Tori Gyokai includes fish as well as chicken, so a chicken-menu heading does not mean every broth has only chicken.",
+        "caveats": "Vegetarian wording is not treated as a complete vegan claim. Gluten-free noodle substitution costs $2 for dine-in, but the operator says the kitchen is not a gluten-free facility. Base prices exclude additions and are not a checkout quote."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_32295bb473c8fef0a0c9",
+      "replacesMenuUrl": "https://www.ikkousha.ca/chickenmenu",
+      "menuUrl": "https://www.ikkousha.ca/tonkotsumenu",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Signature Tonkotsu",
+          "price": 16,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Black Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shio Tonkotsu",
+          "price": 16,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "shio"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "God Fire",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Gyokai Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork",
+            "chicken",
+            "fish"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "price": 16,
+          "brothBase": [],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Vegetarian Ramen",
+          "price": 18,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu",
+            "spicy_other"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Miso Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Veggie Ramen",
+          "price": 17,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 9,
+        "min": 16,
+        "max": 18,
+        "median": 17,
+        "typical": 17,
+        "band": "mid_range",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "unknown",
+        "brothBases": [
+          "pork",
+          "chicken",
+          "fish",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "shoyu",
+          "shio",
+          "miso",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "The 249 Queen St W branch uses Ikkousha’s tonkotsu menu. Chicken-shop dishes are not attributed to this location.",
+        "editorialDescription": "The Queen Street tonkotsu location is at 249, close to the separately listed chicken shop at 257. Choose this branch for the pork-bone menu. Shio Tonkotsu and Signature Tonkotsu both list at $16; moving to Black Tonkotsu or God Fire adds one dollar per bowl. For someone comparing garlic seasoning with chilli heat, this keeps the base budget constant at $17. Spicy Vegetarian Ramen costs $18, but vegetarian menu wording alone does not establish vegan suitability. Check the address before following an ordering link.",
+        "caveats": "Vegetarian wording is not treated as a complete vegan claim. Gluten-free noodle substitution costs $2 for dine-in, but the operator says the kitchen is not a gluten-free facility. Base prices exclude additions and are not a checkout quote."
+      }
+    },
+    {
+      "restaurantId": "ramen_ca_7c8c5ec0c51f36e66a34",
+      "replacesMenuUrl": "https://www.ikkousha.ca/chickenmenu",
+      "menuUrl": "https://www.ikkousha.ca/tonkotsumenu",
+      "permanentItemCount": 9,
+      "items": [
+        {
+          "name": "Signature Tonkotsu",
+          "price": 16,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Black Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shio Tonkotsu",
+          "price": 16,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "shio"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "God Fire",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Gyokai Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork",
+            "chicken",
+            "fish"
+          ],
+          "tare": [],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Shoyu Ramen",
+          "price": 16,
+          "brothBase": [],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Vegetarian Ramen",
+          "price": 18,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu",
+            "spicy_other"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Spicy Miso Tonkotsu",
+          "price": 17,
+          "brothBase": [
+            "pork_bone"
+          ],
+          "tare": [
+            "miso",
+            "spicy_other"
+          ],
+          "brothStyle": [
+            "tonkotsu"
+          ],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        },
+        {
+          "name": "Veggie Ramen",
+          "price": 17,
+          "brothBase": [
+            "vegetable"
+          ],
+          "tare": [
+            "shoyu"
+          ],
+          "brothStyle": [],
+          "servingStyle": [
+            "ramen"
+          ],
+          "dietary": [],
+          "evidenceRefs": [
+            "SR1"
+          ]
+        }
+      ],
+      "prices": {
+        "observedCount": 9,
+        "min": 16,
+        "max": 18,
+        "median": 17,
+        "typical": 17,
+        "band": "mid_range",
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "taxonomy": {
+        "tonkotsu": "yes",
+        "shoyu": "yes",
+        "miso": "yes",
+        "tsukemen": "unknown",
+        "brothBases": [
+          "pork",
+          "chicken",
+          "fish",
+          "vegetable"
+        ],
+        "brothStyles": [
+          "tonkotsu"
+        ],
+        "tares": [
+          "shoyu",
+          "shio",
+          "miso",
+          "spicy_other"
+        ],
+        "servingStyles": [
+          "ramen"
+        ],
+        "evidenceRefs": [
+          "SR1"
+        ]
+      },
+      "content": {
+        "shortDescription": "The 374A Yonge St branch uses Ikkousha’s tonkotsu menu. Chicken-shop dishes are not attributed to this location.",
+        "editorialDescription": "At the Yonge Street pork-ramen branch, decide on the broth before comparing prices. Gyokai Tonkotsu is a three-stock blend containing pork, chicken and fish; its $17 price does not make it equivalent to the $17 vegetable-based Veggie Ramen. A pair of Signature Tonkotsu bowls starts at $32, while two Spicy Miso Tonkotsu bowls total $34 before extras. The operator offers a $2 gluten-free noodle substitution for dine-in but explicitly excludes a gluten-free kitchen guarantee. That distinction matters more than the small price difference when avoiding gluten.",
+        "caveats": "Vegetarian wording is not treated as a complete vegan claim. Gluten-free noodle substitution costs $2 for dine-in, but the operator says the kitchen is not a gluten-free facility. Base prices exclude additions and are not a checkout quote."
       }
     }
   ]

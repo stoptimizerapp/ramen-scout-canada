@@ -207,3 +207,43 @@ h1 { max-width:760px;margin:0;font-family:Georgia,"Times New Roman",serif;font-s
 .record-hours div { display: flex; justify-content: space-between; gap: 1rem; }
 .location-record summary { cursor: pointer; padding: .75rem 0; }
 [id^="city-"], [id^="province-"] { scroll-margin-top: 6rem; }
+
+/* Menu planning stays readable without a horizontally scrolling table. */
+.bowl-planner { margin: 2rem 0; padding: clamp(1.1rem, 3vw, 2rem); background: #f8f4eb; border: 1px solid #ded6c5; border-radius: 20px; }
+.bowl-planner h2 { margin: .3rem 0 1rem; }
+.planner-controls { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 1rem; margin: 1.5rem 0 1rem; }
+.planner-controls label, .planner-shortlist-heading label { display: grid; gap: .5rem; font-size: .88rem; font-weight: 700; }
+.planner-controls input, .planner-controls select, .planner-shortlist select { width: 100%; min-width: 0; min-height: 46px; padding: .65rem; border: 1px solid #a8a18e; border-radius: 8px; color: #252d24; background: #fff; font: inherit; }
+.bowl-planner button { min-height: 44px; padding: .65rem 1rem; border-radius: 8px; border: 1px solid #2e492c; background: #fff; color: #263e25; cursor: pointer; font: inherit; font-weight: 650; }
+.bowl-planner button[aria-pressed=true] { background: #2e492c; color: #fff; }
+.bowl-planner button:disabled { opacity: .45; cursor: default; }
+.planner-summary { margin: 1rem 0; font-weight: 700; }
+.planner-results { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.planner-bowl { display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; padding: 1.2rem; background: #fff; border: 1px solid #e2dfd5; border-radius: 12px; min-width: 0; }
+.planner-bowl h3 { margin: 0 0 .5rem; font-size: 1.05rem; }
+.planner-bowl p { margin: .4rem 0; font-size: .9rem; }
+.planner-bowl small { display: block; color: #555c51; line-height: 1.5; }
+.planner-bowl-action { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; }
+.planner-bowl-action strong { font-size: 1.1rem; }
+.planner-more { margin-top: 1rem; }
+.planner-shortlist { margin: 1.25rem 0; padding: 1.25rem; border-radius: 12px; background: #e7ecde; border: 1px solid #b9c6a5; }
+.planner-shortlist-heading { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.planner-shortlist-heading h3 { flex: 1; margin: 0; }
+.planner-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.planner-options article { min-width: 0; background: #fff; padding: 1rem; border-radius: 10px; }
+.planner-options h4 { margin: 0; }
+.planner-options a, .planner-options small { display: block; margin: .7rem 0; }
+.planner-options p { font-size: .9rem; }
+.planner-options strong { display: block; }
+.planner-difference { font-size: 1.1rem; }
+.city-decisions { margin: 2rem 0; }
+.decision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.decision-grid article { border-top: 3px solid #b85331; background: #faf8f2; padding: 1.25rem; min-width: 0; }
+.decision-grid h3 { font-size: 1.1rem; margin-top: 0; }
+.decision-grid p { line-height: 1.75; }
+.decision-grid a { display: inline-block; margin-right: 1rem; }
+@media (max-width: 760px) {
+ .planner-controls, .planner-results, .planner-options, .decision-grid { grid-template-columns: 1fr; }
+ .planner-shortlist { padding: .85rem; }
+ .bowl-planner { padding: 1rem; }
+}
